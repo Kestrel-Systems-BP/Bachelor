@@ -17,6 +17,11 @@
 
 #include <QtWidgets/QApplication>
 
+//kest
+#include "UI/UdpReceiver.h"
+
+//
+
 class QQmlApplicationEngine;
 class QQuickWindow;
 class QGCImageProvider;
@@ -93,7 +98,7 @@ public:
 
     Q_INVOKABLE void startUdpSender();
     Q_INVOKABLE void startUdpCloseSender();
-   // Q_INVOKABLE void startUdpReceiver();
+    Q_INVOKABLE void startUdpReceiver();
 
 ////////////
     /// Perform initialize which is common to both normal application running and unit tests.
@@ -134,6 +139,10 @@ private slots:
     void _showDelayedAppMessages();
 
 private:
+
+//kest
+ UdpReceiver* _udpReceiver =nullptr;
+///
     bool compressEvent(QEvent *event, QObject *receiver, QPostEventList *postedEvents) final;
 
     /// Initialize the application for normal application boot. Or in other words we are not going to run unit tests.

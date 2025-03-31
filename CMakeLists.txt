@@ -468,6 +468,19 @@ add_compile_definitions(
     QGC_SETTINGS_VERSION=${QGC_SETTINGS_VERSION}
 )
 
+#kest
+
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/UdpReceiver.cpp)
+
+
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/src/UI
+)
+
+
+#################
+
 add_subdirectory(src)
 
 target_link_libraries(${CMAKE_PROJECT_NAME}

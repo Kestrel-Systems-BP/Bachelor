@@ -16,6 +16,13 @@
  *
  */
 
+/* Kest line */
+
+//#include <QProcess> // need it?
+#include <QDebug>
+#include "UI/UdpReceiver.h"
+/////
+
 #include "QGCApplication.h"
 
 #include <QtCore/QEvent>
@@ -364,6 +371,35 @@ void QGCApplication::startUdpCloseSender()
 
 
 
+/////TEST
+void QGCApplication::startUdpReceiver() {
+
+qDebug() << "Inni startUdpReceiver";
+
+
+ if (_udpReceiver) {
+        qDebug() << "UdpReceiver already initialized";
+        return;
+    }
+
+    if (!_qmlAppEngine) {
+        qCritical() << "UdpReceiver is NULL";
+        return;
+    }
+
+    _udpReceiver = new UdpReceiver(this);
+     _qmlAppEngine->rootContext()->setContextProperty("udpReceiver", _udpReceiver);
+
+    qDebug() << "UdpReceiver started + registered in QML";
+}
+////////// TEST
+
+
+
+
+
+
+
 
 ///
 void QGCApplication::_initForNormalAppBoot()
@@ -463,7 +499,39 @@ void QGCApplication::_initForNormalAppBoot()
 
     // Connect links with flag AutoconnectLink
     LinkManager::instance()->startAutoConnectedLinks();
+
+
+
+//kestrel
+
+		//_qmlAppEngine = new QQmlApplicationEngine(this);
+if (_qmlAppEngine) {
+
+     qDebug() << "BEFORE startUdpreceiver";
+
+    	startUdpReceiver();
+
+     qDebug() << "AFTER startUdpReceiver";
+
+
+     _qmlAppEngine->load(QUrl(QStringLiteral("qrc:/qml/MainRootWindow.qml")));
+
+
+    if (_qmlAppEngine->rootObjects().isEmpty()) {
+        qCritical() << "Failed";
+        return;
+    }
+
+    qDebug() << "QGroundControl UI loaded";
+ }
+
+  else {
+	 qCritical() << "QmlApplicationEngine failed to initialize";
+       }
+
 }
+////////////////
+
 
 void QGCApplication::deleteAllSettingsNextBoot()
 {
