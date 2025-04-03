@@ -471,12 +471,14 @@ add_compile_definitions(
 #kest
 
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/UdpReceiver.cpp)
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/TemperatureReceiver.cpp)
 
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/src/UI
 )
+#TEST
 
 
 #################

@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/qmlimages">
+
+	<file alias="kestrelLogo.svg">resources/kestrelLogo.svg</file>
+
         <file alias="adsbVehicle.svg">src/FlightMap/Images/adsbVehicle.svg</file>
         <file alias="Airframe/AirframeSimulation.svg">src/AutoPilotPlugins/Common/Images/AirframeSimulation.svg</file>
         <file alias="Airframe/AirframeUnknown.svg">src/AutoPilotPlugins/Common/Images/AirframeUnknown.svg</file>

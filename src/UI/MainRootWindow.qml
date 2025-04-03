@@ -20,7 +20,10 @@ import QGroundControl.FactControls
 import QGroundControl.ScreenTools
 import QGroundControl.FlightDisplay
 import QGroundControl.FlightMap
+//test
+import Qt5Compat.GraphicalEffects
 
+//
 import QGroundControl.UTMSP
 
 /// @brief Native QML top level window
@@ -286,9 +289,349 @@ ApplicationWindow {
         visible:        false
     }
 
+
+
+////// DISPENSER MENU CENTER TOP
+
+
+/* 
+
+// Toggle menu button (top center, Drone Dispenser)
+Button {
+    id: topOverlayButton
+    text: "Drone Dispenser"
+    anchors.top: parent.top
+    anchors.horizontalCenter: parent.horizontalCenter
+    anchors.topMargin: 6
+    z: 999
+    onClicked: drawer.visible = !drawer.visible
+}
+*/ 
+
+
+
+
+
 //kest
+/*
+MouseArea {
+    id: logoButton
+    anchors.top: parent.top
+    anchors.horizontalCenter: parent.horizontalCenter
+    anchors.topMargin: -18
+    width: 95
+    height: 95
+    z: 999
+    cursorShape: Qt.PointingHandCursor
+
+    onClicked: {
+        drawer.visible = !drawer.visible
+    }
+
+    Image {
+        anchors.fill: parent
+        source: "qrc:/qmlimages/kestrelLogo.svg"
+	//source: "qrc:/gear-white.svg"
+
+        fillMode: Image.PreserveAspectFit
+        smooth: true
+    }
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+/*
+// test connections
+Connections {
+          target: temperatureReceiver
+ 
+          function onTemperatureReceived(temperature) {
+              console.log("temperature:", temperature);
+              temperatureMessage = temperature.trim();
+          }
+      }
+
+*/
+
+/*
+connections {	
+	target: udpReceiver
+	
+	function onMessageReceived(message) {
+	  console.log("melding: ", message);
+	  udpMessage = message.trim();
+	}
+     }
+
+
+property string udpMessage: "No message received"  // standard message for UI text box (received msg)
+property string temperatureMessage: " XX "
+*/
+
+//
+
+
+property string udpMessage: "No message received"  // standard message for UI text box (received msg)
+ property string temperatureMessage: " XX "
+
+
+
+//TEST
+
+
+Item {
+
+//add in connections here?
+
+/*
+Connections {
+            target: temperatureReceiver
+ 
+            function onTemperatureReceived(temperature) {
+                console.log("temperature:", temperature);
+                temperatureMessage = temperature.trim();
+            }
+        }
+ 
+
+  connections {   
+          target: udpReceiver
+          
+          function onMessageReceived(message) {
+            console.log("melding: ", message);
+            udpMessage = message.trim();
+          }
+       }
+ 
+*/
+
+
+///
+
+
+
+
+
+    width: parent.width
+    height: 95
+    anchors.top: parent.top
+    anchors.topMargin: -16
+
+    // Centered logo
+    MouseArea {
+        id: logoButton
+        width: 95
+        height: 95
+        anchors.horizontalCenter: parent.horizontalCenter
+        cursorShape: Qt.PointingHandCursor
+
+        onClicked: {
+            drawer.visible = !drawer.visible
+        }
+
+        Image {
+            anchors.fill: parent
+            source: "qrc:/qmlimages/kestrelLogo.svg"
+            fillMode: Image.PreserveAspectFit
+            smooth: true
+        }
+    }
+
+
+
+    // Dispenser status text to the right of the logo
+    Text {
+        id: dispenserStatusText
+        text: "Dispenser status: " + udpMessage
+        color: "white"
+        font.pixelSize: 18
+        font.bold: true
+        anchors.verticalCenter: logoButton.verticalCenter
+        anchors.left: logoButton.right
+        anchors.leftMargin: 12
+    }
+
+
+
+
+// Drawer-style dropdown menu
+Rectangle {
+    id: drawer
+    width: 280
+    height: 200
+    visible: false
+    color: "#1e1e1e"
+    radius: 12
+    z: 998
+//    anchors.top: topOverlayButton.bottom
+//    anchors.horizontalCenter: topOverlayButton.horizontalCenter
+	 anchors.top: logoButton.bottom
+         anchors.horizontalCenter: logoButton.horizontalCenter
+
+
+    anchors.topMargin: 8
+    border.color: "#3c3c3c"
+    border.width: 1
+
+    layer.enabled: true
+    layer.effect: DropShadow {
+        color: "#000000"
+        radius: 8
+        samples: 16
+        verticalOffset: 4
+    }
+
+    Column {
+        anchors.fill: parent
+        anchors.margins: 16
+        spacing: 10
+
+        // Open Dispenser Button
+        Rectangle {
+            width: parent.width
+            height: 40
+            radius: 8
+            color: openArea.pressed ? "#3d3d3d" : (openArea.containsMouse ? "#2a2a2a" : "transparent")
+
+            MouseArea {
+                id: openArea
+                anchors.fill: parent
+                hoverEnabled: true
+                onClicked: {
+                    console.log("Open Dispenser clicked")
+                   // drawer.visible = false
+		    qgcApp.startUdpSender();
+                }
+            }
+
+            Row {
+                anchors.fill: parent
+                anchors.margins: 10
+                spacing: 12
+
+                // Optional icon
+                // Image {
+                //     source: "/qmlimages/Plan.svg"
+                //     width: 24
+                //     height: 24
+                // }
+
+                Text {
+                    text: "Open Dispenser"
+                    color: "white"
+                    font.pixelSize: 16
+                }
+            }
+        }
+
+        // Close Dispenser Button
+        Rectangle {
+            width: parent.width
+            height: 40
+            radius: 8
+            color: closeArea.pressed ? "#3d3d3d" : (closeArea.containsMouse ? "#2a2a2a" : "transparent")
+
+            MouseArea {
+                id: closeArea
+                anchors.fill: parent
+                hoverEnabled: true
+                onClicked: {
+                    console.log("Close Dispenser clicked")
+                    //drawer.visible = false
+		    qgcApp.startUdpCloseSender();
+                }
+            }
+
+            Row {
+                anchors.fill: parent
+                anchors.margins: 10
+                spacing: 12
+
+                // Optional icon
+                // Image {
+                //     source: "/qmlimages/Analyze.svg"
+                //     width: 24
+                //     height: 24
+                // }
+
+                Text {
+                    text: "Close Dispenser"
+                    color: "white"
+                    font.pixelSize: 16
+                }
+            }
+        }
+
+
+	Connections {  // kan være at temperature rev skal inn her......
+	  target: udpReceiver
+	 
+	  function onMessageReceived(message) {
+              console.log("Received UDP message:", message);
+              udpMessage = message.trim(); // ta vekk ekstra ekstra fra data pakken
+          }
+      }
+
+
+
+
+
+
+
+
+	  Connections {
+              target: temperatureReceiver
+ 
+              function onTemperatureReceived(temperature) {
+                  console.log("temperature:", temperature);
+                  temperatureMessage = temperature.trim();
+              }
+          }
+
+	
+
+
+
+        // Temperature display
+        Text {
+            text: "Temprature: " + temperatureMessage + "°C"        //  "℃"
+            color: "lightgray"
+            width: parent.width
+            font.pixelSize: 16
+            horizontalAlignment: Text.AlignLeft
+	 // wrapMode: Text.NoWrap  // make sure celsius stays on same line
+            elide: Text.ElideNone // make sure celsius stays on same line 
+	    maximumLineCount : 1   // make sure celsius stays on same line	   
+	 }
+       }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+//kest2
+
+/*
 	
 property string udpMessage: "No message received"  // standard message for UI text box (received msg)  
+property string temperatureMessage: " XX " 
+
 
 Column {
     anchors.right: parent.right
@@ -313,14 +656,16 @@ Column {
         }
     }
 
-    Connections {
+    Connections {  // kan være at temperature rev skal inn her......
         target: udpReceiver
 
         function onMessageReceived(message) {
             console.log("Received UDP message:", message);
-            udpMessage = message;
+            udpMessage = message.trim(); // ta vekk ekstra ekstra fra data pakken
         }
     }
+
+
 
     // Button 1 - Open Dispenser
     Button {
@@ -388,52 +733,40 @@ Column {
         }
     }
 
-    // Button 3 - Temperature
-    Button {
+    // textfield - Temperature
+    Rectangle {
         width: 200
         height: 80
-        background: Rectangle {
-            id: tempButtonBg
-            radius: 15
-            border.width: 2
-            color: "white"
+        border.width: 2
+	border.color: "black"
+	radius: 10
+        color: "white"
 
-            MouseArea {
-                anchors.fill: parent
-                hoverEnabled: true
-                onEntered: tempButtonBg.color = "#DDDDDD"
-                onExited: tempButtonBg.color = "white"
-            }
-        }
-
-        contentItem: Column {
-            anchors.centerIn: parent
-            spacing: 5
-
-            Text {
-                text: "Temperature:"
-                font.pixelSize: 18
-                font.bold: true
-                horizontalAlignment: Text.AlignHCenter
-            }
             Text {
                 id: temperatureText
-                text: "15°C"
+                text: "Dispenser temperature: " + temperatureMessage // add C
                 font.pixelSize: 20
                 font.bold: true
                 horizontalAlignment: Text.AlignHCenter
             }
         }
 
-        onClicked: {
-            console.log("Temperature Button Clicked!")
+	
+    Connections {
+        target: temperatureReceiver
+
+        function onTemperatureReceived(temperature) {
+            console.log("temperature:", temperature);
+            temperatureMessage = temperature.trim();
         }
     }
+
+	
 }
 
 
 
-
+*/
 ///
 
 
@@ -975,3 +1308,4 @@ Column {
          anchors.fill:               parent
     }
 }
+

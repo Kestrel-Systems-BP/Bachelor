@@ -19,6 +19,7 @@
 
 //kest
 #include "UI/UdpReceiver.h"
+#include "UI/TemperatureReceiver.h"
 
 //
 
@@ -99,6 +100,7 @@ public:
     Q_INVOKABLE void startUdpSender();
     Q_INVOKABLE void startUdpCloseSender();
     Q_INVOKABLE void startUdpReceiver();
+    Q_INVOKABLE void startTemperatureReceiver();
 
 ////////////
     /// Perform initialize which is common to both normal application running and unit tests.
@@ -142,6 +144,7 @@ private:
 
 //kest
  UdpReceiver* _udpReceiver =nullptr;
+ TemperatureReceiver* _temperatureReceiver = nullptr;
 ///
     bool compressEvent(QEvent *event, QObject *receiver, QPostEventList *postedEvents) final;
 

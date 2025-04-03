@@ -21,6 +21,7 @@
 //#include <QProcess> // need it?
 #include <QDebug>
 #include "UI/UdpReceiver.h"
+#include "UI/TemperatureReceiver.h"
 /////
 
 #include "QGCApplication.h"
@@ -371,10 +372,10 @@ void QGCApplication::startUdpCloseSender()
 
 
 
-/////TEST
+///// FUNGERER!
 void QGCApplication::startUdpReceiver() {
 
-qDebug() << "Inni startUdpReceiver";
+qDebug() << "trying to start startUdpReceiver";
 
 
  if (_udpReceiver) {
@@ -390,18 +391,31 @@ qDebug() << "Inni startUdpReceiver";
     _udpReceiver = new UdpReceiver(this);
      _qmlAppEngine->rootContext()->setContextProperty("udpReceiver", _udpReceiver);
 
+
     qDebug() << "UdpReceiver started + registered in QML";
 }
-////////// TEST
+////////// 
+
+void QGCApplication::startTemperatureReceiver(){
+
+qDebug() << "trying to start startTempratureReceiver";
+
+	if (_temperatureReceiver){
+		qDebug() << "TemperatureReceiver already initialized";
+		return;
+	}
 
 
+	_temperatureReceiver = new TemperatureReceiver(this);
+	_qmlAppEngine->rootContext()->setContextProperty("temperatureReceiver", _temperatureReceiver);
 
-
-
+	qDebug() << "TemperatureReceiver started + registered in QML";
+	}
 
 
 
 ///
+
 void QGCApplication::_initForNormalAppBoot()
 {
 #ifdef QGC_GST_STREAMING
@@ -507,14 +521,15 @@ void QGCApplication::_initForNormalAppBoot()
 		//_qmlAppEngine = new QQmlApplicationEngine(this);
 if (_qmlAppEngine) {
 
-     qDebug() << "BEFORE startUdpreceiver";
+     qDebug() << "BEFORE startUdpreceiver and startTemperatureReceiver";
 
     	startUdpReceiver();
+	startTemperatureReceiver();
 
-     qDebug() << "AFTER startUdpReceiver";
+     qDebug() << "AFTER startUdpReceiver and startTemperatureReceiver";
 
 
-     _qmlAppEngine->load(QUrl(QStringLiteral("qrc:/qml/MainRootWindow.qml")));
+  // TEST   _qmlAppEngine->load(QUrl(QStringLiteral("qrc:/qml/MainRootWindow.qml")));
 
 
     if (_qmlAppEngine->rootObjects().isEmpty()) {
