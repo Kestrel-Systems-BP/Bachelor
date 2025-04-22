@@ -1,0 +1,44 @@
+Hello World 
+2025-04-23 03:28:40,655 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:39:01,755 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:40:56,472 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:41:02,003 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:41:07,535 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:41:13,069 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:41:18,600 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:41:24,130 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:41:29,667 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:41:35,198 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:41:40,726 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:42:10,160 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:42:15,694 ERROR DHT11 error: name 'humidity' is not defined
+2025-04-23 03:51:11,273 ERROR DHT11 error: name 'temperature' is not defined
+2025-04-23 03:51:16,804 ERROR DHT11 error: name 'temperature' is not defined
+2025-04-23 03:51:22,334 ERROR DHT11 error: name 'temperature' is not defined
+2025-04-23 03:51:27,870 WARNING No data to read
+2025-04-23 03:51:33,398 WARNING No data to read
+2025-04-23 03:51:38,930 ERROR DHT11 error: name 'temperature' is not defined
+2025-04-23 03:51:44,459 ERROR DHT11 error: name 'temperature' is not defined
+2025-04-23 03:51:49,990 ERROR DHT11 error: name 'temperature' is not defined
+2025-04-23 03:54:43,997 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 03:54:49,529 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 03:54:55,060 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 03:55:00,592 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 03:55:06,123 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 03:55:11,654 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 03:55:17,186 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 03:55:22,718 WARNING No data to read
+2025-04-23 03:55:28,246 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 03:55:33,778 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 03:57:29,891 WARNING No data to read
+2025-04-23 03:59:32,370 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 03:59:37,901 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 04:05:00,100 WARNING No data to read
+2025-04-23 04:05:05,631 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 04:05:11,162 WARNING No data to read
+2025-04-23 04:05:16,694 ERROR DHT11 error: name 'temperatur' is not defined
+2025-04-23 04:08:52,694 WARNING No data to read
+2025-04-23 04:10:33,182 WARNING No data to read
+2025-04-23 04:10:44,245 WARNING No data to read
+2025-04-23 04:10:55,308 WARNING No data to read
+2025-04-23 04:11:17,433 WARNING No data to read

@@ -1,0 +1,14 @@
+udp:
+  send_address: "100.90.56.83"
+  sensor_port: 5007
+  actuator_port: 5006
+  receiving_port: 5005
+gpio:
+  dht11_pin: 23
+  actuator_relay_pin1: 26
+  actuator_relay_pin2: 20
+logging:
+  level: WARNING
+  file: "/logs/drone_dispenser.log"
+intervals:
+  sensor_read: 60
