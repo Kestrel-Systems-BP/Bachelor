@@ -100,40 +100,6 @@ Item {
             toolInsets:             customOverlay.totalToolInsets
             mapName:                "FlightDisplayView"
             enabled:                !viewer3DWindow.isOpen
-//kest
-
-	property real dispenser1Latitude: mainWindow.dispenserData && mainWindow.dispenserData["1"] ? mainWindow.dispenserData["1"].latitude : 59.6573460
-	property real dispenser1Longitude: mainWindow.dispenserData && mainWindow.dispenserData["1"] ? mainWindow.dispenserData["1"].longitude : 9.6440498
-
-
-	MapQuickItem {
-		id: dispenser1Marker
-		//coordinate: QtPositioning.coordinate(dispenserData["1"].latitude, dispenserData["1"].longitude)
-		//Denne funker   coordinate: QtPositioning.coordinate(59.6573460, 9.6440498)
-		anchorPoint.x: dispenser1Icon.width / 2
-		anchorPoint.y: dispenser1Icon.height / 2
-		z: 100
-
-		Binding  {
-			target: dispenser1Marker
-			property: "coordinate"
-			value: QtPositioning.coordinate(mapControl.dispenser1Latitude, mapControl.dispenser1Longitude)
-			}
-		
-
-        sourceItem: Image {
-            id: dispenser1Icon
-            //source: "qrc:/qmlimages/Plan.svg" // Replace with your dispenser icon
-	    source: "qrc:/qmlimages/Home.svg"	
-            width: 30
-            height: 30
-        }
-    }
-
-
-///////
-
-
         }
 
         FlyViewVideo {

@@ -2,6 +2,10 @@
     <qresource prefix="/qmlimages">
 
 	<file alias="kestrelLogo.svg">resources/kestrelLogo.svg</file>
+	<file alias ="kestrelDispenser.svg">resources/kestrelDispenser.svg</file>
+	<file alias ="kestrelDispenser_swapped.svg">resources/kestrelDispenser_swapped.svg</file>
+	<file alias ="kestrelDispenser123.png">resources/kestrelDispenser123.png</file>	
+
 
         <file alias="adsbVehicle.svg">src/FlightMap/Images/adsbVehicle.svg</file>
         <file alias="Airframe/AirframeSimulation.svg">src/AutoPilotPlugins/Common/Images/AirframeSimulation.svg</file>

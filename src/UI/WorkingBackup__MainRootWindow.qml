@@ -23,13 +23,6 @@ import QGroundControl.FlightMap
 //test
 import Qt5Compat.GraphicalEffects
 import Qt.labs.settings
-
-//for koordinat og vehcile manag
-import QGroundControl 1.0
-import QtPositioning 5.15
-
-
-
 //
 import QGroundControl.UTMSP
 
@@ -99,7 +92,7 @@ ApplicationWindow {
         readonly property var       guidedControllerFlyView:        flyView.guidedController
 
         // Number of QGCTextField's with validation errors. Used to prevent closing panels with validation errors.
-        property int                validationErrorCount:           0
+        property int                validationErrorCount:           0 
 
         // Property to manage RemoteID quick access to settings page
         property bool               commingFromRIDIndicator:        false
@@ -251,9 +244,9 @@ ApplicationWindow {
         for (var index=0; index<QGroundControl.multiVehicleManager.vehicles.count; index++) {
             if (QGroundControl.multiVehicleManager.vehicles.get(index).parameterManager.pendingWrites) {
                 mainWindow.showMessageDialog(closeDialogTitle,
-                                             qsTr("You have pending parameter updates to a vehicle. If you close you will lose changes. Are you sure you want to close?"),
-                                             Dialog.Yes | Dialog.No,
-                                             function() { _closeChecksToSkip |= _skipPendingParameterWritesCheckMask; performCloseChecks() })
+                    qsTr("You have pending parameter updates to a vehicle. If you close you will lose changes. Are you sure you want to close?"),
+                    Dialog.Yes | Dialog.No,
+                    function() { _closeChecksToSkip |= _skipPendingParameterWritesCheckMask; performCloseChecks() })
                 return false
             }
         }
@@ -263,9 +256,9 @@ ApplicationWindow {
     function checkForActiveConnections() {
         if (QGroundControl.multiVehicleManager.activeVehicle) {
             mainWindow.showMessageDialog(closeDialogTitle,
-                                         qsTr("There are still active connections to vehicles. Are you sure you want to exit?"),
-                                         Dialog.Yes | Dialog.No,
-                                         function() { _closeChecksToSkip |= _skipActiveConnectionsCheckMask; performCloseChecks() })
+                qsTr("There are still active connections to vehicles. Are you sure you want to exit?"),
+                Dialog.Yes | Dialog.No,
+                function() { _closeChecksToSkip |= _skipActiveConnectionsCheckMask; performCloseChecks() })
             return false
         } else {
             return true
@@ -273,22 +266,22 @@ ApplicationWindow {
     }
 
     onClosing: (close) => {
-                   if (!_forceClose) {
-                       _closeChecksToSkip = 0
-                       close.accepted = performCloseChecks()
-                   }
-               }
+        if (!_forceClose) {
+            _closeChecksToSkip = 0
+            close.accepted = performCloseChecks()
+        }
+    }
 
     background: Rectangle {
         anchors.fill:   parent
         color:          QGroundControl.globalPalette.window
     }
 
-    FlyView {
+    FlyView { 
         id:                     flyView
         anchors.fill:           parent
         utmspSendActTrigger:    _utmspSendActTrigger
-        property var dispenserData: parent.dispenserData //kest
+	property var dispenserData: parent.dispenserData //kest
     }
 
     PlanView {
@@ -299,10 +292,10 @@ ApplicationWindow {
 
 
 
-    ////// DISPENSER MENU CENTER TOP
+////// DISPENSER MENU CENTER TOP
 
 
-    /*
+/* 
 
 // Toggle menu button (top center, Drone Dispenser)
 Button {
@@ -320,8 +313,8 @@ Button {
 
 
 
-    //kest
-    /*
+//kest
+/*
 MouseArea {
     id: logoButton
     anchors.top: parent.top
@@ -352,12 +345,12 @@ MouseArea {
     Image {
         anchors.fill: parent
         source: "qrc:/qmlimages/kestrelLogo.svg"
-    //source: "qrc:/gear-white.svg"
+	//source: "qrc:/gear-white.svg"
 
         fillMode: Image.PreserveAspectFit
         smooth: true
 
-    }
+	}
     }
 }
 
@@ -365,816 +358,397 @@ MouseArea {
 */
 
 
-    property real calculatedDistance: -1
-    property bool openAndCloseDispenser: false
-
-    // Calculate distance
-
-    Timer {
-        id: distanceInterval
-        interval: 1000 // will update very second
-        running: proximitySlider.proximityOn // its only on when slider is turned to on
-        repeat: true
-
-        onTriggered: {
-            var dispenserLatitude = dispenserData[selectedDispenser].latitude
-            var dispenserLongitude = dispenserData[selectedDispenser].longitude
-
-            if(QGroundControl.multiVehicleManager.activeVehicle) {
-                var droneCoordinate = QGroundControl.multiVehicleManager.activeVehicle.coordinate
-
-                if(droneCoordinate.isValid) {
-                    var droneLatitude = droneCoordinate.latitude
-                    var droneLongitude = droneCoordinate.longitude
-
-                    //calucaltion of distance happens here:
-
-                    calculatedDistance = ProximityCalculator.calculateDistance(dispenserLatitude, dispenserLongitude, droneLatitude, droneLongitude)
 
 
-                    if(proximitySlider.proximityOn && calculatedDistance > 20 && !openAndCloseDispenser){
-                        console.log("Drone is more than 20 meters away, closing dispenser")
-                        qgcApp.startUdpCloseSender()
-                        openAndCloseDispenser = true
-                    }
-                    else if (proximitySlider.proximityOn && calculatedDistance < 15 && openAndCloseDispenser){
-                        console.log("Drone is less than 15 meters away, opening dispenser")
-                        qgcApp.startUdpSender()
-                        openAndCloseDispenser = false
-                    }
 
-                } else{
-                    console.log("Wrong drone coordinates")
-                    calculatedDistance = -1
-                }
 
-            }
-            else{
-                console.log("No active vehicle in QGC, failed.")
-                calculatedDistance = -1
 
-            }
+
+
+
+
+
+// NY ITERASJON
+
+/*
+// Properties for dispenser data
+    property string udpMessage: "No message received"  // Default value
+    property string temperatureMessage: "pending..."   // Default value
+
+
+    property string selectedDispenser: "1"  // Default selected dispenser
+    property var dispenserList: ["Dispenser 1", "Dispenser 2"]  // List of dispensers
+
+	//property var dispenserList: [" 1", " 2"]  // List of dispensers
+
+    property string dispenserStatus: udpMessage  // Reflects CLOSED/OPEN
+    property string temperature: temperatureMessage
+    property string humidity: "25"  // Static for now
+    property string chargerStatus: "CHARGING"  // Static for now
+    property string errorMessage: "NONE"  // Static for now
+
+*/
+
+
+  //  property string selectedDispenser: "1"  // Default selected dispenser
+  //  property var dispenserList: ["Dispenser 1", "Dispenser 2"]  // List of dispensers
+
+/// TEST
+
+property string selectedDispenser: "1"
+property var dispenserList: []
+property var dispenserData: ({})
+
+property var receivers: {
+    "1": {udp: udpReceiver, temperature: temperatureReceiver},
+    "2": {udp: null, temperature: null}
+}
+
+Item {
+    width: parent.width
+    height: 95
+    anchors.top: parent.top
+    anchors.topMargin: 2
+
+    MouseArea {
+        id: logoButton
+        width: 62
+        height: 62
+	anchors.right: parent.right
+        //anchors.horizontalCenter: parent.horizontalCenter
+	anchors.rightMargin: 140
+	anchors.horizontalCenter: parent.verticalCenter
+        cursorShape: Qt.PointingHandCursor
+
+        onClicked: {
+            drawer.visible = !drawer.visible
         }
 
+        Image {
+            anchors.fill: parent
+            source: "qrc:/qmlimages/kestrelDispenser_swapped.svg"
+            fillMode: Image.PreserveAspectFit
+            smooth: true
+        }
+    }
+
+    Text {
+        id: dispenserStatusText
+        text: "Dispenser status: " + dispenserData[selectedDispenser].status
+        color: "white"
+        font.pixelSize: 18
+        font.bold: true
+        anchors.verticalCenter: logoButton.verticalCenter
+        anchors.right: logoButton.left
+        anchors.rightMargin: 12
     }
 
 
+//////// test for lagring...
 
 
+Settings {
+    id: dispenserSettings
+    category: "DispenserData"
+    property var savedDispenserData
 
+    Component.onCompleted: {
+        console.log("Loading savedDispenserData:", JSON.stringify(savedDispenserData))
+        var defaultDispenserData = {
+            "1": {
+                status: "No message received",
+                temperature: " ",
+                humidity: " ",
+                chargerStatus: "Unknown",
+                errors: "NONE",
+                latitude: 59.6574100,
+                longitude: 9.6441920,
+                name: "Dispenser 1"
+            },
+            "2": {
+                status: "No message received",
+                temperature: "pending...",
+                humidity: "25",
+                chargerStatus: "CHARGING",
+                errors: "NONE",
+                latitude: 59.6555001,
+                longitude: 9.6457272,
+                name: "Dispenser 2"
+            }
+        }
 
-
-
-
-
-    // NY ITERASJON
-
-
-
-    property string selectedDispenser: "1"
-    property var dispenserList: []
-    property var dispenserData: ({})
-
-    property var receivers: {
-        "1": {udp: udpReceiver, temperature: temperatureReceiver},
-        "2": {udp: null, temperature: null}
+        if (savedDispenserData && Object.keys(savedDispenserData).length > 0) {
+            dispenserData = {
+                "1": {
+                    status: "No message received",
+                    temperature: " ",
+                    humidity: " ",
+                    chargerStatus: "Unknown",
+                    errors: "NONE",
+                    latitude: savedDispenserData["1"].latitude || defaultDispenserData["1"].latitude,
+                    longitude: savedDispenserData["1"].longitude || defaultDispenserData["1"].longitude,
+                    name: savedDispenserData["1"].name || defaultDispenserData["1"].name
+                },
+                "2": {
+                    status: "No message received",
+                    temperature: "pending...",
+                    humidity: "25",
+                    chargerStatus: "CHARGING",
+                    errors: "NONE",
+                    latitude: savedDispenserData["2"].latitude || defaultDispenserData["2"].latitude,
+                    longitude: savedDispenserData["2"].longitude || defaultDispenserData["2"].longitude,
+                    name: savedDispenserData["2"].name || defaultDispenserData["2"].name
+                }
+            }
+        } else {
+            dispenserData = defaultDispenserData
+            savedDispenserData = {
+                "1": {
+                    latitude: dispenserData["1"].latitude,
+                    longitude: dispenserData["1"].longitude,
+                    name: dispenserData["1"].name
+                },
+                "2": {
+                    latitude: dispenserData["2"].latitude,
+                    longitude: dispenserData["2"].longitude,
+                    name: dispenserData["2"].name
+                }
+            }
+        }
+        dispenserList = Object.keys(dispenserData).map(id => ({
+            id: id,
+            name: dispenserData[id].name
+        }))
+        selectedDispenser = "1"
+        console.log("Initialized dispenserData:", JSON.stringify(dispenserData))
     }
+}
 
-    Item {
-        width: parent.width
-        height: 95
-        anchors.top: parent.top
-        anchors.topMargin: 2
 
-        MouseArea {
-            id: logoButton
-            width: 62
-            height: 62
-            anchors.right: parent.right
-            //anchors.horizontalCenter: parent.horizontalCenter
-            anchors.rightMargin: 140
-            anchors.horizontalCenter: parent.verticalCenter
-            cursorShape: Qt.PointingHandCursor
 
-            onClicked: {
-                drawer.visible = !drawer.visible
-            }
 
-            Image {
-                anchors.fill: parent
-                source: "qrc:/qmlimages/kestrelDispenser_swapped.svg"
-                fillMode: Image.PreserveAspectFit
-                smooth: true
-            }
+///
+
+
+
+    Rectangle {
+        id: drawer
+        width: 600
+        height: 300
+        visible: false
+        color: "#1e1e1e"
+        radius: 12
+        z: 998
+        anchors.top: logoButton.bottom
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.topMargin: 8
+        border.color: "#3c3c3c"
+        border.width: 1
+
+        layer.enabled: true
+        layer.effect: DropShadow {
+            color: "#000000"
+            radius: 8
+            samples: 16
+            verticalOffset: 4
         }
 
-
-
-
-        Text {
-            id: dispenserStatusText
-            text: "Dispenser status: " + dispenserData[selectedDispenser].status
-            color: "white"
-            font.pixelSize: 18
-            font.bold: true
-            anchors.verticalCenter: logoButton.verticalCenter
-            anchors.right: logoButton.left
-            anchors.rightMargin: 12
-        }
-
-
-        //////// test for lagring...
-
-
-        Settings {
-            id: dispenserSettings
-            category: "DispenserData"
-            property var savedDispenserData
-
-            Component.onCompleted: {
-                console.log("Loading savedDispenserData:", JSON.stringify(savedDispenserData))
-                var defaultDispenserData = {
-                    "1": {
-                        status: "No message received",
-                        temperature: " ",
-                        humidity: " ",
-                        chargerStatus: "Unknown",
-                        errors: "NONE",
-                        latitude: 59.6574100,
-                        longitude: 9.6441920,
-                        name: "Dispenser 1"
-                    },
-                    "2": {
-                        status: "No message received",
-                        temperature: "pending...",
-                        humidity: "25",
-                        chargerStatus: "CHARGING",
-                        errors: "NONE",
-                        latitude: 59.6555001,
-                        longitude: 9.6457272,
-                        name: "Dispenser 2"
-                    }
-                }
-
-                if (savedDispenserData && Object.keys(savedDispenserData).length > 0) {
-                    dispenserData = {
-                        "1": {
-                            status: "No message received",
-                            temperature: " ",
-                            humidity: " ",
-                            chargerStatus: "Unknown",
-                            errors: "NONE",
-                            latitude: savedDispenserData["1"].latitude || defaultDispenserData["1"].latitude,
-                            longitude: savedDispenserData["1"].longitude || defaultDispenserData["1"].longitude,
-                            name: savedDispenserData["1"].name || defaultDispenserData["1"].name
-                        },
-                        "2": {
-                            status: "No message received",
-                            temperature: "pending...",
-                            humidity: "25",
-                            chargerStatus: "CHARGING",
-                            errors: "NONE",
-                            latitude: savedDispenserData["2"].latitude || defaultDispenserData["2"].latitude,
-                            longitude: savedDispenserData["2"].longitude || defaultDispenserData["2"].longitude,
-                            name: savedDispenserData["2"].name || defaultDispenserData["2"].name
-                        }
-                    }
-                } else {
-                    dispenserData = defaultDispenserData
-                    savedDispenserData = {
-                        "1": {
-                            latitude: dispenserData["1"].latitude,
-                            longitude: dispenserData["1"].longitude,
-                            name: dispenserData["1"].name
-                        },
-                        "2": {
-                            latitude: dispenserData["2"].latitude,
-                            longitude: dispenserData["2"].longitude,
-                            name: dispenserData["2"].name
-                        }
-                    }
-                }
-                dispenserList = Object.keys(dispenserData).map(id => ({
-                                                                          id: id,
-                                                                          name: dispenserData[id].name
-                                                                      }))
-                selectedDispenser = "1"
-                console.log("Initialized dispenserData:", JSON.stringify(dispenserData))
-            }
-        }
-
-
-        Rectangle {
-            id: drawer
-            width: 600
-            height: 300
-            visible: false
-            color: "#1e1e1e"
-            radius: 12
-            z: 998
-            anchors.top: logoButton.bottom
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: 8
-            border.color: "#3c3c3c"
-            border.width: 1
-
-            layer.enabled: true
-            layer.effect: DropShadow {
-                color: "#000000"
-                radius: 8
-                samples: 16
-                verticalOffset: 4
-            }
-
-            Row {
-                anchors.fill: parent
-                anchors.margins: 16
-                spacing: 16
-
-                Rectangle {
-                    width: 150
-                    height: parent.height
-                    color: "#2b2b2b"
-                    radius: 8
-
-                    ListView {
-                        anchors.fill: parent
-                        anchors.margins: 8
-                        model: dispenserList
-                        delegate: Row {
-                            width: parent.width
-                            height: 40
-                            spacing: 8
-
-                            Rectangle {
-                                width: parent.width - 40
-                                height: 40
-                                color: selectedDispenser === modelData.id ? "#3d3d3d" : "transparent"
-
-                                Text {
-                                    text: modelData.name
-                                    color: "white"
-                                    font.pixelSize: 16
-                                    anchors.verticalCenter: parent.verticalCenter
-                                    anchors.left: parent.left
-                                    anchors.leftMargin: 10
-                                }
-
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        selectedDispenser = modelData.id
-                                    }
-                                }
-                            }
-
-                            Image {
-                                source: "qrc:/res/pencil.svg"
-                                width: 20
-                                height: 20
-                                anchors.verticalCenter: parent.verticalCenter
-                                fillMode: Image.PreserveAspectFit
-                                smooth: true
-
-                                MouseArea {
-                                    id: editArea
-                                    anchors.fill: parent
-                                    hoverEnabled: true
-                                    onClicked: {
-                                        editPopup.dispenserId = modelData.id
-                                        editPopup.dispenserName = dispenserData[modelData.id].name
-                                        editPopup.dispenserLatitude = dispenserData[modelData.id].latitude
-                                        editPopup.dispenserLongitude = dispenserData[modelData.id].longitude
-                                        editPopup.visible = true
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Column {
-                    spacing: 12
-                    width: parent.width - 150 - 16
-
-                    Text {
-                        //text: "Dispenser " + selectedDispenser //Ga ikke riktig navn på valgt dispenser
-                        text: dispenserData[selectedDispenser].name
-                        color: "white"
-                        font.pixelSize: 18
-                        font.bold: true
-                    }
-
-                    Text { text: "Status: " + dispenserData[selectedDispenser].status; color: "lightgray"; font.pixelSize: 16 }
-                    Text {
-                        text: "Temperature: " + (dispenserData[selectedDispenser].temperature === "pending..." ? "N/A" : dispenserData[selectedDispenser].temperature + "°C");
-                        color: "lightgray";
-                        font.pixelSize: 16
-                    }
-                    Text {
-                        text: "Humidity: " + (dispenserData[selectedDispenser].humidity === " " ? "N/A" : dispenserData[selectedDispenser].humidity + "%");
-                        color: "lightgray";
-                        font.pixelSize: 16
-                    }
-                    Text { text: "Charger Status: " + dispenserData[selectedDispenser].chargerStatus; color: "lightgray"; font.pixelSize: 16 }
-                    Text { text: "Errors: " + dispenserData[selectedDispenser].errors; color: "lightgray"; font.pixelSize: 16 }
-
-
-
-                    Rectangle {
-                        width: 300
-                        height: 60
-                        color: "red"
-                        radius: 10
-
-                        Text {
-                            anchors.centerIn: parent
-                            text: "LAUNCH"
-                            font.bold: true
-                            font.pixelSize: 32
-                            color: "white"
-                        }
-
-                        MouseArea {
-                            anchors.fill: parent
-                            onClicked: {
-                                console.log("Launching Dispenser " + selectedDispenser)
-                            }
-                        }
-                    }
-
-                    Rectangle {
-                        width: 40
-                        height: 40
-                        color: "gray"
-                        anchors.right: parent.right
-
-
-                        Text {
-                            anchors.centerIn: parent
-                            text: "☰"
-                            color: "white"
-                            font.pixelSize: 24
-                        }
-
-                        MouseArea {
-                            anchors.fill: parent
-                            onClicked: {
-                                openClosePopup.visible = !openClosePopup.visible
-                            }
-                        }
-                    }
-                }
-            }
-
-
+        Row {
+            anchors.fill: parent
+            anchors.margins: 16
+            spacing: 16
 
             Rectangle {
-                id: editPopup
-                visible: false
-                width: 300
-                height: 200
-                color: "#333"
+                width: 150
+                height: parent.height
+                color: "#2b2b2b"
                 radius: 8
-                anchors.centerIn: parent
-                z: 999
 
-                property string dispenserId: ""
-                property string dispenserName: ""
-                property real dispenserLatitude: 0
-                property real dispenserLongitude: 0
-
-                Column {
+                ListView {
                     anchors.fill: parent
-                    anchors.margins: 16
-                    spacing: 12
-
-                    Text {
-                        text: "Edit Dispenser " + editPopup.dispenserId
-                        color: "white"
-                        font.pixelSize: 18
-                        font.bold: true
-                    }
-
-                    Row {
+                    anchors.margins: 8
+                    model: dispenserList
+                    delegate: Row {
+                        width: parent.width
+                        height: 40
                         spacing: 8
-                        Text {
-                            text: "Name:"
-                            color: "white"
-                            font.pixelSize: 16
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
-                        TextField {
-                            text: editPopup.dispenserName
-                            color: "white"
-                            font.pixelSize: 16
-                            background: Rectangle {
-                                color: "#555"
-                                radius: 5
-                            }
-                            onTextChanged: editPopup.dispenserName = text
-                        }
-                    }
-
-                    Row {
-                        spacing: 8
-                        Text {
-                            text: "Latitude:"
-                            color: "white"
-                            font.pixelSize: 16
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
-                        TextField {
-                            text: editPopup.dispenserLatitude
-                            color: "white"
-                            font.pixelSize: 16
-                            background: Rectangle {
-                                color: "#555"
-                                radius: 5
-                            }
-                            onTextChanged: editPopup.dispenserLatitude = parseFloat(text) || 0
-                        }
-                    }
-
-                    Row {
-                        spacing: 8
-                        Text {
-                            text: "Longitude:"
-                            color: "white"
-                            font.pixelSize: 16
-                            anchors.verticalCenter: parent.verticalCenter
-                        }
-                        TextField {
-                            text: editPopup.dispenserLongitude
-                            color: "white"
-                            font.pixelSize: 16
-                            background: Rectangle {
-                                color: "#555"
-                                radius: 5
-                            }
-                            onTextChanged: editPopup.dispenserLongitude = parseFloat(text) || 0
-                        }
-                    }
-
-                    Row {
-                        spacing: 10
-                        anchors.horizontalCenter: parent.horizontalCenter
 
                         Rectangle {
-                            width: 80
+                            width: parent.width - 40
                             height: 40
-                            radius: 8
-                            color: saveArea.pressed ? "#3d3d3d" : (saveArea.containsMouse ? "#2a2a2a" : "green")
+                            color: selectedDispenser === modelData.id ? "#3d3d3d" : "transparent"
 
+                            Text {
+                                text: modelData.name
+                                color: "white"
+                                font.pixelSize: 16
+                                anchors.verticalCenter: parent.verticalCenter
+                                anchors.left: parent.left
+                                anchors.leftMargin: 10
+                            }
 
                             MouseArea {
-                                id: saveArea
+                                anchors.fill: parent
+                                onClicked: {
+                                    selectedDispenser = modelData.id
+                                }
+                            }
+                        }
+
+                        Image {
+                            source: "qrc:/res/pencil.svg"
+                            width: 20
+                            height: 20
+                            anchors.verticalCenter: parent.verticalCenter
+                            fillMode: Image.PreserveAspectFit
+                            smooth: true
+
+                            MouseArea {
+                                id: editArea
                                 anchors.fill: parent
                                 hoverEnabled: true
                                 onClicked: {
-                                    dispenserData[editPopup.dispenserId].name = editPopup.dispenserName
-                                    dispenserData[editPopup.dispenserId].latitude = editPopup.dispenserLatitude
-                                    dispenserData[editPopup.dispenserId].longitude = editPopup.dispenserLongitude
-                                    dispenserData = dispenserData
-
-                                    dispenserList = Object.keys(dispenserData).map(id => ({
-                                                                                              id: id,
-                                                                                              name: dispenserData[id].name
-                                                                                          }))
-                                    dispenserSettings.savedDispenserData = {
-                                        "1": {
-                                            latitude: dispenserData["1"].latitude,
-                                            longitude: dispenserData["1"].longitude,
-                                            name: dispenserData["1"].name
-                                        },
-                                        "2": {
-                                            latitude: dispenserData["2"].latitude,
-                                            longitude: dispenserData["2"].longitude,
-                                            name: dispenserData["2"].name
-                                        }
-                                    }
-                                    console.log("Saved dispenserData:", JSON.stringify(dispenserSettings.savedDispenserData))
-
-                                    editPopup.visible = false
+                                    editPopup.dispenserId = modelData.id
+                                    editPopup.dispenserName = dispenserData[modelData.id].name
+                                    editPopup.dispenserLatitude = dispenserData[modelData.id].latitude
+                                    editPopup.dispenserLongitude = dispenserData[modelData.id].longitude
+                                    editPopup.visible = true
                                 }
-                            }
-
-
-
-                            Text {
-                                text: "Save"
-                                color: "white"
-                                font.pixelSize: 16
-                                anchors.centerIn: parent
-                            }
-                        }
-
-                        Rectangle {
-                            width: 80
-                            height: 40
-                            radius: 8
-                            color: cancelArea.pressed ? "#3d3d3d" : (cancelArea.containsMouse ? "#2a2a2a" : "red")
-
-                            MouseArea {
-                                id: cancelArea
-                                anchors.fill: parent
-                                hoverEnabled: true
-                                onClicked: {
-                                    editPopup.visible = false
-                                }
-                            }
-
-                            Text {
-                                text: "Cancel"
-                                color: "white"
-                                font.pixelSize: 16
-                                anchors.centerIn: parent
                             }
                         }
                     }
                 }
             }
-        }
-
-
-
-        //////////////
-        //test for open, close and settings pop up:
-
-        Rectangle {
-            id: openClosePopup
-            visible: false
-            width: 300
-            height: 250
-            color: "#333"
-            radius: 8
-            // anchors.bottom: mainWindow.contentItem.bottom
-            // anchors.horizontalCenter: mainWindow.contentItem.horizontalCenter
-            // anchors.bottomMargin: 10
-            anchors.bottom: drawer.bottom
-            anchors.horizontalCenter: drawer.horizontalCenter
-            anchors.bottomMargin: -160
-            z: 999
 
             Column {
-                anchors.fill: parent
-                anchors.margins: 16
                 spacing: 12
+                width: parent.width - 150 - 16
 
                 Text {
-                    text: "Dispenser Options"
+                    //text: "Dispenser " + selectedDispenser //Ga ikke riktig navn på valgt dispenser
+		    text: dispenserData[selectedDispenser].name
                     color: "white"
                     font.pixelSize: 18
                     font.bold: true
                 }
 
-                Row {
-                    spacing: 10
-                    anchors.horizontalCenter: parent.horizontalCenter
-
-                    Rectangle {
-                        width: 80
-                        height: 40
-                        radius: 8
-                        color: openArea.pressed ? "#3d3d3d" : (openArea.containsMouse ? "#2a2a2a" : "transparent")
-
-                        MouseArea {
-                            id: openArea
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            onClicked: {
-                                console.log("Open Dispenser clicked")
-                                qgcApp.startUdpSender()
-                                openClosePopup.visible = false
-                            }
-                        }
-
-                        Text {
-                            text: "Open"
-                            color: "white"
-                            font.pixelSize: 16
-                            anchors.centerIn: parent
-                        }
-                    }
-
-                    Rectangle {
-                        width: 80
-                        height: 40
-                        radius: 8
-                        color: closeArea.pressed ? "#3d3d3d" : (closeArea.containsMouse ? "#2a2a2a" : "transparent")
-
-                        MouseArea {
-                            id: closeArea
-                            anchors.fill: parent
-                            hoverEnabled: true
-                            onClicked: {
-                                console.log("Close Dispenser clicked")
-                                qgcApp.startUdpCloseSender()
-                                openClosePopup.visible = false
-                            }
-                        }
-
-                        Text {
-                            text: "Close"
-                            color: "white"
-                            font.pixelSize: 16
-                            anchors.centerIn: parent
-                        }
-                    }
+                Text { text: "Status: " + dispenserData[selectedDispenser].status; color: "lightgray"; font.pixelSize: 16 }
+                Text { 
+                    text: "Temperature: " + (dispenserData[selectedDispenser].temperature === "pending..." ? "N/A" : dispenserData[selectedDispenser].temperature + "°C"); 
+                    color: "lightgray"; 
+                    font.pixelSize: 16 
                 }
-
-                //new
-            Column {
-                spacing: 8
-                anchors.horizontalCenter: parenthorizontalCenter
-
-                //new
-                Row {
-                    spacing: 8
-                    anchors.horizontalCenter: parent.horizontalCenter
-
-                    Text {
-                        text: "Proximity Opener:"
-                        color: "white"
-                        font.pixelSize: 16
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
-                    Text {
-                        text: "Off"
-                        color: "white"
-                        font.pixelSize: 16
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
-
-                    // herher
-                    Slider {
-                        id: proximitySlider
-                        width: 60
-                        from: 0
-                        to: 1
-                        stepSize: 1
-                        value: 0
-                        anchors.verticalCenter: parent.verticalCenter
-
-
-                        property bool proximityOn: false
-
-
-                        onValueChanged: {
-
-                            proximityOn = (value === 1)
-                            console.log("Proximity Opener:", proximityOn ? "Enabled" : "Disabled")
-                            if (!proximityOn){
-                                calculatedDistance = -1
-                            }
-                        }
-
-                    }
-
-                    Text {
-                        text: "On"
-                        color: "white"
-                        font.pixelSize: 16
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
+                Text { 
+                    text: "Humidity: " + (dispenserData[selectedDispenser].humidity === " " ? "N/A" : dispenserData[selectedDispenser].humidity + "%"); 
+                    color: "lightgray"; 
+                    font.pixelSize: 16 
                 }
-
-                   Row {
-                       spacing: 8
-                       anchors.horizontalCenter: parent.horizontalCenter
-
-                       Text{
-                           text: "Fully Autonomous Mode"
-                           color: "white"
-                           font.pixelSize: 16
-                           anchors.verticalCenter: parent.verticalCenter
-                       }
-                       Text {
-                           text: "Off"
-                           color: "white"
-                           font.pixelSize: 16
-                           anchors.verticalCenter: parent.verticalCenter
-                            }
-
-                    Slider {
-                            id: autonomousSlider
-                            width: 60
-                            from: 0
-                            to: 1
-                            stepSize: 1
-                            value: 0
-                            anchors.verticalCenter: parent.verticalCenter
-
-                            property bool autonomousOn: false
-
-                            onValueChanged: {
-                                autonomousOn = (value === 1)
-                                console.log("Autonomous mode:", autonomousOn ?"Enabled" : "Disabled")
-                                console.log("Fully autonomous mode enabled, will activate when app is used")
-
-                                ///ADD FUNCTIONALITY HERE!
-
-                            }
-
-                    }
-
-                    Text {
-                        text: "On"
-                        color: "white"
-                        font.pixelSize: 16
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
-                   }
-
-                   Text{
-                       text: "Set dispenser coordinates using drone GPS"
-                       color: "white"
-                       font.pixelSize: 16
-                       anchors.horizontalCenter: parent.horizontalCenter
-                   }
-            }
+                Text { text: "Charger Status: " + dispenserData[selectedDispenser].chargerStatus; color: "lightgray"; font.pixelSize: 16 }
+                Text { text: "Errors: " + dispenserData[selectedDispenser].errors; color: "lightgray"; font.pixelSize: 16 }
 
                 Rectangle {
-                    width: 160
-                    height: 40
-                    radius: 8
-                    color: setLocationArea.pressed ? "#3d3d3d" : (setLocationArea.containsMouse ? "#2a2a2a" : "blue")
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    /////////
+                    width: 300
+                    height: 60
+                    color: "red"
+                    radius: 10
+
+                    Text {
+                        anchors.centerIn: parent
+                        text: "LAUNCH"
+                        font.bold: true
+                        font.pixelSize: 32
+                        color: "white"
+                    }
 
                     MouseArea {
-                        id: setLocationArea
+                        anchors.fill: parent
+                        onClicked: {
+                            console.log("Launching Dispenser " + selectedDispenser)
+                        }
+                    }
+                }
+
+                Rectangle {
+                    width: 40
+                    height: 40
+                    color: "gray"
+                    anchors.right: parent.right
+		    
+
+                    Text {
+                        anchors.centerIn: parent
+                        text: "☰"
+                        color: "white"
+                        font.pixelSize: 24
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            openClosePopup.visible = !openClosePopup.visible
+                        }
+                    }
+                }
+            }
+        }
+
+
+        Rectangle {
+            id: openClosePopup
+            visible: false
+            width: 200
+            height: 60
+            color: "#333"
+            radius: 8
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottomMargin: 20 //herher
+	
+	    z: 999
+
+
+            Row {
+                spacing: 10
+                anchors.centerIn: parent
+
+                Rectangle {
+                    width: 80
+                    height: 40
+                    radius: 8
+                    color: openArea.pressed ? "#3d3d3d" : (openArea.containsMouse ? "#2a2a2a" : "transparent")
+
+                    MouseArea {
+                        id: openArea
                         anchors.fill: parent
                         hoverEnabled: true
                         onClicked: {
-                            console.log("Dispenser coordinates linked with drone coordinates " + selectedDispenser)
-                            if (QGroundControl.multiVehicleManager.activeVehicle) {
-                                var droneCoordinate = QGroundControl.multiVehicleManager.activeVehicle.coordinate
-                                if (droneCoordinate.isValid) {
-                                    var newDispenserLatitude = droneCoordinate.latitude
-                                    var newDispenserLongitude = droneCoordinate.longitude
-
-                                    // Update the selected dispenser's coordinates using selectedDispenser
-
-
-                                    dispenserData[selectedDispenser].latitude = newDispenserLatitude
-                                    dispenserData[selectedDispenser].longitude = newDispenserLongitude
-                                    dispenserData = dispenserData // Trigger change signal
-
-                                    dispenserSettings.savedDispenserData = {
-                                        "1": {
-                                            latitude: dispenserData["1"].latitude,
-                                            longitude: dispenserData["1"].longitude,
-                                            name: dispenserData["1"].name
-                                        },
-                                        "2": {
-                                            latitude: dispenserData["2"].latitude,
-                                            longitude: dispenserData["2"].longitude,
-                                            name: dispenserData["2"].name
-                                        }
-                                    }
-                                    console.log("Updated dispenser coordinates with drone coordinates:", JSON.stringify(dispenserSettings.savedDispenserData))
-                                    mainWindow.showMessageDialog("Success", "Dispenser " + selectedDispenser + " coordinates updated to:\nLatitude: " + newDispenserLatitude.toFixed(6) + "\nLongitude: " + newDispenserLongitude.toFixed(6))
-                                } else {
-                                    console.log("Invalid drone coordinates")
-                                    mainWindow.showMessageDialog("Error", "Invalid drone coordinates. Please ensure the drone's position is valid.")
-                                }
-                            } else {
-                                console.log("No active vehicle found")
-                                mainWindow.showMessageDialog("Error", "No active vehicle found. Please connect a vehicle.")
-                            }
+                            console.log("Open Dispenser clicked")
+                            qgcApp.startUdpSender()
+                            openClosePopup.visible = false
                         }
                     }
 
-
-
-
-
-                    //////////////////
-
-
                     Text {
-                        text: "Set Dispenser Location"
+                        text: "Open"
                         color: "white"
                         font.pixelSize: 16
                         anchors.centerIn: parent
                     }
                 }
 
-
-
                 Rectangle {
                     width: 80
                     height: 40
                     radius: 8
-                    color: closePopupArea.pressed ? "#3d3d3d" : (closePopupArea.containsMouse ? "#2a2a2a" : "red")
-                    anchors.horizontalCenter: parent.horizontalCenter
+                    color: closeArea.pressed ? "#3d3d3d" : (closeArea.containsMouse ? "#2a2a2a" : "transparent")
 
                     MouseArea {
-                        id: closePopupArea
+                        id: closeArea
                         anchors.fill: parent
                         hoverEnabled: true
                         onClicked: {
+                            console.log("Close Dispenser clicked")
+                            qgcApp.startUdpCloseSender()
                             openClosePopup.visible = false
                         }
                     }
@@ -1189,209 +763,365 @@ MouseArea {
             }
         }
 
-
-
-
-
-
-        //////////////////
-
-
-
-
-
-        Connections {
-            target: receivers["1"].udp
-            function onMessageReceived(message) {
-                console.log("Received UDP message for dispenser 1:", message)
-                dispenserData["1"].status = message.trim()
-                dispenserData = dispenserData
-            }
-        }
-
-        Connections {
-            target: receivers["1"].temperature
-            function onTemperatureReceived(temperature) {
-                console.log("temperature for dispenser 1:", temperature)
-                dispenserData["1"].temperature = temperature.trim()
-                dispenserData = dispenserData
-            }
-        }
-    }
-
-
-
-
-
-
-
-    ////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////
-    ////////////////////////////////////////////////////////
-
-
-
-    //test for UDP meldinger opo up
-
-    // New Coordinate Pop-Up
-    Popup {
-        id: coordinatePopup
-        x: Math.round((parent.width - width) / 2)
-        y: Math.round((parent.height - height) / 2)
-        width: 300
-        height: 150
-        modal: true
-        focus: true
-        closePolicy: Popup.CloseOnEscape
-
-        property double latitude: 0
-        property double longitude: 0
-        property string typeOfIncident: " "
-
-        background: Rectangle {
+        Rectangle {
+            id: editPopup
+            visible: false
+            width: 300
+            height: 200
             color: "#333"
             radius: 8
-        }
+            anchors.centerIn: parent
+            z: 999
 
-        Column {
-            anchors.fill: parent
-            anchors.margins: 16
-            spacing: 12
+            property string dispenserId: ""
+            property string dispenserName: ""
+            property real dispenserLatitude: 0
+            property real dispenserLongitude: 0
 
-            Text {
-                text: "Security Incident Alert"
-                color: "white"
-                font.pixelSize: 18
-                font.bold: true
-            }
+            Column {
+                anchors.fill: parent
+                anchors.margins: 16
+                spacing: 12
 
-            Text {
-                text: "Type of Incident: " + coordinatePopup.typeOfIncident
-                color: "lightgray"
-                font.pixelSize: 16
+                Text {
+                    text: "Edit Dispenser " + editPopup.dispenserId
+                    color: "white"
+                    font.pixelSize: 18
+                    font.bold: true
+                }
 
-            }
-
-
-            Text {
-                text: "Latitude: " + coordinatePopup.latitude.toFixed(6)
-                color: "lightgray"
-                font.pixelSize: 16
-            }
-
-            Text {
-                text: "Longitude: " + coordinatePopup.longitude.toFixed(6)
-                color: "lightgray"
-                font.pixelSize: 16
-            }
-
-
-            Row {
-                spacing: 10
-                anchors.horizontalCenter: parent.horizontalCenter
-
-                Rectangle {
-                    width: 80
-                    height: 40
-                    radius: 8
-                    color: acceptArea.pressed ? "#3d3d3d" : (acceptArea.containsMouse ? "#2a2a2a" : "green")
-
-                    MouseArea {
-                        id: acceptArea
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        onClicked: {
-                            console.log("Accepted coordinates:", coordinatePopup.latitude, coordinatePopup.longitude)
-                            coordinatePopup.close()
-
-                            if (globals.planMasterControllerFlyView) {
-                                //change into flightplanner
-                                mainWindow.showPlanView()
-
-                                //set waypoint for UDP melding
-                                globals.planMasterControllerFlyView.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude)
-                            }
-                            else {
-                                console.log("Cannot plan flight at this moment")
-                            }
-                            coordinatePopup.close()
-
-
-                        }
-                    }
-
+                Row {
+                    spacing: 8
                     Text {
-                        text: "Accept"
+                        text: "Name:"
                         color: "white"
                         font.pixelSize: 16
-                        anchors.centerIn: parent
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                    TextField {
+                        text: editPopup.dispenserName
+                        color: "white"
+                        font.pixelSize: 16
+                        background: Rectangle {
+                            color: "#555"
+                            radius: 5
+                        }
+                        onTextChanged: editPopup.dispenserName = text
                     }
                 }
 
-                Rectangle {
-                    width: 80
-                    height: 40
-                    radius: 8
-                    color: denyArea.pressed ? "#3d3d3d" : (denyArea.containsMouse ? "#2a2a2a" : "red")
+                Row {
+                    spacing: 8
+                    Text {
+                        text: "Latitude:"
+                        color: "white"
+                        font.pixelSize: 16
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                    TextField {
+                        text: editPopup.dispenserLatitude
+                        color: "white"
+                        font.pixelSize: 16
+                        background: Rectangle {
+                            color: "#555"
+                            radius: 5
+                        }
+                        onTextChanged: editPopup.dispenserLatitude = parseFloat(text) || 0
+                    }
+                }
 
-                    MouseArea {
-                        id: denyArea
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        onClicked: {
-                            console.log("Denied coordinates:", coordinatePopup.latitude, coordinatePopup.longitude)
-                            coordinatePopup.close()
+                Row {
+                    spacing: 8
+                    Text {
+                        text: "Longitude:"
+                        color: "white"
+                        font.pixelSize: 16
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                    TextField {
+                        text: editPopup.dispenserLongitude
+                        color: "white"
+                        font.pixelSize: 16
+                        background: Rectangle {
+                            color: "#555"
+                            radius: 5
+                        }
+                        onTextChanged: editPopup.dispenserLongitude = parseFloat(text) || 0
+                    }
+                }
+
+                Row {
+                    spacing: 10
+                    anchors.horizontalCenter: parent.horizontalCenter
+
+                    Rectangle {
+                        width: 80
+                        height: 40
+                        radius: 8
+                        color: saveArea.pressed ? "#3d3d3d" : (saveArea.containsMouse ? "#2a2a2a" : "green")
+		      
+
+		      MouseArea {
+			    id: saveArea
+			    anchors.fill: parent
+			    hoverEnabled: true
+		    onClicked: {
+		        dispenserData[editPopup.dispenserId].name = editPopup.dispenserName
+		        dispenserData[editPopup.dispenserId].latitude = editPopup.dispenserLatitude
+		        dispenserData[editPopup.dispenserId].longitude = editPopup.dispenserLongitude
+		        dispenserData = dispenserData
+
+		        dispenserList = Object.keys(dispenserData).map(id => ({
+		            id: id,
+		            name: dispenserData[id].name
+		        }))
+		        dispenserSettings.savedDispenserData = {
+	            "1": {
+			        latitude: dispenserData["1"].latitude,
+		                longitude: dispenserData["1"].longitude,
+		                name: dispenserData["1"].name
+		            },
+	            "2": {
+			        latitude: dispenserData["2"].latitude,
+		                longitude: dispenserData["2"].longitude,
+		                name: dispenserData["2"].name
+		            }
+		        }
+		        console.log("Saved dispenserData:", JSON.stringify(dispenserSettings.savedDispenserData))
+
+		        editPopup.visible = false
+		    }
+		}
+  
+
+
+                        Text {
+                            text: "Save"
+                            color: "white"
+                            font.pixelSize: 16
+                            anchors.centerIn: parent
                         }
                     }
 
-                    Text {
-                        text: "Deny"
-                        color: "white"
-                        font.pixelSize: 16
-                        anchors.centerIn: parent
+                    Rectangle {
+                        width: 80
+                        height: 40
+                        radius: 8
+                        color: cancelArea.pressed ? "#3d3d3d" : (cancelArea.containsMouse ? "#2a2a2a" : "red")
+
+                        MouseArea {
+                            id: cancelArea
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            onClicked: {
+                                editPopup.visible = false
+                            }
+                        }
+
+                        Text {
+                            text: "Cancel"
+                            color: "white"
+                            font.pixelSize: 16
+                            anchors.centerIn: parent
+                        }
                     }
                 }
             }
         }
     }
 
-    // Connect the CoordinateReceiver to the pop-up
     Connections {
-        target: coordinateReceiver
-        function onCoordinatesReceived(incidentType, latitude, longitude) {
-            console.log("Received coordinates: Latitude =", latitude, "Longitude =", longitude)
-            coordinatePopup.latitude = latitude
-            coordinatePopup.longitude = longitude
-            coordinatePopup.typeOfIncident = incidentType
-            coordinatePopup.open() // Automatically open the pop-up
+        target: receivers["1"].udp
+        function onMessageReceived(message) {
+            console.log("Received UDP message for dispenser 1:", message)
+            dispenserData["1"].status = message.trim()
+            dispenserData = dispenserData
         }
     }
 
-
-
-
-    //
-
-
-
-
-
-
-
-    ///////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////
+    Connections {
+        target: receivers["1"].temperature
+        function onTemperatureReceived(temperature) {
+            console.log("temperature for dispenser 1:", temperature)
+            dispenserData["1"].temperature = temperature.trim()
+            dispenserData = dispenserData
+        }
+    }
+}
 
 
 
 
 
-    /*
+
+
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+
+
+
+//test for UDP meldinger opo up 
+
+// New Coordinate Pop-Up
+Popup {
+    id: coordinatePopup
+    x: Math.round((parent.width - width) / 2)
+    y: Math.round((parent.height - height) / 2)
+    width: 300
+    height: 150
+    modal: true
+    focus: true
+    closePolicy: Popup.CloseOnEscape
+
+    property double latitude: 0
+    property double longitude: 0
+    property string typeOfIncident: " "
+
+    background: Rectangle {
+        color: "#333"
+        radius: 8
+    }
+
+    Column {
+        anchors.fill: parent
+        anchors.margins: 16
+        spacing: 12
+
+        Text {
+            text: "Security Incident Alert"
+            color: "white"
+            font.pixelSize: 18
+            font.bold: true
+        }
+	
+	Text {
+	    text: "Type of Incident: " + coordinatePopup.typeOfIncident
+            color: "lightgray"
+            font.pixelSize: 16
+
+	}
+
+
+        Text {
+            text: "Latitude: " + coordinatePopup.latitude.toFixed(6)
+            color: "lightgray"
+            font.pixelSize: 16
+        }
+
+        Text {
+            text: "Longitude: " + coordinatePopup.longitude.toFixed(6)
+            color: "lightgray"
+            font.pixelSize: 16
+        }
+
+
+        Row {
+            spacing: 10
+            anchors.horizontalCenter: parent.horizontalCenter
+
+            Rectangle {
+                width: 80
+                height: 40
+                radius: 8
+                color: acceptArea.pressed ? "#3d3d3d" : (acceptArea.containsMouse ? "#2a2a2a" : "green")
+
+                MouseArea {
+                    id: acceptArea
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: {
+                        console.log("Accepted coordinates:", coordinatePopup.latitude, coordinatePopup.longitude)
+                        coordinatePopup.close()
+			
+			if (globals.planMasterControllerFlyView) {
+			//change into flightplanner
+				mainWindow.showPlanView()
+
+			//set waypoint for UDP melding
+				globals.planMasterControllerFlyView.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude)
+			}
+			else {
+				console.log("Cannot plan flight at this moment")
+			}
+			coordinatePopup.close()
+
+				
+                    }
+                }
+
+                Text {
+                    text: "Accept"
+                    color: "white"
+                    font.pixelSize: 16
+                    anchors.centerIn: parent
+                }
+            }
+
+            Rectangle {
+                width: 80
+                height: 40
+                radius: 8
+                color: denyArea.pressed ? "#3d3d3d" : (denyArea.containsMouse ? "#2a2a2a" : "red")
+
+                MouseArea {
+                    id: denyArea
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onClicked: {
+                        console.log("Denied coordinates:", coordinatePopup.latitude, coordinatePopup.longitude)
+                        coordinatePopup.close()
+                    }
+                }
+
+                Text {
+                    text: "Deny"
+                    color: "white"
+                    font.pixelSize: 16
+                    anchors.centerIn: parent
+                }
+            }
+        }
+    }
+}
+
+// Connect the CoordinateReceiver to the pop-up
+Connections {
+    target: coordinateReceiver
+    function onCoordinatesReceived(incidentType, latitude, longitude) {
+        console.log("Received coordinates: Latitude =", latitude, "Longitude =", longitude)
+        coordinatePopup.latitude = latitude
+        coordinatePopup.longitude = longitude
+	coordinatePopup.typeOfIncident = incidentType
+        coordinatePopup.open() // Automatically open the pop-up
+    }
+}
+
+
+
+
+//
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+
+
+
+
+/*
 // Middle Left Logo
 Item {
     width: 62
@@ -1418,7 +1148,7 @@ Item {
 Rectangle {
         id: bottomBar
         anchors.bottom: parent.bottom
-    anchors.bottomMargin: -10
+	anchors.bottomMargin: -10
         anchors.horizontalCenter: parent.horizontalCenter // Center horizontally
         width: parent.width * 0.5 // Takes up half the window's width
         height: 40 // Matches the height of the bar in the image
@@ -1435,14 +1165,14 @@ Rectangle {
 
 
 
-    ///////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
 
 
 
@@ -1453,7 +1183,7 @@ Rectangle {
 
 
 
-    /* // versjon med Eedit som fungerer delvis
+/* // versjon med Eedit som fungerer delvis
 
 property string selectedDispenser: "1"
     property var dispenserList: ["Dispenser 1", "Dispenser 2"]
@@ -1462,20 +1192,20 @@ property string selectedDispenser: "1"
         "1": {
             status: "No message received",
             temperature: " ",
-            humidity: " ",
-            chargerStatus: "Unknown",
+            humidity: " ", 
+            chargerStatus: "Unknown", 
             errors: "NONE",
             latitude: 59.6574100,
             longitude: 9.6441920,
             name: "Dispenser 1"
         },
-        "2": {
-            status: "No message received",
-            temperature: "pending...",
-            humidity: "25",
-            chargerStatus: "CHARGING",
+        "2": { 
+            status: "No message received", 
+            temperature: "pending...", 
+            humidity: "25", 
+            chargerStatus: "CHARGING", 
             errors: "NONE",
-            latitude: 59.6555001,
+            latitude: 59.6555001,  
             longitude: 9.6457272,
             name: "Dispenser 2"
         }
@@ -1506,8 +1236,8 @@ property string selectedDispenser: "1"
             Image {
                 anchors.fill: parent
                 //source: "qrc:/qmlimages/kestrelLogo.svg"
-        //source: "qrc:/qmlimages/kestrelDispenser.svg"
-        source: "qrc:/qmlimages/kestrelDispenser_swapped.svg"
+		//source: "qrc:/qmlimages/kestrelDispenser.svg"
+		source: "qrc:/qmlimages/kestrelDispenser_swapped.svg"
                 fillMode: Image.PreserveAspectFit
                 smooth: true
             }
@@ -1523,12 +1253,12 @@ property string selectedDispenser: "1"
             anchors.left: logoButton.right
             anchors.leftMargin: 12
         }
-
-    //tester her
-    Settings {
-        id: dispenserSettings
-        category: "DispenserData"
-        property var savedDispenserData: ({
+	
+	//tester her
+	Settings {
+		id: dispenserSettings
+		category: "DispenserData"
+		property var savedDispenserData: ({
         "1": {
             status: "No message received",
             temperature: " ",
@@ -1556,9 +1286,9 @@ property string selectedDispenser: "1"
         dispenserData = savedDispenserData
         dispenserList = Object.values(dispenserData).map(item => item.name)
         selectedDispenser = "1"
-    }
+	}
      }
-
+	
 
 
 
@@ -1612,7 +1342,7 @@ property string selectedDispenser: "1"
 
                                 Text {
                                     //text: modelData
-                    text: dispenserData[modelData.split(" ")[1]].name
+				    text: dispenserData[modelData.split(" ")[1]].name
                                     color: "white"
                                     font.pixelSize: 16
                                     anchors.verticalCenter: parent.verticalCenter
@@ -1629,12 +1359,12 @@ property string selectedDispenser: "1"
                             }
 
                             Image {
-                source: "qrc:/res/pencil.svg"
-                                width: 20
+				source: "qrc:/res/pencil.svg"
+                                width: 20				
                                 height: 20
                                 anchors.verticalCenter: parent.verticalCenter
-                fillMode: Image.PreserveAspectFit
-                smooth: true
+				fillMode: Image.PreserveAspectFit
+				smooth: true
 
 
                                 MouseArea {
@@ -1647,7 +1377,7 @@ property string selectedDispenser: "1"
                                         editPopup.dispenserLatitude = dispenserData[editPopup.dispenserId].latitude
                                         editPopup.dispenserLongitude = dispenserData[editPopup.dispenserId].longitude
                                         editPopup.visible = true
-                                   }
+                                   } 
                                 }
                             }
                         }
@@ -1886,17 +1616,17 @@ property string selectedDispenser: "1"
                                 hoverEnabled: true
                                 onClicked: {
 
-                    dispenserData[editPopup.dispenserId].name =editPopup.dispenserName
-                    dispenserData[editPopup.dispenserId].latitude = editPopup.dispenserLatitude
-                    dispenserData[editPopup.dispenserId].longitude = editPopup.dispenserLongitude
-                    dispenserData = dispenserData
+					dispenserData[editPopup.dispenserId].name =editPopup.dispenserName
+					dispenserData[editPopup.dispenserId].latitude = editPopup.dispenserLatitude
+					dispenserData[editPopup.dispenserId].longitude = editPopup.dispenserLongitude
+					dispenserData = dispenserData
 
 
-                    var newList = Object.values(dispenserData).map(item => item.name)
-                    dispenserList = newList
-                    dispenserSettings.savedDispenserData = dispenserData
+					var newList = Object.values(dispenserData).map(item => item.name)
+					dispenserList = newList								
+					dispenserSettings.savedDispenserData = dispenserData
 
-                    editPopup.visible = false
+					editPopup.visible = false
 
                                 }
                             }
@@ -1929,14 +1659,14 @@ property string selectedDispenser: "1"
                                 color: "white"
                                 font.pixelSize: 16
                                 anchors.centerIn: parent
-                }
+				}
                             }
                         }
                     }
                 }
             }
         }
-
+    
 
     Connections {
         target: receivers["1"].udp
@@ -1958,31 +1688,31 @@ property string selectedDispenser: "1"
 
 */
 
-    /////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 
-    /*
+/*
 
  //Fungerende
 
 property var dispenserData: {
-    "1": {
+	"1": {
 
-    status: "No message received",
-    temperature: " ",
-    humidity: " ",
-    chargerStatus: "Unknown",
+	status: "No message received",
+	temperature: " ",
+	humidity: " ", 
+	chargerStatus: "Unknown", 
         errors: "NONE",
         latitude: 59.6574100,  // cribben
         longitude: 9.6441920   // cribben
     },
 
-    "2": {
-        status: "No message received",
-        temperature: "pending...",
-        humidity: "25",
-        chargerStatus: "CHARGING",
+    "2": { 
+        status: "No message received", 
+        temperature: "pending...", 
+        humidity: "25", 
+        chargerStatus: "CHARGING", 
         errors: "NONE",
-        latitude: 59.6555001,
+        latitude: 59.6555001,  
         longitude: 9.6457272
     }
 }
@@ -1992,8 +1722,8 @@ property var dispenserData: {
 // receiver for hver dispenser, pga scalability
 
 property var receivers: {
-    "1": {udp: udpReceiver, temperature: temperatureReceiver},
-    "2": {udp: null, temperature: null }
+	"1": {udp: udpReceiver, temperature: temperatureReceiver},
+	"2": {udp: null, temperature: null }
 }
 
 
@@ -2029,7 +1759,7 @@ Item {
     Text {
         id: dispenserStatusText
         //text: "Dispenser status: " + udpMessage
-    text: "Dispenser status: " + dispenserData[selectedDispenser].status
+	text: "Dispenser status: " + dispenserData[selectedDispenser].status
         color: "white"
         font.pixelSize: 18
         font.bold: true
@@ -2115,20 +1845,20 @@ Item {
                 }
 
                 // Status Fields
-        /*
+		/*
                 Text { text: "Status: " + dispenserData[SelectedDispenser].status; color: "lightgray"; font.pixelSize: 16 }
                 Text { text: "Temperature: " + temperature + "°C"; color: "lightgray"; font.pixelSize: 16 }
                 Text { text: "Humidity: " + humidity + "%"; color: "lightgray"; font.pixelSize: 16 }
                 Text { text: "Charger Status: " + chargerStatus; color: "lightgray"; font.pixelSize: 16 }
                 Text { text: "Errors: " + errorMessage; color: "lightgray"; font.pixelSize: 16 }
-        */
-    /*
+		*/
+        /*
 
-        Text { text: "Status: " + dispenserData[selectedDispenser].status; color: "lightgray"; font.pixelSize: 16 }  // Was: "Status: " + dispenserStatus
-        Text { text: "Temperature: " + dispenserData[selectedDispenser].temperature + "°C"; color: "lightgray"; font.pixelSize: 16 }  // Was: "Temperature: " + temperature + "°C"
-        Text { text: "Humidity: " + dispenserData[selectedDispenser].humidity + "%"; color: "lightgray"; font.pixelSize: 16 }  // Was: "Humidity: " + humidity + "%"
-        Text { text: "Charger Status: " + dispenserData[selectedDispenser].chargerStatus; color: "lightgray"; font.pixelSize: 16 }  // Was: "Charger Status: " + chargerStatus
-        Text { text: "Errors: " + dispenserData[selectedDispenser].errors; color: "lightgray"; font.pixelSize: 16 }  // Was: "Errors: " + errorMessage
+		Text { text: "Status: " + dispenserData[selectedDispenser].status; color: "lightgray"; font.pixelSize: 16 }  // Was: "Status: " + dispenserStatus
+		Text { text: "Temperature: " + dispenserData[selectedDispenser].temperature + "°C"; color: "lightgray"; font.pixelSize: 16 }  // Was: "Temperature: " + temperature + "°C"
+		Text { text: "Humidity: " + dispenserData[selectedDispenser].humidity + "%"; color: "lightgray"; font.pixelSize: 16 }  // Was: "Humidity: " + humidity + "%"
+		Text { text: "Charger Status: " + dispenserData[selectedDispenser].chargerStatus; color: "lightgray"; font.pixelSize: 16 }  // Was: "Charger Status: " + chargerStatus
+		Text { text: "Errors: " + dispenserData[selectedDispenser].errors; color: "lightgray"; font.pixelSize: 16 }  // Was: "Errors: " + errorMessage
 
 
 
@@ -2252,22 +1982,22 @@ Item {
 
     Connections {
         //target: udpReceiver
-    target: receivers["1"].udp
+	target: receivers["1"].udp
         function onMessageReceived(message) {
             console.log("Received UDP message for dispenser 1:", message)
-        dispenserData["1"].status = message.trim()
-        dispenserData = dispenserData
+	    dispenserData["1"].status = message.trim()
+	    dispenserData = dispenserData	
             //udpMessage = message.trim()
         }
     }
 
     Connections {
         //target: temperatureReceiver
-    target: receivers["1"].temperature
+	target: receivers["1"].temperature
         function onTemperatureReceived(temperature) {
             console.log("temperature for dispenser 1:", temperature)
-        dispenserData["1"].temperature = temperature.trim()
-        dispenserData = dispenserData
+	    dispenserData["1"].temperature = temperature.trim()
+	    dispenserData = dispenserData	
             //temperatureMessage = temperature.trim()
         }
     }
@@ -2275,11 +2005,11 @@ Item {
 
 */
 
-    ////////////////
+////////////////
 
-    // Den som fungerer
+// Den som fungerer
 
-    /*
+/*
 
 Item {
 
@@ -2347,7 +2077,7 @@ Rectangle {
     z: 998
 //    anchors.top: topOverlayButton.bottom
 //    anchors.horizontalCenter: topOverlayButton.horizontalCenter
-     anchors.top: logoButton.bottom
+	 anchors.top: logoButton.bottom
          anchors.horizontalCenter: logoButton.horizontalCenter
 
 
@@ -2382,7 +2112,7 @@ Rectangle {
                 onClicked: {
                     console.log("Open Dispenser clicked")
                    // drawer.visible = false
-            qgcApp.startUdpSender();
+		    qgcApp.startUdpSender();
                 }
             }
 
@@ -2420,7 +2150,7 @@ Rectangle {
                 onClicked: {
                     console.log("Close Dispenser clicked")
                     //drawer.visible = false
-            qgcApp.startUdpCloseSender();
+		    qgcApp.startUdpCloseSender();
                 }
             }
 
@@ -2444,11 +2174,11 @@ Rectangle {
             }
         }
 
-
-    Connections {  // kan være at temperature rev skal inn her......
-      target: udpReceiver
-
-      function onMessageReceived(message) {
+	
+	Connections {  // kan være at temperature rev skal inn her......
+	  target: udpReceiver
+	 
+	  function onMessageReceived(message) {
               console.log("Received UDP message:", message);
               udpMessage = message.trim(); // ta vekk ekstra ekstra fra data pakken
           }
@@ -2461,16 +2191,16 @@ Rectangle {
 
 
 
-      Connections {
+	  Connections {
               target: temperatureReceiver
-
+ 
               function onTemperatureReceived(temperature) {
                   console.log("temperature:", temperature);
                   temperatureMessage = temperature.trim();
               }
           }
 
-
+	
 
 
 
@@ -2481,10 +2211,10 @@ Rectangle {
             width: parent.width
             font.pixelSize: 16
             horizontalAlignment: Text.AlignLeft
-     // wrapMode: Text.NoWrap  // make sure celsius stays on same line
-            elide: Text.ElideNone // make sure celsius stays on same line
-        maximumLineCount : 1   // make sure celsius stays on same line
-     }
+	 // wrapMode: Text.NoWrap  // make sure celsius stays on same line
+            elide: Text.ElideNone // make sure celsius stays on same line 
+	    maximumLineCount : 1   // make sure celsius stays on same line	   
+	 }
        }
     }
 }
@@ -2497,10 +2227,10 @@ Rectangle {
 
 
 
-    //kest2
+//kest2
 
-    /*
-
+/*
+	
 property string udpMessage: "No message received"  // standard message for UI text box (received msg)  
 property string temperatureMessage: " XX " 
 
@@ -2610,8 +2340,8 @@ Column {
         width: 200
         height: 80
         border.width: 2
-    border.color: "black"
-    radius: 10
+	border.color: "black"
+	radius: 10
         color: "white"
 
             Text {
@@ -2623,7 +2353,7 @@ Column {
             }
         }
 
-
+	
     Connections {
         target: temperatureReceiver
 
@@ -2633,13 +2363,13 @@ Column {
         }
     }
 
-
+	
 }
 
 
 
 */
-    ///
+///
 
 
 
@@ -2772,18 +2502,18 @@ Column {
                                     anchors.fill:       parent
 
                                     onClicked: (mouse) => {
-                                                   console.log("clicked")
-                                                   if (mouse.modifiers & Qt.ControlModifier) {
-                                                       QGroundControl.corePlugin.showTouchAreas = !QGroundControl.corePlugin.showTouchAreas
-                                                       showTouchAreasNotification.open()
-                                                   } else if (ScreenTools.isMobile || mouse.modifiers & Qt.ShiftModifier) {
-                                                       if(!QGroundControl.corePlugin.showAdvancedUI) {
-                                                           advancedModeOnConfirmation.open()
-                                                       } else {
-                                                           advancedModeOffConfirmation.open()
-                                                       }
-                                                   }
-                                               }
+                                        console.log("clicked")
+                                        if (mouse.modifiers & Qt.ControlModifier) {
+                                            QGroundControl.corePlugin.showTouchAreas = !QGroundControl.corePlugin.showTouchAreas
+                                            showTouchAreasNotification.open()
+                                        } else if (ScreenTools.isMobile || mouse.modifiers & Qt.ShiftModifier) {
+                                            if(!QGroundControl.corePlugin.showAdvancedUI) {
+                                                advancedModeOnConfirmation.open()
+                                            } else {
+                                                advancedModeOffConfirmation.open()
+                                            }
+                                        }
+                                    }
 
                                     // This allows you to change this on mobile
                                     onPressAndHold: {
@@ -3093,7 +2823,7 @@ Column {
                     anchors.centerIn:   parent
                     text:               ">"
                     color:              QGroundControl.globalPalette.buttonText
-                }
+                }  
 
                 QGCMouseArea {
                     fillItem: parent
@@ -3166,18 +2896,18 @@ Column {
     }
 
     Connections{
-        target: activationbar
-        function onActivationTriggered(value){
-            _utmspSendActTrigger= value
-        }
+         target: activationbar
+         function onActivationTriggered(value){
+              _utmspSendActTrigger= value
+         }
     }
 
     UTMSPActivationStatusBar{
-        id:                         activationbar
-        activationStartTimestamp:   UTMSPStateStorage.startTimeStamp
-        activationApproval:         UTMSPStateStorage.showActivationTab && QGroundControl.utmspManager.utmspVehicle.vehicleActivation
-        flightID:                   UTMSPStateStorage.flightID
-        anchors.fill:               parent
+         id:                         activationbar
+         activationStartTimestamp:   UTMSPStateStorage.startTimeStamp
+         activationApproval:         UTMSPStateStorage.showActivationTab && QGroundControl.utmspManager.utmspVehicle.vehicleActivation
+         flightID:                   UTMSPStateStorage.flightID
+         anchors.fill:               parent
     }
 }
 

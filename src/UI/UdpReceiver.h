@@ -14,7 +14,7 @@ signals:
     void messageReceived(QString message); // Signal to update UI
 
 private slots:
-    void readPendingDatagrams(); // Handles incoming UDP packets
+    void readPendingDatagrams(); 
 
 private:
     QUdpSocket *udpSocket;

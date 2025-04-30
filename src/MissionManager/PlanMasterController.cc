@@ -6,7 +6,11 @@
  * COPYING.md in the root of the source code directory.
  *
  ****************************************************************************/
+//kest
 
+#include "MissionItem.h"
+
+//
 #include "PlanMasterController.h"
 #include "QGCApplication.h"
 #include "QGCCorePlugin.h"
@@ -644,3 +648,59 @@ void PlanMasterController::showPlanFromManagerVehicle(void)
         _showPlanFromManagerVehicle();
     }
 }
+
+
+//kest
+/*
+void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
+{
+    qCDebug(PlanMasterControllerLog) << "Waypoint from Kestrel APP: latitude" << latitude << "longitude" << longitude << "altitude" << altitude;
+
+    // standard create mission:
+
+
+    MissionItem* newItem = new MissionItem(this);
+    newItem->setCommand(MAV_CMD_NAV_WAYPOINT);
+  //  newItem->setCoordinate(QGeoCoordinate(latitude, longitude, altitude));
+
+   newItem->coordinate() = QGeoCoordinate(latitude, longitude, altitude);
+
+
+	// 0 = default values
+
+    newItem->setParam1(60); // Hold time at waypoint. set to 1 minute for capturing the moment
+    newItem->setParam2(0); // Acceptance radius 
+    newItem->setParam3(0); // Pass-through radius
+    newItem->setParam4(0); // yaw angle
+    newItem->setFrame(MAV_FRAME_GLOBAL_RELATIVE_ALT);
+    newItem->setAutoContinue(true);
+
+   _missionController.insertSimpleMissionItem(newItem, _missionController.visualItems()->count() - 1);
+
+    // dirty mission meaning it must be saved further
+    _missionController.setDirty(true);
+
+    qCDebug(PlanMasterControllerLog) << "Waypoint added at (" << latitude << "," << longitude << "," << altitude << ")";
+}
+*/
+
+void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
+{
+    qCDebug(PlanMasterControllerLog) << "Waypoint from Kestrel APP: latitude" << latitude << "longitude" << longitude << "altitude" << altitude;
+
+    // Create a QGeoCoordinate for the waypoint
+    QGeoCoordinate coordinate(latitude, longitude, altitude);
+
+    // Insert the waypoint into the mission controller
+    _missionController.insertSimpleMissionItem(coordinate, _missionController.visualItems()->count() - 1);
+
+    // Mark the mission as dirty (needs to be saved)
+    _missionController.setDirty(true);
+
+    qCDebug(PlanMasterControllerLog) << "Waypoint added at (" << latitude << "," << longitude << "," << altitude << ")";
+}
+
+
+
+
+/////

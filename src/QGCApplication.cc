@@ -22,6 +22,8 @@
 #include <QDebug>
 #include "UI/UdpReceiver.h"
 #include "UI/TemperatureReceiver.h"
+#include "UI/CoordinateReceiver.h"
+#include "UI/ProximityCalculator.h"
 /////
 
 #include "QGCApplication.h"
@@ -415,6 +417,31 @@ qDebug() << "trying to start startTempratureReceiver";
 
 
 ///
+void QGCApplication::startCoordinateReceiver(){
+
+qDebug() << "trying to start startCoordinateReceiver";
+
+        if (_coordinateReceiver){
+                qDebug() << "CoordinateReceiver already initialized";
+                return;
+        }
+
+
+        _coordinateReceiver = new CoordinateReceiver(this);
+        _qmlAppEngine->rootContext()->setContextProperty("coordinateReceiver", _coordinateReceiver);
+
+        qDebug() << "CoordinateReceiver started + registered in QML";
+        }
+
+
+
+
+
+
+
+
+
+/////
 
 void QGCApplication::_initForNormalAppBoot()
 {
@@ -442,6 +469,9 @@ void QGCApplication::_initForNormalAppBoot()
     }
 
 
+	qmlRegisterSingletonType<ProximityCalculator>("QGroundControl", 1, 0, "ProximityCalculator", [](QQmlEngine*, QJSEngine*) -> QObject* {
+        return new ProximityCalculator();
+    });
 
 
 
@@ -525,6 +555,7 @@ if (_qmlAppEngine) {
 
     	startUdpReceiver();
 	startTemperatureReceiver();
+	startCoordinateReceiver();
 
      qDebug() << "AFTER startUdpReceiver and startTemperatureReceiver";
 

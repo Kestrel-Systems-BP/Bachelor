@@ -20,7 +20,8 @@
 //kest
 #include "UI/UdpReceiver.h"
 #include "UI/TemperatureReceiver.h"
-
+#include "UI/CoordinateReceiver.h"
+#include "UI/ProximityCalculator.h"
 //
 
 class QQmlApplicationEngine;
@@ -101,6 +102,8 @@ public:
     Q_INVOKABLE void startUdpCloseSender();
     Q_INVOKABLE void startUdpReceiver();
     Q_INVOKABLE void startTemperatureReceiver();
+    Q_INVOKABLE void startCoordinateReceiver();
+   // Q_INVOKABLE void startChargerReceiver();
 
 ////////////
     /// Perform initialize which is common to both normal application running and unit tests.
@@ -143,8 +146,13 @@ private slots:
 private:
 
 //kest
+
  UdpReceiver* _udpReceiver =nullptr;
  TemperatureReceiver* _temperatureReceiver = nullptr;
+ CoordinateReceiver* _coordinateReceiver = nullptr;
+
+
+
 ///
     bool compressEvent(QEvent *event, QObject *receiver, QPostEventList *postedEvents) final;
 

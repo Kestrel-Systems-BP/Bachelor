@@ -472,6 +472,12 @@ add_compile_definitions(
 
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/UdpReceiver.cpp)
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/TemperatureReceiver.cpp)
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/CoordinateReceiver.cpp)
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/ProximityCalculator.cpp)
+
+#target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/EXTRAReceiver.cpp)
+
+
 
 
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
