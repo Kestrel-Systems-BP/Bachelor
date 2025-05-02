@@ -23,6 +23,7 @@ import QGroundControl.FlightMap
 //test
 import Qt5Compat.GraphicalEffects
 import Qt.labs.settings
+import QtQuick.Controls 2.15
 
 //for koordinat og vehcile manag
 import QGroundControl 1.0
@@ -567,7 +568,7 @@ MouseArea {
         Rectangle {
             id: drawer
             width: 600
-            height: 300
+            height: 340//300
             visible: false
             color: "#1e1e1e"
             radius: 12
@@ -665,10 +666,14 @@ MouseArea {
                         font.bold: true
                     }
 
-                    Text { text: "Status: " + dispenserData[selectedDispenser].status; color: "lightgray"; font.pixelSize: 16 }
+                    Text {
+                        text: "Status: " + dispenserData[selectedDispenser].status;
+                        color: "lightgray"
+                        font.pixelSize: 16
+                    }
                     Text {
                         text: "Temperature: " + (dispenserData[selectedDispenser].temperature === "pending..." ? "N/A" : dispenserData[selectedDispenser].temperature + "°C");
-                        color: "lightgray";
+                        color: "lightgray"
                         font.pixelSize: 16
                     }
                     Text {
@@ -676,12 +681,101 @@ MouseArea {
                         color: "lightgray";
                         font.pixelSize: 16
                     }
-                    Text { text: "Charger Status: " + dispenserData[selectedDispenser].chargerStatus; color: "lightgray"; font.pixelSize: 16 }
-                    Text { text: "Errors: " + dispenserData[selectedDispenser].errors; color: "lightgray"; font.pixelSize: 16 }
+                    Text {
+                        text: "Charger Status: " + dispenserData[selectedDispenser].chargerStatus;
+                        color: "lightgray"
+                        font.pixelSize: 16
+                    }
+                    Text {
+                        text: "Errors: " + dispenserData[selectedDispenser].errors;
+                        color: "lightgray";
+                        font.pixelSize: 16
+                    }
+                    Row{
+                        spacing: 8
+                        //anchors.horizontalCenter: parent.horizontalCenter
+
+                        Text{
+                            text: "Safety:"
+                            color: "lightgray"
+                            font.pixelSize: 12
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+
+                        /*
+                        Text{
+                            text: "ON"
+                            color: "lightgray"
+                            font.pixelSize: 12
+
+                        }
 
 
+                        Slider{
+                            id: safetySlider
+                            width: 40
+                            from: 0
+                            to: 1
+                            stepSize: 1
+                            value: 0
+                            anchors.verticalCenter: parent.verticalCenter
+
+                            property bool safetyOn: false
+
+                            onValueChanged: {
+                                proximityOn = (value === 1)
+                                console.log("Launch safety turned off, Lanch button activated")
+                                mainWindow.showMessageDialog("Caution", "Safety turned off, launch button is ready to deploy active vehicle.")
+                            }
+
+                            Text{
+                                text:"OFF"
+                                font.pixelSize: 12
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+
+                        }
+                        */
+                        // better with a swtich
+                        Switch {
+                            id: safetySwitch
+                            checked: false
+                            anchors.verticalCenter: parent.verticalCenter
+
+                            property bool safetyOn
+
+                            onCheckedChanged: {
+                                safetyOn = checked
+
+                                    if(checked){
+                                        console.log("Launch safety turned off, Lanch button activated")
+                                        mainWindow.showMessageDialog("Caution", "Safety turned off, launch button is ready to deploy active vehicle.")
+                                    }
+                                    else{
+                                        console.log("Launch safety turned ON, Lanch button not active")
+                                    }
+
+                            }
+                            Text{
+                                text: safetySwitch.checked ? "ON" : "OFF"
+                                color: "lightgray"
+                                font.pixelSize: 12
+                                anchors.leftMargin: 8 //test
+                                anchors.left: parent.right
+                                anchors.verticalCenter: parent.verticalCenter
+                            }
+
+                        }
+
+
+                    }
+
+
+                    Row{
+                        spacing: 70
 
                     Rectangle {
+                        id: launchButton
                         width: 300
                         height: 60
                         color: "red"
@@ -697,6 +791,7 @@ MouseArea {
 
                         MouseArea {
                             anchors.fill: parent
+                            enabled: safetySwitch.safetyOn
                             onClicked: {
                                 console.log("Launching Dispenser " + selectedDispenser)
                             }
@@ -704,10 +799,12 @@ MouseArea {
                     }
 
                     Rectangle {
+                        id: menuButton
                         width: 40
                         height: 40
                         color: "gray"
-                        anchors.right: parent.right
+                        anchors.top: launchButton.top
+                        anchors.topMargin: 40
 
 
                         Text {
@@ -724,6 +821,7 @@ MouseArea {
                             }
                         }
                     }
+                }
                 }
             }
 
@@ -904,17 +1002,23 @@ MouseArea {
         Rectangle {
             id: openClosePopup
             visible: false
-            width: 300
-            height: 250
+            width: 360 //300
+            height: 300 //250
             color: "#333"
             radius: 8
             // anchors.bottom: mainWindow.contentItem.bottom
             // anchors.horizontalCenter: mainWindow.contentItem.horizontalCenter
             // anchors.bottomMargin: 10
+
+            /*
             anchors.bottom: drawer.bottom
             anchors.horizontalCenter: drawer.horizontalCenter
-            anchors.bottomMargin: -160
+            anchors.bottomMargin: -180
+            */
             z: 999
+            anchors.top: drawer.bottom
+            anchors.topMargin: 8
+            anchors.horizontalCenter: drawer.horizontalCenter
 
             Column {
                 anchors.fill: parent
