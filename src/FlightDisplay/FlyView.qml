@@ -45,6 +45,8 @@ Item {
         flyView:                true
         Component.onCompleted:  start()
     }
+    property alias planMasterController: _planController
+
 
     property bool   _mainWindowIsMap:       mapControl.pipState.state === mapControl.pipState.fullState
     property bool   _isFullWindowItemDark:  _mainWindowIsMap ? mapControl.isSatelliteMap : true
@@ -123,7 +125,6 @@ Item {
 
         sourceItem: Image {
             id: dispenser1Icon
-            //source: "qrc:/qmlimages/Plan.svg" // Replace with your dispenser icon
 	    source: "qrc:/qmlimages/Home.svg"	
             width: 30
             height: 30

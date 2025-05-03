@@ -794,6 +794,11 @@ MouseArea {
                             enabled: safetySwitch.safetyOn
                             onClicked: {
                                 console.log("Launching Dispenser " + selectedDispenser)
+                                //CustomMission.createAutomaticMission(QGroundControl.multiVehicleManager.activeVehicle, 47.3976833, 8.5434278, 15.0)
+                                //flyView.planMasterController.addWaypoint(47.3976833, 8.5434278, 15.0)
+                                flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 15.0)
+
+
                             }
                         }
                     }
@@ -1340,10 +1345,16 @@ MouseArea {
     ////////////////////////////////////////////////////////
 
 
+    //global values to ensure correct waypoint
+
+    //property double missionLatitude;
+    //property double missionLongitude;
 
     //test for UDP meldinger opo up
 
     // New Coordinate Pop-Up
+
+
     Popup {
         id: coordinatePopup
         x: Math.round((parent.width - width) / 2)
@@ -1416,10 +1427,11 @@ MouseArea {
 
                             if (globals.planMasterControllerFlyView) {
                                 //change into flightplanner
-                                mainWindow.showPlanView()
+                                //mainWindow.showPlanView()
 
                                 //set waypoint for UDP melding
-                                globals.planMasterControllerFlyView.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude)
+                                //globals.planMasterControllerFlyView.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 15) // added altitude, tried without first.
+
                             }
                             else {
                                 console.log("Cannot plan flight at this moment")

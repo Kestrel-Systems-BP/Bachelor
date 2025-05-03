@@ -24,6 +24,7 @@
 #include "UI/TemperatureReceiver.h"
 #include "UI/CoordinateReceiver.h"
 #include "UI/ProximityCalculator.h"
+#include "MissionManager/PlanMasterController.h"
 /////
 
 #include "QGCApplication.h"
@@ -469,9 +470,77 @@ void QGCApplication::_initForNormalAppBoot()
     }
 
 
-	qmlRegisterSingletonType<ProximityCalculator>("QGroundControl", 1, 0, "ProximityCalculator", [](QQmlEngine*, QJSEngine*) -> QObject* {
+    qmlRegisterSingletonType<ProximityCalculator>("QGroundControl", 1, 0, "ProximityCalculator", [](QQmlEngine*, QJSEngine*) -> QObject* {
         return new ProximityCalculator();
+
     });
+
+    qmlRegisterSingletonType<CustomMission>("QGroundControl", 1, 0, "CustomMission", [](QQmlEngine*, QJSEngine*) -> QObject* {
+        return new CustomMission();
+
+    });
+/*
+    qmlRegisterSingletonType<PlanMasterController>("QGroundControl", 1, 0, "PlanMasterController", [](QQmlEngine*, QJSEngine*) -> QObject* {
+        return new PlanMasterController();
+
+
+    });
+*/
+
+   /*
+    //mega test
+    if (_qmlAppEngine) {
+        // Attempt to get PlanMasterController from PlanViewController
+        PlanViewController* planViewController = qobject_cast<PlanViewController*>(_toolBox->planViewController());
+        if (planViewController) {
+            PlanMasterController* planMasterController = planViewController->planMasterController(); // Adjust method name if needed
+            if (planMasterController) {
+                _qmlAppEngine->rootContext()->setContextProperty("_planMasterController", planMasterController);
+                qCDebug() << "Exposed existing PlanMasterController as _planMasterController in QML";
+            }
+            else {
+                qCWarning() << "Failed to get PlanMasterController instance from PlanViewController";
+            }
+        }
+
+        else {
+            qCWarning() << "Failed to get PlanViewController instance";
+        }
+    }
+ */
+    /*
+    Vehicle* vehicle = qgcApp()->toolbox()->multiVehicleManager()->activeVehicle();
+    if (vehicle) {
+        PlanMasterController* planMaster = new PlanMasterController(
+            vehicle,
+            qgcApp()->toolbox()->missionCommandTree(),
+            nullptr
+            );
+
+        _qmlAppEngine->rootContext()->setContextProperty("_planMasterController", planMaster);
+        qDebug() << "✅ _planMasterController exposed to QML";
+    }
+
+*/
+    /*
+    if (_qmlAppEngine) {
+        PlanViewController* planViewController = qobject_cast<PlanViewController*>(_toolBox->planViewController());
+        if (planViewController) {
+            PlanMasterController* planMasterController = planViewController->planMasterController(); // Adjust method name if needed
+            if (planMasterController) {
+                _qmlAppEngine->rootContext()->setContextProperty("_planMasterController", planMasterController);
+                qDebug() << "Exposed PlanMasterController as _planMasterController in QML";
+            } else {
+                qWarning() << "PlanMasterController instance not found in PlanViewController";
+            }
+        } else {
+            qWarning() << "PlanViewController instance not found";
+        }
+    }
+
+*/
+    //
+
 
 
 

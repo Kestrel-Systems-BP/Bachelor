@@ -9,6 +9,9 @@
 //kest
 
 #include "MissionItem.h"
+#include "QGCApplication.h" //test
+#include "SimpleMissionItem.h"
+
 
 //
 #include "PlanMasterController.h"
@@ -651,54 +654,53 @@ void PlanMasterController::showPlanFromManagerVehicle(void)
 
 
 //kest
-/*
+
+
+
+
+//versjon 5:
 void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
 {
-    qCDebug(PlanMasterControllerLog) << "Waypoint from Kestrel APP: latitude" << latitude << "longitude" << longitude << "altitude" << altitude;
+    qDebug(PlanMasterControllerLog) << "Adding waypoint from coordinates:" << latitude << longitude << altitude;
 
-    // standard create mission:
+    QGeoCoordinate coord(latitude, longitude, altitude);
 
+            // Insert a takeoff to make sure the flight has one, if not might lead to problems.
+            //checks if there is any items first, if count = 0 then it adds it
+    if (_missionController.visualItems()->count() == 0) {
+        Vehicle* vehicle = MultiVehicleManager::instance()->activeVehicle();
+        if (vehicle && vehicle->coordinate().isValid()) {
+            QGeoCoordinate takeoffCoord = vehicle->coordinate();
+            _missionController.insertTakeoffItem(takeoffCoord, 0, true);
+            qCDebug(PlanMasterControllerLog) << "Takeoff item inserted at" << takeoffCoord;
+        } else {
+            qCWarning(PlanMasterControllerLog) << "Unable to get valid vehicle position for takeoff.";
+        }
+    }
 
-    MissionItem* newItem = new MissionItem(this);
-    newItem->setCommand(MAV_CMD_NAV_WAYPOINT);
-  //  newItem->setCoordinate(QGeoCoordinate(latitude, longitude, altitude));
+            // Insert the waypoint, will use waypoint from app
+    _missionController.insertSimpleMissionItem(coord, _missionController.visualItems()->count(), true);
 
-   newItem->coordinate() = QGeoCoordinate(latitude, longitude, altitude);
+            // Insert RTL command to make sure the droine returns safely
+    MissionItem rtlItem(
+        _missionController.visualItems()->count(),   // sequence
+        MAV_CMD_NAV_RETURN_TO_LAUNCH,
+        MAV_FRAME_MISSION,
+        0, 0, 0, 0, 0, 0, 0,
+        true,    // autoContinue
+        false    // isCurrentItem
+        );
 
+    SimpleMissionItem* rtl = new SimpleMissionItem(this, false, rtlItem);
+    _missionController.visualItems()->append(rtl);
 
-	// 0 = default values
-
-    newItem->setParam1(60); // Hold time at waypoint. set to 1 minute for capturing the moment
-    newItem->setParam2(0); // Acceptance radius 
-    newItem->setParam3(0); // Pass-through radius
-    newItem->setParam4(0); // yaw angle
-    newItem->setFrame(MAV_FRAME_GLOBAL_RELATIVE_ALT);
-    newItem->setAutoContinue(true);
-
-   _missionController.insertSimpleMissionItem(newItem, _missionController.visualItems()->count() - 1);
-
-    // dirty mission meaning it must be saved further
+            // Finalize
     _missionController.setDirty(true);
+    _missionController.sendToVehicle();
 
-    qCDebug(PlanMasterControllerLog) << "Waypoint added at (" << latitude << "," << longitude << "," << altitude << ")";
+    qDebug(PlanMasterControllerLog) << "Waypoint + RTL inserted and mission sent.";
 }
-*/
 
-void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
-{
-    qCDebug(PlanMasterControllerLog) << "Waypoint from Kestrel APP: latitude" << latitude << "longitude" << longitude << "altitude" << altitude;
-
-    // Create a QGeoCoordinate for the waypoint
-    QGeoCoordinate coordinate(latitude, longitude, altitude);
-
-    // Insert the waypoint into the mission controller
-    _missionController.insertSimpleMissionItem(coordinate, _missionController.visualItems()->count() - 1);
-
-    // Mark the mission as dirty (needs to be saved)
-    _missionController.setDirty(true);
-
-    qCDebug(PlanMasterControllerLog) << "Waypoint added at (" << latitude << "," << longitude << "," << altitude << ")";
-}
 
 
 
