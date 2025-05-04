@@ -12,7 +12,7 @@ while True:
     if not ret:
         print("Failed to grab frame")
         break
-    
+
     #Gaussian blur is a mathematical function that blurs images
     #Blurring the image will help reduce noise
     #https://docs.opencv.org/4.x/d4/d86/group__imgproc__filter.html#gae8bdcd9154ed5ca3cbc1766d960f45c1
@@ -38,7 +38,7 @@ while True:
     #description later
     kernel = np.ones((5, 5), np.uint8)
     mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
-    mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel) 
+    mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
 
     #Identify the conturs
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
@@ -58,10 +58,14 @@ while True:
 
                 cv2.circle(frame, center, int(radius), (0, 255, 0), 2)
 
-                img_center = (640, 400)
-                distance = ((center[0] - img_center[0])**2 + (center[1] - img_center[1]**2)**0.5)
-            #if distance < 100 and radius > 50:
-            #    print("Target centered, ready to land!")
+                #Function to check if the landing pad is centered
+                img_center = (1280 // 2, 720 // 2)
+                distance = np.sqrt((center[0] - img_center[0])**2 + (center[1] - img_center[1])**2)
+
+                #Define the threshold for what is defined as the center area
+                center_threshold = 50
+                if distance < center_threshold:
+                    print("Landing pad is centered!")
             break
 
 
