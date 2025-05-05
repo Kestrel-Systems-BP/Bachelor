@@ -23,6 +23,14 @@ if not cap.isOpened():
     print("Failed to access camera")
     return
 
+#Image center and threshold
+img_center = (1280 // 2, 720 // 2)
+center_threshold = 50
+centered_start_time = None
+centered_duration = 1.0
+
+#Pixel to meter conversion
+pixel_to_meter = 0.001
 
 while True:
     ret, frame = cap.read()
@@ -75,15 +83,7 @@ while True:
 
                 cv2.circle(frame, center, int(radius), (0, 255, 0), 2)
 
-                #Function to check if the landing pad is centered
-                img_center = (1280 // 2, 720 // 2)
-                distance = np.sqrt((center[0] - img_center[0])**2 + (center[1] - img_center[1])**2)
 
-                #Define the threshold for what is defined as the center area
-                center_threshold = 50
-                if distance < center_threshold:
-                    print("Landing pad is centered!")
-            break
 
 
 
