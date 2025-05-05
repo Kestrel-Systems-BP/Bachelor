@@ -18,7 +18,11 @@ async def main():
             break
 
 #Initialize the camera
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture("v4l2src device=/dev/video2 ! videoconvert ! appsink", cv2.CAP_GSTREAMER)
+if not cap.isOpened():
+    print("Failed to access camera")
+    return
+
 
 while True:
     ret, frame = cap.read()
