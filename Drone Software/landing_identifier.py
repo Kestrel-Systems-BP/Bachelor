@@ -1,10 +1,23 @@
 import cv2
 import numpy as np
 import time
-#import voxl #VOXL Camera API
+import asyncio
+from mavsdk import System
+from mavsdk.offboard import OffboardError, PositionNewYaw
+import voxl #VOXL Camera API
+
+#Initialize the MAVSDK connection to PX4
+async def main():
+    drone = System()
+    await drone.connect(system_address="udp://8900")
+
+    print("Waiting for drone to connect...")
+    async for state in drone.core.connection_state():
+        if state.is_connected:
+            print("Drone connected!")
+            break
 
 #Initialize the camera
-#cap = voxl_utils.open_camera("hires_tracking_down")
 cap = cv2.VideoCapture(0)
 
 while True:
