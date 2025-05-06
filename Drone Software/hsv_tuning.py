@@ -8,7 +8,7 @@
 #This code is solely for calibrating HSV
 #It allows for real-time adjustments in HSV settings
 #Tests should be done under dynamic conditions for optimilization
-#Settings are plotted into the "landing_identifier" file 
+#Settings are plotted into the "landing_identifier" file
 #H = Hue (color)
 #S = Saturation (color purity)
 #V = Value (intensity)
