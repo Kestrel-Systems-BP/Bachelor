@@ -796,7 +796,7 @@ MouseArea {
                                 console.log("Launching Dispenser " + selectedDispenser)
                                 //CustomMission.createAutomaticMission(QGroundControl.multiVehicleManager.activeVehicle, 47.3976833, 8.5434278, 15.0)
                                 //flyView.planMasterController.addWaypoint(47.3976833, 8.5434278, 15.0)
-                                flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 15.0)
+                                flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 10.0)
 
 
                             }
@@ -1103,7 +1103,7 @@ MouseArea {
                     anchors.horizontalCenter: parent.horizontalCenter
 
                     Text {
-                        text: "Proximity Opener:"
+                        text: "Proximity Trigger Mode:"
                         color: "white"
                         font.pixelSize: 16
                         anchors.verticalCenter: parent.verticalCenter
@@ -1153,7 +1153,7 @@ MouseArea {
                        anchors.horizontalCenter: parent.horizontalCenter
 
                        Text{
-                           text: "Fully Autonomous Mode"
+                           text: "Fully Autonomous Mode:"
                            color: "white"
                            font.pixelSize: 16
                            anchors.verticalCenter: parent.verticalCenter
@@ -1196,7 +1196,7 @@ MouseArea {
                    }
 
                    Text{
-                       text: "Set dispenser coordinates using drone GPS"
+                       text: "Set dispenser coordinates using drone GPS:"
                        color: "white"
                        font.pixelSize: 16
                        anchors.horizontalCenter: parent.horizontalCenter
