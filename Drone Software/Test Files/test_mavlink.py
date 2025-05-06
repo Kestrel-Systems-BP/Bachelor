@@ -1,4 +1,4 @@
-import _asyncio
+import asyncio
 from mavlink import MAVLinkConnection
 
 async def test_mavlink():
