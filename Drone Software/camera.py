@@ -1,4 +1,6 @@
+
 import cv2
+
 
 class Camera:
     def __init__(self, device="/dev/video2", width=1280, height=720):
@@ -24,3 +26,21 @@ class Camera:
         if not ret:
             raise RuntimeError("Failed to grab frame")
         return frame
+
+    def release(self):
+        """Release the camera"""
+        if self.cap:
+            self.cap.release()
+
+if __name__ == "__main__":
+    try:
+        cam = Camera()
+        cam.initialize()
+        frame = cam.get_frame()
+        cv2.imshow("Test Camera", frame)
+        cv2.waitKey(0)
+        cam.release()
+        cv2.destroyAllWindows()
+        print("Camera test success")
+    except Exception as e:
+        print(f"Camera test failed: {e}")
