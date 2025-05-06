@@ -1,13 +1,15 @@
 #This is a code designed to solely test the camera functionality
-#It will capture 10 frames
+#It imports the camera class from the camera.py file
 
 import cv2
 from camera import Camera
 
-def test_camera():
+def test_camera(use_webcam=False, device="/dev/video2"):
     try:
-        #cam = Camera(device="/dev/video2")
-        cam = Camera(device=0)
+        if use_webcam:
+            cam = Camera(device=0)
+        else:
+            cam = Camera(device=device)
         cam.initialize()
         for _ in range(10):
             frame = cam.get_frame()
@@ -21,4 +23,4 @@ def test_camera():
         print(f"Camera test failed: {e}")
 
 if __name__ == '__main__':
-    test_camera()
+    test_camera(use_webcam=True, device="/dev/video2")
