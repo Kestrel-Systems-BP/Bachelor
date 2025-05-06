@@ -85,7 +85,7 @@ public:
     Q_INVOKABLE void removeAllFromVehicle(void);            ///< Removes all from vehicle and controller
 
 //kest
-    Q_INVOKABLE void addWaypoint(double latitude, double longitude, double altitude = 10); // mulig bytte seinere :)
+    Q_INVOKABLE void addWaypoint(double latitude, double longitude, double altitude); // mulig bytte seinere :)
   //  Q_INVOKABLE VisualMissionItem* insertSimpleMissionItem(QGeoCoordinate coordinate, int visualItemIndex, bool makeCurrentItem = false);
 
 ///
