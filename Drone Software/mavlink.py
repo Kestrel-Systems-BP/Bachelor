@@ -17,6 +17,14 @@ class MAVLinkConnection:
                     print("Drone connected")
                     break
         except Exception as e:
-            raise RuntimeError(f"Failed to connect to drone: {e}")
+            raise RuntimeError(f"Drone failed to connect: {e}")
 
     async def disconnect(self):
+        """Disconnect and disarm the drone"""
+        if self.connected:
+            try:
+                await self.drone.action.disarm()
+            except Exception as e:
+                print(f"Failed to disarm: {e}")
+            self.connected = False
+
