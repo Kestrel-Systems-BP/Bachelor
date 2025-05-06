@@ -671,7 +671,7 @@ void PlanMasterController::addWaypoint(double latitude, double longitude, double
         Vehicle* vehicle = MultiVehicleManager::instance()->activeVehicle();
         if (vehicle && vehicle->coordinate().isValid()) {
             QGeoCoordinate takeoffCoord = vehicle->coordinate();
-            _missionController.insertTakeoffItem(takeoffCoord, 0, true);
+            _missionController.insertTakeoffItem(takeoffCoord, 10, true);
             qCDebug(PlanMasterControllerLog) << "Takeoff item inserted at" << takeoffCoord;
         } else {
             qCWarning(PlanMasterControllerLog) << "Unable to get valid vehicle position for takeoff.";
