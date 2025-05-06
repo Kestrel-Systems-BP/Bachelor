@@ -28,3 +28,16 @@ class MAVLinkConnection:
                 print(f"Failed to disarm: {e}")
             self.connected = False
 
+if __name__ == "__main__":
+    async def test_mavlink():
+        try:
+            mavlink = MAVLinkConnection()
+            await mavlink.connect()
+            await asyncio.sleep(2)
+            #Needs a pause to observe the connection
+            await mavlink.disconnect()
+            print("MAVLink successfully tested")
+        except Exception as e:
+            print(f"MAVLink failed test: {e}")
+
+    asyncio.run(test_mavlink)
