@@ -50,11 +50,11 @@ class ObjectDetector:
                 return center, radius, frame
         return None, None, frame
 
-def compute_offset(self, center):
-    """Compute pixel offset from frame center"""
-    if center is None:
-        return None
-    return (center[0] - self.img_center[0], center[1] - self.img_center[1])
+    def compute_offset(self, center):
+        """Compute pixel offset from frame center"""
+        if center is None:
+            return None
+        return (center[0] - self.img_center[0], center[1] - self.img_center[1])
 
 if __name__ == "__main__":
     try:
