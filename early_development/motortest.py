@@ -2,7 +2,7 @@ from time import sleep
 import RPi.GPIO as gpio
 
 direction_pin   = 20
-pulse_pin       = 21
+pulse_pin       = 26
 cw_direction    = 0
 ccw_direction   = 1
 
@@ -18,7 +18,7 @@ try:
         sleep(.5)
         gpio.output(direction_pin,ccw_direction)
         for x in range(4000):
-            gpio.output(pulse_pin,gpio.HIGH)
+            gpio.output(pulse_pin,gpio.LOW)
             sleep(.001)
             gpio.output(pulse_pin,gpio.LOW)
             sleep(.0005)
@@ -29,7 +29,7 @@ try:
         for x in range(4000):
             gpio.output(pulse_pin,gpio.HIGH)
             sleep(.001)
-            gpio.output(pulse_pin,gpio.LOW)
+            gpio.output(pulse_pin,gpio.HIGH)
             sleep(.0005)
 
 except KeyboardInterrupt:

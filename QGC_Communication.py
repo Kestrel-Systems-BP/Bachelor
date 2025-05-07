@@ -31,10 +31,13 @@ async def udp_receiver(queue):
         try:
             data, addr = await asyncio.get_running_loop().run_in_executor(None, recv_socket.recvfrom, 1024)
             message = data.decode('utf-8').strip().lower()
+            print("Inside UDP receiver")
             if message in ["open", "close"]:
+                print("UDP package received")
                 await queue.put({"type": "actuator", "data": message})
+                print("After queue.put")
             elif message in ["starting"]:
-                print("hei")
+                print("other message")
         except Exception as e:
             logging.error(f"Receiving error {e}")
             await asyncio.sleep(1)
@@ -50,7 +53,6 @@ async def udp_sender(queue):
             # Select addres based on type of communication
             if message["type"] == "sensor":
                 port = config['udp']['sensor_port']
-                print("Hello World")
             elif message["type"] == "status_actuator":
                 port = config['udp']['actuator_port']
     #        elif message["type"] == "charging_status":
@@ -63,14 +65,14 @@ async def udp_sender(queue):
 
             send_sock.sendto(message["data"].encode(), (send_address, port))
             queue.task_done()
-            print("Udp sent")
+#            print("Udp sent")
         except Exception as e:
-            print("exception sending UDP: {e}")
+ #           print("exception sending UDP: {e}")
             logging.error(f"Error with UDP sender: {e}")
             await asyncio.sleep(1)
 
 async def main_function():
-    print("Starting main fuction")
+#    print("Starting main fuction")
     queue = asyncio.Queue()
 
     sensor_pin = config['gpio']['dht11_pin']

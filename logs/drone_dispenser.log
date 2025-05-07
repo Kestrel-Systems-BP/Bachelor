@@ -42,3 +42,132 @@ Hello World
 2025-04-23 04:10:44,245 WARNING No data to read
 2025-04-23 04:10:55,308 WARNING No data to read
 2025-04-23 04:11:17,433 WARNING No data to read
+2025-05-07 13:50:22,454 WARNING No data to read
+2025-05-07 13:51:01,174 WARNING No data to read
+2025-05-07 13:52:12,826 WARNING No data to read
+2025-05-07 13:54:23,174 WARNING No data to read
+2025-05-07 13:54:34,477 ERROR Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main_function() done, defined at /home/pi/Kestrel/QGC_Communication.py:72> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "/home/pi/Kestrel/QGC_Communication.py", line 89, in <module>
+    asyncio.run(main_function())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 47, in run
+    _cancel_all_tasks(loop)
+  File "/usr/lib/python3.10/asyncio/runners.py", line 63, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Kestrel/QGC_Communication.py", line 80, in main_function
+    await asyncio.gather(
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Kestrel/DHT11_control.py", line 13, in read_dht11
+    humidity, temperature = Adafruit_DHT.read(sensor, sensor_pin)
+  File "/home/pi/.local/lib/python3.10/site-packages/Adafruit_DHT/common.py", line 81, in read
+    return platform.read(sensor, pin)
+  File "/home/pi/.local/lib/python3.10/site-packages/Adafruit_DHT/Raspberry_Pi_2.py", line 29, in read
+    result, humidity, temp = driver.read(sensor, int(pin))
+KeyboardInterrupt
+2025-05-07 13:55:14,470 WARNING No data to read
+2025-05-07 13:55:31,062 WARNING No data to read
+2025-05-07 13:55:36,595 WARNING No data to read
+2025-05-07 13:58:01,295 WARNING No data to read
+2025-05-07 13:58:12,358 WARNING No data to read
+2025-05-07 13:58:23,422 WARNING No data to read
+2025-05-07 13:59:29,791 WARNING No data to read
+2025-05-07 13:59:46,383 WARNING No data to read
+2025-05-07 14:00:14,042 WARNING No data to read
+2025-05-07 14:00:17,576 WARNING (Unknown message: actuator
+2025-05-07 14:07:17,787 ERROR Error with the actuator: name 'relay1' is not defined
+2025-05-07 14:07:19,463 WARNING No data to read
+2025-05-07 14:07:30,443 ERROR Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main_function() done, defined at /home/pi/Kestrel/QGC_Communication.py:73> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "/home/pi/Kestrel/QGC_Communication.py", line 90, in <module>
+    asyncio.run(main_function())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 47, in run
+    _cancel_all_tasks(loop)
+  File "/usr/lib/python3.10/asyncio/runners.py", line 63, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Kestrel/QGC_Communication.py", line 81, in main_function
+    await asyncio.gather(
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Kestrel/DHT11_control.py", line 13, in read_dht11
+    humidity, temperature = Adafruit_DHT.read(sensor, sensor_pin)
+  File "/home/pi/.local/lib/python3.10/site-packages/Adafruit_DHT/common.py", line 81, in read
+    return platform.read(sensor, pin)
+  File "/home/pi/.local/lib/python3.10/site-packages/Adafruit_DHT/Raspberry_Pi_2.py", line 29, in read
+    result, humidity, temp = driver.read(sensor, int(pin))
+KeyboardInterrupt
+2025-05-07 14:08:23,256 ERROR Error with the actuator: name 'relay1' is not defined
+2025-05-07 14:08:38,039 WARNING No data to read
+2025-05-07 14:09:31,223 ERROR Error with the actuator: name 'relay1' is not defined
+2025-05-07 14:10:39,963 ERROR Error with the actuator: name 'relay1' is not defined
+2025-05-07 14:10:48,545 WARNING No data to read
+2025-05-07 14:10:54,077 WARNING No data to read
+2025-05-07 14:11:43,452 ERROR Error with the actuator: name 'relay1' is not defined
+2025-05-07 14:15:44,887 WARNING No data to read
+2025-05-07 14:16:01,478 WARNING No data to read
+2025-05-07 14:16:23,602 WARNING No data to read
+2025-05-07 14:51:06,962 WARNING No data to read
+2025-05-07 14:51:18,030 WARNING No data to read
+2025-05-07 14:51:23,559 WARNING No data to read
+2025-05-07 14:51:34,619 WARNING No data to read
+2025-05-07 14:51:41,567 WARNING (Unknown message: actuator
+2025-05-07 14:51:56,164 ERROR Error with the actuator: name 'relay1' is not defined
+2025-05-07 14:52:24,383 WARNING No data to read
+2025-05-07 14:52:28,713 WARNING (Unknown message: actuator
+2025-05-07 14:52:40,975 WARNING No data to read
+2025-05-07 14:53:46,234 ERROR Error with the actuator: name 'relay1' is not defined
+2025-05-07 14:53:59,350 ERROR Error with the actuator: name 'relay1' is not defined
+2025-05-07 14:54:09,898 WARNING No data to read
+2025-05-07 14:54:15,433 WARNING No data to read
+2025-05-07 15:00:48,063 WARNING No data to read
+2025-05-07 15:00:48,348 WARNING (Unknown message: actuator
+2025-05-07 15:01:10,189 WARNING No data to read
+2025-05-07 15:05:17,612 WARNING No data to read
+2025-05-07 15:05:45,266 WARNING No data to read
+2025-05-07 15:05:50,799 WARNING No data to read
+2025-05-07 15:06:29,520 WARNING No data to read
+2025-05-07 15:06:35,050 WARNING No data to read
+2025-05-07 15:06:57,175 WARNING No data to read
+2025-05-07 15:07:30,362 WARNING No data to read
+2025-05-07 15:07:46,951 WARNING No data to read
+2025-05-07 15:07:52,479 WARNING No data to read
+2025-05-07 15:08:09,071 WARNING No data to read
+2025-05-07 15:08:56,000 WARNING (Unknown message: actuator
+2025-05-07 15:09:04,369 WARNING No data to read
+2025-05-07 15:09:09,899 WARNING No data to read
+2025-05-07 15:09:20,962 WARNING No data to read
+2025-05-07 15:09:37,556 WARNING No data to read
