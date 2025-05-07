@@ -796,7 +796,7 @@ MouseArea {
                                 console.log("Launching Dispenser " + selectedDispenser)
                                 //CustomMission.createAutomaticMission(QGroundControl.multiVehicleManager.activeVehicle, 47.3976833, 8.5434278, 15.0)
                                 //flyView.planMasterController.addWaypoint(47.3976833, 8.5434278, 15.0)
-                                flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 10.0)
+                                //flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 10.0)
 
 
                             }
@@ -1446,6 +1446,9 @@ MouseArea {
 
                                 //set waypoint for UDP melding
                                 //globals.planMasterControllerFlyView.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 15) // added altitude, tried without first.
+
+                                //added the call here to make it appear when accepting and not when pressing "LAUNCH"
+                                flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 10.0)
 
                             }
                             else {
