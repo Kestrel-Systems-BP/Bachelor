@@ -32,3 +32,44 @@ class ObjectDetector:
         kernel = np.ones((5, 5), np.uint8)
         mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
         mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
+
+        #Find the contours
+        contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        for contour in contours:
+            area = cv2.contourArea(contour)
+            if area < self.min_area:
+                continue
+            perimeter = cv2.arcLength(contour, True)
+            if perimeter == 0:
+                continue
+            circularity = 4 * np.pi * area / (perimeter * perimeter)
+            if circularity > self.circularity_threshold:
+                ((x, y), radius) = cv2.minEnclosingCircle(contour)
+                center = (int(x), int(y))
+                cv2.circle(frame, center, int(radius), (0, 255, 0), 2) #Marks identified circle with a green circle
+                return center, radius, frame
+        return None, None, frame
+
+def compute_offset(self, center):
+    """Compute pixel offset from frame center"""
+    if center is None:
+        return None
+    return (center[0] - self.img_center[0], center[1] - self.img_center[1])
+
+if __name__ == "__main__":
+    try:
+        detector = ObjectDetector()
+        frame = cv2.imread("C:/Users/eirik/Documents/GitHub/Bachelor/Drone Software/testimage.jpg")
+        if frame is None:
+            raise RuntimeError("Failed to load test image")
+        center, radius, processed_frame = detector.detect(frame)
+        if center:
+            offset = detector.compute_offset(center)
+            print(f"Detected center: {center}, radius: {radius}, offset: {offset}")
+            cv2.imshow("Detection test", processed_frame)
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
+        else:
+            print("No object detected")
+    except Exception as e:
+        print(f"Detection test failed: {e}")
