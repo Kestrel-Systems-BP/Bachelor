@@ -1324,9 +1324,10 @@ MouseArea {
                 console.log("temperature and humidity received fro dispenser 1");
 
                 //split the values
+                //temperature.trim();
 
                 var values = temperature.trim().split(",");
-                if(values.length() === 2){
+                if(values.length === 2){
                     dispenserData["1"].temperature = values[0].trim();
                     dispenserData["1"].humidity = values[1].trim();
                 }
