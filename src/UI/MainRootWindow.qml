@@ -508,8 +508,8 @@ MouseArea {
                     "2": {
                         status: "No message received",
                         temperature: "pending...",
-                        humidity: "25",
-                        chargerStatus: "CHARGING",
+                        humidity: "",
+                        chargerStatus: "Unknown",
                         errors: "NONE",
                         latitude: 59.6555001,
                         longitude: 9.6457272,
@@ -796,7 +796,7 @@ MouseArea {
                                 console.log("Launching Dispenser " + selectedDispenser)
                                 //CustomMission.createAutomaticMission(QGroundControl.multiVehicleManager.activeVehicle, 47.3976833, 8.5434278, 15.0)
                                 //flyView.planMasterController.addWaypoint(47.3976833, 8.5434278, 15.0)
-                                flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 10.0)
+                                //flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 10.0)
 
 
                             }
@@ -1321,8 +1321,23 @@ MouseArea {
         Connections {
             target: receivers["1"].temperature
             function onTemperatureReceived(temperature) {
-                console.log("temperature for dispenser 1:", temperature)
-                dispenserData["1"].temperature = temperature.trim()
+                console.log("temperature and humidity received fro dispenser 1");
+
+                //split the values
+                //temperature.trim();
+
+                var values = temperature.trim().split(",");
+                if(values.length === 2){
+                    dispenserData["1"].temperature = values[0].trim();
+                    dispenserData["1"].humidity = values[1].trim();
+                }
+                else{
+                    consolelog("Failed to split humidity and temperature.");
+                    dispenserData["1"].temperature = "N/A";
+                    dispenserData["1"].humidity = "N/A";
+
+                }
+
                 dispenserData = dispenserData
             }
         }
@@ -1431,6 +1446,9 @@ MouseArea {
 
                                 //set waypoint for UDP melding
                                 //globals.planMasterControllerFlyView.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 15) // added altitude, tried without first.
+
+                                //added the call here to make it appear when accepting and not when pressing "LAUNCH"
+                                flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 10.0)
 
                             }
                             else {

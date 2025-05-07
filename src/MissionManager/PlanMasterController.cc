@@ -659,6 +659,8 @@ void PlanMasterController::showPlanFromManagerVehicle(void)
 
 
 //versjon 5:
+//To waypoint and RTL
+/*
 void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
 {
     qDebug(PlanMasterControllerLog) << "Adding waypoint from coordinates:" << latitude << longitude << altitude;
@@ -700,7 +702,110 @@ void PlanMasterController::addWaypoint(double latitude, double longitude, double
 
     qDebug(PlanMasterControllerLog) << "Waypoint + RTL inserted and mission sent.";
 }
+*/
 
+// Versjon uten RTL + center hover
+/*
+void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
+{
+    qDebug(PlanMasterControllerLog) << "Adding ROI + Circle waypoint:" << latitude << longitude << altitude;
+
+    QGeoCoordinate coord(latitude, longitude, altitude);
+
+    if (_missionController.visualItems()->count() == 0) {
+        Vehicle* vehicle = MultiVehicleManager::instance()->activeVehicle();
+        if (vehicle && vehicle->coordinate().isValid()) {
+            QGeoCoordinate takeoffCoord = vehicle->coordinate();
+            _missionController.insertTakeoffItem(takeoffCoord, 10.0, true);
+            qCDebug(PlanMasterControllerLog) << "Takeoff item inserted at" << takeoffCoord;
+        } else {
+            qCWarning(PlanMasterControllerLog) << "Unable to get valid vehicle position for takeoff.";
+        }
+    }
+
+            // 1. Set ROI (Region of Interest)
+    MissionItem roiItem(
+        _missionController.visualItems()->count(),       // sequence
+        MAV_CMD_DO_SET_ROI_LOCATION,                     // command
+        MAV_FRAME_GLOBAL_RELATIVE_ALT,                   // frame
+        0, 0, 0, 0,                                       // param1-4: unused
+        latitude, longitude, altitude,                   // param5-7: ROI position
+        true, false                                       // autoContinue, isCurrentItem
+        );
+    SimpleMissionItem* roi = new SimpleMissionItem(this, false, roiItem);
+    _missionController.visualItems()->append(roi);
+
+            // 2. Add circle/loiter mission
+    MissionItem circleItem(
+        _missionController.visualItems()->count(),       // sequence
+        MAV_CMD_NAV_LOITER_,                        // command
+        MAV_FRAME_GLOBAL_RELATIVE_ALT,                   // frame
+        3,      // param1: number of turns
+        0,      // param2: not used
+        20,     // param3: radius in meters
+        1,      // param4: positive = clockwise
+        //latitude, longitude, altitude,                   // param5-7: loiter center
+        true, false
+        );
+    SimpleMissionItem* circle = new SimpleMissionItem(this, false, circleItem);
+    _missionController.visualItems()->append(circle);
+
+    _missionController.setDirty(true);
+    _missionController.sendToVehicle();
+
+    qDebug(PlanMasterControllerLog) << "ROI + Circle mission sent.";
+}
+*/
+
+
+
+
+void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
+{
+    qDebug(PlanMasterControllerLog) << "Adding ROI + Infinite Circle:" << latitude << longitude << altitude;
+
+    QGeoCoordinate coord(latitude, longitude, altitude);
+
+    if (_missionController.visualItems()->count() == 0) {
+        Vehicle* vehicle = MultiVehicleManager::instance()->activeVehicle();
+        if (vehicle && vehicle->coordinate().isValid()) {
+            QGeoCoordinate takeoffCoord = vehicle->coordinate();
+            _missionController.insertTakeoffItem(takeoffCoord, 10.0, true);
+            qCDebug(PlanMasterControllerLog) << "Takeoff item inserted at" << takeoffCoord;
+        } else {
+            qCWarning(PlanMasterControllerLog) << "Unable to get valid vehicle position for takeoff.";
+        }
+    }
+
+            // Set ROI
+    MissionItem roiItem(
+        _missionController.visualItems()->count(),
+        MAV_CMD_DO_SET_ROI_LOCATION,
+        MAV_FRAME_GLOBAL_RELATIVE_ALT,
+        0, 0, 0, 0,
+        latitude, longitude, altitude,
+        true, false
+        );
+    SimpleMissionItem* roi = new SimpleMissionItem(this, false, roiItem);
+    _missionController.visualItems()->append(roi);
+
+            // Infinite loiter
+    MissionItem loiterItem(
+        _missionController.visualItems()->count(),
+        MAV_CMD_NAV_LOITER_UNLIM,
+        MAV_FRAME_GLOBAL_RELATIVE_ALT,
+        0, 0, 20, 1,   // params: unused, unused, radius, direction
+        latitude, longitude, altitude,
+        true, false
+        );
+    SimpleMissionItem* loiter = new SimpleMissionItem(this, false, loiterItem);
+    _missionController.visualItems()->append(loiter);
+
+    _missionController.setDirty(true);
+    _missionController.sendToVehicle();
+
+    qDebug(PlanMasterControllerLog) << "Infinite circle mission sent.";
+}
 
 
 
