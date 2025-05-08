@@ -7,14 +7,14 @@ logging.basicConfig(
     format = '%(asctime)s %(levelname)s %(message)s')
 
 
-async def control_actuator(queue, relay_pin1, relay_pin2):
+async def control_actuator(actuator_queue, sending_queue, relay_pin1, relay_pin2):
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(relay_pin1, GPIO.OUT)
     GPIO.setup(relay_pin2, GPIO.OUT)
     while True:
         try:
-            command = await queue.get()
-#            print("In the while true loop")
+            command = await actuator_queue.get()
+            print(f"Recieved in Actuator: {command}")
             if command["type"] == "actuator":
                 print("Type == actuator")
                 if command["data"] == "open":
@@ -23,14 +23,15 @@ async def control_actuator(queue, relay_pin1, relay_pin2):
                     GPIO.output(relay_pin2, GPIO.LOW)
                     await asyncio.sleep(15)
                     print("Open Command Recieved and executed")
-                    await queue.put({"type": "status_actuator", "data": "Dispenser opened"})
+                    await sending_queue.put({"type": "status_actuator", "data": "Dispenser opened"})
                 elif command["data"] == "close":
                     print("data == close")
                     GPIO.output(relay_pin1, GPIO.HIGH)
                     GPIO.output(relay_pin2, GPIO.HIGH)
+                    await asyncio.sleep(15)
                     print("Close command received and executed")
-                    await queue.put({"type": "status_actuator", "data": "Dispenser closed"})
-            queue.task_done()
+                    await sending_queue.put({"type": "status_actuator", "data": "Dispenser closed"})
+            actuator_queue.task_done()
         except Exception as e:
             logging.error(f"Error with the actuator: {e}")
             await asyncio.sleep(1)

@@ -6,7 +6,7 @@ logging.basicConfig(
 	filename='logs/drone_dispenser.log',
 	format='%(asctime)s %(levelname)s %(message)s')
 
-async def read_dht11(queue, sensor_pin):
+async def read_dht11(sending_queue, sensor_pin):
 	sensor = Adafruit_DHT.DHT11
 	while True:
 		try:
@@ -15,7 +15,7 @@ async def read_dht11(queue, sensor_pin):
 			if humidity is not None and temperature is not None:
 				message = (f"{temperature:.1f},{humidity:.1f}")
 #				print("In DHT11 queue", message)
-				await queue.put({"type": "sensor", "data": message})
+				await sending_queue.put({"type": "sensor", "data": message})
 			else:
 #				print("No DHT11 results")
 				logging.warning("No data to read")

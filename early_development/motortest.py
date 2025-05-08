@@ -21,8 +21,8 @@ try:
             gpio.output(pulse_pin,gpio.LOW)
             sleep(.001)
             gpio.output(pulse_pin,gpio.LOW)
-            sleep(.0005)
-
+            #sleep(.0005)
+            sleep(15)
         print("Retract the actuator")
         sleep(.5)
         gpio.output(direction_pin,cw_direction)

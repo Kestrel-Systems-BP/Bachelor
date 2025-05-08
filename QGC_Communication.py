@@ -5,8 +5,10 @@ import Adafruit_DHT
 import asyncio
 import yaml
 import logging
+import RPi.GPIO as GPIO
 from DHT11_control import read_dht11
 from Actuator_Control import control_actuator
+from Charging_Control import control_charging
 
 # Read the settings file
 with open('settings.yaml', 'r') as f:
@@ -22,32 +24,34 @@ send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 # global receive socket
 recv_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+recv_socket.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 65536)
 recv_socket.bind(('0.0.0.0', config['udp']['receiving_port']))
 
 
-async def udp_receiver(queue):
-    print("Starting udp_receiver")
+async def udp_receiver(actuator_queue, charging_queue):
+#    print("Starting udp_receiver")
     while True:
         try:
-            data, addr = await asyncio.get_running_loop().run_in_executor(None, recv_socket.recvfrom, 1024)
+            data, addr = await asyncio.get_running_loop().run_in_executor(None, recv_socket.recvfrom, 8192)
             message = data.decode('utf-8').strip().lower()
-            print("Inside UDP receiver")
+         #   print("Inside UDP receiver")
             if message in ["open", "close"]:
                 print("UDP package received")
-                await queue.put({"type": "actuator", "data": message})
-                print("After queue.put")
-            elif message in ["starting"]:
-                print("other message")
+                await actuator_queue.put({"type": "actuator", "data": message})
+             #   print("After queue.put")
+            elif message in ["start", "stop"]:
+                await charging_queue.put({"type": "charging", "data": message})
+                print("Charging Message Received")
         except Exception as e:
             logging.error(f"Receiving error {e}")
             await asyncio.sleep(1)
 
 
-async def udp_sender(queue):
-    print("Starting udp_sender")
+async def udp_sender(sending_queue):
+#    print("Starting udp_sender")
     while True:
         try:
-            message = await queue.get()
+            message = await sending_queue.get()
             send_address = config['udp']['send_address']
 
             # Select addres based on type of communication
@@ -55,16 +59,16 @@ async def udp_sender(queue):
                 port = config['udp']['sensor_port']
             elif message["type"] == "status_actuator":
                 port = config['udp']['actuator_port']
-    #        elif message["type"] == "charging_status":
-     #           port = config['udp']['charging_port']
+            elif message["type"] == "charging_status":
+                port = config['udp']['charging_port']
             else:
                 logging.warning(f"(Unknown message: {message.get('type')}")
-                queue.task_done()
+                #queue.task_done()
                 continue
 
 
             send_sock.sendto(message["data"].encode(), (send_address, port))
-            queue.task_done()
+            sending_queue.task_done()
 #            print("Udp sent")
         except Exception as e:
  #           print("exception sending UDP: {e}")
@@ -72,18 +76,22 @@ async def udp_sender(queue):
             await asyncio.sleep(1)
 
 async def main_function():
-#    print("Starting main fuction")
-    queue = asyncio.Queue()
+    print("Starting main fuction")
+    actuator_queue = asyncio.Queue()
+    charging_queue = asyncio.Queue()
+    sending_queue = asyncio.Queue()
 
     sensor_pin = config['gpio']['dht11_pin']
     actuator_pin1 = config['gpio']['actuator_relay_pin1']
     actuator_pin2 = config['gpio']['actuator_relay_pin2']
+    charging_relay_pin = config['gpio']['charging_relay_pin']
 
     await asyncio.gather(
-    read_dht11(queue, sensor_pin),
-    control_actuator(queue, actuator_pin1, actuator_pin2),
-    udp_sender(queue),
-    udp_receiver(queue)
+    read_dht11(sending_queue, sensor_pin),
+    control_actuator(actuator_queue, sending_queue, actuator_pin1, actuator_pin2),
+    udp_sender(sending_queue),
+    udp_receiver(actuator_queue, charging_queue),
+    control_charging(charging_queue, sending_queue, charging_relay_pin)
     )
 
 if __name__ == "__main__":
@@ -92,3 +100,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         send_sock.close()
         recv_socket.close()
+        GPIO.cleanup()
