@@ -86,6 +86,7 @@ public:
 
 //kest
     Q_INVOKABLE void addWaypoint(double latitude, double longitude, double altitude); // mulig bytte seinere :)
+    Q_INVOKABLE void giveMissionToAvailableDrone(double latitude, double longitude, double altitude);
   //  Q_INVOKABLE VisualMissionItem* insertSimpleMissionItem(QGeoCoordinate coordinate, int visualItemIndex, bool makeCurrentItem = false);
 
 ///

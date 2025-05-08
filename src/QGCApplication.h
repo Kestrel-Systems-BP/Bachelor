@@ -24,6 +24,7 @@
 #include "UI/ProximityCalculator.h"
 #include "UI/CustomMission.h"
 #include "MissionManager/PlanMasterController.h"
+#include "UI/sendUdp.h"
 //
 
 class QQmlApplicationEngine;
