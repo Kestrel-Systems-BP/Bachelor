@@ -14,7 +14,7 @@ public:
     Q_INVOKABLE void stopCharging();
     Q_INVOKABLE void heartbeat();
 
-
+//hei
 	
 
 private:
