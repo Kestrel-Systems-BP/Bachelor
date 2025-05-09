@@ -658,154 +658,147 @@ void PlanMasterController::showPlanFromManagerVehicle(void)
 
 
 
-//versjon 5:
-//To waypoint and RTL
+
+
+
+
+
+
+// 100 % works
+
 /*
+
 void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
 {
-    qDebug(PlanMasterControllerLog) << "Adding waypoint from coordinates:" << latitude << longitude << altitude;
+    qDebug() << "Adding waypoint from coordinates:" << latitude << longitude << altitude;
 
-    QGeoCoordinate coord(latitude, longitude, altitude);
+    QGeoCoordinate waypointCoord(latitude, longitude, altitude);
 
-            // Insert a takeoff to make sure the flight has one, if not might lead to problems.
-            //checks if there is any items first, if count = 0 then it adds it
+            // Insert takeoff only if mission is empty
+
     if (_missionController.visualItems()->count() == 0) {
         Vehicle* vehicle = MultiVehicleManager::instance()->activeVehicle();
         if (vehicle && vehicle->coordinate().isValid()) {
-            QGeoCoordinate takeoffCoord = vehicle->coordinate();
-            _missionController.insertTakeoffItem(takeoffCoord, 10, true);
-            qCDebug(PlanMasterControllerLog) << "Takeoff item inserted at" << takeoffCoord;
+
+            // Use correct lat/lon and set desired takeoff altitude
+            QGeoCoordinate vehicleCoord = vehicle->coordinate();
+            QGeoCoordinate takeoffCoord(vehicleCoord.latitude(), vehicleCoord.longitude(), altitude);
+
+            _missionController.insertTakeoffItem(takeoffCoord, altitude, true);
+            qDebug() << "Takeoff item inserted at" << takeoffCoord;
         } else {
-            qCWarning(PlanMasterControllerLog) << "Unable to get valid vehicle position for takeoff.";
+            qDebug() << "Unable to start mission";
+            return;
         }
     }
+    qDebug() << " altitude:" << altitude;
 
-            // Insert the waypoint, will use waypoint from app
-    _missionController.insertSimpleMissionItem(coord, _missionController.visualItems()->count(), true);
+            // Insert waypoint from kestrel app
+    _missionController.insertSimpleMissionItem(waypointCoord, _missionController.visualItems()->count(), true);
 
-            // Insert RTL command to make sure the droine returns safely
-    MissionItem rtlItem(
-        _missionController.visualItems()->count(),   // sequence
-        MAV_CMD_NAV_RETURN_TO_LAUNCH,
-        MAV_FRAME_MISSION,
-        0, 0, 0, 0, 0, 0, 0,
-        true,    // autoContinue
-        false    // isCurrentItem
-        );
+    qCDebug() << "Waypoint inserted at" << waypointCoord;
 
-    SimpleMissionItem* rtl = new SimpleMissionItem(this, false, rtlItem);
-    _missionController.visualItems()->append(rtl);
-
-            // Finalize
+            // Upload mission to drone
     _missionController.setDirty(true);
     _missionController.sendToVehicle();
 
-    qDebug(PlanMasterControllerLog) << "Waypoint + RTL inserted and mission sent.";
+    qDebug() << "Takeoff + Waypoint mission sent.";
 }
+
 */
 
-// Versjon uten RTL + center hover
-/*
+// test with video capture!
 void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
 {
-    qDebug(PlanMasterControllerLog) << "Adding ROI + Circle waypoint:" << latitude << longitude << altitude;
+    qDebug() << "Adding waypoint from coordinates:" << latitude << longitude << altitude;
 
-    QGeoCoordinate coord(latitude, longitude, altitude);
+    QGeoCoordinate waypointCoord(latitude, longitude, altitude);
 
+            // Insert takeoff only if mission is empty
     if (_missionController.visualItems()->count() == 0) {
         Vehicle* vehicle = MultiVehicleManager::instance()->activeVehicle();
         if (vehicle && vehicle->coordinate().isValid()) {
-            QGeoCoordinate takeoffCoord = vehicle->coordinate();
-            _missionController.insertTakeoffItem(takeoffCoord, 10.0, true);
-            qCDebug(PlanMasterControllerLog) << "Takeoff item inserted at" << takeoffCoord;
+            QGeoCoordinate vehicleCoord = vehicle->coordinate();
+            QGeoCoordinate takeoffCoord(vehicleCoord.latitude(), vehicleCoord.longitude(), altitude);
+
+            _missionController.insertTakeoffItem(takeoffCoord, altitude, true);
+            qDebug() << "Takeoff item inserted at" << takeoffCoord;
+
+                    //Start video recording
+            MissionItem startVideoItem(
+                _missionController.visualItems()->count(),
+                MAV_CMD_VIDEO_START_CAPTURE,
+                MAV_FRAME_MISSION,
+                0, 0, 1, 0, 0, 0, 0,
+                true, false
+                );
+            SimpleMissionItem* videoStart = new SimpleMissionItem(this, false, startVideoItem);
+            _missionController.visualItems()->append(videoStart);
+            qDebug() << "Start video capture command inserted.";
         } else {
-            qCWarning(PlanMasterControllerLog) << "Unable to get valid vehicle position for takeoff.";
+            qDebug() << "Unable to start mission";
+            return;
         }
     }
 
-            // 1. Set ROI (Region of Interest)
-    MissionItem roiItem(
-        _missionController.visualItems()->count(),       // sequence
-        MAV_CMD_DO_SET_ROI_LOCATION,                     // command
-        MAV_FRAME_GLOBAL_RELATIVE_ALT,                   // frame
-        0, 0, 0, 0,                                       // param1-4: unused
-        latitude, longitude, altitude,                   // param5-7: ROI position
-        true, false                                       // autoContinue, isCurrentItem
-        );
-    SimpleMissionItem* roi = new SimpleMissionItem(this, false, roiItem);
-    _missionController.visualItems()->append(roi);
+    qDebug() << " altitude:" << altitude;
 
-            // 2. Add circle/loiter mission
-    MissionItem circleItem(
-        _missionController.visualItems()->count(),       // sequence
-        MAV_CMD_NAV_LOITER_,                        // command
-        MAV_FRAME_GLOBAL_RELATIVE_ALT,                   // frame
-        3,      // param1: number of turns
-        0,      // param2: not used
-        20,     // param3: radius in meters
-        1,      // param4: positive = clockwise
-        //latitude, longitude, altitude,                   // param5-7: loiter center
-        true, false
-        );
-    SimpleMissionItem* circle = new SimpleMissionItem(this, false, circleItem);
-    _missionController.visualItems()->append(circle);
+    _missionController.insertSimpleMissionItem(waypointCoord, _missionController.visualItems()->count(), true);
+    qDebug() << "Waypoint inserted at" << waypointCoord;
 
     _missionController.setDirty(true);
     _missionController.sendToVehicle();
-
-    qDebug(PlanMasterControllerLog) << "ROI + Circle mission sent.";
+    qDebug() << "Takeoff + Start Video + Waypoint mission sent.";
 }
-*/
 
 
-
-
-void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
+void PlanMasterController::giveMissionToAvailableDrone(double latitude, double longitude, double altitude)
 {
-    qDebug(PlanMasterControllerLog) << "Adding ROI + Infinite Circle:" << latitude << longitude << altitude;
+    QmlObjectListModel* vehicleModel = MultiVehicleManager::instance()->vehicles();
 
-    QGeoCoordinate coord(latitude, longitude, altitude);
+    if (!vehicleModel || vehicleModel->count() == 0) {
+        qWarning() << "No vehicles connected in QGC.";
+        return;
+    }
 
-    if (_missionController.visualItems()->count() == 0) {
-        Vehicle* vehicle = MultiVehicleManager::instance()->activeVehicle();
-        if (vehicle && vehicle->coordinate().isValid()) {
-            QGeoCoordinate takeoffCoord = vehicle->coordinate();
-            _missionController.insertTakeoffItem(takeoffCoord, 10.0, true);
-            qCDebug(PlanMasterControllerLog) << "Takeoff item inserted at" << takeoffCoord;
-        } else {
-            qCWarning(PlanMasterControllerLog) << "Unable to get valid vehicle position for takeoff.";
+    for (int i = 0; i < vehicleModel->count(); ++i) {
+        Vehicle* vehicle = qobject_cast<Vehicle*>(vehicleModel->get(i));
+        if (vehicle && !vehicle->armed()) {
+            MultiVehicleManager::instance()->setActiveVehicle(vehicle);
+            qDebug() << "Selected unarmed vehicle ID:" << vehicle->id();
+
+            addWaypoint(latitude, longitude, altitude);
+            return;
         }
     }
 
-            // Set ROI
-    MissionItem roiItem(
-        _missionController.visualItems()->count(),
-        MAV_CMD_DO_SET_ROI_LOCATION,
-        MAV_FRAME_GLOBAL_RELATIVE_ALT,
-        0, 0, 0, 0,
-        latitude, longitude, altitude,
-        true, false
-        );
-    SimpleMissionItem* roi = new SimpleMissionItem(this, false, roiItem);
-    _missionController.visualItems()->append(roi);
-
-            // Infinite loiter
-    MissionItem loiterItem(
-        _missionController.visualItems()->count(),
-        MAV_CMD_NAV_LOITER_UNLIM,
-        MAV_FRAME_GLOBAL_RELATIVE_ALT,
-        0, 0, 20, 1,   // params: unused, unused, radius, direction
-        latitude, longitude, altitude,
-        true, false
-        );
-    SimpleMissionItem* loiter = new SimpleMissionItem(this, false, loiterItem);
-    _missionController.visualItems()->append(loiter);
-
-    _missionController.setDirty(true);
-    _missionController.sendToVehicle();
-
-    qDebug(PlanMasterControllerLog) << "Infinite circle mission sent.";
+    qWarning() << "All vehicles are armed. No mission started.";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

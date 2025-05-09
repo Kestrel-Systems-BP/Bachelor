@@ -24,6 +24,7 @@
 #include "UI/TemperatureReceiver.h"
 #include "UI/CoordinateReceiver.h"
 #include "UI/ProximityCalculator.h"
+#include "UI/sendUdp.h"
 #include "MissionManager/PlanMasterController.h"
 /////
 
@@ -479,6 +480,12 @@ void QGCApplication::_initForNormalAppBoot()
         return new CustomMission();
 
     });
+
+
+   qmlRegisterSingletonType<sendUdp>("QGroundControl", 1, 0, "SendUdp", [](QQmlEngine*, QJSEngine*) -> QObject* {
+    return new sendUdp();
+    });
+
 /*
     qmlRegisterSingletonType<PlanMasterController>("QGroundControl", 1, 0, "PlanMasterController", [](QQmlEngine*, QJSEngine*) -> QObject* {
         return new PlanMasterController();

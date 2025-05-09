@@ -308,6 +308,14 @@ VisualMissionItem* MissionController::_insertSimpleMissionItemWorker(QGeoCoordin
     newItem->setSequenceNumber(sequenceNumber);
     newItem->setCoordinate(coordinate);
     newItem->setCommand(command);
+
+    //kest line
+
+    newItem->missionItem().setFrame(MAV_FRAME_GLOBAL_RELATIVE_ALT);
+    //
+
+
+
     _initVisualItem(newItem);
 
     if (newItem->specifiesAltitude()) {
