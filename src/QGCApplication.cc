@@ -26,6 +26,10 @@
 #include "UI/ProximityCalculator.h"
 #include "UI/sendUdp.h"
 #include "MissionManager/PlanMasterController.h"
+
+#include "UI/receiveTCP.h"
+#include "UI/TCPSender.h"
+
 /////
 
 #include "QGCApplication.h"
@@ -438,6 +442,26 @@ qDebug() << "trying to start startCoordinateReceiver";
 
 
 
+void QGCApplication::startreceiveTCP(){
+
+qDebug() << "trying to startTCP Receiver";
+
+        if (_receiveTCP){
+                qDebug() << "TCP receiver already initialized";
+                return;
+        }
+
+
+        _receiveTCP = new ReceiveTCP(this);
+	_receiveTCP->startListening(5004);
+        _qmlAppEngine->rootContext()->setContextProperty("receiveTCP", _receiveTCP);
+        qDebug() << "TCP receiver started + registered in QML";
+        }
+
+
+
+
+
 
 
 
@@ -481,6 +505,17 @@ void QGCApplication::_initForNormalAppBoot()
    qmlRegisterSingletonType<sendUdp>("QGroundControl", 1, 0, "SendUdp", [](QQmlEngine*, QJSEngine*) -> QObject* {
     return new sendUdp();
     });
+
+    qmlRegisterSingletonType<TCPSender>("QGroundControl", 1, 0, "TCPSender", [](QQmlEngine*, QJSEngine*) -> QObject* {
+    return new TCPSender();
+    });
+
+
+
+
+
+
+
 
 /*
     qmlRegisterSingletonType<PlanMasterController>("QGroundControl", 1, 0, "PlanMasterController", [](QQmlEngine*, QJSEngine*) -> QObject* {
@@ -628,6 +663,7 @@ if (_qmlAppEngine) {
     	startUdpReceiver();
 	startTemperatureReceiver();
 	startCoordinateReceiver();
+	startreceiveTCP();
 
      qDebug() << "AFTER startUdpReceiver and startTemperatureReceiver";
 

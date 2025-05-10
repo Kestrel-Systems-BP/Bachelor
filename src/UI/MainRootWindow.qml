@@ -1316,7 +1316,41 @@ MouseArea {
 
         //////////////////
 
+    // new for TCP instead
+        Connections {
+            target: receiveTCP
+            
 
+            function onTemperatureReceived(temperature) {
+                //temperatureMessage = temp
+                dispenserData["1"].temperature = temperature
+                dispenserData = dispenserData
+            }
+
+            function onHumidityReceived(hum) {
+                //humidityMessage = hum
+                dispenserData["1"].humidity = hum
+                dispenserData = dispenserData
+            }
+
+            function onLidStatusReceived(status) {
+                //lidStatus = status
+                dispenserData["1"].status = status
+                dispenserData = dispenserData
+
+            }
+
+            function onChargingStatusReceived(status) {
+                //chargingStatus = status
+                dispenserData["1"].chargerStatus = status
+                dispenserData = dispenserData
+            }
+        }
+
+
+
+
+     //
 
 
 
