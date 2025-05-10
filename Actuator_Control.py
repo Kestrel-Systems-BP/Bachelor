@@ -23,14 +23,14 @@ async def control_actuator(actuator_queue, sending_queue, relay_pin1, relay_pin2
                     GPIO.output(relay_pin2, GPIO.LOW)
                     await asyncio.sleep(15)
                     print("Open Command Recieved and executed")
-                    await sending_queue.put({"type": "status_actuator", "data": "Dispenser opened"})
+                    await sending_queue.put({"type": "status_actuator", "data": "Open"})
                 elif command["data"] == "close":
                     print("data == close")
                     GPIO.output(relay_pin1, GPIO.HIGH)
                     GPIO.output(relay_pin2, GPIO.HIGH)
                     await asyncio.sleep(15)
                     print("Close command received and executed")
-                    await sending_queue.put({"type": "status_actuator", "data": "Dispenser closed"})
+                    await sending_queue.put({"type": "status_actuator", "data": "Closed"})
             actuator_queue.task_done()
         except Exception as e:
             logging.error(f"Error with the actuator: {e}")

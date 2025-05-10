@@ -1,8 +1,14 @@
-udp:
+#udp:
+#  send_address: "100.117.141.114"
+#  sensor_port: 5007
+#  actuator_port: 5006
+#  receiving_port: 5005
+tcp:
   send_address: "100.117.141.114"
-  sensor_port: 5007
-  actuator_port: 5006
-  receiving_port: 5005
+  sensor_port: 5004
+  actuator_port: 5004
+  charging_port: 5004
+  receiving_port: 5003
 gpio:
   dht11_pin: 23
   actuator_relay_pin1: 26

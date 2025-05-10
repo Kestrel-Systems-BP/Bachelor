@@ -20,14 +20,99 @@ logging.basicConfig(
 
 
 # global send socket
-send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+#send_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 # global receive socket
-recv_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-recv_socket.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 65536)
-recv_socket.bind(('0.0.0.0', config['udp']['receiving_port']))
+#recv_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+#recv_socket.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 65536)
+#recv_socket.bind(('0.0.0.0', config['udp']['receiving_port']))
 
 
+async def tcp_sender(sending_queue):
+    connections = {}
+    send_address = config['tcp']['send_address']
+
+    async def get_connection(port):
+        if port not in connections or connections[port][1].is_closing():
+            try:
+                reader, writer = await asyncio.open_connection(send_address, port)
+                connections[port] = (reader, writer)
+            except Exception as e:
+                logging.error(f"Failed to connect on port {port}: {e}")
+                return None, None
+        return connections[port]
+
+    while True:
+        try:
+            message = await sending_queue.get()
+
+             # Select addres based on type of communication
+            if message["type"] == "sensor":
+                port = config['tcp']['sensor_port']
+            elif message["type"] == "status_actuator":
+                port = config['tcp']['actuator_port']
+            elif message["type"] == "charging_status":
+                port = config['tcp']['charging_port']
+            else:
+                logging.warning(f"(Unknown message: {message.get('type')}")
+                sending_queue.task_done()
+                continue
+            #Establish or get connection
+            reader, writer = await get_connection(port)
+            if writer is None:
+                logging.error(f"No connection on {port}, deleting message")
+                sending_queue.task_done()
+                continue
+
+            #Sending the message
+            try:
+                writer.write((message["data"] + "\n").encode())
+                await writer.drain()
+            except Exception as e:
+                logging.error(f"TCP send error on {port}: {e}")
+                writer.close()
+                await writer.wait_closed()
+                connections.pop(port, None)
+
+            sending_queue.task_done()
+
+        except Exception as e:
+            logging.error(f"TCP sender error: {e}")
+            await ascyncio.sleep(1)
+
+
+async def tcp_receiver(actuator_queue, charging_queue):
+    async def handle_client(reader, writer):
+        addr = writer.get_extra_info('peername')
+
+        while True:
+            try:
+                #Read until a newline
+                data = await reader.readuntil(b"\n")
+                if not data:
+                    break
+                message = data.decode('utf-8').strip().lower()
+                if message in ["open", "close"]:
+                    await actuator_queue.put({"type": "actuator", "data": message})
+                elif message in ["start", "stop"]:
+                    await charging_queue.put({"type": "charging", "data": message})
+            except asyncio.IncompleteReadError:
+                logging.error(f"Connection closed by {addr}")
+                break
+            except Exception as e:
+                logging.error(f"TCP receive error from {addr}: {e}")
+                break
+        writer.close()
+        await writer.wait_closed()
+
+    try:
+        server = await asyncio.start_server(handle_client, '0.0.0.0', config['tcp']['receiving_port'])
+        async with server:
+            await server.serve_forever()
+    except Exception as e:
+        logging.error(f"TCP server error: {e}")
+
+"""
 async def udp_receiver(actuator_queue, charging_queue):
 #    print("Starting udp_receiver")
     while True:
@@ -74,7 +159,7 @@ async def udp_sender(sending_queue):
  #           print("exception sending UDP: {e}")
             logging.error(f"Error with UDP sender: {e}")
             await asyncio.sleep(1)
-
+"""
 async def main_function():
     print("Starting main fuction")
     actuator_queue = asyncio.Queue()
@@ -89,8 +174,10 @@ async def main_function():
     await asyncio.gather(
     read_dht11(sending_queue, sensor_pin),
     control_actuator(actuator_queue, sending_queue, actuator_pin1, actuator_pin2),
-    udp_sender(sending_queue),
-    udp_receiver(actuator_queue, charging_queue),
+#    udp_sender(sending_queue),
+#    udp_receiver(actuator_queue, charging_queue),
+    tcp_sender(sending_queue),
+    tcp_receiver(actuator_queue, charging_queue),
     control_charging(charging_queue, sending_queue, charging_relay_pin)
     )
 
@@ -98,6 +185,8 @@ if __name__ == "__main__":
     try:
         asyncio.run(main_function())
     except KeyboardInterrupt:
-        send_sock.close()
-        recv_socket.close()
+        #send_sock.close()
+        #recv_socket.close()
+        print("Closing after ^C command")
+    finally:
         GPIO.cleanup()

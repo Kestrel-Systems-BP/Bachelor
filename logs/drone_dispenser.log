@@ -448,3 +448,162 @@ KeyboardInterrupt
 2025-05-08 16:33:31,085 ERROR Error with UDP sender: 'charging_port'
 2025-05-08 16:33:32,205 ERROR Error with UDP sender: 'charging_port'
 2025-05-08 16:33:42,148 WARNING No data to read
+2025-05-08 16:43:09,296 WARNING No data to read
+2025-05-08 16:43:25,885 WARNING No data to read
+2025-05-08 16:43:48,001 WARNING No data to read
+2025-05-08 16:44:58,745 ERROR Error with UDP sender: 'charging_port'
+2025-05-08 16:45:05,412 WARNING No data to read
+2025-05-08 16:45:27,529 WARNING No data to read
+2025-05-08 16:45:33,063 WARNING No data to read
+2025-05-08 16:45:38,596 WARNING No data to read
+2025-05-08 16:46:39,433 WARNING No data to read
+2025-05-08 16:47:07,089 WARNING No data to read
+2025-05-08 16:47:23,685 WARNING No data to read
+2025-05-08 16:47:29,216 WARNING No data to read
+2025-05-08 16:47:56,872 WARNING No data to read
+2025-05-08 16:48:02,405 WARNING No data to read
+2025-05-08 16:49:25,346 WARNING No data to read
+2025-05-08 16:49:30,877 WARNING No data to read
+2025-05-08 16:58:27,424 WARNING No data to read
+2025-05-08 16:59:00,608 WARNING No data to read
+2025-05-08 16:59:17,196 WARNING No data to read
+2025-05-08 16:59:50,380 WARNING No data to read
+2025-05-08 17:00:23,565 WARNING No data to read
+2025-05-08 17:00:34,628 WARNING No data to read
+2025-05-08 17:01:24,409 WARNING No data to read
+2025-05-08 17:01:35,469 WARNING No data to read
+2025-05-08 17:02:58,415 WARNING No data to read
+2025-05-08 17:03:09,477 WARNING No data to read
+2025-05-08 17:03:15,005 WARNING No data to read
+2025-05-08 17:03:53,713 WARNING No data to read
+2025-05-08 17:04:04,776 WARNING No data to read
+2025-05-08 17:06:00,893 WARNING No data to read
+2025-05-08 17:06:11,952 WARNING No data to read
+2025-05-08 17:06:50,673 WARNING No data to read
+2025-05-08 17:06:56,205 WARNING No data to read
+2025-05-08 17:07:18,321 WARNING No data to read
+2025-05-08 17:07:23,852 WARNING No data to read
+2025-05-08 17:08:19,164 WARNING No data to read
+2025-05-08 17:08:30,224 WARNING No data to read
+2025-05-08 17:08:57,881 WARNING No data to read
+2025-05-08 17:09:08,943 WARNING No data to read
+2025-05-08 17:09:47,657 WARNING No data to read
+2025-05-08 17:10:20,846 WARNING No data to read
+2025-05-08 17:10:26,377 WARNING No data to read
+2025-05-08 17:10:37,440 WARNING No data to read
+2025-05-08 17:11:10,619 WARNING No data to read
+2025-05-08 17:11:27,215 WARNING No data to read
+2025-05-08 17:12:00,401 WARNING No data to read
+2025-05-08 17:12:39,115 WARNING No data to read
+2025-05-08 17:13:23,351 WARNING No data to read
+2025-05-08 17:15:30,532 WARNING No data to read
+2025-05-08 17:16:42,413 WARNING No data to read
+2025-05-08 17:16:47,946 WARNING No data to read
+2025-05-08 17:16:59,010 WARNING No data to read
+2025-05-08 17:18:16,432 WARNING No data to read
+2025-05-08 17:18:49,604 WARNING No data to read
+2025-05-08 17:19:17,249 WARNING No data to read
+2025-05-08 17:20:07,028 WARNING No data to read
+2025-05-08 17:20:23,617 WARNING No data to read
+2025-05-10 13:46:26,875 ERROR TCP sender error: 'udp'
+2025-05-10 13:46:26,880 ERROR TCP server error: 'command_port'
+2025-05-10 13:47:26,790 WARNING No data to read
+2025-05-10 13:47:26,792 ERROR TCP server error: 'command_port'
+2025-05-10 13:47:32,322 WARNING No data to read
+2025-05-10 13:47:43,302 ERROR Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main_function() done, defined at /home/pi/Kestrel/QGC_Communication.py:163> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "/home/pi/Kestrel/QGC_Communication.py", line 186, in <module>
+    asyncio.run(main_function())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 47, in run
+    _cancel_all_tasks(loop)
+  File "/usr/lib/python3.10/asyncio/runners.py", line 63, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Kestrel/QGC_Communication.py", line 174, in main_function
+    await asyncio.gather(
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Kestrel/DHT11_control.py", line 13, in read_dht11
+    humidity, temperature = Adafruit_DHT.read(sensor, sensor_pin)
+  File "/home/pi/.local/lib/python3.10/site-packages/Adafruit_DHT/common.py", line 81, in read
+    return platform.read(sensor, pin)
+  File "/home/pi/.local/lib/python3.10/site-packages/Adafruit_DHT/Raspberry_Pi_2.py", line 29, in read
+    result, humidity, temp = driver.read(sensor, int(pin))
+KeyboardInterrupt
+2025-05-10 13:48:17,372 ERROR TCP server error: 'command_port'
+2025-05-10 13:54:31,238 WARNING No data to read
+2025-05-10 13:54:31,238 ERROR TCP server error: 'command_port'
+2025-05-10 13:54:44,281 WARNING No data to read
+2025-05-10 13:54:44,282 ERROR TCP server error: 'command_port'
+2025-05-10 13:55:00,878 WARNING No data to read
+2025-05-10 13:55:11,938 WARNING No data to read
+2025-05-10 13:56:48,801 WARNING No data to read
+2025-05-10 13:56:48,802 ERROR TCP server error: 'command_port'
+2025-05-10 13:56:59,860 WARNING No data to read
+2025-05-10 13:58:17,277 WARNING No data to read
+2025-05-10 13:58:33,873 WARNING No data to read
+2025-05-10 14:02:59,273 ERROR Connection closed by ('127.0.0.1', 46144)
+2025-05-10 14:03:02,207 ERROR Connection closed by ('127.0.0.1', 53986)
+2025-05-10 14:03:32,446 WARNING No data to read
+2025-05-10 14:03:43,501 WARNING No data to read
+2025-05-10 14:03:46,156 ERROR Connection closed by ('127.0.0.1', 38682)
+2025-05-10 14:04:05,622 WARNING No data to read
+2025-05-10 14:04:20,946 ERROR Connection closed by ('127.0.0.1', 42826)
+2025-05-10 14:04:23,266 ERROR Connection closed by ('127.0.0.1', 42830)
+2025-05-10 14:04:25,931 ERROR Connection closed by ('127.0.0.1', 42836)
+2025-05-10 14:04:31,779 ERROR Connection closed by ('127.0.0.1', 34972)
+2025-05-10 14:04:35,508 ERROR Connection closed by ('127.0.0.1', 34986)
+2025-05-10 14:05:23,903 ERROR Connection closed by ('127.0.0.1', 47886)
+2025-05-10 14:05:56,197 WARNING No data to read
+2025-05-10 14:07:43,691 ERROR Connection closed by ('127.0.0.1', 48890)
+2025-05-10 14:07:51,239 WARNING No data to read
+2025-05-10 14:08:07,838 WARNING No data to read
+2025-05-10 14:08:13,366 WARNING No data to read
+2025-05-10 14:08:24,429 WARNING No data to read
+2025-05-10 14:08:35,494 WARNING No data to read
+2025-05-10 14:08:41,025 WARNING No data to read
+2025-05-10 14:09:14,214 WARNING No data to read
+2025-05-10 14:11:21,413 WARNING No data to read
+2025-05-10 14:11:26,947 WARNING No data to read
+2025-05-10 14:11:32,478 WARNING No data to read
+2025-05-10 14:11:38,006 WARNING No data to read
+2025-05-10 14:12:27,787 WARNING No data to read
+2025-05-10 14:13:23,070 WARNING No data to read
+2025-05-10 14:15:30,250 WARNING No data to read
+2025-05-10 14:15:35,783 WARNING No data to read
+2025-05-10 14:17:09,809 WARNING No data to read
+2025-05-10 14:17:54,037 WARNING No data to read
+2025-05-10 14:18:16,157 WARNING No data to read
+2025-05-10 14:18:43,812 WARNING No data to read
+2025-05-10 14:19:33,590 WARNING No data to read
+2025-05-10 14:19:44,648 WARNING No data to read
+2025-05-10 14:20:28,899 WARNING No data to read
+2025-05-10 14:20:34,431 WARNING No data to read
+2025-05-10 14:21:57,377 WARNING No data to read
+2025-05-10 14:22:08,439 WARNING No data to read
+2025-05-10 14:22:19,498 WARNING No data to read
+2025-05-10 14:22:25,029 WARNING No data to read
+2025-05-10 14:22:36,086 WARNING No data to read
+2025-05-10 14:22:41,617 WARNING No data to read
+2025-05-10 14:22:47,149 ERROR TCP send error on 5004: Connection lost
+2025-05-10 14:22:47,149 ERROR TCP sender error: [Errno 32] Broken pipe
+2025-05-10 14:27:24,962 ERROR Connection closed by ('100.117.141.114', 33728)
+2025-05-10 14:27:51,886 ERROR Connection closed by ('100.117.141.114', 54078)
+2025-05-10 14:27:54,932 WARNING No data to read
+2025-05-10 14:29:06,821 WARNING No data to read
