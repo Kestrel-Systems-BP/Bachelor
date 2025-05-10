@@ -30,7 +30,7 @@ void ReceiveTCP::handleNewConnection() {
             }
         } else if (message == "Open" || message == "Closed") {
             emit lidStatusReceived(message);
-        } else if (message == "Charging" || message == "Not charging") {
+        } else if (message == "ON" || message == "OFF") {
             emit chargingStatusReceived(message);
         } else {
             qWarning() << "ReceiveTCP: WRONG FORMAT!.";

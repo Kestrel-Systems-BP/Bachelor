@@ -8,7 +8,8 @@ void TCPSender::sendMessage(const QString &message) {
     socket->connectToHost(_host, _port);
 
     if (socket->waitForConnected(1000)) {
-        socket->write(message.toUtf8());
+	QString messageWithNewline = message + "\n";
+        socket->write(messageWithNewline.toUtf8());
         socket->flush();
         socket->waitForBytesWritten();
         socket->disconnectFromHost();

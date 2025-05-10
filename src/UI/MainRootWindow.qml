@@ -395,12 +395,14 @@ MouseArea {
 
                     if(proximitySlider.proximityOn && calculatedDistance > 20 && !openAndCloseDispenser){
                         console.log("Drone is more than 20 meters away, closing dispenser")
-                        SendUdp.close()
+                        //SendUdp.close()
+                        TCPSender.sendMessage("close")
                         openAndCloseDispenser = true
                     }
                     else if (proximitySlider.proximityOn && calculatedDistance < 15 && openAndCloseDispenser){
                         console.log("Drone is less than 15 meters away, opening dispenser")
-                        SendUdp.open()
+                        //SendUdp.open()
+                        TCPSender.sendMessage("open")
                         openAndCloseDispenser = false
                     }
 
@@ -1063,7 +1065,8 @@ MouseArea {
                             onClicked: {
                                 console.log("Open Dispenser clicked")
                                 //qgcApp.startUdpSender()
-                                SendUdp.open()
+                                //SendUdp.open()
+                                TCPSender.sendMessage("open")
                                 openClosePopup.visible = false
                             }
                         }
@@ -1089,7 +1092,8 @@ MouseArea {
                             onClicked: {
                                 console.log("Close Dispenser clicked")
                                 //qgcApp.startUdpCloseSender()
-                                SendUdp.close()
+                                //SendUdp.close()
+                                TCPSender.sendMessage("close")
                                 openClosePopup.visible = false
                             }
                         }
