@@ -1,6 +1,3 @@
-
-#This code is based around similar codes used to calibrate HSV ranges
-
 #Sources:
 #https://stackoverflow.com/questions/73973989/colour-calibration-in-hsv-colour-space (02.05.2025)
 #https://github.com/abhisavaliya/hsv_calibration/blob/master/hsv_calibration/hsv_calibration.py (02.05.2025)
@@ -8,7 +5,6 @@
 #This code is solely for calibrating HSV
 #It allows for real-time adjustments in HSV settings
 #Tests should be done under dynamic conditions for optimilization
-#Settings are plotted into the "landing_identifier" file
 #H = Hue (color)
 #S = Saturation (color purity)
 #V = Value (intensity)
@@ -16,10 +12,11 @@
 import cv2
 import numpy as np
 
+
 #OpenCV requires a callback function for the trackbars to handle changes
-#The function is simply a placeholder that does nothing
-#cv2.createTrackbar expects a callback, and this satifies that requirement without adding any unnecessary logic
 def nothing(x):
+    #The function is simply a placeholder that does nothing
+    #cv2.createTrackbar expects a callback, and this satifies that requirement without adding any unnecessary logic
     pass
 
 #Opens a window with track bars to adjust each value individually
