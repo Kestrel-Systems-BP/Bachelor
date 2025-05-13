@@ -29,6 +29,7 @@ class MAVLinkConnection:
     async def disconnect(self):
         """Disconnect and disarm the drone"""
         print("Disconnecting")
+        self.drone = None
         print("Disconnected")
 
 if __name__ == "__main__":
@@ -39,6 +40,7 @@ if __name__ == "__main__":
             await mavlink.connect()
             await mavlink.wait_heartbeat()
             print("MAVLink test successful")
+            await asyncio.sleep(2)
             #Needs a pause to observe the connection
             await mavlink.disconnect()
         except Exception as e:
