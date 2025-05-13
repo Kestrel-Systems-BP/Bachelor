@@ -9,9 +9,10 @@ logging.basicConfig(
 
 async def control_actuator(actuator_queue, sending_queue, relay_pin1, relay_pin2):
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(relay_pin1, GPIO.OUT)
-    GPIO.setup(relay_pin2, GPIO.OUT)
+    GPIO.setup(relay_pin1, GPIO.OUT, initial=GPIO.HIGH)
+    GPIO.setup(relay_pin2, GPIO.OUT, initial=GPIO.HIGH)
     while True:
+
         try:
             command = await actuator_queue.get()
             print(f"Recieved in Actuator: {command}")

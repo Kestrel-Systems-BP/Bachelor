@@ -607,3 +607,2271 @@ KeyboardInterrupt
 2025-05-10 14:27:51,886 ERROR Connection closed by ('100.117.141.114', 54078)
 2025-05-10 14:27:54,932 WARNING No data to read
 2025-05-10 14:29:06,821 WARNING No data to read
+2025-05-10 14:39:13,590 ERROR Connection closed by ('100.117.141.114', 47904)
+2025-05-10 14:39:38,662 WARNING No data to read
+2025-05-10 14:39:44,195 WARNING No data to read
+2025-05-10 14:40:17,154 ERROR Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main_function() done, defined at /home/pi/Kestrel/QGC_Communication.py:163> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "/home/pi/Kestrel/QGC_Communication.py", line 186, in <module>
+    asyncio.run(main_function())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 47, in run
+    _cancel_all_tasks(loop)
+  File "/usr/lib/python3.10/asyncio/runners.py", line 63, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Kestrel/QGC_Communication.py", line 174, in main_function
+    await asyncio.gather(
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Kestrel/DHT11_control.py", line 13, in read_dht11
+    humidity, temperature = Adafruit_DHT.read(sensor, sensor_pin)
+  File "/home/pi/.local/lib/python3.10/site-packages/Adafruit_DHT/common.py", line 81, in read
+    return platform.read(sensor, pin)
+  File "/home/pi/.local/lib/python3.10/site-packages/Adafruit_DHT/Raspberry_Pi_2.py", line 29, in read
+    result, humidity, temp = driver.read(sensor, int(pin))
+KeyboardInterrupt
+2025-05-10 14:41:29,089 WARNING No data to read
+2025-05-10 14:41:40,148 WARNING No data to read
+2025-05-10 14:41:45,678 WARNING No data to read
+2025-05-10 14:41:56,743 WARNING No data to read
+2025-05-10 14:42:13,336 WARNING No data to read
+2025-05-10 14:42:29,932 WARNING No data to read
+2025-05-10 14:42:57,569 WARNING No data to read
+2025-05-10 14:43:08,634 WARNING No data to read
+2025-05-10 14:43:19,696 WARNING No data to read
+2025-05-10 14:43:36,289 ERROR TCP send error on 5004: Connection lost
+2025-05-10 14:43:36,289 ERROR TCP sender error: [Errno 32] Broken pipe
+2025-05-10 14:44:19,538 WARNING No data to read
+2025-05-10 14:44:25,073 WARNING No data to read
+2025-05-10 14:44:30,606 WARNING No data to read
+2025-05-10 14:44:30,711 ERROR Connection closed by ('100.117.141.114', 33334)
+2025-05-10 14:44:41,664 WARNING No data to read
+2025-05-10 14:45:09,312 WARNING No data to read
+2025-05-10 14:45:14,846 WARNING No data to read
+2025-05-10 14:45:25,316 ERROR Connection closed by ('100.117.141.114', 60608)
+2025-05-10 14:45:25,903 WARNING No data to read
+2025-05-10 14:45:31,436 WARNING No data to read
+2025-05-10 14:45:42,498 WARNING No data to read
+2025-05-10 14:46:37,790 WARNING No data to read
+2025-05-10 14:48:00,746 WARNING No data to read
+2025-05-10 14:48:11,807 WARNING No data to read
+2025-05-10 14:48:44,993 WARNING No data to read
+2025-05-10 14:49:51,348 WARNING No data to read
+2025-05-10 14:49:56,881 WARNING No data to read
+2025-05-10 14:50:02,417 WARNING No data to read
+2025-05-10 14:50:19,009 WARNING No data to read
+2025-05-10 14:50:30,074 WARNING No data to read
+2025-05-10 14:52:09,607 WARNING No data to read
+2025-05-10 14:52:20,669 WARNING No data to read
+2025-05-10 14:52:26,200 WARNING No data to read
+2025-05-10 14:52:42,795 WARNING No data to read
+2025-05-10 14:53:04,921 WARNING No data to read
+2025-05-10 14:53:49,169 WARNING No data to read
+2025-05-10 14:55:23,178 WARNING No data to read
+2025-05-10 14:55:57,075 WARNING No data to read
+2025-05-10 14:57:01,620 WARNING No data to read
+2025-05-10 15:05:34,205 WARNING No data to read
+2025-05-10 15:05:45,264 ERROR TCP send error on 5004: Connection lost
+2025-05-10 15:05:45,264 ERROR TCP sender error: [Errno 32] Broken pipe
+2025-05-10 15:05:58,319 ERROR Connection closed by ('100.117.141.114', 36910)
+2025-05-10 15:06:23,664 WARNING No data to read
+2025-05-10 15:06:23,925 ERROR Connection closed by ('100.117.141.114', 48218)
+2025-05-10 15:10:02,056 WARNING No data to read
+2025-05-10 15:10:18,646 WARNING No data to read
+2025-05-10 15:10:29,707 WARNING No data to read
+2025-05-10 15:10:36,031 ERROR Connection closed by ('127.0.0.1', 57170)
+2025-05-10 15:10:40,490 ERROR Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main_function() done, defined at /home/pi/Kestrel/QGC_Communication.py:163> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "/home/pi/Kestrel/QGC_Communication.py", line 186, in <module>
+    asyncio.run(main_function())
+  File "/usr/lib/python3.10/asyncio/runners.py", line 47, in run
+    _cancel_all_tasks(loop)
+  File "/usr/lib/python3.10/asyncio/runners.py", line 63, in _cancel_all_tasks
+    loop.run_until_complete(tasks.gather(*to_cancel, return_exceptions=True))
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Kestrel/QGC_Communication.py", line 174, in main_function
+    await asyncio.gather(
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
+    handle._run()
+  File "/usr/lib/python3.10/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/pi/Kestrel/DHT11_control.py", line 13, in read_dht11
+    humidity, temperature = Adafruit_DHT.read(sensor, sensor_pin)
+  File "/home/pi/.local/lib/python3.10/site-packages/Adafruit_DHT/common.py", line 81, in read
+    return platform.read(sensor, pin)
+  File "/home/pi/.local/lib/python3.10/site-packages/Adafruit_DHT/Raspberry_Pi_2.py", line 29, in read
+    result, humidity, temp = driver.read(sensor, int(pin))
+KeyboardInterrupt
+2025-05-10 15:12:32,691 ERROR Connection closed by ('127.0.0.1', 54838)
+2025-05-10 15:17:19,726 WARNING No data to read
+2025-05-10 15:17:23,731 ERROR Connection closed by ('127.0.0.1', 57502)
+2025-05-10 15:17:33,150 ERROR Connection closed by ('127.0.0.1', 46500)
+2025-05-10 15:17:47,371 ERROR Connection closed by ('100.117.141.114', 37154)
+2025-05-10 15:17:58,429 WARNING No data to read
+2025-05-10 15:18:00,031 ERROR Connection closed by ('127.0.0.1', 46504)
+2025-05-10 15:18:09,487 WARNING No data to read
+2025-05-10 15:18:31,606 WARNING No data to read
+2025-05-10 15:18:42,667 WARNING No data to read
+2025-05-10 15:18:53,732 WARNING No data to read
+2025-05-10 15:18:59,264 WARNING No data to read
+2025-05-10 15:19:21,390 WARNING No data to read
+2025-05-10 15:19:54,568 WARNING No data to read
+2025-05-10 15:20:49,878 WARNING No data to read
+2025-05-10 15:20:55,409 WARNING No data to read
+2025-05-10 15:22:23,896 WARNING No data to read
+2025-05-10 15:39:48,025 WARNING No data to read
+2025-05-10 15:39:53,554 WARNING No data to read
+2025-05-10 15:40:08,503 ERROR Connection closed by ('100.117.141.114', 34370)
+2025-05-10 15:40:22,512 ERROR Connection closed by ('100.117.141.114', 40760)
+2025-05-10 15:40:24,190 ERROR Connection closed by ('100.117.141.114', 40774)
+2025-05-10 15:40:25,554 ERROR Connection closed by ('100.117.141.114', 49034)
+2025-05-10 15:40:26,733 WARNING No data to read
+2025-05-10 15:40:36,489 ERROR Connection closed by ('100.117.141.114', 53704)
+2025-05-10 15:40:59,907 WARNING No data to read
+2025-05-10 15:41:22,028 WARNING No data to read
+2025-05-10 15:42:33,921 WARNING No data to read
+2025-05-10 15:43:01,570 WARNING No data to read
+2025-05-10 15:43:34,760 WARNING No data to read
+2025-05-10 15:43:51,354 WARNING No data to read
+2025-05-10 15:44:52,174 WARNING No data to read
+2025-05-10 15:45:19,830 WARNING No data to read
+2025-05-10 15:45:36,424 WARNING No data to read
+2025-05-10 15:45:41,955 WARNING No data to read
+2025-05-10 15:45:47,487 WARNING No data to read
+2025-05-10 15:46:04,076 ERROR TCP send error on 5004: Connection lost
+2025-05-10 15:46:04,076 ERROR TCP sender error: [Errno 32] Broken pipe
+2025-05-10 15:46:05,460 WARNING No data to read
+2025-05-10 15:46:33,114 WARNING No data to read
+2025-05-10 15:46:44,174 WARNING No data to read
+2025-05-10 15:46:55,237 WARNING No data to read
+2025-05-10 15:47:06,301 WARNING No data to read
+2025-05-10 15:47:22,891 WARNING No data to read
+2025-05-10 15:47:56,076 WARNING No data to read
+2025-05-10 15:48:12,672 WARNING No data to read
+2025-05-10 15:48:56,910 WARNING No data to read
+2025-05-10 15:49:07,971 WARNING No data to read
+2025-05-10 15:49:41,160 ERROR TCP send error on 5004: Connection lost
+2025-05-10 15:49:41,160 ERROR TCP sender error: [Errno 32] Broken pipe
+2025-05-10 15:49:42,512 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:49:42,513 ERROR No connection on 5004, deleting message
+2025-05-10 15:49:48,042 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:49:48,043 ERROR No connection on 5004, deleting message
+2025-05-10 15:49:53,566 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:49:53,566 ERROR No connection on 5004, deleting message
+2025-05-10 15:49:59,050 WARNING No data to read
+2025-05-10 15:50:04,641 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:50:04,642 ERROR No connection on 5004, deleting message
+2025-05-10 15:50:10,173 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:50:10,174 ERROR No connection on 5004, deleting message
+2025-05-10 15:50:15,712 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:50:15,712 ERROR No connection on 5004, deleting message
+2025-05-10 15:50:21,189 WARNING No data to read
+2025-05-10 15:50:26,769 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:50:26,769 ERROR No connection on 5004, deleting message
+2025-05-10 15:50:32,305 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:50:32,306 ERROR No connection on 5004, deleting message
+2025-05-10 15:50:37,838 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:50:37,838 ERROR No connection on 5004, deleting message
+2025-05-10 15:50:43,359 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:50:43,359 ERROR No connection on 5004, deleting message
+2025-05-10 15:50:48,845 WARNING No data to read
+2025-05-10 15:50:54,376 WARNING No data to read
+2025-05-10 15:50:59,961 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:50:59,962 ERROR No connection on 5004, deleting message
+2025-05-10 15:51:05,498 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:51:05,499 ERROR No connection on 5004, deleting message
+2025-05-10 15:51:11,016 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:51:11,017 ERROR No connection on 5004, deleting message
+2025-05-10 15:51:16,545 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:51:16,545 ERROR No connection on 5004, deleting message
+2025-05-10 15:51:22,073 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:51:22,074 ERROR No connection on 5004, deleting message
+2025-05-10 15:51:27,612 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:51:27,613 ERROR No connection on 5004, deleting message
+2025-05-10 15:51:33,139 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:51:33,140 ERROR No connection on 5004, deleting message
+2025-05-10 15:51:38,666 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:51:38,667 ERROR No connection on 5004, deleting message
+2025-05-10 15:51:44,189 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:51:44,189 ERROR No connection on 5004, deleting message
+2025-05-10 15:51:49,672 WARNING No data to read
+2025-05-10 15:51:55,250 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:51:55,251 ERROR No connection on 5004, deleting message
+2025-05-10 15:52:00,736 WARNING No data to read
+2025-05-10 15:52:06,317 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:52:06,317 ERROR No connection on 5004, deleting message
+2025-05-10 15:52:11,804 WARNING No data to read
+2025-05-10 15:52:17,334 WARNING No data to read
+2025-05-10 15:52:22,914 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:52:22,914 ERROR No connection on 5004, deleting message
+2025-05-10 15:52:28,393 WARNING No data to read
+2025-05-10 15:52:33,972 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:52:33,972 ERROR No connection on 5004, deleting message
+2025-05-10 15:52:39,456 WARNING No data to read
+2025-05-10 15:52:45,037 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:52:45,037 ERROR No connection on 5004, deleting message
+2025-05-10 15:52:50,563 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:52:50,563 ERROR No connection on 5004, deleting message
+2025-05-10 15:52:56,043 WARNING No data to read
+2025-05-10 15:53:01,621 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:53:01,622 ERROR No connection on 5004, deleting message
+2025-05-10 15:53:07,154 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:53:07,154 ERROR No connection on 5004, deleting message
+2025-05-10 15:53:12,685 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:53:12,686 ERROR No connection on 5004, deleting message
+2025-05-10 15:53:18,172 WARNING No data to read
+2025-05-10 15:53:23,750 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:53:23,751 ERROR No connection on 5004, deleting message
+2025-05-10 15:53:29,283 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:53:29,283 ERROR No connection on 5004, deleting message
+2025-05-10 15:53:34,816 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:53:34,817 ERROR No connection on 5004, deleting message
+2025-05-10 15:53:40,300 WARNING No data to read
+2025-05-10 15:53:45,880 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:53:45,881 ERROR No connection on 5004, deleting message
+2025-05-10 15:53:51,417 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:53:51,418 ERROR No connection on 5004, deleting message
+2025-05-10 15:53:56,949 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:53:56,949 ERROR No connection on 5004, deleting message
+2025-05-10 15:54:02,480 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:54:02,481 ERROR No connection on 5004, deleting message
+2025-05-10 15:54:07,957 WARNING No data to read
+2025-05-10 15:54:13,536 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:54:13,537 ERROR No connection on 5004, deleting message
+2025-05-10 15:54:19,065 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:54:19,066 ERROR No connection on 5004, deleting message
+2025-05-10 15:54:24,548 WARNING No data to read
+2025-05-10 15:54:30,126 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:54:30,127 ERROR No connection on 5004, deleting message
+2025-05-10 15:54:35,659 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:54:35,660 ERROR No connection on 5004, deleting message
+2025-05-10 15:54:41,200 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:54:41,200 ERROR No connection on 5004, deleting message
+2025-05-10 15:54:46,717 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:54:46,717 ERROR No connection on 5004, deleting message
+2025-05-10 15:54:52,249 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:54:52,250 ERROR No connection on 5004, deleting message
+2025-05-10 15:54:57,786 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:54:57,787 ERROR No connection on 5004, deleting message
+2025-05-10 15:55:03,312 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:55:03,313 ERROR No connection on 5004, deleting message
+2025-05-10 15:55:08,850 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:55:08,857 ERROR No connection on 5004, deleting message
+2025-05-10 15:55:14,376 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:55:14,377 ERROR No connection on 5004, deleting message
+2025-05-10 15:55:19,860 WARNING No data to read
+2025-05-10 15:55:25,439 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:55:25,440 ERROR No connection on 5004, deleting message
+2025-05-10 15:55:30,971 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:55:30,976 ERROR No connection on 5004, deleting message
+2025-05-10 15:55:36,503 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:55:36,504 ERROR No connection on 5004, deleting message
+2025-05-10 15:55:41,989 WARNING No data to read
+2025-05-10 15:55:47,566 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:55:47,567 ERROR No connection on 5004, deleting message
+2025-05-10 15:55:53,100 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:55:53,100 ERROR No connection on 5004, deleting message
+2025-05-10 15:55:58,632 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:55:58,636 ERROR No connection on 5004, deleting message
+2025-05-10 15:56:04,165 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:56:04,166 ERROR No connection on 5004, deleting message
+2025-05-10 15:56:09,695 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:56:09,696 ERROR No connection on 5004, deleting message
+2025-05-10 15:56:15,179 WARNING No data to read
+2025-05-10 15:56:20,758 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:56:20,759 ERROR No connection on 5004, deleting message
+2025-05-10 15:56:26,293 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:56:26,294 ERROR No connection on 5004, deleting message
+2025-05-10 15:56:31,821 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:56:31,827 ERROR No connection on 5004, deleting message
+2025-05-10 15:56:37,352 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:56:37,353 ERROR No connection on 5004, deleting message
+2025-05-10 15:56:42,884 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:56:42,885 ERROR No connection on 5004, deleting message
+2025-05-10 15:56:48,421 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:56:48,421 ERROR No connection on 5004, deleting message
+2025-05-10 15:56:53,953 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:56:53,953 ERROR No connection on 5004, deleting message
+2025-05-10 15:56:59,430 WARNING No data to read
+2025-05-10 15:57:05,010 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:57:05,010 ERROR No connection on 5004, deleting message
+2025-05-10 15:57:10,493 WARNING No data to read
+2025-05-10 15:57:16,024 WARNING No data to read
+2025-05-10 15:57:21,603 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:57:21,603 ERROR No connection on 5004, deleting message
+2025-05-10 15:57:27,142 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:57:27,143 ERROR No connection on 5004, deleting message
+2025-05-10 15:57:32,674 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:57:32,678 ERROR No connection on 5004, deleting message
+2025-05-10 15:57:38,196 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:57:38,197 ERROR No connection on 5004, deleting message
+2025-05-10 15:57:43,734 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:57:43,734 ERROR No connection on 5004, deleting message
+2025-05-10 15:57:49,254 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:57:49,255 ERROR No connection on 5004, deleting message
+2025-05-10 15:57:54,818 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:57:54,818 ERROR No connection on 5004, deleting message
+2025-05-10 15:58:00,269 WARNING No data to read
+2025-05-10 15:58:05,850 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:58:05,851 ERROR No connection on 5004, deleting message
+2025-05-10 15:58:11,377 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:58:11,383 ERROR No connection on 5004, deleting message
+2025-05-10 15:58:16,903 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:58:16,904 ERROR No connection on 5004, deleting message
+2025-05-10 15:58:22,460 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:58:22,460 ERROR No connection on 5004, deleting message
+2025-05-10 15:58:27,920 WARNING No data to read
+2025-05-10 15:58:33,500 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:58:33,500 ERROR No connection on 5004, deleting message
+2025-05-10 15:58:39,037 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:58:39,037 ERROR No connection on 5004, deleting message
+2025-05-10 15:58:44,514 WARNING No data to read
+2025-05-10 15:58:50,093 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:58:50,094 ERROR No connection on 5004, deleting message
+2025-05-10 15:58:55,626 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:58:55,627 ERROR No connection on 5004, deleting message
+2025-05-10 15:59:01,153 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:59:01,153 ERROR No connection on 5004, deleting message
+2025-05-10 15:59:06,688 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:59:06,689 ERROR No connection on 5004, deleting message
+2025-05-10 15:59:12,217 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:59:12,217 ERROR No connection on 5004, deleting message
+2025-05-10 15:59:17,703 WARNING No data to read
+2025-05-10 15:59:23,236 WARNING No data to read
+2025-05-10 15:59:28,821 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:59:28,821 ERROR No connection on 5004, deleting message
+2025-05-10 15:59:34,299 WARNING No data to read
+2025-05-10 15:59:39,878 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:59:39,879 ERROR No connection on 5004, deleting message
+2025-05-10 15:59:45,415 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:59:45,416 ERROR No connection on 5004, deleting message
+2025-05-10 15:59:50,942 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:59:50,943 ERROR No connection on 5004, deleting message
+2025-05-10 15:59:56,465 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 15:59:56,466 ERROR No connection on 5004, deleting message
+2025-05-10 16:00:02,003 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:00:02,004 ERROR No connection on 5004, deleting message
+2025-05-10 16:00:07,535 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:00:07,535 ERROR No connection on 5004, deleting message
+2025-05-10 16:00:13,057 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:00:13,058 ERROR No connection on 5004, deleting message
+2025-05-10 16:00:18,600 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:00:18,600 ERROR No connection on 5004, deleting message
+2025-05-10 16:00:24,073 WARNING No data to read
+2025-05-10 16:00:29,650 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:00:29,651 ERROR No connection on 5004, deleting message
+2025-05-10 16:00:35,189 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:00:35,189 ERROR No connection on 5004, deleting message
+2025-05-10 16:00:40,669 WARNING No data to read
+2025-05-10 16:00:46,248 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:00:46,249 ERROR No connection on 5004, deleting message
+2025-05-10 16:00:51,786 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:00:51,787 ERROR No connection on 5004, deleting message
+2025-05-10 16:00:57,264 WARNING No data to read
+2025-05-10 16:01:02,845 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:01:02,845 ERROR No connection on 5004, deleting message
+2025-05-10 16:01:08,375 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:01:08,376 ERROR No connection on 5004, deleting message
+2025-05-10 16:01:13,912 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:01:13,913 ERROR No connection on 5004, deleting message
+2025-05-10 16:01:19,439 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:01:19,443 ERROR No connection on 5004, deleting message
+2025-05-10 16:01:24,966 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:01:24,967 ERROR No connection on 5004, deleting message
+2025-05-10 16:01:30,496 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:01:30,497 ERROR No connection on 5004, deleting message
+2025-05-10 16:01:36,035 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:01:36,036 ERROR No connection on 5004, deleting message
+2025-05-10 16:01:41,571 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:01:41,571 ERROR No connection on 5004, deleting message
+2025-05-10 16:01:47,040 WARNING No data to read
+2025-05-10 16:01:52,620 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:01:52,620 ERROR No connection on 5004, deleting message
+2025-05-10 16:01:58,102 WARNING No data to read
+2025-05-10 16:02:03,682 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:02:03,682 ERROR No connection on 5004, deleting message
+2025-05-10 16:02:09,217 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:02:09,218 ERROR No connection on 5004, deleting message
+2025-05-10 16:02:14,750 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:02:14,751 ERROR No connection on 5004, deleting message
+2025-05-10 16:02:20,274 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:02:20,275 ERROR No connection on 5004, deleting message
+2025-05-10 16:02:25,812 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:02:25,813 ERROR No connection on 5004, deleting message
+2025-05-10 16:02:31,400 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:02:31,401 ERROR No connection on 5004, deleting message
+2025-05-10 16:02:36,888 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:02:36,889 ERROR No connection on 5004, deleting message
+2025-05-10 16:02:42,401 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:02:42,402 ERROR No connection on 5004, deleting message
+2025-05-10 16:02:47,883 WARNING No data to read
+2025-05-10 16:02:53,463 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:02:53,464 ERROR No connection on 5004, deleting message
+2025-05-10 16:02:58,950 WARNING No data to read
+2025-05-10 16:03:04,529 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:03:04,530 ERROR No connection on 5004, deleting message
+2025-05-10 16:03:10,072 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:03:10,073 ERROR No connection on 5004, deleting message
+2025-05-10 16:03:15,596 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:03:15,596 ERROR No connection on 5004, deleting message
+2025-05-10 16:03:21,123 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:03:21,123 ERROR No connection on 5004, deleting message
+2025-05-10 16:03:26,605 WARNING No data to read
+2025-05-10 16:03:32,184 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:03:32,185 ERROR No connection on 5004, deleting message
+2025-05-10 16:03:37,715 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:03:37,716 ERROR No connection on 5004, deleting message
+2025-05-10 16:03:43,197 WARNING No data to read
+2025-05-10 16:03:48,777 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:03:48,778 ERROR No connection on 5004, deleting message
+2025-05-10 16:03:54,256 WARNING No data to read
+2025-05-10 16:03:59,841 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:03:59,842 ERROR No connection on 5004, deleting message
+2025-05-10 16:04:05,372 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:04:05,373 ERROR No connection on 5004, deleting message
+2025-05-10 16:04:10,900 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:04:10,900 ERROR No connection on 5004, deleting message
+2025-05-10 16:04:16,380 WARNING No data to read
+2025-05-10 16:04:21,913 WARNING No data to read
+2025-05-10 16:04:27,492 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:04:27,493 ERROR No connection on 5004, deleting message
+2025-05-10 16:04:33,024 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:04:33,025 ERROR No connection on 5004, deleting message
+2025-05-10 16:04:38,557 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:04:38,565 ERROR No connection on 5004, deleting message
+2025-05-10 16:04:44,107 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:04:44,107 ERROR No connection on 5004, deleting message
+2025-05-10 16:04:49,570 WARNING No data to read
+2025-05-10 16:04:55,149 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:04:55,150 ERROR No connection on 5004, deleting message
+2025-05-10 16:05:00,630 WARNING No data to read
+2025-05-10 16:05:06,162 WARNING No data to read
+2025-05-10 16:05:11,743 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:05:11,744 ERROR No connection on 5004, deleting message
+2025-05-10 16:05:17,273 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:05:17,273 ERROR No connection on 5004, deleting message
+2025-05-10 16:05:22,805 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:05:22,805 ERROR No connection on 5004, deleting message
+2025-05-10 16:05:28,338 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:05:28,339 ERROR No connection on 5004, deleting message
+2025-05-10 16:05:33,873 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:05:33,873 ERROR No connection on 5004, deleting message
+2025-05-10 16:05:39,350 WARNING No data to read
+2025-05-10 16:05:44,929 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:05:44,930 ERROR No connection on 5004, deleting message
+2025-05-10 16:05:50,413 WARNING No data to read
+2025-05-10 16:05:55,989 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:05:55,990 ERROR No connection on 5004, deleting message
+2025-05-10 16:06:01,473 WARNING No data to read
+2025-05-10 16:06:07,004 WARNING No data to read
+2025-05-10 16:06:12,585 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:06:12,585 ERROR No connection on 5004, deleting message
+2025-05-10 16:06:18,111 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:06:18,112 ERROR No connection on 5004, deleting message
+2025-05-10 16:06:23,593 WARNING No data to read
+2025-05-10 16:06:29,172 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:06:29,173 ERROR No connection on 5004, deleting message
+2025-05-10 16:06:34,723 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:06:34,724 ERROR No connection on 5004, deleting message
+2025-05-10 16:06:40,237 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:06:40,238 ERROR No connection on 5004, deleting message
+2025-05-10 16:06:45,768 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:06:45,769 ERROR No connection on 5004, deleting message
+2025-05-10 16:06:51,297 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:06:51,298 ERROR No connection on 5004, deleting message
+2025-05-10 16:06:56,833 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:06:56,833 ERROR No connection on 5004, deleting message
+2025-05-10 16:07:02,356 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:07:02,357 ERROR No connection on 5004, deleting message
+2025-05-10 16:07:07,890 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:07:07,891 ERROR No connection on 5004, deleting message
+2025-05-10 16:07:13,423 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:07:13,423 ERROR No connection on 5004, deleting message
+2025-05-10 16:07:18,969 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:07:18,969 ERROR No connection on 5004, deleting message
+2025-05-10 16:07:24,488 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:07:24,489 ERROR No connection on 5004, deleting message
+2025-05-10 16:07:30,015 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:07:30,015 ERROR No connection on 5004, deleting message
+2025-05-10 16:07:35,493 WARNING No data to read
+2025-05-10 16:07:41,072 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:07:41,073 ERROR No connection on 5004, deleting message
+2025-05-10 16:07:46,557 WARNING No data to read
+2025-05-10 16:07:52,136 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:07:52,137 ERROR No connection on 5004, deleting message
+2025-05-10 16:07:57,674 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:07:57,675 ERROR No connection on 5004, deleting message
+2025-05-10 16:08:03,205 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:08:03,205 ERROR No connection on 5004, deleting message
+2025-05-10 16:08:08,732 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:08:08,733 ERROR No connection on 5004, deleting message
+2025-05-10 16:08:14,218 WARNING No data to read
+2025-05-10 16:08:19,747 WARNING No data to read
+2025-05-10 16:08:25,324 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:08:25,325 ERROR No connection on 5004, deleting message
+2025-05-10 16:08:30,862 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:08:30,862 ERROR No connection on 5004, deleting message
+2025-05-10 16:08:36,383 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:08:36,384 ERROR No connection on 5004, deleting message
+2025-05-10 16:08:41,910 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:08:41,910 ERROR No connection on 5004, deleting message
+2025-05-10 16:08:47,438 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:08:47,438 ERROR No connection on 5004, deleting message
+2025-05-10 16:08:52,974 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:08:52,974 ERROR No connection on 5004, deleting message
+2025-05-10 16:08:58,448 WARNING No data to read
+2025-05-10 16:09:04,026 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:09:04,027 ERROR No connection on 5004, deleting message
+2025-05-10 16:09:09,510 WARNING No data to read
+2025-05-10 16:09:15,086 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:09:15,087 ERROR No connection on 5004, deleting message
+2025-05-10 16:09:20,614 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:09:20,619 ERROR No connection on 5004, deleting message
+2025-05-10 16:09:26,140 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:09:26,141 ERROR No connection on 5004, deleting message
+2025-05-10 16:09:31,625 WARNING No data to read
+2025-05-10 16:09:37,204 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:09:37,204 ERROR No connection on 5004, deleting message
+2025-05-10 16:09:42,741 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:09:42,741 ERROR No connection on 5004, deleting message
+2025-05-10 16:09:48,272 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:09:48,272 ERROR No connection on 5004, deleting message
+2025-05-10 16:09:53,803 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:09:53,804 ERROR No connection on 5004, deleting message
+2025-05-10 16:09:59,330 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:09:59,330 ERROR No connection on 5004, deleting message
+2025-05-10 16:10:04,867 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:10:04,868 ERROR No connection on 5004, deleting message
+2025-05-10 16:10:10,394 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:10:10,395 ERROR No connection on 5004, deleting message
+2025-05-10 16:10:15,927 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:10:15,928 ERROR No connection on 5004, deleting message
+2025-05-10 16:10:21,457 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:10:21,471 ERROR No connection on 5004, deleting message
+2025-05-10 16:10:26,991 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:10:26,991 ERROR No connection on 5004, deleting message
+2025-05-10 16:10:32,524 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:10:32,524 ERROR No connection on 5004, deleting message
+2025-05-10 16:10:38,049 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:10:38,050 ERROR No connection on 5004, deleting message
+2025-05-10 16:10:43,533 WARNING No data to read
+2025-05-10 16:10:49,073 WARNING No data to read
+2025-05-10 16:10:54,657 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:10:54,657 ERROR No connection on 5004, deleting message
+2025-05-10 16:11:00,134 WARNING No data to read
+2025-05-10 16:11:05,666 WARNING No data to read
+2025-05-10 16:11:11,248 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:11:11,249 ERROR No connection on 5004, deleting message
+2025-05-10 16:11:16,783 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:11:16,783 ERROR No connection on 5004, deleting message
+2025-05-10 16:11:22,309 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:11:22,309 ERROR No connection on 5004, deleting message
+2025-05-10 16:11:27,842 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:11:27,842 ERROR No connection on 5004, deleting message
+2025-05-10 16:11:33,326 WARNING No data to read
+2025-05-10 16:11:38,906 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:11:38,907 ERROR No connection on 5004, deleting message
+2025-05-10 16:11:44,390 WARNING No data to read
+2025-05-10 16:11:49,922 WARNING No data to read
+2025-05-10 16:11:55,511 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:11:55,512 ERROR No connection on 5004, deleting message
+2025-05-10 16:12:01,033 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:12:01,037 ERROR No connection on 5004, deleting message
+2025-05-10 16:12:06,569 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:12:06,570 ERROR No connection on 5004, deleting message
+2025-05-10 16:12:12,048 WARNING No data to read
+2025-05-10 16:12:17,626 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:12:17,627 ERROR No connection on 5004, deleting message
+2025-05-10 16:12:23,164 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:12:23,165 ERROR No connection on 5004, deleting message
+2025-05-10 16:12:28,705 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:12:28,705 ERROR No connection on 5004, deleting message
+2025-05-10 16:12:34,174 WARNING No data to read
+2025-05-10 16:12:39,751 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:12:39,751 ERROR No connection on 5004, deleting message
+2025-05-10 16:12:45,284 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:12:45,285 ERROR No connection on 5004, deleting message
+2025-05-10 16:12:50,818 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:12:50,819 ERROR No connection on 5004, deleting message
+2025-05-10 16:12:56,351 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:12:56,352 ERROR No connection on 5004, deleting message
+2025-05-10 16:13:01,873 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:13:01,878 ERROR No connection on 5004, deleting message
+2025-05-10 16:13:07,402 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:13:07,403 ERROR No connection on 5004, deleting message
+2025-05-10 16:13:12,938 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:13:12,942 ERROR No connection on 5004, deleting message
+2025-05-10 16:13:18,465 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:13:18,466 ERROR No connection on 5004, deleting message
+2025-05-10 16:13:23,991 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:13:23,992 ERROR No connection on 5004, deleting message
+2025-05-10 16:13:29,528 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:13:29,533 ERROR No connection on 5004, deleting message
+2025-05-10 16:13:35,008 WARNING No data to read
+2025-05-10 16:13:40,589 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:13:40,590 ERROR No connection on 5004, deleting message
+2025-05-10 16:13:46,120 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:13:46,121 ERROR No connection on 5004, deleting message
+2025-05-10 16:13:51,661 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:13:51,662 ERROR No connection on 5004, deleting message
+2025-05-10 16:13:57,186 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:13:57,187 ERROR No connection on 5004, deleting message
+2025-05-10 16:14:02,752 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:14:02,753 ERROR No connection on 5004, deleting message
+2025-05-10 16:14:08,250 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:14:08,251 ERROR No connection on 5004, deleting message
+2025-05-10 16:14:13,734 WARNING No data to read
+2025-05-10 16:14:19,266 WARNING No data to read
+2025-05-10 16:14:24,854 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:14:24,854 ERROR No connection on 5004, deleting message
+2025-05-10 16:14:30,379 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:14:30,380 ERROR No connection on 5004, deleting message
+2025-05-10 16:14:35,911 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:14:35,912 ERROR No connection on 5004, deleting message
+2025-05-10 16:14:41,465 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:14:41,465 ERROR No connection on 5004, deleting message
+2025-05-10 16:14:46,971 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:14:46,972 ERROR No connection on 5004, deleting message
+2025-05-10 16:14:52,449 WARNING No data to read
+2025-05-10 16:14:58,029 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:14:58,030 ERROR No connection on 5004, deleting message
+2025-05-10 16:15:03,561 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:15:03,561 ERROR No connection on 5004, deleting message
+2025-05-10 16:15:09,092 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:15:09,093 ERROR No connection on 5004, deleting message
+2025-05-10 16:15:14,629 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:15:14,629 ERROR No connection on 5004, deleting message
+2025-05-10 16:15:20,150 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:15:20,151 ERROR No connection on 5004, deleting message
+2025-05-10 16:15:25,683 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:15:25,684 ERROR No connection on 5004, deleting message
+2025-05-10 16:15:31,210 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:15:31,211 ERROR No connection on 5004, deleting message
+2025-05-10 16:15:36,744 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:15:36,745 ERROR No connection on 5004, deleting message
+2025-05-10 16:15:42,228 WARNING No data to read
+2025-05-10 16:15:47,807 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:15:47,808 ERROR No connection on 5004, deleting message
+2025-05-10 16:15:53,345 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:15:53,346 ERROR No connection on 5004, deleting message
+2025-05-10 16:15:58,823 WARNING No data to read
+2025-05-10 16:16:04,405 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:16:04,405 ERROR No connection on 5004, deleting message
+2025-05-10 16:16:09,935 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:16:09,936 ERROR No connection on 5004, deleting message
+2025-05-10 16:16:15,470 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:16:15,471 ERROR No connection on 5004, deleting message
+2025-05-10 16:16:20,949 WARNING No data to read
+2025-05-10 16:16:26,529 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:16:26,530 ERROR No connection on 5004, deleting message
+2025-05-10 16:16:32,015 WARNING No data to read
+2025-05-10 16:16:37,595 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:16:37,596 ERROR No connection on 5004, deleting message
+2025-05-10 16:16:43,127 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:16:43,128 ERROR No connection on 5004, deleting message
+2025-05-10 16:16:48,669 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:16:48,670 ERROR No connection on 5004, deleting message
+2025-05-10 16:16:54,186 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:16:54,187 ERROR No connection on 5004, deleting message
+2025-05-10 16:16:59,723 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:16:59,724 ERROR No connection on 5004, deleting message
+2025-05-10 16:17:05,255 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:17:05,256 ERROR No connection on 5004, deleting message
+2025-05-10 16:17:10,777 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:17:10,782 ERROR No connection on 5004, deleting message
+2025-05-10 16:17:16,303 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:17:16,303 ERROR No connection on 5004, deleting message
+2025-05-10 16:17:21,789 WARNING No data to read
+2025-05-10 16:17:27,370 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:17:27,370 ERROR No connection on 5004, deleting message
+2025-05-10 16:17:32,902 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:17:32,903 ERROR No connection on 5004, deleting message
+2025-05-10 16:17:38,389 WARNING No data to read
+2025-05-10 16:17:43,920 WARNING No data to read
+2025-05-10 16:17:49,504 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:17:49,504 ERROR No connection on 5004, deleting message
+2025-05-10 16:17:55,041 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:17:55,042 ERROR No connection on 5004, deleting message
+2025-05-10 16:18:00,516 WARNING No data to read
+2025-05-10 16:18:06,050 WARNING No data to read
+2025-05-10 16:18:11,638 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:18:11,639 ERROR No connection on 5004, deleting message
+2025-05-10 16:18:17,162 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:18:17,163 ERROR No connection on 5004, deleting message
+2025-05-10 16:18:22,649 WARNING No data to read
+2025-05-10 16:18:28,229 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:18:28,229 ERROR No connection on 5004, deleting message
+2025-05-10 16:18:33,763 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:18:33,764 ERROR No connection on 5004, deleting message
+2025-05-10 16:18:39,312 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:18:39,312 ERROR No connection on 5004, deleting message
+2025-05-10 16:18:44,774 WARNING No data to read
+2025-05-10 16:18:50,361 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:18:50,362 ERROR No connection on 5004, deleting message
+2025-05-10 16:18:55,840 WARNING No data to read
+2025-05-10 16:19:01,419 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:19:01,420 ERROR No connection on 5004, deleting message
+2025-05-10 16:19:06,906 WARNING No data to read
+2025-05-10 16:19:12,483 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:19:12,484 ERROR No connection on 5004, deleting message
+2025-05-10 16:19:18,015 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:19:18,016 ERROR No connection on 5004, deleting message
+2025-05-10 16:19:23,548 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:19:23,548 ERROR No connection on 5004, deleting message
+2025-05-10 16:19:29,032 WARNING No data to read
+2025-05-10 16:19:34,578 WARNING No data to read
+2025-05-10 16:19:40,110 WARNING No data to read
+2025-05-10 16:19:45,690 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:19:45,691 ERROR No connection on 5004, deleting message
+2025-05-10 16:19:51,221 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:19:51,222 ERROR No connection on 5004, deleting message
+2025-05-10 16:19:56,758 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:19:56,758 ERROR No connection on 5004, deleting message
+2025-05-10 16:20:02,287 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:20:02,288 ERROR No connection on 5004, deleting message
+2025-05-10 16:20:07,810 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:20:07,811 ERROR No connection on 5004, deleting message
+2025-05-10 16:20:13,296 WARNING No data to read
+2025-05-10 16:20:18,877 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:20:18,877 ERROR No connection on 5004, deleting message
+2025-05-10 16:20:24,405 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:20:24,406 ERROR No connection on 5004, deleting message
+2025-05-10 16:20:29,939 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:20:29,939 ERROR No connection on 5004, deleting message
+2025-05-10 16:20:35,470 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:20:35,470 ERROR No connection on 5004, deleting message
+2025-05-10 16:20:40,997 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:20:40,997 ERROR No connection on 5004, deleting message
+2025-05-10 16:20:46,523 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:20:46,523 ERROR No connection on 5004, deleting message
+2025-05-10 16:20:52,062 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:20:52,063 ERROR No connection on 5004, deleting message
+2025-05-10 16:20:57,539 WARNING No data to read
+2025-05-10 16:21:03,073 WARNING No data to read
+2025-05-10 16:21:08,650 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:21:08,650 ERROR No connection on 5004, deleting message
+2025-05-10 16:21:14,185 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:21:14,186 ERROR No connection on 5004, deleting message
+2025-05-10 16:21:19,665 WARNING No data to read
+2025-05-10 16:21:25,246 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:21:25,247 ERROR No connection on 5004, deleting message
+2025-05-10 16:21:30,775 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:21:30,775 ERROR No connection on 5004, deleting message
+2025-05-10 16:21:36,306 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:21:36,307 ERROR No connection on 5004, deleting message
+2025-05-10 16:21:41,839 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:21:41,843 ERROR No connection on 5004, deleting message
+2025-05-10 16:21:47,374 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:21:47,375 ERROR No connection on 5004, deleting message
+2025-05-10 16:21:52,854 WARNING No data to read
+2025-05-10 16:21:58,385 WARNING No data to read
+2025-05-10 16:22:03,919 WARNING No data to read
+2025-05-10 16:22:09,503 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:22:09,503 ERROR No connection on 5004, deleting message
+2025-05-10 16:22:15,026 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:22:15,027 ERROR No connection on 5004, deleting message
+2025-05-10 16:22:20,553 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:22:20,559 ERROR No connection on 5004, deleting message
+2025-05-10 16:22:26,089 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:22:26,090 ERROR No connection on 5004, deleting message
+2025-05-10 16:22:31,616 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:22:31,616 ERROR No connection on 5004, deleting message
+2025-05-10 16:22:37,094 WARNING No data to read
+2025-05-10 16:22:42,673 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:22:42,674 ERROR No connection on 5004, deleting message
+2025-05-10 16:22:48,210 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:22:48,210 ERROR No connection on 5004, deleting message
+2025-05-10 16:22:53,760 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:22:53,761 ERROR No connection on 5004, deleting message
+2025-05-10 16:22:59,270 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:22:59,270 ERROR No connection on 5004, deleting message
+2025-05-10 16:23:04,798 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:23:04,798 ERROR No connection on 5004, deleting message
+2025-05-10 16:23:10,328 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:23:10,329 ERROR No connection on 5004, deleting message
+2025-05-10 16:23:15,814 WARNING No data to read
+2025-05-10 16:23:21,346 WARNING No data to read
+2025-05-10 16:23:26,926 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:23:26,926 ERROR No connection on 5004, deleting message
+2025-05-10 16:23:32,410 WARNING No data to read
+2025-05-10 16:23:37,988 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:23:37,989 ERROR No connection on 5004, deleting message
+2025-05-10 16:23:43,530 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:23:43,531 ERROR No connection on 5004, deleting message
+2025-05-10 16:23:49,004 WARNING No data to read
+2025-05-10 16:23:54,588 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:23:54,589 ERROR No connection on 5004, deleting message
+2025-05-10 16:24:00,113 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:24:00,114 ERROR No connection on 5004, deleting message
+2025-05-10 16:24:05,650 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:24:05,651 ERROR No connection on 5004, deleting message
+2025-05-10 16:24:11,177 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:24:11,178 ERROR No connection on 5004, deleting message
+2025-05-10 16:24:16,707 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:24:16,707 ERROR No connection on 5004, deleting message
+2025-05-10 16:24:22,240 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:24:22,240 ERROR No connection on 5004, deleting message
+2025-05-10 16:24:27,776 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:24:27,777 ERROR No connection on 5004, deleting message
+2025-05-10 16:24:33,252 WARNING No data to read
+2025-05-10 16:24:38,832 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:24:38,832 ERROR No connection on 5004, deleting message
+2025-05-10 16:24:44,369 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:24:44,370 ERROR No connection on 5004, deleting message
+2025-05-10 16:24:49,900 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:24:49,901 ERROR No connection on 5004, deleting message
+2025-05-10 16:24:55,455 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:24:55,455 ERROR No connection on 5004, deleting message
+2025-05-10 16:25:00,961 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:25:00,961 ERROR No connection on 5004, deleting message
+2025-05-10 16:25:06,496 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:25:06,497 ERROR No connection on 5004, deleting message
+2025-05-10 16:25:11,974 WARNING No data to read
+2025-05-10 16:25:17,554 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:25:17,554 ERROR No connection on 5004, deleting message
+2025-05-10 16:25:23,081 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:25:23,082 ERROR No connection on 5004, deleting message
+2025-05-10 16:25:28,615 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:25:28,619 ERROR No connection on 5004, deleting message
+2025-05-10 16:25:34,098 WARNING No data to read
+2025-05-10 16:25:39,677 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:25:39,677 ERROR No connection on 5004, deleting message
+2025-05-10 16:25:45,208 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:25:45,208 ERROR No connection on 5004, deleting message
+2025-05-10 16:25:50,692 WARNING No data to read
+2025-05-10 16:25:56,271 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:25:56,271 ERROR No connection on 5004, deleting message
+2025-05-10 16:26:01,755 WARNING No data to read
+2025-05-10 16:26:07,335 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:26:07,335 ERROR No connection on 5004, deleting message
+2025-05-10 16:26:12,866 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:26:12,871 ERROR No connection on 5004, deleting message
+2025-05-10 16:26:18,397 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:26:18,398 ERROR No connection on 5004, deleting message
+2025-05-10 16:26:23,930 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:26:23,930 ERROR No connection on 5004, deleting message
+2025-05-10 16:26:29,414 WARNING No data to read
+2025-05-10 16:26:34,994 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:26:34,994 ERROR No connection on 5004, deleting message
+2025-05-10 16:26:40,525 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:26:40,525 ERROR No connection on 5004, deleting message
+2025-05-10 16:26:46,066 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:26:46,067 ERROR No connection on 5004, deleting message
+2025-05-10 16:26:51,597 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:26:51,598 ERROR No connection on 5004, deleting message
+2025-05-10 16:26:57,115 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:26:57,116 ERROR No connection on 5004, deleting message
+2025-05-10 16:27:02,651 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:27:02,652 ERROR No connection on 5004, deleting message
+2025-05-10 16:27:13,658 WARNING No data to read
+2025-05-10 16:27:24,717 ERROR TCP send error on 5004: Connection lost
+2025-05-10 16:27:24,718 ERROR TCP sender error: [Errno 32] Broken pipe
+2025-05-10 16:27:25,996 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:27:25,996 ERROR No connection on 5004, deleting message
+2025-05-10 16:27:31,478 WARNING No data to read
+2025-05-10 16:27:37,058 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:27:37,059 ERROR No connection on 5004, deleting message
+2025-05-10 16:27:42,584 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:27:42,585 ERROR No connection on 5004, deleting message
+2025-05-10 16:27:48,068 WARNING No data to read
+2025-05-10 16:27:53,648 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:27:53,649 ERROR No connection on 5004, deleting message
+2025-05-10 16:27:59,184 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:27:59,185 ERROR No connection on 5004, deleting message
+2025-05-10 16:28:04,663 WARNING No data to read
+2025-05-10 16:28:10,527 WARNING No data to read
+2025-05-10 16:28:16,111 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:28:16,112 ERROR No connection on 5004, deleting message
+2025-05-10 16:28:21,592 WARNING No data to read
+2025-05-10 16:28:27,171 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:28:27,171 ERROR No connection on 5004, deleting message
+2025-05-10 16:28:32,702 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:28:32,707 ERROR No connection on 5004, deleting message
+2025-05-10 16:28:38,236 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:28:38,237 ERROR No connection on 5004, deleting message
+2025-05-10 16:28:43,769 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:28:43,769 ERROR No connection on 5004, deleting message
+2025-05-10 16:28:49,247 WARNING No data to read
+2025-05-10 16:28:54,826 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:28:54,826 ERROR No connection on 5004, deleting message
+2025-05-10 16:29:00,379 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:29:00,379 ERROR No connection on 5004, deleting message
+2025-05-10 16:29:05,890 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:29:05,890 ERROR No connection on 5004, deleting message
+2025-05-10 16:29:11,423 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:29:11,428 ERROR No connection on 5004, deleting message
+2025-05-10 16:29:16,948 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:29:16,949 ERROR No connection on 5004, deleting message
+2025-05-10 16:29:22,479 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:29:22,483 ERROR No connection on 5004, deleting message
+2025-05-10 16:29:28,017 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:29:28,017 ERROR No connection on 5004, deleting message
+2025-05-10 16:29:33,490 WARNING No data to read
+2025-05-10 16:29:39,070 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:29:39,071 ERROR No connection on 5004, deleting message
+2025-05-10 16:29:44,606 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:29:44,607 ERROR No connection on 5004, deleting message
+2025-05-10 16:29:50,138 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:29:50,139 ERROR No connection on 5004, deleting message
+2025-05-10 16:29:55,673 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:29:55,673 ERROR No connection on 5004, deleting message
+2025-05-10 16:30:01,239 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:30:01,239 ERROR No connection on 5004, deleting message
+2025-05-10 16:30:06,728 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:30:06,729 ERROR No connection on 5004, deleting message
+2025-05-10 16:30:12,259 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:30:12,259 ERROR No connection on 5004, deleting message
+2025-05-10 16:30:17,791 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:30:17,792 ERROR No connection on 5004, deleting message
+2025-05-10 16:30:23,323 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:30:23,324 ERROR No connection on 5004, deleting message
+2025-05-10 16:30:28,861 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:30:28,861 ERROR No connection on 5004, deleting message
+2025-05-10 16:30:34,388 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:30:34,389 ERROR No connection on 5004, deleting message
+2025-05-10 16:30:39,923 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:30:39,923 ERROR No connection on 5004, deleting message
+2025-05-10 16:30:45,446 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:30:45,446 ERROR No connection on 5004, deleting message
+2025-05-10 16:30:50,983 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:30:50,984 ERROR No connection on 5004, deleting message
+2025-05-10 16:30:56,456 WARNING No data to read
+2025-05-10 16:31:02,034 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:31:02,035 ERROR No connection on 5004, deleting message
+2025-05-10 16:31:07,570 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:31:07,570 ERROR No connection on 5004, deleting message
+2025-05-10 16:31:13,050 WARNING No data to read
+2025-05-10 16:31:18,579 WARNING No data to read
+2025-05-10 16:31:24,159 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:31:24,159 ERROR No connection on 5004, deleting message
+2025-05-10 16:31:29,645 WARNING No data to read
+2025-05-10 16:31:35,224 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:31:35,225 ERROR No connection on 5004, deleting message
+2025-05-10 16:31:40,756 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:31:40,765 ERROR No connection on 5004, deleting message
+2025-05-10 16:31:46,288 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:31:46,289 ERROR No connection on 5004, deleting message
+2025-05-10 16:31:51,834 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:31:51,835 ERROR No connection on 5004, deleting message
+2025-05-10 16:31:57,355 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:31:57,356 ERROR No connection on 5004, deleting message
+2025-05-10 16:32:02,892 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:32:02,892 ERROR No connection on 5004, deleting message
+2025-05-10 16:32:08,407 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:32:08,408 ERROR No connection on 5004, deleting message
+2025-05-10 16:32:13,940 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:32:13,941 ERROR No connection on 5004, deleting message
+2025-05-10 16:32:19,462 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:32:19,462 ERROR No connection on 5004, deleting message
+2025-05-10 16:32:24,946 WARNING No data to read
+2025-05-10 16:32:30,526 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:32:30,526 ERROR No connection on 5004, deleting message
+2025-05-10 16:32:36,010 WARNING No data to read
+2025-05-10 16:32:41,588 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:32:41,589 ERROR No connection on 5004, deleting message
+2025-05-10 16:32:47,120 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:32:47,121 ERROR No connection on 5004, deleting message
+2025-05-10 16:32:52,656 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:32:52,660 ERROR No connection on 5004, deleting message
+2025-05-10 16:32:58,136 WARNING No data to read
+2025-05-10 16:33:03,711 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:33:03,711 ERROR No connection on 5004, deleting message
+2025-05-10 16:33:09,197 WARNING No data to read
+2025-05-10 16:33:14,775 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:33:14,776 ERROR No connection on 5004, deleting message
+2025-05-10 16:33:20,259 WARNING No data to read
+2025-05-10 16:33:25,838 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:33:25,839 ERROR No connection on 5004, deleting message
+2025-05-10 16:33:31,859 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:33:31,860 ERROR No connection on 5004, deleting message
+2025-05-10 16:33:36,901 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:33:36,901 ERROR No connection on 5004, deleting message
+2025-05-10 16:33:42,432 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:33:42,440 ERROR No connection on 5004, deleting message
+2025-05-10 16:33:47,967 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:33:47,968 ERROR No connection on 5004, deleting message
+2025-05-10 16:33:53,443 WARNING No data to read
+2025-05-10 16:33:59,022 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:33:59,023 ERROR No connection on 5004, deleting message
+2025-05-10 16:34:04,560 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:34:04,561 ERROR No connection on 5004, deleting message
+2025-05-10 16:34:10,082 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:34:10,082 ERROR No connection on 5004, deleting message
+2025-05-10 16:34:15,610 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:34:15,611 ERROR No connection on 5004, deleting message
+2025-05-10 16:34:21,140 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:34:21,141 ERROR No connection on 5004, deleting message
+2025-05-10 16:34:26,674 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:34:26,674 ERROR No connection on 5004, deleting message
+2025-05-10 16:34:32,206 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:34:32,207 ERROR No connection on 5004, deleting message
+2025-05-10 16:34:37,738 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:34:37,739 ERROR No connection on 5004, deleting message
+2025-05-10 16:34:43,277 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:34:43,278 ERROR No connection on 5004, deleting message
+2025-05-10 16:34:48,755 WARNING No data to read
+2025-05-10 16:34:54,334 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:34:54,335 ERROR No connection on 5004, deleting message
+2025-05-10 16:34:59,865 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:34:59,866 ERROR No connection on 5004, deleting message
+2025-05-10 16:35:05,395 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:35:05,396 ERROR No connection on 5004, deleting message
+2025-05-10 16:35:10,881 WARNING No data to read
+2025-05-10 16:35:16,466 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:35:16,467 ERROR No connection on 5004, deleting message
+2025-05-10 16:35:21,989 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:35:21,989 ERROR No connection on 5004, deleting message
+2025-05-10 16:35:27,474 WARNING No data to read
+2025-05-10 16:35:33,054 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:35:33,055 ERROR No connection on 5004, deleting message
+2025-05-10 16:35:38,584 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:35:38,584 ERROR No connection on 5004, deleting message
+2025-05-10 16:35:44,117 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:35:44,117 ERROR No connection on 5004, deleting message
+2025-05-10 16:35:49,649 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:35:49,650 ERROR No connection on 5004, deleting message
+2025-05-10 16:35:55,134 WARNING No data to read
+2025-05-10 16:36:00,667 WARNING No data to read
+2025-05-10 16:36:06,251 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:36:06,251 ERROR No connection on 5004, deleting message
+2025-05-10 16:36:11,779 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:36:11,783 ERROR No connection on 5004, deleting message
+2025-05-10 16:36:17,261 WARNING No data to read
+2025-05-10 16:36:22,841 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:36:22,842 ERROR No connection on 5004, deleting message
+2025-05-10 16:36:28,379 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:36:28,380 ERROR No connection on 5004, deleting message
+2025-05-10 16:36:33,910 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:36:33,911 ERROR No connection on 5004, deleting message
+2025-05-10 16:36:39,442 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:36:39,442 ERROR No connection on 5004, deleting message
+2025-05-10 16:36:44,968 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:36:44,969 ERROR No connection on 5004, deleting message
+2025-05-10 16:36:50,497 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:36:50,498 ERROR No connection on 5004, deleting message
+2025-05-10 16:36:56,029 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:36:56,029 ERROR No connection on 5004, deleting message
+2025-05-10 16:37:01,562 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:37:01,566 ERROR No connection on 5004, deleting message
+2025-05-10 16:37:07,041 WARNING No data to read
+2025-05-10 16:37:12,567 WARNING No data to read
+2025-05-10 16:37:18,150 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:37:18,151 ERROR No connection on 5004, deleting message
+2025-05-10 16:37:23,687 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:37:23,688 ERROR No connection on 5004, deleting message
+2025-05-10 16:37:29,208 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:37:29,209 ERROR No connection on 5004, deleting message
+2025-05-10 16:37:34,742 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:37:34,742 ERROR No connection on 5004, deleting message
+2025-05-10 16:37:40,277 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:37:40,277 ERROR No connection on 5004, deleting message
+2025-05-10 16:37:45,809 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:37:45,810 ERROR No connection on 5004, deleting message
+2025-05-10 16:37:51,286 WARNING No data to read
+2025-05-10 16:37:56,864 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:37:56,865 ERROR No connection on 5004, deleting message
+2025-05-10 16:38:02,348 WARNING No data to read
+2025-05-10 16:38:07,928 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:38:07,929 ERROR No connection on 5004, deleting message
+2025-05-10 16:38:13,559 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:38:13,560 ERROR No connection on 5004, deleting message
+2025-05-10 16:38:18,990 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:38:18,990 ERROR No connection on 5004, deleting message
+2025-05-10 16:38:24,519 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:38:24,520 ERROR No connection on 5004, deleting message
+2025-05-10 16:38:30,049 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:38:30,050 ERROR No connection on 5004, deleting message
+2025-05-10 16:38:35,582 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:38:35,582 ERROR No connection on 5004, deleting message
+2025-05-10 16:38:41,106 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:38:41,107 ERROR No connection on 5004, deleting message
+2025-05-10 16:38:46,638 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:38:46,638 ERROR No connection on 5004, deleting message
+2025-05-10 16:38:52,169 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:38:52,169 ERROR No connection on 5004, deleting message
+2025-05-10 16:38:57,697 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:38:57,698 ERROR No connection on 5004, deleting message
+2025-05-10 16:39:03,226 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:39:03,227 ERROR No connection on 5004, deleting message
+2025-05-10 16:39:08,758 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:39:08,758 ERROR No connection on 5004, deleting message
+2025-05-10 16:39:14,283 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:39:14,284 ERROR No connection on 5004, deleting message
+2025-05-10 16:39:19,813 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:39:19,817 ERROR No connection on 5004, deleting message
+2025-05-10 16:39:25,349 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:39:25,350 ERROR No connection on 5004, deleting message
+2025-05-10 16:39:30,878 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:39:30,879 ERROR No connection on 5004, deleting message
+2025-05-10 16:39:36,409 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:39:36,410 ERROR No connection on 5004, deleting message
+2025-05-10 16:39:41,945 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:39:41,950 ERROR No connection on 5004, deleting message
+2025-05-10 16:39:47,474 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:39:47,475 ERROR No connection on 5004, deleting message
+2025-05-10 16:39:52,949 WARNING No data to read
+2025-05-10 16:39:58,480 WARNING No data to read
+2025-05-10 16:40:04,060 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:40:04,061 ERROR No connection on 5004, deleting message
+2025-05-10 16:40:09,601 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:40:09,602 ERROR No connection on 5004, deleting message
+2025-05-10 16:40:15,124 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:40:15,125 ERROR No connection on 5004, deleting message
+2025-05-10 16:40:20,605 WARNING No data to read
+2025-05-10 16:40:26,185 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:40:26,185 ERROR No connection on 5004, deleting message
+2025-05-10 16:40:31,668 WARNING No data to read
+2025-05-10 16:40:37,245 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:40:37,246 ERROR No connection on 5004, deleting message
+2025-05-10 16:40:42,779 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:40:42,779 ERROR No connection on 5004, deleting message
+2025-05-10 16:40:48,316 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:40:48,317 ERROR No connection on 5004, deleting message
+2025-05-10 16:40:53,841 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:40:53,842 ERROR No connection on 5004, deleting message
+2025-05-10 16:40:59,368 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:40:59,369 ERROR No connection on 5004, deleting message
+2025-05-10 16:41:04,900 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:41:04,901 ERROR No connection on 5004, deleting message
+2025-05-10 16:41:10,432 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:41:10,433 ERROR No connection on 5004, deleting message
+2025-05-10 16:41:15,969 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:41:15,970 ERROR No connection on 5004, deleting message
+2025-05-10 16:41:21,499 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:41:21,499 ERROR No connection on 5004, deleting message
+2025-05-10 16:41:27,028 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:41:27,029 ERROR No connection on 5004, deleting message
+2025-05-10 16:41:32,554 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:41:32,555 ERROR No connection on 5004, deleting message
+2025-05-10 16:41:38,086 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:41:38,086 ERROR No connection on 5004, deleting message
+2025-05-10 16:41:43,565 WARNING No data to read
+2025-05-10 16:41:49,145 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:41:49,145 ERROR No connection on 5004, deleting message
+2025-05-10 16:41:54,629 WARNING No data to read
+2025-05-10 16:42:00,162 WARNING No data to read
+2025-05-10 16:42:05,746 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:42:05,746 ERROR No connection on 5004, deleting message
+2025-05-10 16:42:11,304 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:42:11,304 ERROR No connection on 5004, deleting message
+2025-05-10 16:42:16,806 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:42:16,807 ERROR No connection on 5004, deleting message
+2025-05-10 16:42:22,333 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:42:22,334 ERROR No connection on 5004, deleting message
+2025-05-10 16:42:27,875 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:42:27,876 ERROR No connection on 5004, deleting message
+2025-05-10 16:42:33,351 WARNING No data to read
+2025-05-10 16:42:38,885 WARNING No data to read
+2025-05-10 16:42:44,416 WARNING No data to read
+2025-05-10 16:42:49,995 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:42:49,996 ERROR No connection on 5004, deleting message
+2025-05-10 16:42:55,479 WARNING No data to read
+2025-05-10 16:43:01,057 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:43:01,057 ERROR No connection on 5004, deleting message
+2025-05-10 16:43:06,538 WARNING No data to read
+2025-05-10 16:43:12,116 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:43:12,117 ERROR No connection on 5004, deleting message
+2025-05-10 16:43:17,659 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:43:17,660 ERROR No connection on 5004, deleting message
+2025-05-10 16:43:23,179 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:43:23,180 ERROR No connection on 5004, deleting message
+2025-05-10 16:43:28,710 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:43:28,710 ERROR No connection on 5004, deleting message
+2025-05-10 16:43:34,247 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:43:34,247 ERROR No connection on 5004, deleting message
+2025-05-10 16:43:39,779 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:43:39,780 ERROR No connection on 5004, deleting message
+2025-05-10 16:43:45,306 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:43:45,306 ERROR No connection on 5004, deleting message
+2025-05-10 16:43:50,838 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:43:50,842 ERROR No connection on 5004, deleting message
+2025-05-10 16:43:56,374 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:43:56,374 ERROR No connection on 5004, deleting message
+2025-05-10 16:44:01,901 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:44:01,905 ERROR No connection on 5004, deleting message
+2025-05-10 16:44:07,437 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:44:07,438 ERROR No connection on 5004, deleting message
+2025-05-10 16:44:12,915 WARNING No data to read
+2025-05-10 16:44:18,495 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:44:18,495 ERROR No connection on 5004, deleting message
+2025-05-10 16:44:23,974 WARNING No data to read
+2025-05-10 16:44:29,553 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:44:29,554 ERROR No connection on 5004, deleting message
+2025-05-10 16:44:35,036 WARNING No data to read
+2025-05-10 16:44:40,615 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:44:40,616 ERROR No connection on 5004, deleting message
+2025-05-10 16:44:46,148 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:44:46,148 ERROR No connection on 5004, deleting message
+2025-05-10 16:44:51,684 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:44:51,685 ERROR No connection on 5004, deleting message
+2025-05-10 16:44:57,211 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:44:57,211 ERROR No connection on 5004, deleting message
+2025-05-10 16:45:02,697 WARNING No data to read
+2025-05-10 16:45:08,275 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:45:08,275 ERROR No connection on 5004, deleting message
+2025-05-10 16:45:13,760 WARNING No data to read
+2025-05-10 16:45:19,339 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:45:19,340 ERROR No connection on 5004, deleting message
+2025-05-10 16:45:24,876 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:45:24,877 ERROR No connection on 5004, deleting message
+2025-05-10 16:45:30,401 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:45:30,401 ERROR No connection on 5004, deleting message
+2025-05-10 16:45:35,938 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:45:35,938 ERROR No connection on 5004, deleting message
+2025-05-10 16:45:41,464 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:45:41,465 ERROR No connection on 5004, deleting message
+2025-05-10 16:45:46,995 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:45:46,996 ERROR No connection on 5004, deleting message
+2025-05-10 16:45:52,532 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:45:52,532 ERROR No connection on 5004, deleting message
+2025-05-10 16:45:58,059 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:45:58,060 ERROR No connection on 5004, deleting message
+2025-05-10 16:46:03,586 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:46:03,586 ERROR No connection on 5004, deleting message
+2025-05-10 16:46:09,110 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:46:09,110 ERROR No connection on 5004, deleting message
+2025-05-10 16:46:14,598 WARNING No data to read
+2025-05-10 16:46:20,177 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:46:20,177 ERROR No connection on 5004, deleting message
+2025-05-10 16:46:25,713 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:46:25,713 ERROR No connection on 5004, deleting message
+2025-05-10 16:46:31,244 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:46:31,244 ERROR No connection on 5004, deleting message
+2025-05-10 16:46:36,780 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:46:36,780 ERROR No connection on 5004, deleting message
+2025-05-10 16:46:42,303 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:46:42,304 ERROR No connection on 5004, deleting message
+2025-05-10 16:46:47,839 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:46:47,840 ERROR No connection on 5004, deleting message
+2025-05-10 16:46:53,318 WARNING No data to read
+2025-05-10 16:46:58,897 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:46:58,897 ERROR No connection on 5004, deleting message
+2025-05-10 16:47:04,439 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:47:04,440 ERROR No connection on 5004, deleting message
+2025-05-10 16:47:09,961 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:47:09,961 ERROR No connection on 5004, deleting message
+2025-05-10 16:47:15,494 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:47:15,495 ERROR No connection on 5004, deleting message
+2025-05-10 16:47:21,022 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:47:21,023 ERROR No connection on 5004, deleting message
+2025-05-10 16:47:26,555 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:47:26,556 ERROR No connection on 5004, deleting message
+2025-05-10 16:47:32,081 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:47:32,082 ERROR No connection on 5004, deleting message
+2025-05-10 16:47:37,565 WARNING No data to read
+2025-05-10 16:47:43,144 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:47:43,144 ERROR No connection on 5004, deleting message
+2025-05-10 16:47:48,677 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:47:48,677 ERROR No connection on 5004, deleting message
+2025-05-10 16:47:54,207 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:47:54,208 ERROR No connection on 5004, deleting message
+2025-05-10 16:47:59,739 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:47:59,743 ERROR No connection on 5004, deleting message
+2025-05-10 16:48:05,271 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:48:05,272 ERROR No connection on 5004, deleting message
+2025-05-10 16:48:10,797 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:48:10,801 ERROR No connection on 5004, deleting message
+2025-05-10 16:48:16,334 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:48:16,335 ERROR No connection on 5004, deleting message
+2025-05-10 16:48:21,863 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:48:21,864 ERROR No connection on 5004, deleting message
+2025-05-10 16:48:27,393 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:48:27,394 ERROR No connection on 5004, deleting message
+2025-05-10 16:48:32,915 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:48:32,916 ERROR No connection on 5004, deleting message
+2025-05-10 16:48:38,395 WARNING No data to read
+2025-05-10 16:48:43,973 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:48:43,974 ERROR No connection on 5004, deleting message
+2025-05-10 16:48:49,515 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:48:49,515 ERROR No connection on 5004, deleting message
+2025-05-10 16:48:55,040 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:48:55,041 ERROR No connection on 5004, deleting message
+2025-05-10 16:49:00,569 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:49:00,573 ERROR No connection on 5004, deleting message
+2025-05-10 16:49:06,099 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:49:06,099 ERROR No connection on 5004, deleting message
+2025-05-10 16:49:11,629 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:49:11,630 ERROR No connection on 5004, deleting message
+2025-05-10 16:49:17,162 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:49:17,162 ERROR No connection on 5004, deleting message
+2025-05-10 16:49:22,714 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:49:22,715 ERROR No connection on 5004, deleting message
+2025-05-10 16:49:28,225 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:49:28,225 ERROR No connection on 5004, deleting message
+2025-05-10 16:49:33,752 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:49:33,752 ERROR No connection on 5004, deleting message
+2025-05-10 16:49:39,278 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:49:39,279 ERROR No connection on 5004, deleting message
+2025-05-10 16:49:44,806 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:49:44,806 ERROR No connection on 5004, deleting message
+2025-05-10 16:49:50,337 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:49:50,337 ERROR No connection on 5004, deleting message
+2025-05-10 16:49:55,870 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:49:55,871 ERROR No connection on 5004, deleting message
+2025-05-10 16:50:01,397 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:50:01,401 ERROR No connection on 5004, deleting message
+2025-05-10 16:50:06,930 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:50:06,930 ERROR No connection on 5004, deleting message
+2025-05-10 16:50:12,404 WARNING No data to read
+2025-05-10 16:50:17,982 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:50:17,982 ERROR No connection on 5004, deleting message
+2025-05-10 16:50:23,523 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:50:23,524 ERROR No connection on 5004, deleting message
+2025-05-10 16:50:29,047 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:50:29,047 ERROR No connection on 5004, deleting message
+2025-05-10 16:50:34,578 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:50:34,579 ERROR No connection on 5004, deleting message
+2025-05-10 16:50:40,114 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:50:40,115 ERROR No connection on 5004, deleting message
+2025-05-10 16:50:45,644 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:50:45,644 ERROR No connection on 5004, deleting message
+2025-05-10 16:50:51,173 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:50:51,173 ERROR No connection on 5004, deleting message
+2025-05-10 16:50:56,657 WARNING No data to read
+2025-05-10 16:51:02,235 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:51:02,235 ERROR No connection on 5004, deleting message
+2025-05-10 16:51:07,718 WARNING No data to read
+2025-05-10 16:51:13,296 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:51:13,296 ERROR No connection on 5004, deleting message
+2025-05-10 16:51:18,837 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:51:18,837 ERROR No connection on 5004, deleting message
+2025-05-10 16:51:24,364 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:51:24,364 ERROR No connection on 5004, deleting message
+2025-05-10 16:51:29,888 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:51:29,893 ERROR No connection on 5004, deleting message
+2025-05-10 16:51:35,416 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:51:35,416 ERROR No connection on 5004, deleting message
+2025-05-10 16:51:40,942 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:51:40,948 ERROR No connection on 5004, deleting message
+2025-05-10 16:51:46,473 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:51:46,474 ERROR No connection on 5004, deleting message
+2025-05-10 16:51:52,008 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:51:52,012 ERROR No connection on 5004, deleting message
+2025-05-10 16:51:57,488 WARNING No data to read
+2025-05-10 16:52:03,066 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:52:03,067 ERROR No connection on 5004, deleting message
+2025-05-10 16:52:08,598 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:52:08,599 ERROR No connection on 5004, deleting message
+2025-05-10 16:52:14,085 WARNING No data to read
+2025-05-10 16:52:19,664 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:52:19,665 ERROR No connection on 5004, deleting message
+2025-05-10 16:52:25,195 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:52:25,196 ERROR No connection on 5004, deleting message
+2025-05-10 16:52:30,726 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:52:30,727 ERROR No connection on 5004, deleting message
+2025-05-10 16:52:36,259 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:52:36,259 ERROR No connection on 5004, deleting message
+2025-05-10 16:52:41,791 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:52:41,791 ERROR No connection on 5004, deleting message
+2025-05-10 16:52:47,323 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:52:47,324 ERROR No connection on 5004, deleting message
+2025-05-10 16:52:52,807 WARNING No data to read
+2025-05-10 16:52:58,386 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:52:58,387 ERROR No connection on 5004, deleting message
+2025-05-10 16:53:03,919 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:53:03,919 ERROR No connection on 5004, deleting message
+2025-05-10 16:53:09,450 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:53:09,451 ERROR No connection on 5004, deleting message
+2025-05-10 16:53:14,987 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:53:14,987 ERROR No connection on 5004, deleting message
+2025-05-10 16:53:20,465 WARNING No data to read
+2025-05-10 16:53:26,043 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:53:26,043 ERROR No connection on 5004, deleting message
+2025-05-10 16:53:31,579 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:53:31,580 ERROR No connection on 5004, deleting message
+2025-05-10 16:53:37,107 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:53:37,107 ERROR No connection on 5004, deleting message
+2025-05-10 16:53:42,638 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:53:42,639 ERROR No connection on 5004, deleting message
+2025-05-10 16:53:48,170 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:53:48,171 ERROR No connection on 5004, deleting message
+2025-05-10 16:53:53,707 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:53:53,707 ERROR No connection on 5004, deleting message
+2025-05-10 16:53:59,233 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:53:59,233 ERROR No connection on 5004, deleting message
+2025-05-10 16:54:04,766 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:54:04,767 ERROR No connection on 5004, deleting message
+2025-05-10 16:54:10,248 WARNING No data to read
+2025-05-10 16:54:15,824 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:54:15,824 ERROR No connection on 5004, deleting message
+2025-05-10 16:54:21,354 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:54:21,354 ERROR No connection on 5004, deleting message
+2025-05-10 16:54:26,882 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:54:26,883 ERROR No connection on 5004, deleting message
+2025-05-10 16:54:32,409 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:54:32,409 ERROR No connection on 5004, deleting message
+2025-05-10 16:54:37,945 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:54:37,946 ERROR No connection on 5004, deleting message
+2025-05-10 16:54:43,471 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:54:43,472 ERROR No connection on 5004, deleting message
+2025-05-10 16:54:49,000 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:54:49,001 ERROR No connection on 5004, deleting message
+2025-05-10 16:54:54,532 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:54:54,533 ERROR No connection on 5004, deleting message
+2025-05-10 16:55:00,069 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:55:00,069 ERROR No connection on 5004, deleting message
+2025-05-10 16:55:05,605 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:55:05,605 ERROR No connection on 5004, deleting message
+2025-05-10 16:55:11,126 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:55:11,127 ERROR No connection on 5004, deleting message
+2025-05-10 16:55:16,612 WARNING No data to read
+2025-05-10 16:55:22,190 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:55:22,191 ERROR No connection on 5004, deleting message
+2025-05-10 16:55:27,746 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:55:27,746 ERROR No connection on 5004, deleting message
+2025-05-10 16:55:33,254 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:55:33,255 ERROR No connection on 5004, deleting message
+2025-05-10 16:55:38,777 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:55:38,778 ERROR No connection on 5004, deleting message
+2025-05-10 16:55:44,304 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:55:44,305 ERROR No connection on 5004, deleting message
+2025-05-10 16:55:49,831 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:55:49,832 ERROR No connection on 5004, deleting message
+2025-05-10 16:55:55,367 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:55:55,368 ERROR No connection on 5004, deleting message
+2025-05-10 16:56:00,846 WARNING No data to read
+2025-05-10 16:56:06,424 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:56:06,424 ERROR No connection on 5004, deleting message
+2025-05-10 16:56:11,962 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:56:11,962 ERROR No connection on 5004, deleting message
+2025-05-10 16:56:17,499 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:56:17,499 ERROR No connection on 5004, deleting message
+2025-05-10 16:56:23,018 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:56:23,018 ERROR No connection on 5004, deleting message
+2025-05-10 16:56:28,552 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:56:28,553 ERROR No connection on 5004, deleting message
+2025-05-10 16:56:34,086 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:56:34,086 ERROR No connection on 5004, deleting message
+2025-05-10 16:56:39,617 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:56:39,618 ERROR No connection on 5004, deleting message
+2025-05-10 16:56:45,144 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:56:45,145 ERROR No connection on 5004, deleting message
+2025-05-10 16:56:50,676 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:56:50,680 ERROR No connection on 5004, deleting message
+2025-05-10 16:56:56,207 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:56:56,208 ERROR No connection on 5004, deleting message
+2025-05-10 16:57:01,748 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:57:01,749 ERROR No connection on 5004, deleting message
+2025-05-10 16:57:07,274 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:57:07,275 ERROR No connection on 5004, deleting message
+2025-05-10 16:57:12,801 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:57:12,806 ERROR No connection on 5004, deleting message
+2025-05-10 16:57:18,330 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:57:18,330 ERROR No connection on 5004, deleting message
+2025-05-10 16:57:23,814 WARNING No data to read
+2025-05-10 16:57:29,393 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:57:29,393 ERROR No connection on 5004, deleting message
+2025-05-10 16:57:34,925 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:57:34,926 ERROR No connection on 5004, deleting message
+2025-05-10 16:57:40,410 WARNING No data to read
+2025-05-10 16:57:45,988 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:57:45,989 ERROR No connection on 5004, deleting message
+2025-05-10 16:57:51,520 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:57:51,520 ERROR No connection on 5004, deleting message
+2025-05-10 16:57:57,050 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:57:57,051 ERROR No connection on 5004, deleting message
+2025-05-10 16:58:02,586 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:58:02,587 ERROR No connection on 5004, deleting message
+2025-05-10 16:58:08,066 WARNING No data to read
+2025-05-10 16:58:13,649 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:58:13,649 ERROR No connection on 5004, deleting message
+2025-05-10 16:58:19,129 WARNING No data to read
+2025-05-10 16:58:24,706 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:58:24,707 ERROR No connection on 5004, deleting message
+2025-05-10 16:58:30,239 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:58:30,239 ERROR No connection on 5004, deleting message
+2025-05-10 16:58:35,772 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:58:35,772 ERROR No connection on 5004, deleting message
+2025-05-10 16:58:41,254 WARNING No data to read
+2025-05-10 16:58:46,833 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:58:46,833 ERROR No connection on 5004, deleting message
+2025-05-10 16:58:52,365 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:58:52,366 ERROR No connection on 5004, deleting message
+2025-05-10 16:58:57,901 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:58:57,901 ERROR No connection on 5004, deleting message
+2025-05-10 16:59:03,383 WARNING No data to read
+2025-05-10 16:59:08,961 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:59:08,961 ERROR No connection on 5004, deleting message
+2025-05-10 16:59:14,669 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:59:14,669 ERROR No connection on 5004, deleting message
+2025-05-10 16:59:20,022 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:59:20,023 ERROR No connection on 5004, deleting message
+2025-05-10 16:59:25,560 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:59:25,561 ERROR No connection on 5004, deleting message
+2025-05-10 16:59:31,081 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:59:31,081 ERROR No connection on 5004, deleting message
+2025-05-10 16:59:36,614 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:59:36,615 ERROR No connection on 5004, deleting message
+2025-05-10 16:59:42,094 WARNING No data to read
+2025-05-10 16:59:47,673 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:59:47,674 ERROR No connection on 5004, deleting message
+2025-05-10 16:59:53,206 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:59:53,207 ERROR No connection on 5004, deleting message
+2025-05-10 16:59:58,736 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 16:59:58,737 ERROR No connection on 5004, deleting message
+2025-05-10 17:00:04,268 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:00:04,269 ERROR No connection on 5004, deleting message
+2025-05-10 17:00:09,805 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:00:09,805 ERROR No connection on 5004, deleting message
+2025-05-10 17:00:15,333 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:00:15,333 ERROR No connection on 5004, deleting message
+2025-05-10 17:00:20,868 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:00:20,868 ERROR No connection on 5004, deleting message
+2025-05-10 17:00:26,346 WARNING No data to read
+2025-05-10 17:00:31,921 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:00:31,922 ERROR No connection on 5004, deleting message
+2025-05-10 17:00:37,457 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:00:37,458 ERROR No connection on 5004, deleting message
+2025-05-10 17:00:42,983 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:00:42,984 ERROR No connection on 5004, deleting message
+2025-05-10 17:00:48,518 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:00:48,518 ERROR No connection on 5004, deleting message
+2025-05-10 17:00:54,058 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:00:54,058 ERROR No connection on 5004, deleting message
+2025-05-10 17:00:59,579 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:00:59,584 ERROR No connection on 5004, deleting message
+2025-05-10 17:01:05,054 WARNING No data to read
+2025-05-10 17:01:10,630 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:01:10,631 ERROR No connection on 5004, deleting message
+2025-05-10 17:01:16,162 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:01:16,162 ERROR No connection on 5004, deleting message
+2025-05-10 17:01:21,701 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:01:21,702 ERROR No connection on 5004, deleting message
+2025-05-10 17:01:27,227 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:01:27,228 ERROR No connection on 5004, deleting message
+2025-05-10 17:01:32,702 WARNING No data to read
+2025-05-10 17:01:38,273 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:01:38,274 ERROR No connection on 5004, deleting message
+2025-05-10 17:01:43,811 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:01:43,812 ERROR No connection on 5004, deleting message
+2025-05-10 17:01:49,342 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:01:49,343 ERROR No connection on 5004, deleting message
+2025-05-10 17:01:54,822 WARNING No data to read
+2025-05-10 17:02:00,529 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:02:00,529 ERROR No connection on 5004, deleting message
+2025-05-10 17:02:05,968 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:02:05,968 ERROR No connection on 5004, deleting message
+2025-05-10 17:02:11,464 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:02:11,464 ERROR No connection on 5004, deleting message
+2025-05-10 17:02:16,948 WARNING No data to read
+2025-05-10 17:02:22,527 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:02:22,527 ERROR No connection on 5004, deleting message
+2025-05-10 17:02:28,055 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:02:28,056 ERROR No connection on 5004, deleting message
+2025-05-10 17:02:33,539 WARNING No data to read
+2025-05-10 17:02:39,117 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:02:39,117 ERROR No connection on 5004, deleting message
+2025-05-10 17:02:44,651 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:02:44,651 ERROR No connection on 5004, deleting message
+2025-05-10 17:02:50,181 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:02:50,182 ERROR No connection on 5004, deleting message
+2025-05-10 17:02:55,661 WARNING No data to read
+2025-05-10 17:03:01,238 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:03:01,239 ERROR No connection on 5004, deleting message
+2025-05-10 17:03:06,776 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:03:06,777 ERROR No connection on 5004, deleting message
+2025-05-10 17:03:12,305 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:03:12,305 ERROR No connection on 5004, deleting message
+2025-05-10 17:03:17,835 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:03:17,836 ERROR No connection on 5004, deleting message
+2025-05-10 17:03:23,366 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:03:23,366 ERROR No connection on 5004, deleting message
+2025-05-10 17:03:28,897 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:03:28,901 ERROR No connection on 5004, deleting message
+2025-05-10 17:03:34,384 WARNING No data to read
+2025-05-10 17:03:39,964 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:03:39,965 ERROR No connection on 5004, deleting message
+2025-05-10 17:03:45,448 WARNING No data to read
+2025-05-10 17:03:51,026 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:03:51,027 ERROR No connection on 5004, deleting message
+2025-05-10 17:03:56,565 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:03:56,566 ERROR No connection on 5004, deleting message
+2025-05-10 17:04:02,095 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:04:02,096 ERROR No connection on 5004, deleting message
+2025-05-10 17:04:07,631 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:04:07,632 ERROR No connection on 5004, deleting message
+2025-05-10 17:04:13,108 WARNING No data to read
+2025-05-10 17:04:18,693 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:04:18,694 ERROR No connection on 5004, deleting message
+2025-05-10 17:04:24,219 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:04:24,219 ERROR No connection on 5004, deleting message
+2025-05-10 17:04:29,750 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:04:29,754 ERROR No connection on 5004, deleting message
+2025-05-10 17:04:35,283 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:04:35,283 ERROR No connection on 5004, deleting message
+2025-05-10 17:04:40,821 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:04:40,821 ERROR No connection on 5004, deleting message
+2025-05-10 17:04:46,350 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:04:46,350 ERROR No connection on 5004, deleting message
+2025-05-10 17:04:51,877 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:04:51,882 ERROR No connection on 5004, deleting message
+2025-05-10 17:04:57,410 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:04:57,411 ERROR No connection on 5004, deleting message
+2025-05-10 17:05:02,935 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:05:02,936 ERROR No connection on 5004, deleting message
+2025-05-10 17:05:08,475 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:05:08,476 ERROR No connection on 5004, deleting message
+2025-05-10 17:05:13,996 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:05:13,997 ERROR No connection on 5004, deleting message
+2025-05-10 17:05:19,529 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:05:19,534 ERROR No connection on 5004, deleting message
+2025-05-10 17:05:25,062 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:05:25,063 ERROR No connection on 5004, deleting message
+2025-05-10 17:05:30,591 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:05:30,595 ERROR No connection on 5004, deleting message
+2025-05-10 17:05:36,125 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:05:36,125 ERROR No connection on 5004, deleting message
+2025-05-10 17:05:41,653 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:05:41,653 ERROR No connection on 5004, deleting message
+2025-05-10 17:05:47,181 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:05:47,181 ERROR No connection on 5004, deleting message
+2025-05-10 17:05:52,713 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:05:52,713 ERROR No connection on 5004, deleting message
+2025-05-10 17:05:58,249 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:05:58,250 ERROR No connection on 5004, deleting message
+2025-05-10 17:06:03,777 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:06:03,778 ERROR No connection on 5004, deleting message
+2025-05-10 17:06:09,310 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:06:09,311 ERROR No connection on 5004, deleting message
+2025-05-10 17:06:14,839 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:06:14,839 ERROR No connection on 5004, deleting message
+2025-05-10 17:06:20,366 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:06:20,366 ERROR No connection on 5004, deleting message
+2025-05-10 17:06:25,898 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:06:25,899 ERROR No connection on 5004, deleting message
+2025-05-10 17:06:31,379 WARNING No data to read
+2025-05-10 17:06:36,911 WARNING No data to read
+2025-05-10 17:06:42,442 WARNING No data to read
+2025-05-10 17:06:48,030 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:06:48,030 ERROR No connection on 5004, deleting message
+2025-05-10 17:06:53,557 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:06:53,558 ERROR No connection on 5004, deleting message
+2025-05-10 17:06:59,088 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:06:59,089 ERROR No connection on 5004, deleting message
+2025-05-10 17:07:04,611 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:07:04,612 ERROR No connection on 5004, deleting message
+2025-05-10 17:07:10,188 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:07:10,189 ERROR No connection on 5004, deleting message
+2025-05-10 17:07:15,676 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:07:15,677 ERROR No connection on 5004, deleting message
+2025-05-10 17:07:21,160 WARNING No data to read
+2025-05-10 17:07:26,739 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:07:26,740 ERROR No connection on 5004, deleting message
+2025-05-10 17:07:32,269 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:07:32,270 ERROR No connection on 5004, deleting message
+2025-05-10 17:07:37,810 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:07:37,811 ERROR No connection on 5004, deleting message
+2025-05-10 17:07:43,286 WARNING No data to read
+2025-05-10 17:07:48,865 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:07:48,865 ERROR No connection on 5004, deleting message
+2025-05-10 17:07:54,398 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:07:54,398 ERROR No connection on 5004, deleting message
+2025-05-10 17:07:59,932 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:07:59,937 ERROR No connection on 5004, deleting message
+2025-05-10 17:08:05,466 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:08:05,467 ERROR No connection on 5004, deleting message
+2025-05-10 17:08:10,947 WARNING No data to read
+2025-05-10 17:08:16,527 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:08:16,527 ERROR No connection on 5004, deleting message
+2025-05-10 17:08:22,057 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:08:22,058 ERROR No connection on 5004, deleting message
+2025-05-10 17:08:27,595 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:08:27,596 ERROR No connection on 5004, deleting message
+2025-05-10 17:08:33,074 WARNING No data to read
+2025-05-10 17:08:38,652 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:08:38,652 ERROR No connection on 5004, deleting message
+2025-05-10 17:08:44,185 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:08:44,186 ERROR No connection on 5004, deleting message
+2025-05-10 17:08:49,714 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:08:49,717 ERROR No connection on 5004, deleting message
+2025-05-10 17:08:55,243 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:08:55,243 ERROR No connection on 5004, deleting message
+2025-05-10 17:09:00,776 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:09:00,781 ERROR No connection on 5004, deleting message
+2025-05-10 17:09:06,312 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:09:06,313 ERROR No connection on 5004, deleting message
+2025-05-10 17:09:11,838 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:09:11,842 ERROR No connection on 5004, deleting message
+2025-05-10 17:09:17,363 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:09:17,363 ERROR No connection on 5004, deleting message
+2025-05-10 17:09:22,897 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:09:22,901 ERROR No connection on 5004, deleting message
+2025-05-10 17:09:28,433 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:09:28,433 ERROR No connection on 5004, deleting message
+2025-05-10 17:09:33,958 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:09:33,958 ERROR No connection on 5004, deleting message
+2025-05-10 17:09:39,438 WARNING No data to read
+2025-05-10 17:09:45,018 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:09:45,018 ERROR No connection on 5004, deleting message
+2025-05-10 17:09:50,548 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:09:50,549 ERROR No connection on 5004, deleting message
+2025-05-10 17:09:56,085 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:09:56,086 ERROR No connection on 5004, deleting message
+2025-05-10 17:10:01,613 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:10:01,617 ERROR No connection on 5004, deleting message
+2025-05-10 17:10:07,096 WARNING No data to read
+2025-05-10 17:10:12,675 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:10:12,676 ERROR No connection on 5004, deleting message
+2025-05-10 17:10:18,207 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:10:18,208 ERROR No connection on 5004, deleting message
+2025-05-10 17:10:23,745 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:10:23,745 ERROR No connection on 5004, deleting message
+2025-05-10 17:10:29,270 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:10:29,270 ERROR No connection on 5004, deleting message
+2025-05-10 17:10:34,803 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:10:34,803 ERROR No connection on 5004, deleting message
+2025-05-10 17:10:40,336 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:10:40,336 ERROR No connection on 5004, deleting message
+2025-05-10 17:10:45,878 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:10:45,879 ERROR No connection on 5004, deleting message
+2025-05-10 17:10:51,401 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:10:51,401 ERROR No connection on 5004, deleting message
+2025-05-10 17:10:56,882 WARNING No data to read
+2025-05-10 17:11:02,460 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:11:02,461 ERROR No connection on 5004, deleting message
+2025-05-10 17:11:07,997 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:11:07,998 ERROR No connection on 5004, deleting message
+2025-05-10 17:11:13,476 WARNING No data to read
+2025-05-10 17:11:19,007 WARNING No data to read
+2025-05-10 17:11:24,541 WARNING No data to read
+2025-05-10 17:11:30,120 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:11:30,121 ERROR No connection on 5004, deleting message
+2025-05-10 17:11:35,652 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:11:35,652 ERROR No connection on 5004, deleting message
+2025-05-10 17:11:41,182 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:11:41,183 ERROR No connection on 5004, deleting message
+2025-05-10 17:11:46,720 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:11:46,721 ERROR No connection on 5004, deleting message
+2025-05-10 17:11:52,241 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:11:52,242 ERROR No connection on 5004, deleting message
+2025-05-10 17:11:57,780 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:11:57,780 ERROR No connection on 5004, deleting message
+2025-05-10 17:12:03,303 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:12:03,303 ERROR No connection on 5004, deleting message
+2025-05-10 17:12:08,781 WARNING No data to read
+2025-05-10 17:12:14,360 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:12:14,361 ERROR No connection on 5004, deleting message
+2025-05-10 17:12:19,895 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:12:19,896 ERROR No connection on 5004, deleting message
+2025-05-10 17:12:25,373 WARNING No data to read
+2025-05-10 17:12:30,952 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:12:30,952 ERROR No connection on 5004, deleting message
+2025-05-10 17:12:36,481 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:12:36,481 ERROR No connection on 5004, deleting message
+2025-05-10 17:12:42,015 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:12:42,016 ERROR No connection on 5004, deleting message
+2025-05-10 17:12:47,552 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:12:47,552 ERROR No connection on 5004, deleting message
+2025-05-10 17:12:53,078 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:12:53,079 ERROR No connection on 5004, deleting message
+2025-05-10 17:12:58,621 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:12:58,635 ERROR No connection on 5004, deleting message
+2025-05-10 17:13:04,147 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:13:04,147 ERROR No connection on 5004, deleting message
+2025-05-10 17:13:09,675 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:13:09,688 ERROR No connection on 5004, deleting message
+2025-05-10 17:13:15,151 WARNING No data to read
+2025-05-10 17:13:20,730 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:13:20,730 ERROR No connection on 5004, deleting message
+2025-05-10 17:13:26,265 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:13:26,265 ERROR No connection on 5004, deleting message
+2025-05-10 17:13:31,745 WARNING No data to read
+2025-05-10 17:13:37,320 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:13:37,320 ERROR No connection on 5004, deleting message
+2025-05-10 17:13:42,850 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:13:42,851 ERROR No connection on 5004, deleting message
+2025-05-10 17:13:48,336 WARNING No data to read
+2025-05-10 17:13:53,866 WARNING No data to read
+2025-05-10 17:13:59,601 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:13:59,602 ERROR No connection on 5004, deleting message
+2025-05-10 17:14:04,977 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:14:04,977 ERROR No connection on 5004, deleting message
+2025-05-10 17:14:10,506 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:14:10,506 ERROR No connection on 5004, deleting message
+2025-05-10 17:14:16,048 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:14:16,049 ERROR No connection on 5004, deleting message
+2025-05-10 17:14:21,570 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:14:21,573 ERROR No connection on 5004, deleting message
+2025-05-10 17:14:27,099 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:14:27,100 ERROR No connection on 5004, deleting message
+2025-05-10 17:14:32,634 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:14:32,634 ERROR No connection on 5004, deleting message
+2025-05-10 17:14:38,156 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:14:38,157 ERROR No connection on 5004, deleting message
+2025-05-10 17:14:43,698 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:14:43,699 ERROR No connection on 5004, deleting message
+2025-05-10 17:14:49,220 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:14:49,220 ERROR No connection on 5004, deleting message
+2025-05-10 17:14:54,757 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:14:54,757 ERROR No connection on 5004, deleting message
+2025-05-10 17:15:00,283 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:15:00,284 ERROR No connection on 5004, deleting message
+2025-05-10 17:15:05,817 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:15:05,817 ERROR No connection on 5004, deleting message
+2025-05-10 17:15:11,341 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:15:11,342 ERROR No connection on 5004, deleting message
+2025-05-10 17:15:16,876 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:15:16,877 ERROR No connection on 5004, deleting message
+2025-05-10 17:15:22,415 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:15:22,416 ERROR No connection on 5004, deleting message
+2025-05-10 17:15:27,944 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:15:27,945 ERROR No connection on 5004, deleting message
+2025-05-10 17:15:33,466 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:15:33,466 ERROR No connection on 5004, deleting message
+2025-05-10 17:15:38,998 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:15:38,999 ERROR No connection on 5004, deleting message
+2025-05-10 17:15:44,525 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:15:44,526 ERROR No connection on 5004, deleting message
+2025-05-10 17:15:50,056 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:15:50,056 ERROR No connection on 5004, deleting message
+2025-05-10 17:15:55,593 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:15:55,593 ERROR No connection on 5004, deleting message
+2025-05-10 17:16:01,121 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:16:01,121 ERROR No connection on 5004, deleting message
+2025-05-10 17:16:06,646 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:16:06,647 ERROR No connection on 5004, deleting message
+2025-05-10 17:16:12,182 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:16:12,182 ERROR No connection on 5004, deleting message
+2025-05-10 17:16:17,715 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:16:17,716 ERROR No connection on 5004, deleting message
+2025-05-10 17:16:23,239 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:16:23,239 ERROR No connection on 5004, deleting message
+2025-05-10 17:16:28,776 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:16:28,777 ERROR No connection on 5004, deleting message
+2025-05-10 17:16:34,300 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:16:34,300 ERROR No connection on 5004, deleting message
+2025-05-10 17:16:39,832 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:16:39,837 ERROR No connection on 5004, deleting message
+2025-05-10 17:16:45,367 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:16:45,367 ERROR No connection on 5004, deleting message
+2025-05-10 17:16:50,895 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:16:50,899 ERROR No connection on 5004, deleting message
+2025-05-10 17:16:56,421 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:16:56,421 ERROR No connection on 5004, deleting message
+2025-05-10 17:17:01,905 WARNING No data to read
+2025-05-10 17:17:07,436 WARNING No data to read
+2025-05-10 17:17:12,963 WARNING No data to read
+2025-05-10 17:17:18,546 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:17:18,547 ERROR No connection on 5004, deleting message
+2025-05-10 17:17:24,078 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:17:24,078 ERROR No connection on 5004, deleting message
+2025-05-10 17:17:29,614 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:17:29,615 ERROR No connection on 5004, deleting message
+2025-05-10 17:17:35,138 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:17:35,139 ERROR No connection on 5004, deleting message
+2025-05-10 17:17:40,670 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:17:40,671 ERROR No connection on 5004, deleting message
+2025-05-10 17:17:46,206 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:17:46,207 ERROR No connection on 5004, deleting message
+2025-05-10 17:17:51,686 WARNING No data to read
+2025-05-10 17:17:57,265 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:17:57,265 ERROR No connection on 5004, deleting message
+2025-05-10 17:18:02,748 WARNING No data to read
+2025-05-10 17:18:08,327 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:18:08,328 ERROR No connection on 5004, deleting message
+2025-05-10 17:18:13,811 WARNING No data to read
+2025-05-10 17:18:19,391 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:18:19,391 ERROR No connection on 5004, deleting message
+2025-05-10 17:18:24,928 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:18:24,929 ERROR No connection on 5004, deleting message
+2025-05-10 17:18:30,460 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:18:30,460 ERROR No connection on 5004, deleting message
+2025-05-10 17:18:35,979 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:18:35,979 ERROR No connection on 5004, deleting message
+2025-05-10 17:18:41,515 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:18:41,516 ERROR No connection on 5004, deleting message
+2025-05-10 17:18:47,041 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:18:47,042 ERROR No connection on 5004, deleting message
+2025-05-10 17:18:52,579 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:18:52,579 ERROR No connection on 5004, deleting message
+2025-05-10 17:18:58,105 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:18:58,105 ERROR No connection on 5004, deleting message
+2025-05-10 17:19:03,633 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:19:03,634 ERROR No connection on 5004, deleting message
+2025-05-10 17:19:09,159 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:19:09,160 ERROR No connection on 5004, deleting message
+2025-05-10 17:19:14,695 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:19:14,696 ERROR No connection on 5004, deleting message
+2025-05-10 17:19:20,174 WARNING No data to read
+2025-05-10 17:19:25,754 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:19:25,755 ERROR No connection on 5004, deleting message
+2025-05-10 17:19:31,286 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:19:31,287 ERROR No connection on 5004, deleting message
+2025-05-10 17:19:36,819 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:19:36,819 ERROR No connection on 5004, deleting message
+2025-05-10 17:19:42,302 WARNING No data to read
+2025-05-10 17:19:47,836 WARNING No data to read
+2025-05-10 17:19:53,420 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:19:53,421 ERROR No connection on 5004, deleting message
+2025-05-10 17:19:58,951 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:19:58,952 ERROR No connection on 5004, deleting message
+2025-05-10 17:20:04,426 WARNING No data to read
+2025-05-10 17:20:10,003 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:20:10,003 ERROR No connection on 5004, deleting message
+2025-05-10 17:20:15,488 WARNING No data to read
+2025-05-10 17:20:21,065 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:20:21,065 ERROR No connection on 5004, deleting message
+2025-05-10 17:20:26,546 WARNING No data to read
+2025-05-10 17:20:32,125 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:20:32,125 ERROR No connection on 5004, deleting message
+2025-05-10 17:20:37,661 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:20:37,662 ERROR No connection on 5004, deleting message
+2025-05-10 17:20:43,140 WARNING No data to read
+2025-05-10 17:20:48,670 WARNING No data to read
+2025-05-10 17:20:54,245 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:20:54,246 ERROR No connection on 5004, deleting message
+2025-05-10 17:20:59,777 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:20:59,777 ERROR No connection on 5004, deleting message
+2025-05-10 17:21:05,313 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:21:05,313 ERROR No connection on 5004, deleting message
+2025-05-10 17:21:10,793 WARNING No data to read
+2025-05-10 17:21:16,371 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:21:16,372 ERROR No connection on 5004, deleting message
+2025-05-10 17:21:21,903 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:21:21,904 ERROR No connection on 5004, deleting message
+2025-05-10 17:21:27,437 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:21:27,438 ERROR No connection on 5004, deleting message
+2025-05-10 17:21:32,918 WARNING No data to read
+2025-05-10 17:21:38,499 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:21:38,499 ERROR No connection on 5004, deleting message
+2025-05-10 17:21:43,980 WARNING No data to read
+2025-05-10 17:21:49,511 WARNING No data to read
+2025-05-10 17:21:55,045 WARNING No data to read
+2025-05-10 17:22:00,622 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:22:00,622 ERROR No connection on 5004, deleting message
+2025-05-10 17:22:06,106 WARNING No data to read
+2025-05-10 17:22:11,637 WARNING No data to read
+2025-05-10 17:22:17,166 WARNING No data to read
+2025-05-10 17:22:22,744 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:22:22,744 ERROR No connection on 5004, deleting message
+2025-05-10 17:22:28,281 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:22:28,282 ERROR No connection on 5004, deleting message
+2025-05-10 17:22:33,760 WARNING No data to read
+2025-05-10 17:22:39,339 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:22:39,340 ERROR No connection on 5004, deleting message
+2025-05-10 17:22:44,870 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:22:44,871 ERROR No connection on 5004, deleting message
+2025-05-10 17:22:50,408 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:22:50,409 ERROR No connection on 5004, deleting message
+2025-05-10 17:22:55,937 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:22:55,938 ERROR No connection on 5004, deleting message
+2025-05-10 17:23:01,418 WARNING No data to read
+2025-05-10 17:23:06,997 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:23:06,998 ERROR No connection on 5004, deleting message
+2025-05-10 17:23:12,528 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:23:12,529 ERROR No connection on 5004, deleting message
+2025-05-10 17:23:18,058 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:23:18,059 ERROR No connection on 5004, deleting message
+2025-05-10 17:23:23,542 WARNING No data to read
+2025-05-10 17:23:29,119 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:23:29,119 ERROR No connection on 5004, deleting message
+2025-05-10 17:23:34,653 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:23:34,654 ERROR No connection on 5004, deleting message
+2025-05-10 17:23:40,185 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:23:40,185 ERROR No connection on 5004, deleting message
+2025-05-10 17:23:45,669 WARNING No data to read
+2025-05-10 17:23:51,246 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:23:51,247 ERROR No connection on 5004, deleting message
+2025-05-10 17:23:56,783 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:23:56,783 ERROR No connection on 5004, deleting message
+2025-05-10 17:24:02,332 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:24:02,333 ERROR No connection on 5004, deleting message
+2025-05-10 17:24:07,842 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:24:07,843 ERROR No connection on 5004, deleting message
+2025-05-10 17:24:13,374 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:24:13,374 ERROR No connection on 5004, deleting message
+2025-05-10 17:24:18,911 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:24:18,915 ERROR No connection on 5004, deleting message
+2025-05-10 17:24:24,441 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:24:24,442 ERROR No connection on 5004, deleting message
+2025-05-10 17:24:29,968 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:24:29,969 ERROR No connection on 5004, deleting message
+2025-05-10 17:24:35,452 WARNING No data to read
+2025-05-10 17:24:41,032 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:24:41,032 ERROR No connection on 5004, deleting message
+2025-05-10 17:24:46,564 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:24:46,565 ERROR No connection on 5004, deleting message
+2025-05-10 17:24:52,091 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:24:52,092 ERROR No connection on 5004, deleting message
+2025-05-10 17:24:57,627 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:24:57,627 ERROR No connection on 5004, deleting message
+2025-05-10 17:25:03,106 WARNING No data to read
+2025-05-10 17:25:08,680 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:25:08,681 ERROR No connection on 5004, deleting message
+2025-05-10 17:25:14,212 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:25:14,212 ERROR No connection on 5004, deleting message
+2025-05-10 17:25:19,748 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:25:19,753 ERROR No connection on 5004, deleting message
+2025-05-10 17:25:25,275 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:25:25,275 ERROR No connection on 5004, deleting message
+2025-05-10 17:25:30,811 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:25:30,811 ERROR No connection on 5004, deleting message
+2025-05-10 17:25:36,336 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:25:36,337 ERROR No connection on 5004, deleting message
+2025-05-10 17:25:41,869 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:25:41,874 ERROR No connection on 5004, deleting message
+2025-05-10 17:25:47,401 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:25:47,401 ERROR No connection on 5004, deleting message
+2025-05-10 17:25:52,932 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:25:52,933 ERROR No connection on 5004, deleting message
+2025-05-10 17:25:58,469 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:25:58,469 ERROR No connection on 5004, deleting message
+2025-05-10 17:26:04,017 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:26:04,018 ERROR No connection on 5004, deleting message
+2025-05-10 17:26:09,470 WARNING No data to read
+2025-05-10 17:26:15,044 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:26:15,045 ERROR No connection on 5004, deleting message
+2025-05-10 17:26:20,577 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:26:20,577 ERROR No connection on 5004, deleting message
+2025-05-10 17:26:26,113 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:26:26,113 ERROR No connection on 5004, deleting message
+2025-05-10 17:26:31,644 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:26:31,648 ERROR No connection on 5004, deleting message
+2025-05-10 17:26:37,123 WARNING No data to read
+2025-05-10 17:26:42,703 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:26:42,703 ERROR No connection on 5004, deleting message
+2025-05-10 17:26:48,189 WARNING No data to read
+2025-05-10 17:26:53,769 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:26:53,770 ERROR No connection on 5004, deleting message
+2025-05-10 17:26:59,301 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:26:59,301 ERROR No connection on 5004, deleting message
+2025-05-10 17:27:04,839 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:27:04,839 ERROR No connection on 5004, deleting message
+2025-05-10 17:27:10,365 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:27:10,365 ERROR No connection on 5004, deleting message
+2025-05-10 17:27:15,901 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:27:15,902 ERROR No connection on 5004, deleting message
+2025-05-10 17:27:21,426 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:27:21,427 ERROR No connection on 5004, deleting message
+2025-05-10 17:27:26,908 WARNING No data to read
+2025-05-10 17:27:32,486 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:27:32,486 ERROR No connection on 5004, deleting message
+2025-05-10 17:27:38,021 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:27:38,022 ERROR No connection on 5004, deleting message
+2025-05-10 17:27:43,554 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:27:43,555 ERROR No connection on 5004, deleting message
+2025-05-10 17:27:49,080 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:27:49,081 ERROR No connection on 5004, deleting message
+2025-05-10 17:27:54,564 WARNING No data to read
+2025-05-10 17:28:00,142 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:28:00,143 ERROR No connection on 5004, deleting message
+2025-05-10 17:28:05,679 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:28:05,680 ERROR No connection on 5004, deleting message
+2025-05-10 17:28:11,206 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:28:11,207 ERROR No connection on 5004, deleting message
+2025-05-10 17:28:16,690 WARNING No data to read
+2025-05-10 17:28:22,269 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:28:22,270 ERROR No connection on 5004, deleting message
+2025-05-10 17:28:27,811 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:28:27,811 ERROR No connection on 5004, deleting message
+2025-05-10 17:28:33,338 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:28:33,339 ERROR No connection on 5004, deleting message
+2025-05-10 17:28:38,860 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:28:38,860 ERROR No connection on 5004, deleting message
+2025-05-10 17:28:44,391 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:28:44,392 ERROR No connection on 5004, deleting message
+2025-05-10 17:28:49,927 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:28:49,927 ERROR No connection on 5004, deleting message
+2025-05-10 17:28:55,455 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:28:55,455 ERROR No connection on 5004, deleting message
+2025-05-10 17:29:00,987 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:29:00,987 ERROR No connection on 5004, deleting message
+2025-05-10 17:29:06,473 WARNING No data to read
+2025-05-10 17:29:12,004 WARNING No data to read
+2025-05-10 17:29:17,610 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:29:17,611 ERROR No connection on 5004, deleting message
+2025-05-10 17:29:23,114 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:29:23,114 ERROR No connection on 5004, deleting message
+2025-05-10 17:29:28,656 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:29:28,656 ERROR No connection on 5004, deleting message
+2025-05-10 17:29:34,177 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:29:34,178 ERROR No connection on 5004, deleting message
+2025-05-10 17:29:39,663 WARNING No data to read
+2025-05-10 17:29:45,243 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:29:45,243 ERROR No connection on 5004, deleting message
+2025-05-10 17:29:50,774 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:29:50,780 ERROR No connection on 5004, deleting message
+2025-05-10 17:29:56,305 ERROR Failed to connect on port 5004: [Errno 111] Connect call failed ('100.117.141.114', 5004)
+2025-05-10 17:29:56,306 ERROR No connection on 5004, deleting message
+2025-05-10 17:30:01,790 WARNING No data to read
+2025-05-10 17:30:07,318 WARNING No data to read
+2025-05-10 17:30:46,037 WARNING No data to read
+2025-05-10 17:31:24,754 WARNING No data to read
+2025-05-10 17:31:57,942 WARNING No data to read
+2025-05-10 17:32:31,124 WARNING No data to read
+2025-05-10 17:33:43,030 WARNING No data to read
+2025-05-10 17:34:21,749 WARNING No data to read
+2025-05-10 17:34:32,811 WARNING No data to read
+2025-05-10 17:34:43,873 WARNING No data to read
+2025-05-10 17:34:54,936 WARNING No data to read
+2025-05-10 17:35:11,529 WARNING No data to read
+2025-05-10 17:36:17,890 WARNING No data to read
+2025-05-10 17:36:45,543 WARNING No data to read
+2025-05-10 17:36:51,074 WARNING No data to read
+2025-05-10 17:36:56,606 WARNING No data to read
+2025-05-10 17:37:57,433 WARNING No data to read
+2025-05-10 17:38:02,964 WARNING No data to read
+2025-05-10 17:38:19,557 WARNING No data to read
+2025-05-10 17:38:30,618 WARNING No data to read
+2025-05-10 17:38:41,680 WARNING No data to read
+2025-05-10 17:39:14,860 WARNING No data to read
+2025-05-10 17:39:31,449 WARNING No data to read
+2025-05-10 17:39:36,980 WARNING No data to read
+2025-05-10 17:39:53,572 WARNING No data to read
+2025-05-10 17:40:04,630 WARNING No data to read
+2025-05-10 17:40:26,757 WARNING No data to read
+2025-05-10 17:40:54,404 WARNING No data to read
+2025-05-10 17:42:11,832 WARNING No data to read
+2025-05-10 17:42:17,366 WARNING No data to read
+2025-05-10 17:43:12,656 WARNING No data to read
+2025-05-10 17:44:35,622 WARNING No data to read
+2025-05-10 17:44:41,150 WARNING No data to read
+2025-05-10 17:44:52,212 WARNING No data to read
+2025-05-10 17:45:19,868 WARNING No data to read
+2025-05-10 17:45:47,522 WARNING No data to read
+2025-05-10 17:45:53,053 WARNING No data to read
+2025-05-10 17:45:58,585 WARNING No data to read
+2025-05-10 17:46:09,647 WARNING No data to read
+2025-05-10 17:46:42,834 WARNING No data to read
+2025-05-10 17:47:43,666 WARNING No data to read
+2025-05-10 17:47:49,197 WARNING No data to read
+2025-05-10 17:48:00,262 WARNING No data to read
+2025-05-10 17:48:55,576 WARNING No data to read
+2025-05-10 17:50:13,004 WARNING No data to read
+2025-05-10 17:50:46,192 WARNING No data to read
+2025-05-10 17:51:13,848 WARNING No data to read
+2025-05-10 17:51:52,568 WARNING No data to read
+2025-05-10 17:52:20,224 WARNING No data to read
+2025-05-10 17:52:31,287 WARNING No data to read
+2025-05-10 17:52:42,350 WARNING No data to read
+2025-05-10 17:53:04,475 WARNING No data to read
+2025-05-10 17:54:10,829 WARNING No data to read
+2025-05-10 17:54:55,079 WARNING No data to read
+2025-05-10 17:55:28,261 WARNING No data to read
+2025-05-10 17:56:06,981 WARNING No data to read
+2025-05-10 17:56:18,043 WARNING No data to read
+2025-05-10 17:56:23,574 WARNING No data to read
+2025-05-10 17:57:02,284 WARNING No data to read
+2025-05-10 17:59:20,526 WARNING No data to read
+2025-05-10 17:59:31,585 WARNING No data to read
+2025-05-10 17:59:37,117 WARNING No data to read
+2025-05-10 18:00:15,836 WARNING No data to read
+2025-05-10 18:00:26,899 WARNING No data to read
+2025-05-10 18:00:37,954 WARNING No data to read
+2025-05-10 18:01:00,076 WARNING No data to read
+2025-05-10 18:01:11,138 WARNING No data to read
+2025-05-10 18:01:16,670 WARNING No data to read
+2025-05-10 18:01:22,203 WARNING No data to read
+2025-05-10 18:02:28,556 WARNING No data to read
+2025-05-10 18:02:56,212 WARNING No data to read
+2025-05-10 18:03:01,744 WARNING No data to read
+2025-05-10 18:03:29,396 WARNING No data to read
+2025-05-10 18:04:19,164 WARNING No data to read
+2025-05-10 18:04:57,881 WARNING No data to read
+2025-05-10 18:05:03,412 WARNING No data to read
+2025-05-10 18:05:08,942 WARNING No data to read
+2025-05-10 18:05:53,174 WARNING No data to read
+2025-05-10 18:05:58,707 WARNING No data to read
+2025-05-10 18:06:54,020 WARNING No data to read
+2025-05-10 18:07:21,667 WARNING No data to read
+2025-05-10 18:07:27,198 WARNING No data to read
+2025-05-10 18:07:49,326 WARNING No data to read
+2025-05-10 18:07:54,857 WARNING No data to read
+2025-05-10 18:08:11,451 WARNING No data to read
+2025-05-10 18:08:16,982 WARNING No data to read
+2025-05-10 18:08:39,107 WARNING No data to read
+2025-05-10 18:09:06,761 WARNING No data to read
+2025-05-10 18:09:12,295 WARNING No data to read
+2025-05-10 18:09:34,415 WARNING No data to read
+2025-05-10 18:09:39,946 WARNING No data to read
+2025-05-10 18:09:45,476 WARNING No data to read
+2025-05-10 18:09:56,539 WARNING No data to read
+2025-05-10 18:10:07,602 WARNING No data to read
+2025-05-10 18:10:18,664 WARNING No data to read
+2025-05-10 18:11:13,952 WARNING No data to read
+2025-05-10 18:11:41,609 WARNING No data to read
+2025-05-10 18:11:47,142 WARNING No data to read
+2025-05-10 18:11:58,204 WARNING No data to read
+2025-05-10 18:13:15,619 WARNING No data to read
+2025-05-10 18:13:26,678 WARNING No data to read
+2025-05-10 18:14:05,388 WARNING No data to read
+2025-05-10 18:14:55,158 WARNING No data to read
+2025-05-10 18:15:11,751 WARNING No data to read
+2025-05-10 18:15:22,814 WARNING No data to read
+2025-05-10 18:16:56,818 WARNING No data to read
+2025-05-10 18:18:19,762 WARNING No data to read
+2025-05-10 18:19:09,541 WARNING No data to read
+2025-05-10 18:19:26,137 WARNING No data to read
+2025-05-10 18:19:37,200 WARNING No data to read
+2025-05-10 18:19:53,789 WARNING No data to read
+2025-05-10 18:20:15,916 WARNING No data to read
+2025-05-10 18:20:26,979 WARNING No data to read
+2025-05-10 18:20:49,096 WARNING No data to read
+2023-08-09 13:09:06,061 WARNING No data to read
+2023-08-09 13:09:11,611 WARNING No data to read
+2023-08-09 13:09:17,144 WARNING No data to read
+2025-05-13 09:03:27,303 WARNING No data to read
+2025-05-13 09:03:32,846 WARNING No data to read
+2025-05-13 09:03:38,380 WARNING No data to read
+2025-05-13 09:03:43,909 WARNING No data to read
+2025-05-13 09:04:00,512 WARNING No data to read
+2025-05-13 09:04:22,630 WARNING No data to read
+2025-05-13 09:05:29,001 WARNING No data to read
+2025-05-13 09:05:59,330 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:05:59,330 ERROR No connection on 5004, deleting message
+2025-05-13 09:06:13,247 WARNING No data to read
+2025-05-13 09:06:24,309 WARNING No data to read
+2025-05-13 09:07:03,021 WARNING No data to read
+2025-05-13 09:07:25,145 WARNING No data to read
+2025-05-13 09:07:52,800 WARNING No data to read
+2025-05-13 09:07:58,334 WARNING No data to read
+2025-05-13 09:08:10,401 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:08:10,402 ERROR No connection on 5004, deleting message
+2025-05-13 09:08:25,988 WARNING No data to read
+2025-05-13 09:08:48,114 WARNING No data to read
+2025-05-13 09:08:59,174 WARNING No data to read
+2025-05-13 09:09:32,362 WARNING No data to read
+2025-05-13 09:09:54,490 WARNING No data to read
+2025-05-13 09:10:16,616 WARNING No data to read
+2025-05-13 09:10:21,473 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:10:21,474 ERROR No connection on 5004, deleting message
+2025-05-13 09:10:22,142 WARNING No data to read
+2025-05-13 09:10:33,205 WARNING No data to read
+2025-05-13 09:10:44,269 WARNING No data to read
+2025-05-13 09:11:06,392 WARNING No data to read
+2025-05-13 09:11:28,514 WARNING No data to read
+2025-05-13 09:12:07,232 WARNING No data to read
+2025-05-13 09:12:32,545 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:12:32,546 ERROR No connection on 5004, deleting message
+2025-05-13 09:13:02,541 WARNING No data to read
+2025-05-13 09:13:13,602 WARNING No data to read

@@ -8,7 +8,7 @@ logging.basicConfig(
 
 async def control_charging(charging_queue, sending_queue, charging_relay_pin):
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(charging_relay_pin, GPIO.OUT)
+    GPIO.setup(charging_relay_pin, GPIO.OUT, initial=GPIO.HIGH)
     while True:
         try:
             command = await charging_queue.get()
@@ -17,11 +17,11 @@ async def control_charging(charging_queue, sending_queue, charging_relay_pin):
                 print("type == charging")
                 if command["data"] == "start":
                     GPIO.output(charging_relay_pin, GPIO.LOW)
-                    await sending_queue.put({"type": "charging_status", "data": "Charging started"})
+                    await sending_queue.put({"type": "charging_status", "data": "ON"})
                     print("Charging started")
                 elif command["data"] == "stop":
                     GPIO.output(charging_relay_pin, GPIO.HIGH)
-                    await sending_queue.put({"type": "charging_status", "data": "Charging stopped"})
+                    await sending_queue.put({"type": "charging_status", "data": "OFF"})
                     print("Charging stopped")
             charging_queue.task_done()
         except Exception as e:

@@ -17,5 +17,4 @@ gpio:
 logging:
   level: WARNING
   file: "/logs/drone_dispenser.log"
-#intervals:
-#  sensor_read: 60
+

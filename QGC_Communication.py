@@ -46,7 +46,7 @@ async def tcp_sender(sending_queue):
         try:
             message = await sending_queue.get()
 
-             # Select addres based on type of communication
+             # Select address based on type of communication
             if message["type"] == "sensor":
                 port = config['tcp']['sensor_port']
             elif message["type"] == "status_actuator":
