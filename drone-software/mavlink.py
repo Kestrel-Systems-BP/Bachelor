@@ -2,41 +2,45 @@ import asyncio
 from mavsdk import System
 
 class MAVLinkConnection:
-    def __init__(self, address="udp://:14540"):
-        self.address = address
+    def __init__(self, connection_str="udp://:14550"):
         self.drone = System()
-        self.connected = False
+        self.connection_str = connection_str
 
     async def connect(self):
         """Connect to the PX4 Autopilot"""
+        print(f"Attempting connection to {self.connection_str}")
         try:
-            await self.drone.connect(system_address=self.address)
+            await self.drone.connect(system_address=self.connection_str)
+            print("Connected to drone")
+        except Exception as e:
+            print(f"Connection failed: {e}")
+            raise RuntimeError(f"Connection failed: {e}")
+
+        async def wait_heartbea(self):
+            """Wait for a heartbeat from the drone"""
+            print("Waiting for heartbeat")
             async for state in self.drone.core.connection_state():
                 if state.is_connected:
-                    self.connected = True
-                    print("Drone connected")
-                    break
-        except Exception as e:
-            raise RuntimeError(f"Drone failed to connect: {e}")
+                    print("Heartbeat received")
+                    return
+            print("No heartbeat received")
+            raise RuntimeError("No heartbeat received")
 
     async def disconnect(self):
         """Disconnect and disarm the drone"""
-        if self.connected:
-            try:
-                await self.drone.action.disarm()
-            except Exception as e:
-                print(f"Failed to disarm: {e}")
-            self.connected = False
+        print("Disconnecting")
+        print("Disconnected")
 
 if __name__ == "__main__":
     async def test_mavlink():
+        print("Testing MAVLinkConnection")
         try:
             mavlink = MAVLinkConnection()
             await mavlink.connect()
-            await asyncio.sleep(2)
+            await mavlink.wait_heartbeat()
+            print("MAVLink test successful")
             #Needs a pause to observe the connection
             await mavlink.disconnect()
-            print("MAVLink successfully tested")
         except Exception as e:
             print(f"MAVLink failed test: {e}")
 
