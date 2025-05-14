@@ -1,6 +1,7 @@
 import asyncio
 import cv2
 import sys
+import time
 from camera import Camera
 from detection import ObjectDetector
 from mavlink import MAVLinkConnection
@@ -45,9 +46,11 @@ async def main():
 
             #Check if the object is centered
             if center:
-                distance = ((center[0] - detector.img_center[0])**2 + (center[1] - detector.img_center[1]**2))**0.5
+                distance = ((center[0] - detector.img_center[0])**2 + (center[1] - detector.img_center[1])**2) ** 0.5
                 if distance < center_threshold:
+                    print("Second IF-loop")
                     if centered_start_time is None:
+                        print("Third IF-loop")
                         centered_start_time = time.time()
                     elif time.time() - centered_start_time >= centered_duration:
                         print("Object is centered, initiating landing!")
@@ -59,18 +62,18 @@ async def main():
                 centered_start_time = None
 
             #Display the frame
-            #Not necessary, but good for testing
-            cv2.imshow('Camera Feed', processed_frame)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
+            #Not possible within VOXL 2
+#            cv2.imshow('Camera Feed', processed_frame)
+#            if cv2.waitKey(1) & 0xFF == ord('q'):
+#                break
 
     except Exception as e:
         print(f"Error in main loop: {e}")
     finally:
         #Clean up processes
         camera.release()
-        cv2.destroyAllWindows()
-        await controller.stop()
+#        cv2.destroyAllWindows()
+        await controller.stop_offboard()
 
 if __name__ == "__main__":
     try:
