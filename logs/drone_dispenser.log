@@ -2875,3 +2875,1406 @@ KeyboardInterrupt
 2025-05-13 09:12:32,546 ERROR No connection on 5004, deleting message
 2025-05-13 09:13:02,541 WARNING No data to read
 2025-05-13 09:13:13,602 WARNING No data to read
+2025-05-13 09:13:41,259 WARNING No data to read
+2025-05-13 09:13:52,322 WARNING No data to read
+2025-05-13 09:14:43,617 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:14:43,618 ERROR No connection on 5004, deleting message
+2025-05-13 09:14:47,628 WARNING No data to read
+2025-05-13 09:16:21,646 WARNING No data to read
+2025-05-13 09:16:38,238 WARNING No data to read
+2025-05-13 09:16:54,832 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:16:54,832 ERROR No connection on 5004, deleting message
+2025-05-13 09:17:00,359 WARNING No data to read
+2025-05-13 09:17:11,424 WARNING No data to read
+2025-05-13 09:17:28,012 WARNING No data to read
+2025-05-13 09:18:12,254 WARNING No data to read
+2025-05-13 09:18:39,905 WARNING No data to read
+2025-05-13 09:19:05,761 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:19:05,762 ERROR No connection on 5004, deleting message
+2025-05-13 09:19:18,615 WARNING No data to read
+2025-05-13 09:20:13,925 WARNING No data to read
+2025-05-13 09:20:24,990 WARNING No data to read
+2025-05-13 09:20:30,521 WARNING No data to read
+2025-05-13 09:21:09,236 WARNING No data to read
+2025-05-13 09:21:16,833 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:21:16,834 ERROR No connection on 5004, deleting message
+2025-05-13 09:21:31,358 WARNING No data to read
+2025-05-13 09:21:36,889 WARNING No data to read
+2025-05-13 09:22:37,729 WARNING No data to read
+2025-05-13 09:23:16,442 WARNING No data to read
+2025-05-13 09:23:27,504 WARNING No data to read
+2025-05-13 09:23:27,905 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:23:27,906 ERROR No connection on 5004, deleting message
+2025-05-13 09:23:44,098 WARNING No data to read
+2025-05-13 09:24:11,752 WARNING No data to read
+2025-05-13 09:25:01,533 WARNING No data to read
+2025-05-13 09:25:38,977 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:25:38,978 ERROR No connection on 5004, deleting message
+2025-05-13 09:25:40,246 WARNING No data to read
+2025-05-13 09:27:03,212 WARNING No data to read
+2025-05-13 09:27:19,804 WARNING No data to read
+2025-05-13 09:27:36,396 WARNING No data to read
+2025-05-13 09:27:50,049 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:27:50,050 ERROR No connection on 5004, deleting message
+2025-05-13 09:28:09,578 WARNING No data to read
+2025-05-13 09:28:15,110 WARNING No data to read
+2025-05-13 09:28:26,167 WARNING No data to read
+2025-05-13 09:28:31,700 WARNING No data to read
+2025-05-13 09:29:54,654 WARNING No data to read
+2025-05-13 09:30:00,184 WARNING No data to read
+2025-05-13 09:30:01,121 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:30:01,122 ERROR No connection on 5004, deleting message
+2025-05-13 09:31:39,734 WARNING No data to read
+2025-05-13 09:31:45,262 WARNING No data to read
+2025-05-13 09:32:12,193 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:32:12,194 ERROR No connection on 5004, deleting message
+2025-05-13 09:32:29,501 WARNING No data to read
+2025-05-13 09:33:35,870 WARNING No data to read
+2025-05-13 09:33:46,933 WARNING No data to read
+2025-05-13 09:34:03,526 WARNING No data to read
+2025-05-13 09:34:14,587 WARNING No data to read
+2025-05-13 09:34:23,265 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:34:23,266 ERROR No connection on 5004, deleting message
+2025-05-13 09:35:26,478 WARNING No data to read
+2025-05-13 09:35:43,070 WARNING No data to read
+2025-05-13 09:35:54,132 WARNING No data to read
+2025-05-13 09:36:16,254 WARNING No data to read
+2025-05-13 09:36:34,337 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:36:34,338 ERROR No connection on 5004, deleting message
+2025-05-13 09:36:49,438 WARNING No data to read
+2025-05-13 09:37:33,683 WARNING No data to read
+2025-05-13 09:38:01,337 WARNING No data to read
+2025-05-13 09:38:17,932 WARNING No data to read
+2025-05-13 09:38:45,582 WARNING No data to read
+2025-05-13 09:38:45,582 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:38:45,583 ERROR No connection on 5004, deleting message
+2025-05-13 09:38:51,115 WARNING No data to read
+2025-05-13 09:38:56,646 WARNING No data to read
+2025-05-13 09:39:51,955 WARNING No data to read
+2025-05-13 09:40:36,198 WARNING No data to read
+2025-05-13 09:40:56,481 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:40:56,482 ERROR No connection on 5004, deleting message
+2025-05-13 09:41:25,968 WARNING No data to read
+2025-05-13 09:41:31,499 WARNING No data to read
+2025-05-13 09:41:37,030 WARNING No data to read
+2025-05-13 09:41:48,091 WARNING No data to read
+2025-05-13 09:43:07,553 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:43:07,554 ERROR No connection on 5004, deleting message
+2025-05-13 09:43:44,230 WARNING No data to read
+2025-05-13 09:44:06,353 WARNING No data to read
+2025-05-13 09:45:18,625 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:45:18,625 ERROR No connection on 5004, deleting message
+2025-05-13 09:45:45,897 WARNING No data to read
+2025-05-13 09:46:02,485 WARNING No data to read
+2025-05-13 09:46:35,669 WARNING No data to read
+2025-05-13 09:47:29,697 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:47:29,698 ERROR No connection on 5004, deleting message
+2025-05-13 09:48:15,214 WARNING No data to read
+2025-05-13 09:48:37,334 WARNING No data to read
+2025-05-13 09:48:48,397 WARNING No data to read
+2025-05-13 09:49:04,990 WARNING No data to read
+2025-05-13 09:49:40,769 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:49:40,770 ERROR No connection on 5004, deleting message
+2025-05-13 09:50:39,006 WARNING No data to read
+2025-05-13 09:51:45,373 WARNING No data to read
+2025-05-13 09:51:51,841 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:51:51,841 ERROR No connection on 5004, deleting message
+2025-05-13 09:52:18,558 WARNING No data to read
+2025-05-13 09:52:24,089 WARNING No data to read
+2025-05-13 09:53:30,457 WARNING No data to read
+2025-05-13 09:54:02,913 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:54:02,914 ERROR No connection on 5004, deleting message
+2025-05-13 09:54:42,349 WARNING No data to read
+2025-05-13 09:56:05,301 WARNING No data to read
+2025-05-13 09:56:13,985 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:56:13,986 ERROR No connection on 5004, deleting message
+2025-05-13 09:56:16,362 WARNING No data to read
+2025-05-13 09:56:49,546 WARNING No data to read
+2025-05-13 09:57:11,669 WARNING No data to read
+2025-05-13 09:57:39,325 WARNING No data to read
+2025-05-13 09:58:01,448 WARNING No data to read
+2025-05-13 09:58:25,057 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 09:58:25,058 ERROR No connection on 5004, deleting message
+2025-05-13 09:58:29,096 WARNING No data to read
+2025-05-13 09:58:56,750 WARNING No data to read
+2025-05-13 09:59:02,281 WARNING No data to read
+2025-05-13 09:59:46,526 WARNING No data to read
+2025-05-13 09:59:52,057 WARNING No data to read
+2025-05-13 10:00:03,118 WARNING No data to read
+2025-05-13 10:00:25,237 WARNING No data to read
+2025-05-13 10:00:36,297 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:00:36,297 ERROR No connection on 5004, deleting message
+2025-05-13 10:00:47,354 WARNING No data to read
+2025-05-13 10:01:03,946 WARNING No data to read
+2025-05-13 10:01:20,539 WARNING No data to read
+2025-05-13 10:01:31,603 WARNING No data to read
+2025-05-13 10:01:59,257 WARNING No data to read
+2025-05-13 10:02:15,852 WARNING No data to read
+2025-05-13 10:02:32,445 WARNING No data to read
+2025-05-13 10:02:47,201 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:02:47,202 ERROR No connection on 5004, deleting message
+2025-05-13 10:03:22,217 WARNING No data to read
+2025-05-13 10:04:00,933 WARNING No data to read
+2025-05-13 10:04:17,525 WARNING No data to read
+2025-05-13 10:04:45,181 WARNING No data to read
+2025-05-13 10:04:56,242 WARNING No data to read
+2025-05-13 10:04:58,273 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:04:58,274 ERROR No connection on 5004, deleting message
+2025-05-13 10:06:13,666 WARNING No data to read
+2025-05-13 10:06:46,853 WARNING No data to read
+2025-05-13 10:07:09,345 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:07:09,346 ERROR No connection on 5004, deleting message
+2025-05-13 10:07:31,102 WARNING No data to read
+2025-05-13 10:07:53,225 WARNING No data to read
+2025-05-13 10:08:09,817 WARNING No data to read
+2025-05-13 10:08:15,349 WARNING No data to read
+2025-05-13 10:08:31,941 WARNING No data to read
+2025-05-13 10:08:43,005 WARNING No data to read
+2025-05-13 10:08:48,536 WARNING No data to read
+2025-05-13 10:08:59,598 WARNING No data to read
+2025-05-13 10:09:20,417 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:09:20,418 ERROR No connection on 5004, deleting message
+2025-05-13 10:10:05,964 WARNING No data to read
+2025-05-13 10:11:01,272 WARNING No data to read
+2025-05-13 10:11:23,398 WARNING No data to read
+2025-05-13 10:11:31,489 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:11:31,490 ERROR No connection on 5004, deleting message
+2025-05-13 10:11:45,517 WARNING No data to read
+2025-05-13 10:12:18,702 WARNING No data to read
+2025-05-13 10:12:29,764 WARNING No data to read
+2025-05-13 10:12:46,356 WARNING No data to read
+2025-05-13 10:13:02,949 WARNING No data to read
+2025-05-13 10:13:08,482 WARNING No data to read
+2025-05-13 10:13:14,014 WARNING No data to read
+2025-05-13 10:13:36,137 WARNING No data to read
+2025-05-13 10:13:42,561 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:13:42,562 ERROR No connection on 5004, deleting message
+2025-05-13 10:13:58,262 WARNING No data to read
+2025-05-13 10:14:03,792 WARNING No data to read
+2025-05-13 10:14:14,854 WARNING No data to read
+2025-05-13 10:14:36,978 WARNING No data to read
+2025-05-13 10:15:37,817 WARNING No data to read
+2025-05-13 10:15:53,633 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:15:53,634 ERROR No connection on 5004, deleting message
+2025-05-13 10:16:33,120 WARNING No data to read
+2025-05-13 10:16:38,654 WARNING No data to read
+2025-05-13 10:16:55,248 WARNING No data to read
+2025-05-13 10:17:11,841 WARNING No data to read
+2025-05-13 10:17:45,026 WARNING No data to read
+2025-05-13 10:18:04,705 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:18:04,706 ERROR No connection on 5004, deleting message
+2025-05-13 10:18:40,332 WARNING No data to read
+2025-05-13 10:18:56,925 WARNING No data to read
+2025-05-13 10:19:07,987 WARNING No data to read
+2025-05-13 10:19:19,049 WARNING No data to read
+2025-05-13 10:20:03,294 WARNING No data to read
+2025-05-13 10:20:15,777 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:20:15,778 ERROR No connection on 5004, deleting message
+2025-05-13 10:20:36,477 WARNING No data to read
+2025-05-13 10:20:53,065 WARNING No data to read
+2025-05-13 10:21:04,126 WARNING No data to read
+2025-05-13 10:21:09,657 WARNING No data to read
+2025-05-13 10:21:42,841 WARNING No data to read
+2025-05-13 10:22:04,964 WARNING No data to read
+2025-05-13 10:22:27,087 WARNING No data to read
+2025-05-13 10:22:27,088 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:22:27,088 ERROR No connection on 5004, deleting message
+2025-05-13 10:22:38,149 WARNING No data to read
+2025-05-13 10:23:05,805 WARNING No data to read
+2025-05-13 10:23:11,336 WARNING No data to read
+2025-05-13 10:23:22,400 WARNING No data to read
+2025-05-13 10:23:27,933 WARNING No data to read
+2025-05-13 10:24:12,180 WARNING No data to read
+2025-05-13 10:24:37,921 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:24:37,922 ERROR No connection on 5004, deleting message
+2025-05-13 10:24:39,829 WARNING No data to read
+2025-05-13 10:25:18,543 WARNING No data to read
+2025-05-13 10:26:48,993 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:26:48,994 ERROR No connection on 5004, deleting message
+2025-05-13 10:26:52,558 WARNING No data to read
+2025-05-13 10:27:03,619 WARNING No data to read
+2025-05-13 10:29:00,065 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:29:00,066 ERROR No connection on 5004, deleting message
+2025-05-13 10:29:21,877 WARNING No data to read
+2025-05-13 10:30:28,245 WARNING No data to read
+2025-05-13 10:31:11,137 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:31:11,138 ERROR No connection on 5004, deleting message
+2025-05-13 10:33:22,209 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:33:22,209 ERROR No connection on 5004, deleting message
+2025-05-13 10:33:58,390 WARNING No data to read
+2025-05-13 10:34:03,921 WARNING No data to read
+2025-05-13 10:34:48,165 WARNING No data to read
+2025-05-13 10:34:59,229 WARNING No data to read
+2025-05-13 10:35:33,281 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:35:33,282 ERROR No connection on 5004, deleting message
+2025-05-13 10:36:11,122 WARNING No data to read
+2025-05-13 10:36:27,716 WARNING No data to read
+2025-05-13 10:36:49,840 WARNING No data to read
+2025-05-13 10:37:44,353 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:37:44,354 ERROR No connection on 5004, deleting message
+2025-05-13 10:39:55,425 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:39:55,426 ERROR No connection on 5004, deleting message
+2025-05-13 10:39:57,870 WARNING No data to read
+2025-05-13 10:40:14,464 WARNING No data to read
+2025-05-13 10:40:53,180 WARNING No data to read
+2025-05-13 10:41:04,238 WARNING No data to read
+2025-05-13 10:42:06,497 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:42:06,498 ERROR No connection on 5004, deleting message
+2025-05-13 10:43:11,437 WARNING No data to read
+2025-05-13 10:43:28,029 WARNING No data to read
+2025-05-13 10:43:39,091 WARNING No data to read
+2025-05-13 10:44:17,806 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:44:17,806 ERROR No connection on 5004, deleting message
+2025-05-13 10:44:23,336 WARNING No data to read
+2025-05-13 10:44:28,867 WARNING No data to read
+2025-05-13 10:44:34,398 WARNING No data to read
+2025-05-13 10:44:50,990 WARNING No data to read
+2025-05-13 10:45:07,584 WARNING No data to read
+2025-05-13 10:46:13,952 WARNING No data to read
+2025-05-13 10:46:28,641 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:46:28,642 ERROR No connection on 5004, deleting message
+2025-05-13 10:46:30,541 WARNING No data to read
+2025-05-13 10:47:14,786 WARNING No data to read
+2025-05-13 10:47:20,317 WARNING No data to read
+2025-05-13 10:48:39,713 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:48:39,714 ERROR No connection on 5004, deleting message
+2025-05-13 10:48:48,798 WARNING No data to read
+2025-05-13 10:49:21,982 WARNING No data to read
+2025-05-13 10:49:38,574 WARNING No data to read
+2025-05-13 10:49:44,105 WARNING No data to read
+2025-05-13 10:50:22,820 WARNING No data to read
+2025-05-13 10:50:28,354 WARNING No data to read
+2025-05-13 10:50:50,785 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:50:50,786 ERROR No connection on 5004, deleting message
+2025-05-13 10:51:56,841 WARNING No data to read
+2025-05-13 10:52:13,433 WARNING No data to read
+2025-05-13 10:52:46,618 WARNING No data to read
+2025-05-13 10:53:01,857 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:53:01,858 ERROR No connection on 5004, deleting message
+2025-05-13 10:53:30,862 WARNING No data to read
+2025-05-13 10:53:36,393 WARNING No data to read
+2025-05-13 10:53:47,454 WARNING No data to read
+2025-05-13 10:53:52,989 WARNING No data to read
+2025-05-13 10:54:09,584 WARNING No data to read
+2025-05-13 10:54:26,177 WARNING No data to read
+2025-05-13 10:54:59,358 WARNING No data to read
+2025-05-13 10:55:04,889 WARNING No data to read
+2025-05-13 10:55:12,929 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:55:12,930 ERROR No connection on 5004, deleting message
+2025-05-13 10:55:32,540 WARNING No data to read
+2025-05-13 10:56:05,724 WARNING No data to read
+2025-05-13 10:57:17,625 WARNING No data to read
+2025-05-13 10:57:24,001 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:57:24,002 ERROR No connection on 5004, deleting message
+2025-05-13 10:57:56,344 WARNING No data to read
+2025-05-13 10:58:24,000 WARNING No data to read
+2025-05-13 10:58:35,065 WARNING No data to read
+2025-05-13 10:58:46,126 WARNING No data to read
+2025-05-13 10:59:35,073 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 10:59:35,074 ERROR No connection on 5004, deleting message
+2025-05-13 11:00:14,615 WARNING No data to read
+2025-05-13 11:00:53,326 WARNING No data to read
+2025-05-13 11:00:58,857 WARNING No data to read
+2025-05-13 11:01:09,921 WARNING No data to read
+2025-05-13 11:01:15,452 WARNING No data to read
+2025-05-13 11:01:26,510 WARNING No data to read
+2025-05-13 11:01:32,041 WARNING No data to read
+2025-05-13 11:01:43,105 WARNING No data to read
+2025-05-13 11:01:46,145 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:01:46,146 ERROR No connection on 5004, deleting message
+2025-05-13 11:01:48,633 WARNING No data to read
+2025-05-13 11:03:57,217 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:03:57,218 ERROR No connection on 5004, deleting message
+2025-05-13 11:05:35,389 WARNING No data to read
+2025-05-13 11:05:51,982 WARNING No data to read
+2025-05-13 11:05:57,513 WARNING No data to read
+2025-05-13 11:06:08,575 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:06:08,575 ERROR No connection on 5004, deleting message
+2025-05-13 11:06:41,759 WARNING No data to read
+2025-05-13 11:08:15,782 WARNING No data to read
+2025-05-13 11:08:19,361 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:08:19,362 ERROR No connection on 5004, deleting message
+2025-05-13 11:08:43,432 WARNING No data to read
+2025-05-13 11:09:22,148 WARNING No data to read
+2025-05-13 11:09:38,741 WARNING No data to read
+2025-05-13 11:10:22,990 WARNING No data to read
+2025-05-13 11:10:30,433 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:10:30,434 ERROR No connection on 5004, deleting message
+2025-05-13 11:11:07,233 WARNING No data to read
+2025-05-13 11:12:41,505 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:12:41,506 ERROR No connection on 5004, deleting message
+2025-05-13 11:13:19,968 WARNING No data to read
+2025-05-13 11:13:36,558 WARNING No data to read
+2025-05-13 11:13:53,150 WARNING No data to read
+2025-05-13 11:14:26,334 WARNING No data to read
+2025-05-13 11:14:37,395 WARNING No data to read
+2025-05-13 11:14:48,454 WARNING No data to read
+2025-05-13 11:14:52,577 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:14:52,578 ERROR No connection on 5004, deleting message
+2025-05-13 11:15:16,105 WARNING No data to read
+2025-05-13 11:15:49,290 WARNING No data to read
+2025-05-13 11:16:05,884 WARNING No data to read
+2025-05-13 11:16:44,602 WARNING No data to read
+2025-05-13 11:16:55,664 WARNING No data to read
+2025-05-13 11:17:03,649 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:17:03,650 ERROR No connection on 5004, deleting message
+2025-05-13 11:17:17,788 WARNING No data to read
+2025-05-13 11:17:28,850 WARNING No data to read
+2025-05-13 11:17:50,973 WARNING No data to read
+2025-05-13 11:18:35,217 WARNING No data to read
+2025-05-13 11:18:40,750 WARNING No data to read
+2025-05-13 11:19:14,721 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:19:14,722 ERROR No connection on 5004, deleting message
+2025-05-13 11:19:52,648 WARNING No data to read
+2025-05-13 11:19:58,182 WARNING No data to read
+2025-05-13 11:20:03,710 WARNING No data to read
+2025-05-13 11:20:25,833 WARNING No data to read
+2025-05-13 11:20:47,956 WARNING No data to read
+2025-05-13 11:21:25,793 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:21:25,794 ERROR No connection on 5004, deleting message
+2025-05-13 11:23:17,277 WARNING No data to read
+2025-05-13 11:23:36,865 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:23:36,866 ERROR No connection on 5004, deleting message
+2025-05-13 11:23:39,400 WARNING No data to read
+2025-05-13 11:23:55,992 WARNING No data to read
+2025-05-13 11:24:12,584 WARNING No data to read
+2025-05-13 11:25:46,602 WARNING No data to read
+2025-05-13 11:25:47,937 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:25:47,938 ERROR No connection on 5004, deleting message
+2025-05-13 11:26:47,438 WARNING No data to read
+2025-05-13 11:26:58,501 WARNING No data to read
+2025-05-13 11:27:15,093 WARNING No data to read
+2025-05-13 11:27:20,624 WARNING No data to read
+2025-05-13 11:27:37,213 WARNING No data to read
+2025-05-13 11:27:53,806 WARNING No data to read
+2025-05-13 11:27:59,337 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:27:59,337 ERROR No connection on 5004, deleting message
+2025-05-13 11:28:10,394 WARNING No data to read
+2025-05-13 11:28:49,111 WARNING No data to read
+2025-05-13 11:30:10,081 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:30:10,082 ERROR No connection on 5004, deleting message
+2025-05-13 11:30:17,598 WARNING No data to read
+2025-05-13 11:30:39,721 WARNING No data to read
+2025-05-13 11:31:35,026 WARNING No data to read
+2025-05-13 11:32:21,153 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:32:21,153 ERROR No connection on 5004, deleting message
+2025-05-13 11:32:35,862 WARNING No data to read
+2025-05-13 11:32:41,395 WARNING No data to read
+2025-05-13 11:32:52,454 WARNING No data to read
+2025-05-13 11:33:36,701 WARNING No data to read
+2025-05-13 11:34:04,352 WARNING No data to read
+2025-05-13 11:34:32,007 WARNING No data to read
+2025-05-13 11:34:32,225 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:34:32,226 ERROR No connection on 5004, deleting message
+2025-05-13 11:34:59,661 WARNING No data to read
+2025-05-13 11:35:38,375 WARNING No data to read
+2025-05-13 11:36:06,114 WARNING No data to read
+2025-05-13 11:36:11,645 WARNING No data to read
+2025-05-13 11:36:17,176 WARNING No data to read
+2025-05-13 11:36:43,297 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:36:43,298 ERROR No connection on 5004, deleting message
+2025-05-13 11:36:44,828 WARNING No data to read
+2025-05-13 11:36:50,358 WARNING No data to read
+2025-05-13 11:37:56,721 WARNING No data to read
+2025-05-13 11:38:18,846 WARNING No data to read
+2025-05-13 11:38:24,377 WARNING No data to read
+2025-05-13 11:38:29,908 WARNING No data to read
+2025-05-13 11:38:52,030 WARNING No data to read
+2025-05-13 11:38:54,369 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:38:54,370 ERROR No connection on 5004, deleting message
+2025-05-13 11:39:19,678 WARNING No data to read
+2025-05-13 11:40:20,510 WARNING No data to read
+2025-05-13 11:41:05,441 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:41:05,442 ERROR No connection on 5004, deleting message
+2025-05-13 11:42:00,058 WARNING No data to read
+2025-05-13 11:42:16,649 WARNING No data to read
+2025-05-13 11:42:27,709 WARNING No data to read
+2025-05-13 11:43:16,513 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:43:16,514 ERROR No connection on 5004, deleting message
+2025-05-13 11:43:28,544 WARNING No data to read
+2025-05-13 11:44:23,849 WARNING No data to read
+2025-05-13 11:45:08,094 WARNING No data to read
+2025-05-13 11:45:27,585 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:45:27,586 ERROR No connection on 5004, deleting message
+2025-05-13 11:46:36,582 WARNING No data to read
+2025-05-13 11:47:09,762 WARNING No data to read
+2025-05-13 11:47:38,657 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:47:38,658 ERROR No connection on 5004, deleting message
+2025-05-13 11:47:54,005 WARNING No data to read
+2025-05-13 11:48:38,245 WARNING No data to read
+2025-05-13 11:49:50,141 WARNING No data to read
+2025-05-13 11:49:50,142 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:49:50,142 ERROR No connection on 5004, deleting message
+2025-05-13 11:51:02,034 WARNING No data to read
+2025-05-13 11:52:00,801 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:52:00,802 ERROR No connection on 5004, deleting message
+2025-05-13 11:52:30,522 WARNING No data to read
+2025-05-13 11:53:03,706 WARNING No data to read
+2025-05-13 11:54:11,873 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:54:11,874 ERROR No connection on 5004, deleting message
+2025-05-13 11:54:15,602 WARNING No data to read
+2025-05-13 11:54:21,135 WARNING No data to read
+2025-05-13 11:54:54,319 WARNING No data to read
+2025-05-13 11:56:22,945 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:56:22,946 ERROR No connection on 5004, deleting message
+2025-05-13 11:56:28,337 WARNING No data to read
+2025-05-13 11:56:39,398 WARNING No data to read
+2025-05-13 11:56:55,993 WARNING No data to read
+2025-05-13 11:57:18,118 WARNING No data to read
+2025-05-13 11:57:34,710 WARNING No data to read
+2025-05-13 11:58:24,486 WARNING No data to read
+2025-05-13 11:58:34,017 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 11:58:34,018 ERROR No connection on 5004, deleting message
+2025-05-13 11:59:19,789 WARNING No data to read
+2025-05-13 11:59:36,382 WARNING No data to read
+2025-05-13 12:00:15,099 WARNING No data to read
+2025-05-13 12:00:42,746 WARNING No data to read
+2025-05-13 12:00:45,089 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:00:45,089 ERROR No connection on 5004, deleting message
+2025-05-13 12:00:53,805 WARNING No data to read
+2025-05-13 12:01:04,870 WARNING No data to read
+2025-05-13 12:02:33,354 WARNING No data to read
+2025-05-13 12:02:38,885 WARNING No data to read
+2025-05-13 12:02:55,481 WARNING No data to read
+2025-05-13 12:02:56,161 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:02:56,162 ERROR No connection on 5004, deleting message
+2025-05-13 12:03:45,257 WARNING No data to read
+2025-05-13 12:05:07,233 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:05:07,234 ERROR No connection on 5004, deleting message
+2025-05-13 12:05:13,745 WARNING No data to read
+2025-05-13 12:06:20,113 WARNING No data to read
+2025-05-13 12:06:47,767 WARNING No data to read
+2025-05-13 12:07:18,305 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:07:18,306 ERROR No connection on 5004, deleting message
+2025-05-13 12:07:43,069 WARNING No data to read
+2025-05-13 12:07:54,126 WARNING No data to read
+2025-05-13 12:08:49,435 WARNING No data to read
+2025-05-13 12:09:29,377 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:09:29,378 ERROR No connection on 5004, deleting message
+2025-05-13 12:10:01,333 WARNING No data to read
+2025-05-13 12:10:12,395 WARNING No data to read
+2025-05-13 12:10:34,519 WARNING No data to read
+2025-05-13 12:11:07,698 WARNING No data to read
+2025-05-13 12:11:29,824 WARNING No data to read
+2025-05-13 12:11:40,888 WARNING No data to read
+2025-05-13 12:11:40,889 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:11:40,889 ERROR No connection on 5004, deleting message
+2025-05-13 12:12:58,321 WARNING No data to read
+2025-05-13 12:13:03,854 WARNING No data to read
+2025-05-13 12:13:48,101 WARNING No data to read
+2025-05-13 12:13:51,521 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:13:51,522 ERROR No connection on 5004, deleting message
+2025-05-13 12:14:10,217 WARNING No data to read
+2025-05-13 12:14:26,810 WARNING No data to read
+2025-05-13 12:15:27,649 WARNING No data to read
+2025-05-13 12:16:02,593 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:16:02,593 ERROR No connection on 5004, deleting message
+2025-05-13 12:16:11,893 WARNING No data to read
+2025-05-13 12:16:34,011 WARNING No data to read
+2025-05-13 12:17:01,665 WARNING No data to read
+2025-05-13 12:17:12,724 WARNING No data to read
+2025-05-13 12:18:02,502 WARNING No data to read
+2025-05-13 12:18:13,665 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:18:13,680 ERROR No connection on 5004, deleting message
+2025-05-13 12:19:03,342 WARNING No data to read
+2025-05-13 12:19:19,934 WARNING No data to read
+2025-05-13 12:20:24,737 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:20:24,738 ERROR No connection on 5004, deleting message
+2025-05-13 12:20:42,893 WARNING No data to read
+2025-05-13 12:21:21,609 WARNING No data to read
+2025-05-13 12:21:32,670 WARNING No data to read
+2025-05-13 12:21:43,732 WARNING No data to read
+2025-05-13 12:22:35,809 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:22:35,810 ERROR No connection on 5004, deleting message
+2025-05-13 12:23:06,694 WARNING No data to read
+2025-05-13 12:23:17,755 WARNING No data to read
+2025-05-13 12:23:34,348 WARNING No data to read
+2025-05-13 12:23:50,941 WARNING No data to read
+2025-05-13 12:24:13,064 WARNING No data to read
+2025-05-13 12:24:24,126 WARNING No data to read
+2025-05-13 12:24:46,881 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:24:46,882 ERROR No connection on 5004, deleting message
+2025-05-13 12:25:02,839 WARNING No data to read
+2025-05-13 12:26:03,678 WARNING No data to read
+2025-05-13 12:26:31,333 WARNING No data to read
+2025-05-13 12:26:42,397 WARNING No data to read
+2025-05-13 12:26:57,953 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:26:57,954 ERROR No connection on 5004, deleting message
+2025-05-13 12:26:58,981 WARNING No data to read
+2025-05-13 12:27:26,637 WARNING No data to read
+2025-05-13 12:27:37,699 WARNING No data to read
+2025-05-13 12:28:05,354 WARNING No data to read
+2025-05-13 12:28:16,418 WARNING No data to read
+2025-05-13 12:28:33,010 WARNING No data to read
+2025-05-13 12:29:09,025 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:29:09,026 ERROR No connection on 5004, deleting message
+2025-05-13 12:30:29,153 WARNING No data to read
+2025-05-13 12:30:45,746 WARNING No data to read
+2025-05-13 12:31:20,097 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:31:20,098 ERROR No connection on 5004, deleting message
+2025-05-13 12:31:29,993 WARNING No data to read
+2025-05-13 12:31:57,646 WARNING No data to read
+2025-05-13 12:32:19,772 WARNING No data to read
+2025-05-13 12:32:47,426 WARNING No data to read
+2025-05-13 12:33:04,021 WARNING No data to read
+2025-05-13 12:33:31,675 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:33:31,675 ERROR No connection on 5004, deleting message
+2025-05-13 12:34:15,917 WARNING No data to read
+2025-05-13 12:35:11,221 WARNING No data to read
+2025-05-13 12:35:16,753 WARNING No data to read
+2025-05-13 12:35:33,348 WARNING No data to read
+2025-05-13 12:35:42,241 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:35:42,241 ERROR No connection on 5004, deleting message
+2025-05-13 12:36:12,063 WARNING No data to read
+2025-05-13 12:37:35,027 WARNING No data to read
+2025-05-13 12:37:53,313 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:37:53,314 ERROR No connection on 5004, deleting message
+2025-05-13 12:38:08,210 WARNING No data to read
+2025-05-13 12:38:24,805 WARNING No data to read
+2025-05-13 12:38:52,454 WARNING No data to read
+2025-05-13 12:39:36,701 WARNING No data to read
+2025-05-13 12:40:04,385 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:40:04,386 ERROR No connection on 5004, deleting message
+2025-05-13 12:40:15,413 WARNING No data to read
+2025-05-13 12:40:37,533 WARNING No data to read
+2025-05-13 12:41:10,718 WARNING No data to read
+2025-05-13 12:42:15,457 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:42:15,458 ERROR No connection on 5004, deleting message
+2025-05-13 12:42:55,797 WARNING No data to read
+2025-05-13 12:43:17,921 WARNING No data to read
+2025-05-13 12:43:23,452 WARNING No data to read
+2025-05-13 12:43:40,045 WARNING No data to read
+2025-05-13 12:44:26,529 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:44:26,530 ERROR No connection on 5004, deleting message
+2025-05-13 12:44:35,349 WARNING No data to read
+2025-05-13 12:44:40,883 WARNING No data to read
+2025-05-13 12:44:46,414 WARNING No data to read
+2025-05-13 12:45:14,068 WARNING No data to read
+2025-05-13 12:45:47,256 WARNING No data to read
+2025-05-13 12:45:58,318 WARNING No data to read
+2025-05-13 12:46:20,443 WARNING No data to read
+2025-05-13 12:46:37,601 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:46:37,602 ERROR No connection on 5004, deleting message
+2025-05-13 12:47:26,814 WARNING No data to read
+2025-05-13 12:47:59,996 WARNING No data to read
+2025-05-13 12:48:22,120 WARNING No data to read
+2025-05-13 12:48:48,673 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:48:48,674 ERROR No connection on 5004, deleting message
+2025-05-13 12:50:18,265 WARNING No data to read
+2025-05-13 12:50:40,386 WARNING No data to read
+2025-05-13 12:50:59,745 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:50:59,746 ERROR No connection on 5004, deleting message
+2025-05-13 12:51:02,508 WARNING No data to read
+2025-05-13 12:51:46,750 WARNING No data to read
+2025-05-13 12:52:25,467 WARNING No data to read
+2025-05-13 12:53:10,817 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:53:10,818 ERROR No connection on 5004, deleting message
+2025-05-13 12:53:42,894 WARNING No data to read
+2025-05-13 12:53:48,424 WARNING No data to read
+2025-05-13 12:53:59,486 WARNING No data to read
+2025-05-13 12:54:43,732 WARNING No data to read
+2025-05-13 12:55:16,917 WARNING No data to read
+2025-05-13 12:55:21,889 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:55:21,890 ERROR No connection on 5004, deleting message
+2025-05-13 12:56:01,158 WARNING No data to read
+2025-05-13 12:56:50,937 WARNING No data to read
+2025-05-13 12:57:02,001 WARNING No data to read
+2025-05-13 12:57:07,532 WARNING No data to read
+2025-05-13 12:57:32,961 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:57:32,962 ERROR No connection on 5004, deleting message
+2025-05-13 12:57:46,243 WARNING No data to read
+2025-05-13 12:57:57,305 WARNING No data to read
+2025-05-13 12:58:08,369 WARNING No data to read
+2025-05-13 12:58:41,554 WARNING No data to read
+2025-05-13 12:59:03,678 WARNING No data to read
+2025-05-13 12:59:09,209 WARNING No data to read
+2025-05-13 12:59:44,033 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 12:59:44,034 ERROR No connection on 5004, deleting message
+2025-05-13 12:59:53,454 WARNING No data to read
+2025-05-13 13:00:04,514 WARNING No data to read
+2025-05-13 13:01:16,413 WARNING No data to read
+2025-05-13 13:01:33,006 WARNING No data to read
+2025-05-13 13:01:38,537 WARNING No data to read
+2025-05-13 13:01:49,601 WARNING No data to read
+2025-05-13 13:01:55,134 WARNING No data to read
+2025-05-13 13:01:55,135 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:01:55,135 ERROR No connection on 5004, deleting message
+2025-05-13 13:03:18,090 WARNING No data to read
+2025-05-13 13:03:23,621 WARNING No data to read
+2025-05-13 13:03:34,685 WARNING No data to read
+2025-05-13 13:04:06,177 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:04:06,178 ERROR No connection on 5004, deleting message
+2025-05-13 13:04:13,400 WARNING No data to read
+2025-05-13 13:04:18,930 WARNING No data to read
+2025-05-13 13:04:29,988 WARNING No data to read
+2025-05-13 13:05:14,231 WARNING No data to read
+2025-05-13 13:05:41,886 WARNING No data to read
+2025-05-13 13:06:17,249 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:06:17,250 ERROR No connection on 5004, deleting message
+2025-05-13 13:07:32,501 WARNING No data to read
+2025-05-13 13:08:16,748 WARNING No data to read
+2025-05-13 13:08:28,321 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:08:28,322 ERROR No connection on 5004, deleting message
+2025-05-13 13:09:28,648 WARNING No data to read
+2025-05-13 13:09:39,710 WARNING No data to read
+2025-05-13 13:09:45,241 WARNING No data to read
+2025-05-13 13:10:07,365 WARNING No data to read
+2025-05-13 13:10:23,960 WARNING No data to read
+2025-05-13 13:10:39,393 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:10:39,394 ERROR No connection on 5004, deleting message
+2025-05-13 13:11:13,728 WARNING No data to read
+2025-05-13 13:11:41,383 WARNING No data to read
+2025-05-13 13:12:09,035 WARNING No data to read
+2025-05-13 13:12:14,566 WARNING No data to read
+2025-05-13 13:12:36,690 WARNING No data to read
+2025-05-13 13:12:50,465 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:12:50,466 ERROR No connection on 5004, deleting message
+2025-05-13 13:12:58,811 WARNING No data to read
+2025-05-13 13:13:26,466 WARNING No data to read
+2025-05-13 13:14:16,244 WARNING No data to read
+2025-05-13 13:14:43,896 WARNING No data to read
+2025-05-13 13:15:01,537 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:15:01,538 ERROR No connection on 5004, deleting message
+2025-05-13 13:15:22,615 WARNING No data to read
+2025-05-13 13:15:33,677 WARNING No data to read
+2025-05-13 13:15:44,739 WARNING No data to read
+2025-05-13 13:15:50,270 WARNING No data to read
+2025-05-13 13:16:06,862 WARNING No data to read
+2025-05-13 13:17:02,166 WARNING No data to read
+2025-05-13 13:17:12,609 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:17:12,609 ERROR No connection on 5004, deleting message
+2025-05-13 13:17:13,220 WARNING No data to read
+2025-05-13 13:17:24,282 WARNING No data to read
+2025-05-13 13:17:35,344 WARNING No data to read
+2025-05-13 13:18:08,530 WARNING No data to read
+2025-05-13 13:18:30,654 WARNING No data to read
+2025-05-13 13:19:23,681 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:19:23,682 ERROR No connection on 5004, deleting message
+2025-05-13 13:19:53,614 WARNING No data to read
+2025-05-13 13:20:10,206 WARNING No data to read
+2025-05-13 13:20:21,268 WARNING No data to read
+2025-05-13 13:20:54,456 WARNING No data to read
+2025-05-13 13:21:05,518 WARNING No data to read
+2025-05-13 13:21:27,642 WARNING No data to read
+2025-05-13 13:21:34,753 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:21:34,754 ERROR No connection on 5004, deleting message
+2025-05-13 13:21:49,764 WARNING No data to read
+2025-05-13 13:22:45,073 WARNING No data to read
+2025-05-13 13:23:01,665 WARNING No data to read
+2025-05-13 13:23:29,319 WARNING No data to read
+2025-05-13 13:23:45,909 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:23:45,909 ERROR No connection on 5004, deleting message
+2025-05-13 13:24:19,092 WARNING No data to read
+2025-05-13 13:25:56,897 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:25:56,898 ERROR No connection on 5004, deleting message
+2025-05-13 13:26:37,353 WARNING No data to read
+2025-05-13 13:26:53,944 WARNING No data to read
+2025-05-13 13:28:07,969 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:28:07,970 ERROR No connection on 5004, deleting message
+2025-05-13 13:28:22,437 WARNING No data to read
+2025-05-13 13:28:27,968 WARNING No data to read
+2025-05-13 13:29:06,686 WARNING No data to read
+2025-05-13 13:30:07,524 WARNING No data to read
+2025-05-13 13:30:19,041 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:30:19,042 ERROR No connection on 5004, deleting message
+2025-05-13 13:30:29,648 WARNING No data to read
+2025-05-13 13:30:51,773 WARNING No data to read
+2025-05-13 13:31:47,083 WARNING No data to read
+2025-05-13 13:31:52,610 WARNING No data to read
+2025-05-13 13:32:30,113 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:32:30,114 ERROR No connection on 5004, deleting message
+2025-05-13 13:32:31,324 WARNING No data to read
+2025-05-13 13:33:10,037 WARNING No data to read
+2025-05-13 13:33:21,097 WARNING No data to read
+2025-05-13 13:33:37,689 WARNING No data to read
+2025-05-13 13:33:59,812 WARNING No data to read
+2025-05-13 13:34:05,342 WARNING No data to read
+2025-05-13 13:34:41,185 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:34:41,186 ERROR No connection on 5004, deleting message
+2025-05-13 13:34:49,586 WARNING No data to read
+2025-05-13 13:35:11,709 WARNING No data to read
+2025-05-13 13:35:17,242 WARNING No data to read
+2025-05-13 13:35:39,366 WARNING No data to read
+2025-05-13 13:36:07,020 WARNING No data to read
+2025-05-13 13:36:34,674 WARNING No data to read
+2025-05-13 13:36:51,269 WARNING No data to read
+2025-05-13 13:36:52,257 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:36:52,258 ERROR No connection on 5004, deleting message
+2025-05-13 13:37:13,392 WARNING No data to read
+2025-05-13 13:37:41,042 WARNING No data to read
+2025-05-13 13:37:46,572 WARNING No data to read
+2025-05-13 13:38:03,158 WARNING No data to read
+2025-05-13 13:38:14,221 WARNING No data to read
+2025-05-13 13:38:19,751 WARNING No data to read
+2025-05-13 13:38:30,812 WARNING No data to read
+2025-05-13 13:38:58,466 WARNING No data to read
+2025-05-13 13:39:03,329 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:39:03,329 ERROR No connection on 5004, deleting message
+2025-05-13 13:39:04,133 WARNING No data to read
+2025-05-13 13:39:20,726 WARNING No data to read
+2025-05-13 13:40:21,561 WARNING No data to read
+2025-05-13 13:40:54,748 WARNING No data to read
+2025-05-13 13:41:14,401 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:41:14,402 ERROR No connection on 5004, deleting message
+2025-05-13 13:41:16,869 WARNING No data to read
+2025-05-13 13:41:38,995 WARNING No data to read
+2025-05-13 13:42:23,238 WARNING No data to read
+2025-05-13 13:42:50,896 WARNING No data to read
+2025-05-13 13:42:56,429 WARNING No data to read
+2025-05-13 13:43:25,473 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:43:25,474 ERROR No connection on 5004, deleting message
+2025-05-13 13:43:46,202 WARNING No data to read
+2025-05-13 13:44:47,042 WARNING No data to read
+2025-05-13 13:45:36,819 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:45:36,819 ERROR No connection on 5004, deleting message
+2025-05-13 13:45:42,352 WARNING No data to read
+2025-05-13 13:46:04,475 WARNING No data to read
+2025-05-13 13:46:21,065 WARNING No data to read
+2025-05-13 13:46:32,126 WARNING No data to read
+2025-05-13 13:46:37,659 WARNING No data to read
+2025-05-13 13:47:47,617 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:47:47,618 ERROR No connection on 5004, deleting message
+2025-05-13 13:48:33,800 WARNING No data to read
+2025-05-13 13:48:44,862 WARNING No data to read
+2025-05-13 13:49:18,046 WARNING No data to read
+2025-05-13 13:49:58,689 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:49:58,690 ERROR No connection on 5004, deleting message
+2025-05-13 13:50:07,818 WARNING No data to read
+2025-05-13 13:50:57,595 WARNING No data to read
+2025-05-13 13:51:08,657 WARNING No data to read
+2025-05-13 13:52:09,761 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:52:09,762 ERROR No connection on 5004, deleting message
+2025-05-13 13:52:15,022 WARNING No data to read
+2025-05-13 13:52:20,556 WARNING No data to read
+2025-05-13 13:52:53,741 WARNING No data to read
+2025-05-13 13:53:15,865 WARNING No data to read
+2025-05-13 13:53:21,398 WARNING No data to read
+2025-05-13 13:54:20,833 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:54:20,834 ERROR No connection on 5004, deleting message
+2025-05-13 13:55:00,948 WARNING No data to read
+2025-05-13 13:55:12,009 WARNING No data to read
+2025-05-13 13:55:50,723 WARNING No data to read
+2025-05-13 13:56:31,905 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:56:31,906 ERROR No connection on 5004, deleting message
+2025-05-13 13:57:35,806 WARNING No data to read
+2025-05-13 13:57:46,870 WARNING No data to read
+2025-05-13 13:58:42,177 WARNING No data to read
+2025-05-13 13:58:42,977 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 13:58:42,978 ERROR No connection on 5004, deleting message
+2025-05-13 13:59:15,362 WARNING No data to read
+2025-05-13 13:59:37,486 WARNING No data to read
+2025-05-13 13:59:54,079 WARNING No data to read
+2025-05-13 14:00:32,797 WARNING No data to read
+2025-05-13 14:00:49,390 WARNING No data to read
+2025-05-13 14:00:54,049 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:00:54,050 ERROR No connection on 5004, deleting message
+2025-05-13 14:01:05,979 WARNING No data to read
+2025-05-13 14:01:55,753 WARNING No data to read
+2025-05-13 14:02:01,284 WARNING No data to read
+2025-05-13 14:02:12,349 WARNING No data to read
+2025-05-13 14:02:34,473 WARNING No data to read
+2025-05-13 14:02:40,006 WARNING No data to read
+2025-05-13 14:02:45,537 WARNING No data to read
+2025-05-13 14:02:56,599 WARNING No data to read
+2025-05-13 14:03:05,121 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:03:05,122 ERROR No connection on 5004, deleting message
+2025-05-13 14:03:13,190 WARNING No data to read
+2025-05-13 14:03:18,721 WARNING No data to read
+2025-05-13 14:03:24,252 WARNING No data to read
+2025-05-13 14:03:35,317 WARNING No data to read
+2025-05-13 14:04:08,502 WARNING No data to read
+2025-05-13 14:04:30,625 WARNING No data to read
+2025-05-13 14:05:16,193 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:05:16,194 ERROR No connection on 5004, deleting message
+2025-05-13 14:05:31,462 WARNING No data to read
+2025-05-13 14:05:42,524 WARNING No data to read
+2025-05-13 14:05:53,586 WARNING No data to read
+2025-05-13 14:07:16,549 WARNING No data to read
+2025-05-13 14:07:27,610 WARNING No data to read
+2025-05-13 14:07:27,611 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:07:27,611 ERROR No connection on 5004, deleting message
+2025-05-13 14:07:33,137 WARNING No data to read
+2025-05-13 14:08:45,034 WARNING No data to read
+2025-05-13 14:09:38,337 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:09:38,338 ERROR No connection on 5004, deleting message
+2025-05-13 14:09:45,870 WARNING No data to read
+2025-05-13 14:10:46,708 WARNING No data to read
+2025-05-13 14:11:49,409 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:11:49,410 ERROR No connection on 5004, deleting message
+2025-05-13 14:12:04,138 WARNING No data to read
+2025-05-13 14:12:20,730 WARNING No data to read
+2025-05-13 14:12:42,856 WARNING No data to read
+2025-05-13 14:12:53,918 WARNING No data to read
+2025-05-13 14:13:04,982 WARNING No data to read
+2025-05-13 14:13:27,104 WARNING No data to read
+2025-05-13 14:13:43,700 WARNING No data to read
+2025-05-13 14:13:54,761 WARNING No data to read
+2025-05-13 14:14:00,481 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:14:00,482 ERROR No connection on 5004, deleting message
+2025-05-13 14:14:11,354 WARNING No data to read
+2025-05-13 14:14:39,008 WARNING No data to read
+2025-05-13 14:15:28,786 WARNING No data to read
+2025-05-13 14:16:01,971 WARNING No data to read
+2025-05-13 14:16:11,553 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:16:11,554 ERROR No connection on 5004, deleting message
+2025-05-13 14:16:13,033 WARNING No data to read
+2025-05-13 14:16:35,156 WARNING No data to read
+2025-05-13 14:17:02,809 WARNING No data to read
+2025-05-13 14:17:30,458 WARNING No data to read
+2025-05-13 14:18:03,641 WARNING No data to read
+2025-05-13 14:18:22,625 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:18:22,626 ERROR No connection on 5004, deleting message
+2025-05-13 14:18:31,294 WARNING No data to read
+2025-05-13 14:18:53,418 WARNING No data to read
+2025-05-13 14:19:10,013 WARNING No data to read
+2025-05-13 14:19:15,544 WARNING No data to read
+2025-05-13 14:19:54,260 WARNING No data to read
+2025-05-13 14:20:32,977 WARNING No data to read
+2025-05-13 14:20:33,697 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:20:33,698 ERROR No connection on 5004, deleting message
+2025-05-13 14:20:44,041 WARNING No data to read
+2025-05-13 14:20:49,572 WARNING No data to read
+2025-05-13 14:21:28,289 WARNING No data to read
+2025-05-13 14:21:55,943 WARNING No data to read
+2025-05-13 14:22:07,007 WARNING No data to read
+2025-05-13 14:22:18,069 WARNING No data to read
+2025-05-13 14:22:44,769 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:22:44,770 ERROR No connection on 5004, deleting message
+2025-05-13 14:24:47,387 WARNING No data to read
+2025-05-13 14:24:55,841 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:24:55,842 ERROR No connection on 5004, deleting message
+2025-05-13 14:27:06,913 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:27:06,914 ERROR No connection on 5004, deleting message
+2025-05-13 14:27:55,422 WARNING No data to read
+2025-05-13 14:29:12,854 WARNING No data to read
+2025-05-13 14:29:18,386 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:29:18,386 ERROR No connection on 5004, deleting message
+2025-05-13 14:30:13,690 WARNING No data to read
+2025-05-13 14:31:03,469 WARNING No data to read
+2025-05-13 14:31:29,057 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:31:29,058 ERROR No connection on 5004, deleting message
+2025-05-13 14:32:20,889 WARNING No data to read
+2025-05-13 14:32:54,074 WARNING No data to read
+2025-05-13 14:33:38,320 WARNING No data to read
+2025-05-13 14:33:40,129 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:33:40,130 ERROR No connection on 5004, deleting message
+2025-05-13 14:33:43,850 WARNING No data to read
+2025-05-13 14:34:17,032 WARNING No data to read
+2025-05-13 14:34:33,625 WARNING No data to read
+2025-05-13 14:34:44,689 WARNING No data to read
+2025-05-13 14:35:01,282 WARNING No data to read
+2025-05-13 14:35:17,870 WARNING No data to read
+2025-05-13 14:35:34,462 WARNING No data to read
+2025-05-13 14:35:51,201 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:35:51,202 ERROR No connection on 5004, deleting message
+2025-05-13 14:35:56,586 WARNING No data to read
+2025-05-13 14:36:13,181 WARNING No data to read
+2025-05-13 14:36:29,769 WARNING No data to read
+2025-05-13 14:36:51,889 WARNING No data to read
+2025-05-13 14:37:41,666 WARNING No data to read
+2025-05-13 14:37:47,198 WARNING No data to read
+2025-05-13 14:37:52,731 WARNING No data to read
+2025-05-13 14:38:02,273 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:38:02,274 ERROR No connection on 5004, deleting message
+2025-05-13 14:38:03,790 WARNING No data to read
+2025-05-13 14:38:59,099 WARNING No data to read
+2025-05-13 14:40:13,345 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:40:13,346 ERROR No connection on 5004, deleting message
+2025-05-13 14:40:55,244 WARNING No data to read
+2025-05-13 14:41:45,018 WARNING No data to read
+2025-05-13 14:41:56,080 WARNING No data to read
+2025-05-13 14:42:01,611 WARNING No data to read
+2025-05-13 14:42:24,417 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:42:24,418 ERROR No connection on 5004, deleting message
+2025-05-13 14:42:29,264 WARNING No data to read
+2025-05-13 14:43:07,977 WARNING No data to read
+2025-05-13 14:43:41,164 WARNING No data to read
+2025-05-13 14:44:35,489 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:44:35,490 ERROR No connection on 5004, deleting message
+2025-05-13 14:45:09,653 WARNING No data to read
+2025-05-13 14:45:31,774 WARNING No data to read
+2025-05-13 14:45:48,368 WARNING No data to read
+2025-05-13 14:46:16,018 WARNING No data to read
+2025-05-13 14:46:46,561 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:46:46,562 ERROR No connection on 5004, deleting message
+2025-05-13 14:47:22,385 WARNING No data to read
+2025-05-13 14:47:33,446 WARNING No data to read
+2025-05-13 14:47:38,978 WARNING No data to read
+2025-05-13 14:48:39,814 WARNING No data to read
+2025-05-13 14:48:57,633 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:48:57,634 ERROR No connection on 5004, deleting message
+2025-05-13 14:49:12,997 WARNING No data to read
+2025-05-13 14:49:18,528 WARNING No data to read
+2025-05-13 14:49:57,244 WARNING No data to read
+2025-05-13 14:50:13,837 WARNING No data to read
+2025-05-13 14:50:19,368 WARNING No data to read
+2025-05-13 14:50:47,020 WARNING No data to read
+2025-05-13 14:50:52,551 WARNING No data to read
+2025-05-13 14:51:09,141 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:51:09,141 ERROR No connection on 5004, deleting message
+2025-05-13 14:51:47,854 WARNING No data to read
+2025-05-13 14:52:15,505 WARNING No data to read
+2025-05-13 14:52:37,629 WARNING No data to read
+2025-05-13 14:53:19,777 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:53:19,778 ERROR No connection on 5004, deleting message
+2025-05-13 14:53:43,996 WARNING No data to read
+2025-05-13 14:54:39,301 WARNING No data to read
+2025-05-13 14:55:01,419 WARNING No data to read
+2025-05-13 14:55:30,849 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:55:30,850 ERROR No connection on 5004, deleting message
+2025-05-13 14:55:45,660 WARNING No data to read
+2025-05-13 14:55:56,718 WARNING No data to read
+2025-05-13 14:56:29,904 WARNING No data to read
+2025-05-13 14:57:08,621 WARNING No data to read
+2025-05-13 14:57:41,921 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:57:41,922 ERROR No connection on 5004, deleting message
+2025-05-13 14:57:58,398 WARNING No data to read
+2025-05-13 14:58:14,991 WARNING No data to read
+2025-05-13 14:58:20,525 WARNING No data to read
+2025-05-13 14:59:04,772 WARNING No data to read
+2025-05-13 14:59:37,956 WARNING No data to read
+2025-05-13 14:59:52,993 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 14:59:52,994 ERROR No connection on 5004, deleting message
+2025-05-13 15:01:06,446 WARNING No data to read
+2025-05-13 15:01:34,103 WARNING No data to read
+2025-05-13 15:02:01,753 WARNING No data to read
+2025-05-13 15:02:04,065 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:02:04,066 ERROR No connection on 5004, deleting message
+2025-05-13 15:02:51,528 WARNING No data to read
+2025-05-13 15:03:30,244 WARNING No data to read
+2025-05-13 15:04:15,137 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:04:15,138 ERROR No connection on 5004, deleting message
+2025-05-13 15:04:47,672 WARNING No data to read
+2025-05-13 15:04:58,734 WARNING No data to read
+2025-05-13 15:06:21,694 WARNING No data to read
+2025-05-13 15:06:26,209 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:06:26,210 ERROR No connection on 5004, deleting message
+2025-05-13 15:06:43,813 WARNING No data to read
+2025-05-13 15:07:00,404 WARNING No data to read
+2025-05-13 15:07:55,715 WARNING No data to read
+2025-05-13 15:08:06,777 WARNING No data to read
+2025-05-13 15:08:12,308 WARNING No data to read
+2025-05-13 15:08:23,369 WARNING No data to read
+2025-05-13 15:08:34,425 WARNING No data to read
+2025-05-13 15:08:37,281 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:08:37,282 ERROR No connection on 5004, deleting message
+2025-05-13 15:08:39,957 WARNING No data to read
+2025-05-13 15:09:07,612 WARNING No data to read
+2025-05-13 15:09:24,204 WARNING No data to read
+2025-05-13 15:09:35,266 WARNING No data to read
+2025-05-13 15:09:57,389 WARNING No data to read
+2025-05-13 15:10:48,353 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:10:48,354 ERROR No connection on 5004, deleting message
+2025-05-13 15:12:04,589 WARNING No data to read
+2025-05-13 15:12:26,709 WARNING No data to read
+2025-05-13 15:12:59,894 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:12:59,894 ERROR No connection on 5004, deleting message
+2025-05-13 15:13:05,425 WARNING No data to read
+2025-05-13 15:15:10,497 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:15:10,498 ERROR No connection on 5004, deleting message
+2025-05-13 15:15:12,627 WARNING No data to read
+2025-05-13 15:15:18,161 WARNING No data to read
+2025-05-13 15:16:57,716 WARNING No data to read
+2025-05-13 15:17:19,842 WARNING No data to read
+2025-05-13 15:17:21,569 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:17:21,570 ERROR No connection on 5004, deleting message
+2025-05-13 15:19:21,509 WARNING No data to read
+2025-05-13 15:19:32,641 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:19:32,642 ERROR No connection on 5004, deleting message
+2025-05-13 15:20:44,466 WARNING No data to read
+2025-05-13 15:21:01,058 WARNING No data to read
+2025-05-13 15:21:23,181 WARNING No data to read
+2025-05-13 15:21:43,713 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:21:43,714 ERROR No connection on 5004, deleting message
+2025-05-13 15:21:56,365 WARNING No data to read
+2025-05-13 15:22:01,897 WARNING No data to read
+2025-05-13 15:22:12,962 WARNING No data to read
+2025-05-13 15:22:18,493 WARNING No data to read
+2025-05-13 15:22:35,088 WARNING No data to read
+2025-05-13 15:23:02,742 WARNING No data to read
+2025-05-13 15:23:19,337 WARNING No data to read
+2025-05-13 15:23:52,518 WARNING No data to read
+2025-05-13 15:23:54,785 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:23:54,786 ERROR No connection on 5004, deleting message
+2025-05-13 15:24:03,580 WARNING No data to read
+2025-05-13 15:25:37,594 WARNING No data to read
+2025-05-13 15:26:05,857 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:26:05,858 ERROR No connection on 5004, deleting message
+2025-05-13 15:26:32,900 WARNING No data to read
+2025-05-13 15:27:06,084 WARNING No data to read
+2025-05-13 15:27:17,146 WARNING No data to read
+2025-05-13 15:27:33,738 WARNING No data to read
+2025-05-13 15:27:44,798 WARNING No data to read
+2025-05-13 15:27:50,329 WARNING No data to read
+2025-05-13 15:28:16,929 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:28:16,930 ERROR No connection on 5004, deleting message
+2025-05-13 15:28:17,976 WARNING No data to read
+2025-05-13 15:29:40,933 WARNING No data to read
+2025-05-13 15:30:14,115 WARNING No data to read
+2025-05-13 15:30:28,001 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:30:28,002 ERROR No connection on 5004, deleting message
+2025-05-13 15:32:26,843 WARNING No data to read
+2025-05-13 15:32:39,073 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:32:39,074 ERROR No connection on 5004, deleting message
+2025-05-13 15:34:50,636 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:34:50,637 ERROR No connection on 5004, deleting message
+2025-05-13 15:35:07,224 WARNING No data to read
+2025-05-13 15:35:12,755 WARNING No data to read
+2025-05-13 15:36:46,778 WARNING No data to read
+2025-05-13 15:37:01,217 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:37:01,218 ERROR No connection on 5004, deleting message
+2025-05-13 15:37:14,425 WARNING No data to read
+2025-05-13 15:37:36,549 WARNING No data to read
+2025-05-13 15:38:37,385 WARNING No data to read
+2025-05-13 15:39:10,563 WARNING No data to read
+2025-05-13 15:39:12,289 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:39:12,290 ERROR No connection on 5004, deleting message
+2025-05-13 15:39:43,742 WARNING No data to read
+2025-05-13 15:39:49,273 WARNING No data to read
+2025-05-13 15:40:22,458 WARNING No data to read
+2025-05-13 15:40:55,641 WARNING No data to read
+2025-05-13 15:41:23,361 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:41:23,362 ERROR No connection on 5004, deleting message
+2025-05-13 15:41:50,949 WARNING No data to read
+2025-05-13 15:42:13,073 WARNING No data to read
+2025-05-13 15:42:51,785 WARNING No data to read
+2025-05-13 15:43:24,972 WARNING No data to read
+2025-05-13 15:43:34,433 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:43:34,434 ERROR No connection on 5004, deleting message
+2025-05-13 15:44:20,275 WARNING No data to read
+2025-05-13 15:44:58,991 WARNING No data to read
+2025-05-13 15:45:10,053 WARNING No data to read
+2025-05-13 15:45:45,505 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:45:45,506 ERROR No connection on 5004, deleting message
+2025-05-13 15:45:59,828 WARNING No data to read
+2025-05-13 15:46:33,009 WARNING No data to read
+2025-05-13 15:46:38,541 WARNING No data to read
+2025-05-13 15:46:49,598 WARNING No data to read
+2025-05-13 15:47:56,577 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:47:56,578 ERROR No connection on 5004, deleting message
+2025-05-13 15:48:51,274 WARNING No data to read
+2025-05-13 15:49:46,577 WARNING No data to read
+2025-05-13 15:49:57,641 WARNING No data to read
+2025-05-13 15:50:07,649 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:50:07,649 ERROR No connection on 5004, deleting message
+2025-05-13 15:50:36,350 WARNING No data to read
+2025-05-13 15:50:41,883 WARNING No data to read
+2025-05-13 15:50:52,945 WARNING No data to read
+2025-05-13 15:52:18,721 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:52:18,722 ERROR No connection on 5004, deleting message
+2025-05-13 15:52:32,492 WARNING No data to read
+2025-05-13 15:52:43,557 WARNING No data to read
+2025-05-13 15:53:27,803 WARNING No data to read
+2025-05-13 15:53:44,398 WARNING No data to read
+2025-05-13 15:53:49,929 WARNING No data to read
+2025-05-13 15:54:23,112 WARNING No data to read
+2025-05-13 15:54:29,793 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:54:29,794 ERROR No connection on 5004, deleting message
+2025-05-13 15:54:34,173 WARNING No data to read
+2025-05-13 15:54:45,230 WARNING No data to read
+2025-05-13 15:54:50,761 WARNING No data to read
+2025-05-13 15:56:41,374 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 15:56:41,374 ERROR No connection on 5004, deleting message
+2025-05-13 15:56:46,904 WARNING No data to read
+2025-05-13 15:57:20,092 WARNING No data to read
+2025-05-13 15:57:31,155 WARNING No data to read
+2025-05-13 15:57:58,810 WARNING No data to read
+                                                2023-08-09 13:09:07,593 ERROR Failed to connect on port 5004: [Errno 101] Network is unreachable
+2023-08-09 13:09:07,599 ERROR No connection on 5004, deleting message
+2023-08-09 13:09:13,124 ERROR Failed to connect on port 5004: [Errno 101] Network is unreachable
+2023-08-09 13:09:13,124 ERROR No connection on 5004, deleting message
+2023-08-09 13:09:18,656 WARNING No data to read
+2025-05-13 16:55:30,403 WARNING No data to read
+2025-05-13 16:55:41,464 WARNING No data to read
+2025-05-13 16:56:36,775 WARNING No data to read
+2025-05-13 16:56:53,368 WARNING No data to read
+2025-05-13 16:57:19,269 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 16:57:19,269 ERROR No connection on 5004, deleting message
+2025-05-13 16:57:32,077 WARNING No data to read
+2025-05-13 16:58:38,452 WARNING No data to read
+2025-05-13 16:58:55,043 WARNING No data to read
+2025-05-13 16:59:00,573 WARNING No data to read
+2025-05-13 16:59:06,103 WARNING No data to read
+2025-05-13 16:59:30,337 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 16:59:30,337 ERROR No connection on 5004, deleting message
+2025-05-13 16:59:39,290 WARNING No data to read
+2025-05-13 17:00:51,185 WARNING No data to read
+2025-05-13 17:01:13,304 WARNING No data to read
+2025-05-13 17:01:41,408 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 17:01:41,409 ERROR No connection on 5004, deleting message
+2025-05-13 17:02:19,676 WARNING No data to read
+2025-05-13 17:02:25,208 WARNING No data to read
+2025-05-13 17:03:26,047 WARNING No data to read
+2025-05-13 17:03:42,640 WARNING No data to read
+2025-05-13 17:03:52,480 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 17:03:52,481 ERROR No connection on 5004, deleting message
+2025-05-13 17:04:26,884 WARNING No data to read
+2025-05-13 17:04:49,010 WARNING No data to read
+2025-05-13 17:05:00,072 WARNING No data to read
+2025-05-13 17:05:22,195 WARNING No data to read
+2025-05-13 17:05:33,256 WARNING No data to read
+2025-05-13 17:05:38,786 WARNING No data to read
+2025-05-13 17:05:44,318 WARNING No data to read
+2025-05-13 17:05:49,851 WARNING No data to read
+2025-05-13 17:06:03,552 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 17:06:03,553 ERROR No connection on 5004, deleting message
+2025-05-13 17:06:39,626 WARNING No data to read
+2025-05-13 17:08:13,648 WARNING No data to read
+2025-05-13 17:08:14,624 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 17:08:14,625 ERROR No connection on 5004, deleting message
+2025-05-13 17:08:35,772 WARNING No data to read
+2025-05-13 17:09:25,551 WARNING No data to read
+2025-05-13 17:09:36,613 WARNING No data to read
+2025-05-13 17:09:58,737 WARNING No data to read
+2025-05-13 17:10:25,696 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 17:10:25,697 ERROR No connection on 5004, deleting message
+2025-05-13 17:10:42,973 WARNING No data to read
+2025-05-13 17:11:10,628 WARNING No data to read
+2025-05-13 17:11:54,877 WARNING No data to read
+2025-05-13 17:12:11,471 WARNING No data to read
+2025-05-13 17:12:28,063 WARNING No data to read
+2025-05-13 17:12:36,768 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 17:12:36,769 ERROR No connection on 5004, deleting message
+2025-05-13 17:13:12,301 WARNING No data to read
+2025-05-13 17:13:34,424 WARNING No data to read
+2025-05-13 17:14:02,077 WARNING No data to read
+2025-05-13 17:14:47,840 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-13 17:14:47,841 ERROR No connection on 5004, deleting message
+2025-05-13 17:15:25,037 WARNING No data to read
+2025-05-13 17:15:52,692 WARNING No data to read
+2023-08-09 13:09:10,768 ERROR Failed to connect on port 5004: [Errno 101] Network is unreachable
+2023-08-09 13:09:10,773 ERROR No connection on 5004, deleting message
+2023-08-09 13:09:16,299 ERROR Failed to connect on port 5004: [Errno 101] Network is unreachable
+2023-08-09 13:09:16,299 ERROR No connection on 5004, deleting message
+2023-08-09 13:09:21,839 WARNING No data to read
+2025-05-14 11:40:37,538 WARNING No data to read
+2025-05-14 11:40:48,944 ERROR Connection closed by ('100.117.141.114', 39994)
+2025-05-14 11:40:54,127 WARNING No data to read
+2025-05-14 11:40:55,668 ERROR Connection closed by ('100.117.141.114', 40008)
+2025-05-14 11:40:57,918 ERROR Connection closed by ('100.117.141.114', 44000)
+2025-05-14 11:41:24,722 ERROR Connection closed by ('100.117.141.114', 39320)
+2025-05-14 11:41:32,837 WARNING No data to read
+2025-05-14 11:41:43,899 WARNING No data to read
+2025-05-14 11:42:11,551 WARNING No data to read
+2025-05-14 11:42:28,142 WARNING No data to read
+2025-05-14 11:42:50,266 WARNING No data to read
+2025-05-14 11:44:07,689 WARNING No data to read
+2025-05-14 11:44:46,398 WARNING No data to read
+2025-05-14 11:44:57,452 WARNING No data to read
+2025-05-14 11:45:19,580 WARNING No data to read
+2025-05-14 11:45:36,176 WARNING No data to read
+2025-05-14 11:46:09,358 WARNING No data to read
+2025-05-14 11:46:20,420 WARNING No data to read
+2025-05-14 11:47:15,726 WARNING No data to read
+2025-05-14 11:47:59,946 WARNING No data to read
+2025-05-14 11:48:11,009 WARNING No data to read
+2025-05-14 11:48:33,122 WARNING No data to read
+2025-05-14 11:48:38,654 WARNING No data to read
+2025-05-14 11:48:55,244 WARNING No data to read
+2025-05-14 11:49:11,827 WARNING No data to read
+2025-05-14 11:49:17,360 WARNING No data to read
+2025-05-14 11:49:22,889 WARNING No data to read
+2025-05-14 11:49:33,949 WARNING No data to read
+2025-05-14 11:49:50,541 WARNING No data to read
+2025-05-14 11:50:18,184 WARNING No data to read
+2025-05-14 11:50:34,771 WARNING No data to read
+2025-05-14 11:50:45,832 WARNING No data to read
+2025-05-14 11:50:56,894 WARNING No data to read
+2025-05-14 11:51:13,481 WARNING No data to read
+2025-05-14 11:52:30,900 WARNING No data to read
+2025-05-14 11:52:36,431 WARNING No data to read
+2025-05-14 11:52:48,578 WARNING No data to read
+2025-05-14 11:53:21,761 WARNING No data to read
+2025-05-14 11:54:11,531 WARNING No data to read
+2025-05-14 11:55:06,842 WARNING No data to read
+2025-05-14 11:55:40,022 WARNING No data to read
+2025-05-14 11:57:14,021 WARNING No data to read
+2025-05-14 11:57:19,552 WARNING No data to read
+2025-05-14 11:57:52,740 WARNING No data to read
+2025-05-14 11:58:25,917 WARNING No data to read
+2025-05-14 11:58:59,089 WARNING No data to read
+2025-05-14 11:59:26,744 WARNING No data to read
+2025-05-14 11:59:43,338 WARNING No data to read
+2025-05-14 12:00:44,155 WARNING No data to read
+2025-05-14 12:01:28,404 WARNING No data to read
+2025-05-14 12:01:44,988 WARNING No data to read
+2025-05-14 12:02:12,644 WARNING No data to read
+2025-05-14 12:02:29,236 WARNING No data to read
+2025-05-14 12:02:34,770 WARNING No data to read
+2025-05-14 12:03:02,425 WARNING No data to read
+2025-05-14 12:03:24,549 WARNING No data to read
+2025-05-14 12:03:41,142 WARNING No data to read
+2025-05-14 12:03:57,733 WARNING No data to read
+2025-05-14 12:04:36,450 WARNING No data to read
+2025-05-14 12:05:20,681 WARNING No data to read
+2025-05-14 12:05:26,212 WARNING No data to read
+2025-05-14 12:05:31,743 WARNING No data to read
+2025-05-14 12:05:42,805 WARNING No data to read
+2025-05-14 12:06:38,111 WARNING No data to read
+2025-05-14 12:07:05,752 WARNING No data to read
+2025-05-14 12:07:27,877 WARNING No data to read
+2025-05-14 12:07:50,001 WARNING No data to read
+2025-05-14 12:08:45,294 WARNING No data to read
+2025-05-14 12:09:18,481 WARNING No data to read
+2025-05-14 12:09:35,072 WARNING No data to read
+2025-05-14 12:10:19,308 WARNING No data to read
+2025-05-14 12:11:09,079 WARNING No data to read
+2025-05-14 12:11:36,734 WARNING No data to read
+2025-05-14 12:12:09,922 WARNING No data to read
+2025-05-14 12:12:15,453 WARNING No data to read
+2025-05-14 12:14:00,517 WARNING No data to read
+2025-05-14 12:14:06,048 WARNING No data to read
+2025-05-14 12:15:34,545 WARNING No data to read
+2025-05-14 12:16:18,790 WARNING No data to read
+2025-05-14 12:17:08,569 WARNING No data to read
+2025-05-14 12:18:14,930 WARNING No data to read
+2025-05-14 12:18:42,585 WARNING No data to read
+2025-05-14 12:19:15,768 WARNING No data to read
+2025-05-14 12:20:33,192 WARNING No data to read
+2025-05-14 12:20:55,316 WARNING No data to read
+2025-05-14 12:21:50,628 WARNING No data to read
+2025-05-14 12:22:51,465 WARNING No data to read
+2025-05-14 12:23:46,774 WARNING No data to read
+2025-05-14 12:24:14,420 WARNING No data to read
+2025-05-14 12:24:36,540 WARNING No data to read
+2025-05-14 12:24:58,664 WARNING No data to read
+2025-05-14 12:25:42,914 WARNING No data to read
+2025-05-14 12:26:38,223 WARNING No data to read
+2025-05-14 12:27:16,926 WARNING No data to read
+2025-05-14 12:27:22,457 WARNING No data to read
+2025-05-14 12:27:44,579 WARNING No data to read
+2025-05-14 12:27:50,110 WARNING No data to read
+2025-05-14 12:27:55,643 WARNING No data to read
+2025-05-14 12:28:01,178 WARNING No data to read
+2025-05-14 12:28:23,301 WARNING No data to read
+2025-05-14 12:28:28,832 WARNING No data to read
+2025-05-14 12:29:07,542 WARNING No data to read
+2025-05-14 12:30:41,533 WARNING No data to read
+2025-05-14 12:31:20,241 WARNING No data to read
+2025-05-14 12:31:31,303 WARNING No data to read
+2025-05-14 12:31:47,891 WARNING No data to read
+2025-05-14 12:32:21,077 WARNING No data to read
+2025-05-14 12:33:21,910 WARNING No data to read
+2025-05-14 12:33:49,565 WARNING No data to read
+2025-05-14 12:35:12,520 WARNING No data to read
+2025-05-14 12:35:29,114 WARNING No data to read
+2025-05-14 12:36:18,890 WARNING No data to read
+2025-05-14 12:37:14,200 WARNING No data to read
+2025-05-14 12:37:30,794 WARNING No data to read
+2025-05-14 12:38:26,104 WARNING No data to read
+2025-05-14 12:39:10,335 WARNING No data to read
+2025-05-14 12:39:21,400 WARNING No data to read
+2025-05-14 12:39:32,462 WARNING No data to read
+2025-05-14 12:40:16,710 WARNING No data to read
+2025-05-14 12:41:34,134 WARNING No data to read
+2025-05-14 12:41:39,665 WARNING No data to read
+2025-05-14 12:43:46,857 WARNING No data to read
+2025-05-14 12:44:14,502 WARNING No data to read
+2025-05-14 12:44:20,034 WARNING No data to read
+2025-05-14 12:45:09,797 WARNING No data to read
+2025-05-14 12:45:37,453 WARNING No data to read
+2025-05-14 12:46:32,745 WARNING No data to read
+2025-05-14 12:47:05,930 WARNING No data to read
+2025-05-14 12:47:16,985 WARNING No data to read
+2025-05-14 12:47:28,048 WARNING No data to read
+2025-05-14 12:47:33,578 WARNING No data to read
+                                                2023-08-09 13:09:12,350 ERROR Failed to connect on port 5004: [Errno 101] Network is unreachable
+2023-08-09 13:09:12,354 ERROR No connection on 5004, deleting message
+2023-08-09 13:09:17,878 WARNING No data to read
+2025-05-14 13:16:12,889 WARNING No data to read
+2025-05-14 13:16:35,007 WARNING No data to read
+2025-05-14 13:16:48,258 ERROR Connection closed by ('100.117.141.114', 58228)
+2025-05-14 13:17:13,721 WARNING No data to read
+2025-05-14 13:17:52,433 WARNING No data to read
+2025-05-14 13:18:17,013 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-14 13:18:17,013 ERROR No connection on 5004, deleting message
+2025-05-14 13:18:25,615 WARNING No data to read
+2025-05-14 13:18:28,301 ERROR Connection closed by ('100.117.141.114', 50704)
+2025-05-14 13:18:31,144 WARNING No data to read
+2025-05-14 13:18:47,736 WARNING No data to read
+2025-05-14 13:18:51,056 ERROR Connection closed by ('100.117.141.114', 34546)
+2025-05-14 13:18:53,265 WARNING No data to read
+2025-05-14 13:18:58,195 ERROR Connection closed by ('100.117.141.114', 45446)
+2025-05-14 13:19:01,846 ERROR Connection closed by ('100.117.141.114', 45460)
+2025-05-14 13:19:32,640 ERROR Connection closed by ('100.117.141.114', 53192)
+2025-05-14 13:19:43,769 ERROR Connection closed by ('100.117.141.114', 49326)
+2025-05-14 13:19:46,524 ERROR Connection closed by ('100.117.141.114', 48226)
+2025-05-14 13:19:59,617 WARNING No data to read
+2023-08-09 13:09:17,918 WARNING No data to read
+2023-08-09 13:09:23,457 WARNING No data to read
+2025-05-14 14:06:37,781 WARNING No data to read
+2025-05-14 14:07:22,022 WARNING No data to read
+2025-05-14 14:07:59,829 ERROR Connection closed by ('100.117.141.114', 58078)
+2025-05-14 14:08:00,732 WARNING No data to read
+2025-05-14 14:08:02,995 ERROR Connection closed by ('100.117.141.114', 58092)
+2025-05-14 14:08:17,323 WARNING No data to read
+2025-05-14 14:08:17,367 ERROR Connection closed by ('100.117.141.114', 44094)
+2025-05-14 14:08:22,855 WARNING No data to read
+2025-05-14 14:08:28,386 WARNING No data to read
+2025-05-14 14:08:39,446 WARNING No data to read
+2025-05-14 14:08:42,379 ERROR Failed to connect on port 5004: [Errno 110] Connect call failed ('100.117.141.114', 5004)
+2025-05-14 14:08:42,379 ERROR No connection on 5004, deleting message
+2025-05-14 14:08:50,502 WARNING No data to read
+2025-05-14 14:08:57,294 ERROR Connection closed by ('100.117.141.114', 47258)
+2025-05-14 14:09:29,221 WARNING No data to read
+2025-05-14 14:09:49,951 ERROR Connection closed by ('100.117.141.114', 36184)
+2025-05-14 14:10:24,522 WARNING No data to read
+2025-05-14 14:10:28,428 ERROR Connection closed by ('100.117.141.114', 45550)
+2025-05-14 14:10:49,141 ERROR Connection closed by ('100.117.141.114', 49766)
+2023-08-09 13:09:22,591 WARNING No data to read
+2023-08-09 13:09:28,128 WARNING No data to read
+2023-08-09 13:09:33,660 WARNING No data to read
+2025-05-14 14:37:23,234 WARNING No data to read
+2025-05-14 14:37:34,296 WARNING No data to read
+2025-05-14 14:37:39,829 WARNING No data to read
+2025-05-14 14:37:45,365 WARNING No data to read
+2025-05-14 14:37:50,895 WARNING No data to read
+2025-05-14 14:38:13,020 WARNING No data to read
+2025-05-14 14:39:13,866 WARNING No data to read
+2025-05-14 14:39:41,515 WARNING No data to read
+2025-05-14 14:40:14,693 WARNING No data to read
+2025-05-14 14:42:05,288 WARNING No data to read
+2025-05-14 14:42:38,464 WARNING No data to read
+2025-05-14 14:42:55,058 WARNING No data to read
+2025-05-14 14:43:11,652 WARNING No data to read
+2025-05-14 14:43:22,714 WARNING No data to read
+2025-05-14 14:44:12,489 WARNING No data to read
+2025-05-14 14:44:45,675 WARNING No data to read
+2025-05-14 14:44:51,206 WARNING No data to read
+2025-05-14 14:45:35,440 WARNING No data to read
+2025-05-14 14:46:19,680 WARNING No data to read
+2025-05-14 14:46:25,211 WARNING No data to read
+2025-05-14 14:46:47,334 WARNING No data to read
+2025-05-14 14:47:42,632 WARNING No data to read
+2025-05-14 14:48:10,284 WARNING No data to read
+2025-05-14 14:48:32,409 WARNING No data to read
+2025-05-14 14:48:37,942 WARNING No data to read
+2025-05-14 14:49:33,245 WARNING No data to read
+2025-05-14 14:49:44,302 WARNING No data to read
+2025-05-14 14:49:55,367 WARNING No data to read
+2025-05-14 14:50:34,084 WARNING No data to read
+2025-05-14 14:50:45,146 WARNING No data to read
+2025-05-14 14:51:07,270 WARNING No data to read
+2025-05-14 14:51:45,988 WARNING No data to read
+2025-05-14 14:51:57,051 WARNING No data to read
+2025-05-14 14:53:08,932 WARNING No data to read
+2025-05-14 14:54:09,754 WARNING No data to read
+2025-05-14 14:54:26,348 WARNING No data to read
+2025-05-14 14:54:48,469 WARNING No data to read
+2025-05-14 14:55:38,244 WARNING No data to read
+2025-05-14 14:55:43,775 WARNING No data to read
+2025-05-14 14:55:54,837 WARNING No data to read
+2025-05-14 14:56:00,371 WARNING No data to read
+2025-05-14 14:56:11,433 WARNING No data to read
+2025-05-14 14:56:33,557 WARNING No data to read
+2025-05-14 14:56:50,150 WARNING No data to read
+2025-05-14 14:57:06,735 WARNING No data to read
+2025-05-14 14:58:40,755 WARNING No data to read
+2025-05-14 14:58:46,286 WARNING No data to read
+2025-05-14 14:59:19,468 WARNING No data to read
+2025-05-14 15:00:53,478 WARNING No data to read
+2025-05-14 15:01:10,066 WARNING No data to read
+2025-05-14 15:01:21,128 WARNING No data to read
+2025-05-14 15:01:26,658 WARNING No data to read
+2025-05-14 15:01:54,312 WARNING No data to read
+2025-05-14 15:02:21,959 WARNING No data to read
