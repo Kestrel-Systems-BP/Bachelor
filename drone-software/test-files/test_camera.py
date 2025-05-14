@@ -1,5 +1,6 @@
-#This is a code designed to solely test the camera functionality
-#It imports the camera class from the camera.py file
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import cv2
 from camera import Camera
