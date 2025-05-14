@@ -371,6 +371,10 @@ MouseArea {
 
     // Calculate distance
 
+
+   //if(dispenserData[selectedDispenser].chargerStatus =)
+
+
     Timer {
         id: distanceInterval
         interval: 1000 // will update very second
@@ -792,25 +796,60 @@ MouseArea {
                         }
 
                         MouseArea {
-                          anchors.fill: parent
-                          enabled: safetySwitch.safetyOn
-                          onClicked: {
-                            console.log("Launching Dispenser " + selectedDispenser)
-                            //CustomMission.createAutomaticMission(QGroundControl.multiVehicleManager.activeVehicle, 47.3976833, 8.5434278, 15.0)
-                            //flyView.planMasterController.addWaypoint(47.3976833, 8.5434278, 15.0)
-                            //flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 10.0)
+                            anchors.fill: parent
+                            enabled: safetySwitch.safetyOn
+                            onClicked: {
+                                console.log("Launching button clicked")
 
-                            if (QGroundControl.multiVehicleManager.activeVehicle) {
-                              QGroundControl.multiVehicleManager.activeVehicle.startMission()
-                              console.log("launched the mission")
+
+                                //CustomMission.createAutomaticMission(QGroundControl.multiVehicleManager.activeVehicle, 47.3976833, 8.5434278, 15.0)
+                                //flyView.planMasterController.addWaypoint(47.3976833, 8.5434278, 15.0)
+                                //flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 10.0)
+
+                                /*
+                                if(dispenserData[selectedDispenser].chargerStatus === "OFF" && dispenserData[selectedDispenser].lidStatus === "Open"){
+
+
+
+                                    if (QGroundControl.multiVehicleManager.activeVehicle) {
+                                        QGroundControl.multiVehicleManager.activeVehicle.startMission()
+                                        console.log("launched the mission")
+                                    }
+                                    else {
+                                        console.log("No active vehicle.")
+                                        mainWindow.showMessageDialog("Error", "No active vehicle connected.")
+                                    }
+                                }
+
+                                else {
+                                    mainWindow.showMessageDialog("Caution", "Lid must be open and charger must be off")
+                                    console.log("Trying to launch:  Lid must be open and charger must be off")
+
+                                }*/
+
+                                if (dispenserData[selectedDispenser].chargerStatus === "OFF") {
+                                    // Send lid open command
+
+                                    TCPSender.sendMessage("open")
+
+                                     // Start checking for lid status
+                                    lidCheckTimer.start()
+                                }
+
+
+                                else {
+                                    mainWindow.showMessageDialog("Caution", "Lid must be open and charger must be off")
+                                    console.log("Trying to launch: Lid must be open and charger must be off")
+                                }
+
+
+
+
+
                             }
-                            else {
-                              console.log("No active vehicle.")
-                              mainWindow.showMessageDialog("Error", "No active vehicle connected.")
-                            }
 
 
-                          }
+
                         }
                     }
 
@@ -1018,8 +1057,8 @@ MouseArea {
         Rectangle {
             id: openClosePopup
             visible: false
-            width: 360 //300
-            height: 300 //250
+            width: 380 // 360 //300
+            height: 350 //300 //250
             color: "#333"
             radius: 8
             // anchors.bottom: mainWindow.contentItem.bottom
@@ -1048,6 +1087,9 @@ MouseArea {
                     font.bold: true
                 }
 
+
+                Column{ // test
+
                 Row {
                     spacing: 10
                     anchors.horizontalCenter: parent.horizontalCenter
@@ -1057,6 +1099,8 @@ MouseArea {
                         height: 40
                         radius: 8
                         color: openArea.pressed ? "#3d3d3d" : (openArea.containsMouse ? "#2a2a2a" : "transparent")
+                        border.color: "white"
+                        border.width: 2
 
                         MouseArea {
                             id: openArea
@@ -1067,6 +1111,10 @@ MouseArea {
                                 //qgcApp.startUdpSender()
                                 //SendUdp.open()
                                 TCPSender.sendMessage("open")
+
+                                // test for flyning
+                                    //flyView.planMasterController.changeAltitudeMidMission(1, 25.0);  // Tell drone 1 to climb to 25m
+
                                 openClosePopup.visible = false
                             }
                         }
@@ -1084,6 +1132,9 @@ MouseArea {
                         height: 40
                         radius: 8
                         color: closeArea.pressed ? "#3d3d3d" : (closeArea.containsMouse ? "#2a2a2a" : "transparent")
+                        border.color: "white"
+                        border.width: 2
+
 
                         MouseArea {
                             id: closeArea
@@ -1105,7 +1156,77 @@ MouseArea {
                             anchors.centerIn: parent
                         }
                     }
+
+                    ///// test
+                    Rectangle {
+                        width: 80
+                        height: 40
+                        radius: 8
+                        color: startArea.pressed ? "#3d3d3d" : (startArea.containsMouse ? "#2a2a2a" : "transparent")
+                        border.color: "white"
+                        border.width: 2
+
+
+                        MouseArea {
+                            id: startArea
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            onClicked: {
+                                console.log("Start charging clicked")
+                                //qgcApp.startUdpSender()
+                                //SendUdp.open()
+                                TCPSender.sendMessage("start")
+
+                                openClosePopup.visible = false
+                            }
+                        }
+
+                        Text {
+                            text: "Start"
+                            color: "white"
+                            font.pixelSize: 16
+                            anchors.centerIn: parent
+                        }
+                    }
+
+                    Rectangle {
+                        width: 80
+                        height: 40
+                        radius: 8
+                        color: stopArea.pressed ? "#3d3d3d" : (stopArea.containsMouse ? "#2a2a2a" : "transparent")
+                        border.color: "white"
+                        border.width: 2
+
+
+                        MouseArea {
+                            id: stopArea
+                            anchors.fill: parent
+                            hoverEnabled: true
+                            onClicked: {
+                                console.log("Stop charging clicked")
+
+                                TCPSender.sendMessage("stop")
+                                openClosePopup.visible = false
+                            }
+                        }
+
+                        Text {
+                            text: "Stop"
+                            color: "white"
+                            font.pixelSize: 16
+                            anchors.centerIn: parent
+                        }
+                    }
+
+
+
+
+
+                    /// TEST
                 }
+            }       // testcd ..
+
+
 
                 //new
             Column {
@@ -1210,6 +1331,63 @@ MouseArea {
                     }
                    }
 
+
+
+
+                    /// test
+                   Row {
+                       spacing: 8
+                       anchors.horizontalCenter: parent.horizontalCenter
+
+                       Text{
+                           text: "Replace Drone Mode:"
+                           color: "white"
+                           font.pixelSize: 16
+                           anchors.verticalCenter: parent.verticalCenter
+                       }
+                       Text {
+                           text: "Off"
+                           color: "white"
+                           font.pixelSize: 16
+                           anchors.verticalCenter: parent.verticalCenter
+                            }
+
+                    Slider {
+                            id: replaceDroneSlider
+                            width: 60
+                            from: 0
+                            to: 1
+                            stepSize: 1
+                            value: 0
+                            anchors.verticalCenter: parent.verticalCenter
+
+                            property bool replaceDroneOn: false
+
+                            onValueChanged: {
+                                replaceDroneOn = (value === 1)
+                                console.log("Replace Drone:", replaceDroneOn ?"Enabled, automatic drone replacement when battery is low" : "Disabled, not replacement at low battery")
+                                //console.log("Drone Replacement Enabled, will activate when a drone has low battery")
+
+
+                            }
+
+                    }
+
+                    Text {
+                        text: "On"
+                        color: "white"
+                        font.pixelSize: 16
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+                   }
+
+
+
+
+
+
+                   ///
+
                    Text{
                        text: "Set dispenser coordinates using drone GPS:"
                        color: "white"
@@ -1219,7 +1397,7 @@ MouseArea {
             }
 
                 Rectangle {
-                    width: 160
+                    width: 170
                     height: 40
                     radius: 8
                     color: setLocationArea.pressed ? "#3d3d3d" : (setLocationArea.containsMouse ? "#2a2a2a" : "blue")
@@ -1350,6 +1528,69 @@ MouseArea {
                 dispenserData = dispenserData
             }
         }
+
+
+
+
+
+
+        // replace drone when battery is low function!!!!
+
+            Timer {
+            interval: 6000           // 6 sec
+            repeat: true
+            running: replaceDroneSlider.replaceDroneOn
+
+
+            onTriggered: {
+                    if (!flyView.planMasterController.replacementInProgress) {
+
+                        flyView.planMasterController.replaceDrone(25)
+                    }
+                }
+            }
+
+
+        // timet to wait for the lid to open
+
+            Timer {
+                id: lidCheckTimer
+                interval: 3000     // Check every 3 second
+                repeat: true
+                running: false
+
+                onTriggered: {
+
+                    let lid = dispenserData[selectedDispenser].status
+
+                    console.log("LID =", lid)
+
+
+
+                    if (dispenserData[selectedDispenser].status === "Open") {
+                        lidCheckTimer.stop()
+                        console.log("Lid is open — launching mission")
+
+                        if (QGroundControl.multiVehicleManager.activeVehicle) {
+                            QGroundControl.multiVehicleManager.activeVehicle.startMission()
+                        }
+
+                        else {
+                            console.log("No active vehicle.")
+                            mainWindow.showMessageDialog("Error", "No active vehicle connected.")
+                        }
+                    }
+
+                    else {
+                        console.log("Waiting for lid to open...")
+                    }
+                }
+            }
+
+
+
+
+
 
 
 
@@ -1506,7 +1747,8 @@ MouseArea {
 
                                 //added the call here to make it appear when accepting and not when pressing "LAUNCH"
                                 //flyView.planMasterController.addWaypoint(coordinatePopup.latitude, coordinatePopup.longitude, 10.0)
-                                flyView.planMasterController.addWaypoint(missionLatitude, missionLongitude, 10.0)
+                                //flyView.planMasterController.addWaypoint(missionLatitude, missionLongitude, 15.0)
+                                flyView.planMasterController.giveMissionToAvailableDrone(missionLatitude, missionLongitude, 10.0)
 
 
                                 // skal inn i fully autonomousmode: flyView.planMasterController.giveMissionToAvailableDrone(coordinatePopup.latitude, coordinatePopup.longitude, 10.0)
@@ -1566,37 +1808,53 @@ MouseArea {
         target: coordinateReceiver
         function onCoordinatesReceived(incidentType, latitude, longitude) {
 
-          if(autonomousSlider.autonomousOn){
+            if(autonomousSlider.autonomousOn){
 
-            flyView.planMasterController.giveMissionToAvailableDrone(latitude,longitude, 10.0)
-            if (QGroundControl.multiVehicleManager.activeVehicle) {
-              QGroundControl.multiVehicleManager.activeVehicle.startMission()
-              console.log("launched the mission")
-              mainWindow.showMessageDialog("Mission Started Automatically", "Authorized user started mission from kestrel app.")
+                flyView.planMasterController.giveMissionToAvailableDrone(latitude,longitude, 10.0)
+                missionStartDelay.start()
+               /* if (QGroundControl.multiVehicleManager.activeVehicle) {
 
+                    QGroundControl.multiVehicleManager.activeVehicle.startMission()
+                    console.log("launched the mission")
+                    mainWindow.showMessageDialog("Mission Started Automatically", "Authorized user started mission from kestrel app.")
+
+                }
+
+                else {
+                    console.log("No active vehicle.")
+                    mainWindow.showMessageDialog("Error", "No active vehicle connected.")
+                }*/
             }
             else {
-              console.log("No active vehicle.")
-              mainWindow.showMessageDialog("Error", "No active vehicle connected.")
+                console.log("Received coordinates: Latitude =", latitude, "Longitude =", longitude)
+                coordinatePopup.latitude = latitude
+                coordinatePopup.longitude = longitude
+                coordinatePopup.typeOfIncident = incidentType
+                coordinatePopup.open() // Automatically open the pop-up
             }
-          }
-          else {
-            console.log("Received coordinates: Latitude =", latitude, "Longitude =", longitude)
-            coordinatePopup.latitude = latitude
-            coordinatePopup.longitude = longitude
-            coordinatePopup.typeOfIncident = incidentType
-            coordinatePopup.open() // Automatically open the pop-up
-          }
-
-
 
         }
     }
 
 
+    // to wait a little bit before starting mission
 
 
-    //
+    Timer {
+        id: missionStartDelay
+        interval: 600
+        repeat: false
+        onTriggered: {
+            if (QGroundControl.multiVehicleManager.activeVehicle) {
+                QGroundControl.multiVehicleManager.activeVehicle.startMission()
+                console.log("launched the mission")
+                mainWindow.showMessageDialog("Mission Started Automatically", "Authorized user started mission from kestrel app.")
+            }
+        }
+    }
+
+
+
 
 
 
