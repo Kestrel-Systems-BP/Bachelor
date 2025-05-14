@@ -31,7 +31,7 @@ logging.basicConfig(
 async def tcp_sender(sending_queue):
     connections = {}
     send_address = config['tcp']['send_address']
-
+    #Initiate a tcp connection to QGC
     async def get_connection(port):
         if port not in connections or connections[port][1].is_closing():
             try:
@@ -46,7 +46,7 @@ async def tcp_sender(sending_queue):
         try:
             message = await sending_queue.get()
 
-             # Select address based on type of communication
+            #Select address based on type of communication
             if message["type"] == "sensor":
                 port = config['tcp']['sensor_port']
             elif message["type"] == "status_actuator":
@@ -92,6 +92,7 @@ async def tcp_receiver(actuator_queue, charging_queue):
                 if not data:
                     break
                 message = data.decode('utf-8').strip().lower()
+                #Place message in queue acqording to the data
                 if message in ["open", "close"]:
                     await actuator_queue.put({"type": "actuator", "data": message})
                 elif message in ["start", "stop"]:
@@ -104,7 +105,7 @@ async def tcp_receiver(actuator_queue, charging_queue):
                 break
         writer.close()
         await writer.wait_closed()
-
+    #Starting the tcp server
     try:
         server = await asyncio.start_server(handle_client, '0.0.0.0', config['tcp']['receiving_port'])
         async with server:
