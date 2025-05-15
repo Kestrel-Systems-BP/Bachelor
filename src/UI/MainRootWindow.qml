@@ -365,7 +365,7 @@ MouseArea {
 
 */
 
-
+    property real calculatedDistanceForMission
     property real calculatedDistance: -1
     property bool openAndCloseDispenser: false
 
@@ -784,8 +784,11 @@ MouseArea {
                         id: launchButton
                         width: 300
                         height: 60
-                        color: "red"
                         radius: 10
+                        color: "red"
+
+                        // color: mouseArea.pressed ? "#cc0000" : (mouseArea.containsMouse ? "#ff4d4d" : "red")
+
 
                         Text {
                             anchors.centerIn: parent
@@ -1098,7 +1101,9 @@ MouseArea {
                         width: 80
                         height: 40
                         radius: 8
-                        color: openArea.pressed ? "#3d3d3d" : (openArea.containsMouse ? "#2a2a2a" : "transparent")
+                        //color: openArea.pressed ? "#3d3d3d" : (openArea.containsMouse ? "#2a2a2a" : "transparent")
+                        color: openArea.pressed ? "#3d3d3d" : (openArea.containsMouse ? "#5a5a5a" : "transparent")
+
                         border.color: "white"
                         border.width: 2
 
@@ -1131,7 +1136,9 @@ MouseArea {
                         width: 80
                         height: 40
                         radius: 8
-                        color: closeArea.pressed ? "#3d3d3d" : (closeArea.containsMouse ? "#2a2a2a" : "transparent")
+                        //color: closeArea.pressed ? "#3d3d3d" : (closeArea.containsMouse ? "#2a2a2a" : "transparent")
+                        color: closeArea.pressed ? "#3d3d3d" : (closeArea.containsMouse ? "#5a5a5a" : "transparent")
+
                         border.color: "white"
                         border.width: 2
 
@@ -1162,7 +1169,9 @@ MouseArea {
                         width: 80
                         height: 40
                         radius: 8
-                        color: startArea.pressed ? "#3d3d3d" : (startArea.containsMouse ? "#2a2a2a" : "transparent")
+                        //color: startArea.pressed ? "#3d3d3d" : (startArea.containsMouse ? "#2a2a2a" : "transparent")
+                        color: startArea.pressed ? "#3d3d3d" : (startArea.containsMouse ? "#5a5a5a" : "transparent")
+
                         border.color: "white"
                         border.width: 2
 
@@ -1193,7 +1202,9 @@ MouseArea {
                         width: 80
                         height: 40
                         radius: 8
-                        color: stopArea.pressed ? "#3d3d3d" : (stopArea.containsMouse ? "#2a2a2a" : "transparent")
+                        //color: stopArea.pressed ? "#3d3d3d" : (stopArea.containsMouse ? "#2a2a2a" : "transparent")
+                        color: stopArea.pressed ? "#3d3d3d" : (stopArea.containsMouse ? "#5a5a5a" : "transparent")
+
                         border.color: "white"
                         border.width: 2
 
@@ -1665,7 +1676,7 @@ MouseArea {
         x: Math.round((parent.width - width) / 2)
         y: Math.round((parent.height - height) / 2)
         width: 300
-        height: 150
+        height: 190
         modal: true
         focus: true
         closePolicy: Popup.CloseOnEscape
@@ -1673,6 +1684,13 @@ MouseArea {
         property double latitude: 0
         property double longitude: 0
         property string typeOfIncident: " "
+        property double calculatedDistanceForMission: 0
+
+
+
+       // calculatedDistanceForMission = ProximityCalculator.calculateDistance(dispenserLatitude, dispenserLongitude, coordinatePopup.latitude, coordinatePopup.longitude);
+
+
 
         background: Rectangle {
             color: "#333"
@@ -1696,6 +1714,12 @@ MouseArea {
                 color: "lightgray"
                 font.pixelSize: 16
 
+            }
+
+            Text {
+                text: "Distance: " + calculatedDistanceForMission.toFixed(1) +"m"
+                color: "lightgray"
+                font.pixelSize: 16
             }
 
 
@@ -1830,6 +1854,10 @@ MouseArea {
                 coordinatePopup.latitude = latitude
                 coordinatePopup.longitude = longitude
                 coordinatePopup.typeOfIncident = incidentType
+
+
+                calculatedDistanceForMission = ProximityCalculator.calculateDistance(dispenserData[selectedDispenser].latitude, dispenserData[selectedDispenser].longitude, latitude, longitude)
+
                 coordinatePopup.open() // Automatically open the pop-up
             }
 
