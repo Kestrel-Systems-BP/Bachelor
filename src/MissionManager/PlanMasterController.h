@@ -9,6 +9,10 @@
 
 #pragma once
 
+//kest
+#include <QSet>
+//
+
 #include <QtCore/QObject>
 #include <QtCore/QLoggingCategory>
 
@@ -85,8 +89,34 @@ public:
     Q_INVOKABLE void removeAllFromVehicle(void);            ///< Removes all from vehicle and controller
 
 //kest
-    Q_INVOKABLE void addWaypoint(double latitude, double longitude, double altitude); // mulig bytte seinere :)
+    //Q_INVOKABLE void addWaypoint(double latitude, double longitude, double altitude); // changed from active vehicle(UI) to ID..   (added another paramter)
+    Q_INVOKABLE void addWaypoint(int sysId, double latitude, double longitude, double altitude);
+     Q_INVOKABLE void addWaypointAutoStart(int sysId, double latitude, double longitude, double altitude);
+
+
+    //Q_INVOKABLE void addWaypointToDrone(int sysId, double latitude, double longitude, double altitude);
     Q_INVOKABLE void giveMissionToAvailableDrone(double latitude, double longitude, double altitude);
+    Q_INVOKABLE void giveMissionToAvailableDroneAutoStart(double latitude, double longitude, double altitude); // for replaceDrone
+    Q_INVOKABLE void changeAltitudeMidMission(int sysId, double newAltitude);
+    Q_INVOKABLE void replaceDrone(double safeAltitude);
+    Q_INVOKABLE void triggerRTL(int sysId);
+    Q_INVOKABLE void checkBackupDroneArrival();
+
+    Q_INVOKABLE void setReplacementInProgress(bool value);
+
+    Q_PROPERTY(bool replacementInProgress READ replacementInProgress NOTIFY replacementInProgressChanged)
+
+
+
+    bool replacementInProgress() const { return _replacementInProgress; }
+
+
+
+
+
+
+
+
   //  Q_INVOKABLE VisualMissionItem* insertSimpleMissionItem(QGeoCoordinate coordinate, int visualItemIndex, bool makeCurrentItem = false);
 
 ///
@@ -130,6 +160,10 @@ signals:
     void managerVehicleChanged              (Vehicle* managerVehicle);
     void promptForPlanUsageOnVehicleChange  (void);
 
+    void replacementInProgressChanged();
+
+
+
 private slots:
     void _activeVehicleChanged      (Vehicle* activeVehicle);
     void _loadMissionComplete       (void);
@@ -159,4 +193,13 @@ private:
     QString                 _currentPlanFile;
     bool                    _deleteWhenSendCompleted =  false;
     QmlObjectListModel*     _planCreators =             nullptr;
+    //kest
+
+
+    bool _replacementInProgress = false;
+    QGeoCoordinate _drone1Coord;
+    int _backupDroneId = -1;
+    QSet<int> _assignedVehicles;
+
+
 };
