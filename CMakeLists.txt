@@ -475,11 +475,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/TemperatureReceiver.cpp)
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/CoordinateReceiver.cpp)
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/ProximityCalculator.cpp)
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/sendUdp.cpp)
-<<<<<<< HEAD
-=======
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/TCPSender.cpp)
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/receiveTCP.cpp)
->>>>>>> 17336fba6c164345ea892a985aab8b1b8628197f
 
 
 #target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/UI/EXTRAReceiver.cpp)
