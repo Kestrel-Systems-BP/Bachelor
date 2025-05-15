@@ -29,7 +29,7 @@ Bachelor/
 ```
 
 ## Requirements 
-All packages 
+Installing packages imported in the scripts. 
 
 ## Set & run
 
