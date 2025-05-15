@@ -24,6 +24,8 @@
 #include "UI/ProximityCalculator.h"
 #include "MissionManager/PlanMasterController.h"
 #include "UI/sendUdp.h"
+#include "UI/TCPSender.h"
+#include "UI/receiveTCP.h"
 //
 
 class QQmlApplicationEngine;
@@ -105,6 +107,7 @@ public:
     Q_INVOKABLE void startUdpReceiver();
     Q_INVOKABLE void startTemperatureReceiver();
     Q_INVOKABLE void startCoordinateReceiver();
+    Q_INVOKABLE void startreceiveTCP();
    // Q_INVOKABLE void startChargerReceiver();
 
 ////////////
@@ -152,7 +155,7 @@ private:
  UdpReceiver* _udpReceiver =nullptr;
  TemperatureReceiver* _temperatureReceiver = nullptr;
  CoordinateReceiver* _coordinateReceiver = nullptr;
-
+ ReceiveTCP* _receiveTCP = nullptr;
 
 
 ///

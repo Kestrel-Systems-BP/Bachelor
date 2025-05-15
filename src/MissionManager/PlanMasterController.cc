@@ -11,6 +11,14 @@
 #include "MissionItem.h"
 #include "QGCApplication.h" //test
 #include "SimpleMissionItem.h"
+#include "Vehicle.h"
+#include "VehicleBatteryFactGroup.h"
+#include <mavlink.h>
+#include "Vehicle.h"
+#include "Fact.h"
+#include "QmlObjectListModel.h"
+
+
 
 
 //
@@ -32,6 +40,8 @@
 #include "GeoFenceManager.h"
 #include "RallyPointManager.h"
 #include "QGCLoggingCategory.h"
+
+
 
 #include <QtCore/QJsonDocument>
 #include <QtCore/QFileInfo>
@@ -666,8 +676,8 @@ void PlanMasterController::showPlanFromManagerVehicle(void)
 
 // 100 % works
 
-/*
 
+/*
 void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
 {
     qDebug() << "Adding waypoint from coordinates:" << latitude << longitude << altitude;
@@ -696,7 +706,7 @@ void PlanMasterController::addWaypoint(double latitude, double longitude, double
             // Insert waypoint from kestrel app
     _missionController.insertSimpleMissionItem(waypointCoord, _missionController.visualItems()->count(), true);
 
-    qCDebug() << "Waypoint inserted at" << waypointCoord;
+    qDebug() << "Waypoint inserted at" << waypointCoord;
 
             // Upload mission to drone
     _missionController.setDirty(true);
@@ -707,41 +717,84 @@ void PlanMasterController::addWaypoint(double latitude, double longitude, double
 
 */
 
-// test with video capture!
-void PlanMasterController::addWaypoint(double latitude, double longitude, double altitude)
-{
-    qDebug() << "Adding waypoint from coordinates:" << latitude << longitude << altitude;
+// test with video capture! working waypoint atleast!.
 
-    QGeoCoordinate waypointCoord(latitude, longitude, altitude);
 
-            // Insert takeoff only if mission is empty
-    if (_missionController.visualItems()->count() == 0) {
-        Vehicle* vehicle = MultiVehicleManager::instance()->activeVehicle();
-        if (vehicle && vehicle->coordinate().isValid()) {
-            QGeoCoordinate vehicleCoord = vehicle->coordinate();
-            QGeoCoordinate takeoffCoord(vehicleCoord.latitude(), vehicleCoord.longitude(), altitude);
 
-            _missionController.insertTakeoffItem(takeoffCoord, altitude, true);
-            qDebug() << "Takeoff item inserted at" << takeoffCoord;
+// funker, men ny versjon bruker ID.... denne sjekker UI bruk.
 
-                    //Start video recording
-            MissionItem startVideoItem(
-                _missionController.visualItems()->count(),
-                MAV_CMD_VIDEO_START_CAPTURE,
-                MAV_FRAME_MISSION,
-                0, 0, 1, 0, 0, 0, 0,
-                true, false
-                );
-            SimpleMissionItem* videoStart = new SimpleMissionItem(this, false, startVideoItem);
-            _missionController.visualItems()->append(videoStart);
-            qDebug() << "Start video capture command inserted.";
-        } else {
-            qDebug() << "Unable to start mission";
-            return;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// waypoint med sys id i stedte.
+// skal på igjen
+
+
+void PlanMasterController::addWaypoint(int sysId, double latitude, double longitude, double altitude)
+
+ {      //debug to check what vehicle id used to start the mission
+
+    qDebug() << "addWaypoint() called with sysid:" << sysId;
+    qDebug() << "Looking for vehicle with sysid" << sysId;
+
+
+
+
+    //check what vehciles there are
+    QmlObjectListModel* vehicleModel = MultiVehicleManager::instance()->vehicles();
+    Vehicle* vehicle = nullptr;
+
+        // for loop that cheks until it finds the correct vehicle
+    for (int i = 0; i < vehicleModel->count(); ++i) {
+        Vehicle* v = qobject_cast<Vehicle*>(vehicleModel->get(i));
+        if (v && v->id() == sysId) {
+            vehicle = v;
+            break;
         }
     }
+        //vehicle ID or coordinates check
+    if (!vehicle || !vehicle->coordinate().isValid()) {
+        qDebug() << "Vehicle with sysid" << sysId << "not found or invalid position.";
+        return;
+    }
+        // set the vehicle with the correct ID as active
+    MultiVehicleManager::instance()->setActiveVehicle(vehicle);
 
-    qDebug() << " altitude:" << altitude;
+    QGeoCoordinate waypointCoord(latitude, longitude, altitude);
+    qDebug() << "Adding waypoint for vehicle ID:" << vehicle->id() << latitude << longitude << altitude;
+
+    //if there are no items in the mission already a takeoff item is added. (no takeoff item == system crash)
+
+    if (_missionController.visualItems()->count() == 0) {
+        QGeoCoordinate takeoffCoord(vehicle->coordinate().latitude(), vehicle->coordinate().longitude(), altitude);
+
+        _missionController.insertTakeoffItem(takeoffCoord, altitude, true);
+        qDebug() << "Takeoff item inserted at" << takeoffCoord;
+
+
+        //start recording when starting mission
+        MissionItem startVideoItem(
+            _missionController.visualItems()->count(),
+            MAV_CMD_VIDEO_START_CAPTURE,
+            MAV_FRAME_MISSION,
+            0, 0, 1, 0, 0, 0, 0,
+            true, false
+            );
+        SimpleMissionItem* videoStart = new SimpleMissionItem(this, false, startVideoItem);
+        _missionController.visualItems()->append(videoStart);
+        qDebug() << "Start video capture command inserted.";
+    }
 
     _missionController.insertSimpleMissionItem(waypointCoord, _missionController.visualItems()->count(), true);
     qDebug() << "Waypoint inserted at" << waypointCoord;
@@ -752,6 +805,21 @@ void PlanMasterController::addWaypoint(double latitude, double longitude, double
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+//the first correct one
+
+/*
 void PlanMasterController::giveMissionToAvailableDrone(double latitude, double longitude, double altitude)
 {
     QmlObjectListModel* vehicleModel = MultiVehicleManager::instance()->vehicles();
@@ -767,12 +835,506 @@ void PlanMasterController::giveMissionToAvailableDrone(double latitude, double l
             MultiVehicleManager::instance()->setActiveVehicle(vehicle);
             qDebug() << "Selected unarmed vehicle ID:" << vehicle->id();
 
-            addWaypoint(latitude, longitude, altitude);
+            addWaypoint(latitude, longitude, altitude);  // calls the clean version below
             return;
         }
     }
 
     qWarning() << "All vehicles are armed. No mission started.";
+}
+
+*/
+
+
+
+//test
+//funker fjell, men endre hvordan dronen tilegner mission
+//skal på igen
+
+
+void PlanMasterController::giveMissionToAvailableDrone(double latitude, double longitude, double altitude)
+{
+    QmlObjectListModel* vehicleModel = MultiVehicleManager::instance()->vehicles();
+    Vehicle* preferred = nullptr;
+
+    if (!vehicleModel || vehicleModel->count() == 0) {
+        qWarning() << "No vehicles connected in QGC.";
+        return;
+    }
+
+            // Step 1: Prefer unarmed drone with MAV_SYS_ID == 1
+    for (int i = 0; i < vehicleModel->count(); ++i) {
+        Vehicle* v = qobject_cast<Vehicle*>(vehicleModel->get(i));
+        if (v && v->id() == 1 && !v->armed()) {
+            preferred = v;
+            break;
+        }
+    }
+
+            // Step 2: If not found, use any unarmed drone
+    if (!preferred) {
+        for (int i = 0; i < vehicleModel->count(); ++i) {
+            Vehicle* v = qobject_cast<Vehicle*>(vehicleModel->get(i));
+            if (v && !v->armed()) {
+                preferred = v;
+                break;
+            }
+        }
+    }
+/*
+            // Step 3: If found, assign mission
+
+    if (preferred) {
+        MultiVehicleManager::instance()->setActiveVehicle(preferred);
+        qDebug() << "Assigned to unarmed vehicle ID:" << preferred->id();
+        addWaypoint(preferred->id(),latitude, longitude, altitude);
+*/
+        // test
+
+        QTimer::singleShot(300, this, [this, preferred, latitude, longitude, altitude]() {
+            _missionController.removeAll();
+            addWaypoint(preferred->id(), latitude, longitude, altitude);
+        });
+
+        //test
+
+    } // FJERN       //else {
+       // qWarning() << "All vehicles are armed. No mission started.";
+ //   }
+//}
+
+
+
+
+
+
+/*
+void PlanMasterController::giveMissionToAvailableDrone(double latitude, double longitude, double altitude)
+{
+    QmlObjectListModel* vehicleModel = MultiVehicleManager::instance()->vehicles();
+    Vehicle* preferred = nullptr;
+
+    if (!vehicleModel || vehicleModel->count() == 0) {
+        qWarning() << "No vehicles connected in QGC.";
+        return;
+    }
+
+            // Step 1: Prefer unarmed drone with MAV_SYS_ID == 1
+    for (int i = 0; i < vehicleModel->count(); ++i) {
+        Vehicle* v = qobject_cast<Vehicle*>(vehicleModel->get(i));
+        if (v && v->id() == 1 && !v->armed()) {
+            preferred = v;
+            break;
+        }
+    }
+
+            // Step 2: If not found, use any unarmed drone
+    if (!preferred) {
+        for (int i = 0; i < vehicleModel->count(); ++i) {
+            Vehicle* v = qobject_cast<Vehicle*>(vehicleModel->get(i));
+            if (v && !v->armed()) {
+                preferred = v;
+                break;
+            }
+        }
+    }
+
+            // Step 3: Assign mission directly (no activeVehicle change!)
+    if (preferred) {
+        qDebug() << "Assigned to unarmed vehicle ID:" << preferred->id();
+        addWaypoint(preferred->id(),latitude, longitude, altitude);
+    } else {
+        qWarning() << "All vehicles are armed. No mission started.";
+    }
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+// test altitude change:
+/*
+void PlanMasterController::changeAltitudeMidMission(int sysId, double newAltitude)
+{
+    QmlObjectListModel* vehicleModel = MultiVehicleManager::instance()->vehicles();
+
+    for (int i = 0; i < vehicleModel->count(); ++i) {
+        Vehicle* vehicle = qobject_cast<Vehicle*>(vehicleModel->get(i));
+        if (vehicle && vehicle->id() == sysId) {
+            qDebug() << "Sending DO_CHANGE_ALTITUDE to vehicle" << sysId;
+
+            MissionItem altChangeItem(
+                0,                              // seq (not used)
+                MAV_CMD_DO_CHANGE_ALTITUDE,     // command
+                MAV_FRAME_GLOBAL_RELATIVE_ALT,  // frame
+                newAltitude, 0, 0, 0, 0, 0, 0,   // only param1 is used
+                true, false                     // autoContinue, isCurrent
+                );
+
+            vehicle->sendMavCommand(
+                MAV_COMP_ID_AUTOPILOT1,
+                MAV_CMD_DO_CHANGE_ALTITUDE,
+                true,
+                newAltitude                     // param1: target altitude
+                );
+            return;
+        }
+    }
+
+    qWarning() << "Vehicle with ID" << sysId << "not found.";
+}
+*/
+
+
+void PlanMasterController::triggerRTL(int sysId)
+{
+    QmlObjectListModel* model = MultiVehicleManager::instance()->vehicles();
+    for (int i = 0; i < model->count(); ++i) {
+        Vehicle* v = qobject_cast<Vehicle*>(model->get(i));
+        if (v && v->id() == sysId) {
+            v->sendMavCommand(
+                MAV_COMP_ID_AUTOPILOT1,
+                MAV_CMD_NAV_RETURN_TO_LAUNCH,
+                true
+                );
+            qDebug() << "Sent RTL to drone ID" << sysId;
+            return;
+        }
+    }
+
+    qWarning() << "Drone ID" << sysId << "not found for RTL.";
+}
+
+/*
+void PlanMasterController::checkBackupDroneArrival()
+{
+    QmlObjectListModel* model = MultiVehicleManager::instance()->vehicles();
+    Vehicle* drone1 = nullptr;
+    Vehicle* backupDrone = nullptr;
+
+            // Find Drone 1 (ID 1)
+    for (int i = 0; i < model->count(); ++i) {
+        Vehicle* v = qobject_cast<Vehicle*>(model->get(i));
+        if (v && v->id() == 1 && v->armed()) {
+            drone1 = v;
+        } else if (v && v->id() != 1 && v->armed()) {
+            backupDrone = v;
+        }
+    }
+
+    if (!drone1 || !backupDrone) {
+        qDebug() << "Either Drone 1 or backup drone not ready.";
+        return;
+    }
+
+    if (!drone1->coordinate().isValid() || !backupDrone->coordinate().isValid()) {
+        qDebug() << "Invalid coordinates. Skip check.";
+        return;
+    }
+
+    double distance = backupDrone->coordinate().distanceTo(drone1->coordinate());
+    qDebug() << "Distance between drones:" << distance;
+
+    if (distance < 5.0) {
+        triggerRTL(1);
+        qDebug() << "Backup drone arrived. Triggered RTL for Drone 1.";
+    }
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+// replaceDrone() med emit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void PlanMasterController::giveMissionToAvailableDroneAutoStart(double latitude, double longitude, double altitude)
+{
+    QmlObjectListModel* vehicleModel = MultiVehicleManager::instance()->vehicles();
+    Vehicle* preferred = nullptr;
+
+    if (!vehicleModel || vehicleModel->count() == 0) {
+        qWarning() << "No vehicles connected in QGC.";
+        return;
+    }
+
+            // Step 1: Prefer unarmed drone with MAV_SYS_ID == 1
+    for (int i = 0; i < vehicleModel->count(); ++i) {
+        Vehicle* v = qobject_cast<Vehicle*>(vehicleModel->get(i));
+        if (v && v->id() == 1 && !v->armed()) {
+            preferred = v;
+            break;
+        }
+    }
+
+            // Step 2: If not found, use any unarmed drone
+    if (!preferred) {
+        for (int i = 0; i < vehicleModel->count(); ++i) {
+            Vehicle* v = qobject_cast<Vehicle*>(vehicleModel->get(i));
+            if (v && !v->armed()) {
+                preferred = v;
+                break;
+            }
+        }
+    }
+
+            // Step 3: If found, assign mission
+    if (preferred) {
+        MultiVehicleManager::instance()->setActiveVehicle(preferred);
+        qDebug() << "Assigned to unarmed vehicle ID:" << preferred->id();
+        addWaypointAutoStart(preferred->id(),latitude, longitude, altitude);
+    } else {
+        qWarning() << "All vehicles are armed. No mission started.";
+    }
+}
+
+
+
+
+// G TEST
+
+
+// skal på igjen.
+
+
+
+
+
+/// skal på igjen etter test!!
+
+
+void PlanMasterController::replaceDrone(double safeAltitude)
+{
+    if (_replacementInProgress) {
+        qDebug() << "Replacement already in progress. Skipping.";
+        return;
+    }
+
+    QmlObjectListModel* vehicleModel = MultiVehicleManager::instance()->vehicles();
+    if (!vehicleModel || vehicleModel->count() == 0) {
+        qWarning() << "No vehicles connected.";
+        return;
+    }
+
+    Vehicle* drone1 = nullptr;
+    Vehicle* backupDrone = nullptr;
+
+            // Step 1: Find armed Drone 1 (ID 1)
+    for (int i = 0; i < vehicleModel->count(); ++i) {
+        Vehicle* v = qobject_cast<Vehicle*>(vehicleModel->get(i));
+        if (v && v->id() == 1 && v->armed()) {
+            drone1 = v;
+            break;
+        }
+    }
+
+    if (!drone1) {
+        qWarning() << "Drone 1 not armed or not found.";
+        return;
+    }
+
+            // Step 2: Check battery level
+    Fact* percentFact = nullptr;
+    QmlObjectListModel* batteries = drone1->batteries();
+    if (batteries && batteries->count() > 0) {
+        VehicleBatteryFactGroup* batteryGroup = qobject_cast<VehicleBatteryFactGroup*>(batteries->get(0));
+        if (batteryGroup) {
+            percentFact = batteryGroup->percentRemaining();
+        }
+    }
+
+    if (!percentFact || !percentFact->rawValue().isValid()) {
+        qWarning() << "Battery percentage unavailable.";
+        return;
+    }
+
+    float batteryPercent = percentFact->rawValue().toFloat();
+    if (batteryPercent > 50.0f) {
+        qDebug() << "Battery OK (" << batteryPercent << "%). No replacement needed.";
+        return;
+    }
+
+    qDebug() << "Drone 1 battery low (" << batteryPercent << "%). Initiating replacement...";
+    //_replacementInProgress = true;
+    setReplacementInProgress(true);
+
+
+            // Step 3: Get drone 1 coordinates
+    QGeoCoordinate drone1Coord = drone1->coordinate();
+    if (!drone1Coord.isValid()) {
+        qWarning() << "Invalid coordinate from Drone 1.";
+        //_replacementInProgress = false;
+        setReplacementInProgress(false);
+
+        return;
+    }
+
+            // Step 4: Find unarmed backup drone
+    for (int i = 0; i < vehicleModel->count(); ++i) {
+        Vehicle* v = qobject_cast<Vehicle*>(vehicleModel->get(i));
+        if (v && v->id() != 1 && !v->armed()) {
+            backupDrone = v;
+            break;
+        }
+    }
+
+    if (!backupDrone) {
+        qWarning() << "No unarmed backup drone found.";
+        //_replacementInProgress = false;
+        setReplacementInProgress(false);
+
+        return;
+    }
+
+            // Step 5: Send mission and start it
+    MultiVehicleManager::instance()->setActiveVehicle(backupDrone);
+    qDebug() << "Backup drone assigned: ID" << backupDrone->id();
+
+    _backupDroneId = backupDrone->id();// test
+    _drone1Coord = drone1->coordinate(); // test
+
+    /*
+    //addWaypointAutoStart(backupDrone->id(), drone1Coord.latitude(), drone1Coord.longitude(), 10.0);
+    addWaypoint(backupDrone->id(), drone1Coord.latitude(), drone1Coord.longitude(), 10.0);
+
+
+    if (!backupDrone->armed()) {
+        backupDrone->setArmed(true, false);
+        qDebug() << "Backup drone armed automatically.";
+    }
+
+
+    //backupDrone->startMission();
+    //qDebug() << "Backup drone mission started automatically.";
+
+
+    if (backupDrone && backupDrone->missionManager() && backupDrone->missionManager()->missionItems().count() > 0) {
+        backupDrone->startMission();
+        qDebug() << "Backup drone mission started automatically.";
+    } else {
+        qWarning() << "Cannot start mission: No mission items found for backup drone.";
+    }
+
+*/
+
+    addWaypoint(backupDrone->id(), drone1Coord.latitude(), drone1Coord.longitude(), 10.0);
+
+    QTimer::singleShot(500, this, [this, backupDrone]() {
+        if (!backupDrone->armed()) {
+            backupDrone->setArmed(true, false);
+            qDebug() << "Backup drone armed automatically.";
+        }
+
+        QTimer::singleShot(1000, this, [this, backupDrone]() {
+            if (backupDrone && backupDrone->missionManager() && backupDrone->missionManager()->missionItems().count() > 0) {
+                backupDrone->startMission();
+                qDebug() << "Backup drone mission started automatically.";
+            } else {
+                qWarning() << "Cannot start mission: No mission items found for backup drone.";
+            }
+        });
+    });
+
+            // Step 6: Raise altitude of Drone 1
+    changeAltitudeMidMission(1, safeAltitude);
+
+            // Step 7: Trigger RTL if close enough
+    if (backupDrone->coordinate().isValid()) {
+        double dist = backupDrone->coordinate().distanceTo(drone1Coord);
+        qDebug() << "Backup drone distance to Drone 1:" << dist << "m";
+
+
+
+
+
+        //if (dist < 20.0) {
+          //  triggerRTL(1);
+           // qDebug() << "Backup drone is nearby. RTL triggered.";
+       // } else {
+          //  qDebug() << "Backup drone not close enough yet.";
+     //   }
+    }
+
+    //_replacementInProgress = false;
+   // setReplacementInProgress(true);
+    _backupDroneId = backupDrone->id();
+    //QTimer::singleShot(5000, this, SLOT(checkBackupDroneArrival()));
+    QTimer::singleShot(3000, this, [this]() {
+        checkBackupDroneArrival();
+    });
+
+
+}
+
+
+
+
+
+
+void PlanMasterController::checkBackupDroneArrival()
+{
+    if (!_replacementInProgress) return;
+
+    QmlObjectListModel* vehicleModel = MultiVehicleManager::instance()->vehicles();
+    Vehicle* backupDrone = nullptr;
+
+    for (int i = 0; i < vehicleModel->count(); ++i) {
+        Vehicle* v = qobject_cast<Vehicle*>(vehicleModel->get(i));
+        if (v && v->id() == _backupDroneId) {
+            backupDrone = v;
+            break;
+        }
+    }
+
+    if (!backupDrone || !_drone1Coord.isValid() || !backupDrone->coordinate().isValid()) {
+        qWarning() << "Backup drone or coordinates invalid. Retrying...";
+        QTimer::singleShot(3000, this, [this]() { checkBackupDroneArrival(); });
+        return;
+    }
+
+    double dist = backupDrone->coordinate().distanceTo(_drone1Coord);
+    qDebug() << "Backup drone distance to Drone 1:" << dist << "m";
+
+    if (dist < 20.0) {
+        triggerRTL(1);
+        setReplacementInProgress(false);
+        qDebug() << "Backup drone is nearby. RTL triggered.";
+    } else {
+        QTimer::singleShot(3000, this, [this]() { checkBackupDroneArrival(); });
+    }
 }
 
 
@@ -785,13 +1347,50 @@ void PlanMasterController::giveMissionToAvailableDrone(double latitude, double l
 
 
 
+void PlanMasterController::changeAltitudeMidMission(int sysId, double newAltitude)
+{
+    qCDebug(PlanMasterControllerLog) << "changeAltitudeMidMission: Starting for sysId" << sysId;
+
+    QmlObjectListModel* vehicleModel = MultiVehicleManager::instance()->vehicles();
+    Vehicle* vehicle = nullptr;
+
+    for (int i = 0; i < vehicleModel->count(); ++i) {
+        Vehicle* v = qobject_cast<Vehicle*>(vehicleModel->get(i));
+        if (v && v->id() == sysId) {
+            vehicle = v;
+            break;
+        }
+    }
+
+    if (!vehicle) {
+        qCWarning(PlanMasterControllerLog) << "changeAltitudeMidMission: Vehicle with ID" << sysId << "not found.";
+        return;
+    }
+
+    if (!vehicle->coordinate().isValid()) {
+        qCWarning(PlanMasterControllerLog) << "changeAltitudeMidMission: Vehicle ID" << sysId << "has invalid position.";
+        return;
+    }
+
+    qCDebug(PlanMasterControllerLog) << "changeAltitudeMidMission: Sending DO_CHANGE_ALTITUDE to vehicle ID" << sysId << "with altitude" << newAltitude;
+
+    vehicle->sendMavCommand(
+        MAV_COMP_ID_AUTOPILOT1,
+        MAV_CMD_DO_CHANGE_ALTITUDE,
+        true, // showError
+        static_cast<float>(newAltitude), // param1: altitude in meters
+        0, 0, 0, 0, 0, 0 // unused params
+        );
+}
 
 
 
-
-
-
-
+void PlanMasterController::setReplacementInProgress(bool value) {
+    if (_replacementInProgress != value) {
+        _replacementInProgress = value;
+        emit replacementInProgressChanged();
+    }
+}
 
 
 
