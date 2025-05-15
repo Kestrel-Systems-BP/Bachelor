@@ -41,6 +41,9 @@
 #include <QtQml/QQmlEngine>
 #include <QtQuick/QQuickItem>
 
+#include <QDebug>
+#include <QPointer>
+
 QGC_LOGGING_CATEGORY(VideoManagerLog, "qgc.videomanager.videomanager")
 
 static constexpr const char *kFileExtension[VideoReceiver::FILE_FORMAT_MAX - VideoReceiver::FILE_FORMAT_MIN] = {
@@ -509,6 +512,18 @@ void VideoManager::_videoSourceChanged()
         stopVideo();
     }
 
+
+//kest
+
+/*
+	if (hasVideo()) {
+    		switchVideoUri(_videoSettings->rtspUrl()->rawValue().toString());
+	} else {
+    		stopVideo();
+	}
+//*/
+
+
     qCDebug(VideoManagerLog) << "New Video Source:" << _videoSettings->videoSource()->rawValue().toString();
 }
 
@@ -623,6 +638,7 @@ bool VideoManager::_updateAutoStream(unsigned id)
 
 bool VideoManager::_updateSettings(unsigned id)
 {
+    qDebug() << "Utenfor";
     if (!_videoSettings) {
         return false;
     }
@@ -641,7 +657,7 @@ bool VideoManager::_updateSettings(unsigned id)
     }
 
     settingsChanged |= _updateUVC();
-
+/*
     if (_activeVehicle && _activeVehicle->cameraManager()) {
         const QGCVideoStreamInfo* const pInfo = _activeVehicle->cameraManager()->currentStreamInstance();
         if (pInfo) {
@@ -652,7 +668,7 @@ bool VideoManager::_updateSettings(unsigned id)
 	}
 	else {
         //Hardcode fallback RTSP stream for VOXL 2
-        const QString fallbackUri = "rtsp://192.168.8.1:8900/live";
+        const QString fallbackUri = "rtsp://100.70.96.115:8900/live";
         qCDebug(VideoManagerLog) << "Fallback RTSP stream: " << fallbackUri;
         settingsChanged |= _updateVideoUri(id, fallbackUri);
         SettingsManager::instance()->videoSettings()->videoSource()->setRawValue(VideoSettings::videoSourceRTSP);
@@ -662,7 +678,67 @@ bool VideoManager::_updateSettings(unsigned id)
 	//////
 
         }
+    }*/
+
+/*    const QString fallbackUri = "rtsp://100.108.114.15:8904/live";
+    qCDebug(VideoManagerLog) << "Using fallback RTSP stream as primary: " << fallbackUri;
+    settingsChanged |= _updateVideoUri(id, fallbackUri);
+    SettingsManager::instance()->videoSettings()->videoSource()->setRawValue(VideoSettings::videoSourceRTSP);
+    return settingsChanged;
+*/
+
+    if (!_activeVehicle) {
+        qDebug() << "!! _activeVehicle is null";
+    } else {
+        qDebug() << ">> _activeVehicle is valid, ID:" << _activeVehicle->id();
     }
+
+if (_activeVehicle) {
+    int vehicleId = _activeVehicle->id(); // Henter MAVLink system ID
+    qDebug() << "Inside _activeVehical code, id:" << vehicleId;
+    QString selectedUri;
+    if (vehicleId == 1) {
+        selectedUri = "rtsp://100.108.114.15:8904/live";  // Drone 1
+        qDebug() << "Selected drone 1";
+    } else if (vehicleId == 2) {
+        selectedUri = "rtsp://100.70.96.115:8900/live";  // Drone 2
+        qDebug() << "Selected drone 2";
+    } else {
+        selectedUri = "rtsp://default/stream";           // Valgfri fallback
+        qDebug() << "Triggered default stream";
+    }
+
+    qCDebug(VideoManagerLog) << "Selected RTSP stream for vehicle ID"
+                             << vehicleId << ":" << selectedUri;
+//KESTREL
+    if (_videoReceiverData[id].receiver) {
+        qDebug() << "Stopping previous video stream";
+        _videoReceiverData[id].receiver->stop();
+        qDebug() << "WAITING BEFORE RESTART";
+
+        QPointer<VideoReceiver> safeReceiver = _videoReceiverData[id].receiver;
+        QTimer::singleShot(500, this, [safeReceiver, selectedUri]() {
+            if (safeReceiver) {
+                safeReceiver->start(selectedUri, 0, 3);
+                qDebug() << "RESTARTED THE STREAM FOR THIS VEHICLE:      " << selectedUri;
+            }
+        });
+    }
+//END
+    settingsChanged |= _updateVideoUri(id, selectedUri);
+    SettingsManager::instance()->videoSettings()->videoSource()->setRawValue(VideoSettings::videoSourceRTSP);
+//KESTREL
+    /*
+    if (_videoReceiverData[id].receiver) {
+        qDebug() << "Starting new video stream";
+        _videoReceiverData[id].receiver->start(selectedUri, 0, 3);
+    } */
+//END
+    return settingsChanged;
+}
+
+
+
 
     if (id == 0) {
         const QString source = _videoSettings->videoSource()->rawValue().toString();
@@ -796,6 +872,12 @@ void VideoManager::_setActiveVehicle(Vehicle *vehicle)
 
     _activeVehicle = vehicle;
     if (_activeVehicle) {
+    //KESTREL
+        qDebug() << "ACTIVE VEHICLE CALLED";
+        _updateSettings(0); //set URI for current drone
+        _restartAllVideos();  //force restart
+        qDebug() << "THE STREAM RUNNING IS: " << _videoReceiverData[0].uri;
+    //END
         (void) connect(_activeVehicle->vehicleLinkManager(), &VehicleLinkManager::communicationLostChanged, this, &VideoManager::_communicationLostChanged);
         if (_activeVehicle->cameraManager()) {
             (void) connect(_activeVehicle->cameraManager(), &QGCCameraManager::streamChanged, this, &VideoManager::_restartAllVideos);
@@ -836,3 +918,89 @@ void FinishVideoInitialization::run()
 {
     VideoManager::instance()->_initVideo();
 }
+
+//kest
+/*
+void VideoManager::switchVideoUri(const QString& newUri)
+{
+    qCDebug(VideoManagerLog) << "[VideoManager] Switching all video URIs to:" << newUri;
+
+    // Update the RTSP URI in settings (affects all receivers that depend on it)
+    _videoSettings->rtspUrl()->setRawValue(newUri);
+
+    // Restart each video receiver cleanly by index
+    for (VideoReceiverData& receiverData : _videoReceiverData) {
+        QTimer::singleShot(1000, [this, index = receiverData.index]() {
+            _updateSettings(index);
+        });
+    }
+} */
+/*
+void VideoManager::switchVideoUri(const QString& newUri)
+{
+    qCDebug(VideoManagerLog) << "[VideoManager] Switching all video URIs to:" << newUri;
+
+    stopVideo();  // fully tear down current video stream
+
+    // Clear the RTSP URI setting temporarily
+    _videoSettings->rtspUrl()->setRawValue("");
+
+    QTimer::singleShot(1500, [this, newUri]() {
+        // Set new URI
+        _videoSettings->rtspUrl()->setRawValue(newUri);
+
+        // Restart video receivers using new URI
+	Vehicle* activeVehicle = qgcApp()->toolbox()->multiVehicleManager()->activeVehicle();
+	if (!activeVehicle) {
+    	qCWarning(VideoManagerLog) << "No active vehicle selected.";
+    	return;
+	}
+
+	// Only update the video receiver for the active vehicle
+	int receiverIndex = _receiverIndexForVehicle(activeVehicle);  // You may need to implement this
+	_videoSettings->rtspUrl()->setRawValue(newUri);
+ 	_updateSettings(receiverIndex);
+    });
+}
+
+*/
+//
+
+/*
+void VideoManager::switchVideoUri(const QString& fallbackUri)
+{
+    Vehicle* activeVehicle = MultiVehicleManager::instance()->activeVehicle();
+    if (!activeVehicle) {
+        qWarning() << "[VideoManager] No active vehicle, using fallback URI:" << fallbackUri;
+        _videoSettings->rtspUrl()->setRawValue(fallbackUri);
+    } else {
+        QString rtspUrl;
+
+        // Assign RTSP URL based on active vehicle ID
+        switch (activeVehicle->id()) {
+            case 1:
+                rtspUrl = "rtsp://100.108.114.15:8900/live";
+                break;
+            case 2:
+                rtspUrl = "rtsp://100.70.96.115:8900/live";
+                break;
+            default:
+                rtspUrl = fallbackUri;
+                break;
+        }
+
+        qCDebug(VideoManagerLog) << "[VideoManager] Active vehicle ID:" << activeVehicle->id()
+                                 << "Switching to URI:" << rtspUrl;
+
+        _videoSettings->rtspUrl()->setRawValue(rtspUrl);
+    }
+
+    stopVideo();  // Hard reset all streams
+
+    QTimer::singleShot(1500, [this]() {
+        for (VideoReceiverData& receiverData : _videoReceiverData) {
+            _updateSettings(receiverData.index);
+        }
+    });
+}
+*/
