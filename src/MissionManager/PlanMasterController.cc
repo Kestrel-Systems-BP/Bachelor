@@ -1080,7 +1080,7 @@ void PlanMasterController::checkBackupDroneArrival()
 
 
 
-
+/*
 void PlanMasterController::giveMissionToAvailableDroneAutoStart(double latitude, double longitude, double altitude)
 {
     QmlObjectListModel* vehicleModel = MultiVehicleManager::instance()->vehicles();
@@ -1121,7 +1121,7 @@ void PlanMasterController::giveMissionToAvailableDroneAutoStart(double latitude,
     }
 }
 
-
+*/
 
 
 // G TEST

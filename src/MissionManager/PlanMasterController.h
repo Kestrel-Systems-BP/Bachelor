@@ -91,12 +91,12 @@ public:
 //kest
     //Q_INVOKABLE void addWaypoint(double latitude, double longitude, double altitude); // changed from active vehicle(UI) to ID..   (added another paramter)
     Q_INVOKABLE void addWaypoint(int sysId, double latitude, double longitude, double altitude);
-     Q_INVOKABLE void addWaypointAutoStart(int sysId, double latitude, double longitude, double altitude);
+     //Q_INVOKABLE void addWaypointAutoStart(int sysId, double latitude, double longitude, double altitude);
 
 
     //Q_INVOKABLE void addWaypointToDrone(int sysId, double latitude, double longitude, double altitude);
     Q_INVOKABLE void giveMissionToAvailableDrone(double latitude, double longitude, double altitude);
-    Q_INVOKABLE void giveMissionToAvailableDroneAutoStart(double latitude, double longitude, double altitude); // for replaceDrone
+    //Q_INVOKABLE void giveMissionToAvailableDroneAutoStart(double latitude, double longitude, double altitude); // for replaceDrone
     Q_INVOKABLE void changeAltitudeMidMission(int sysId, double newAltitude);
     Q_INVOKABLE void replaceDrone(double safeAltitude);
     Q_INVOKABLE void triggerRTL(int sysId);
