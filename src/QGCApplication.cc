@@ -476,10 +476,6 @@ void QGCApplication::_initForNormalAppBoot()
 
     });
 
-    qmlRegisterSingletonType<CustomMission>("QGroundControl", 1, 0, "CustomMission", [](QQmlEngine*, QJSEngine*) -> QObject* {
-        return new CustomMission();
-
-    });
 
 
    qmlRegisterSingletonType<sendUdp>("QGroundControl", 1, 0, "SendUdp", [](QQmlEngine*, QJSEngine*) -> QObject* {

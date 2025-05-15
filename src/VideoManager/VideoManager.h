@@ -50,7 +50,9 @@ class VideoManager : public QObject
     Q_PROPERTY(QSize    videoSize               READ videoSize                                  NOTIFY videoSizeChanged)
     Q_PROPERTY(QString  imageFile               READ imageFile                                  NOTIFY imageFileChanged)
     Q_PROPERTY(QString  uvcVideoSourceID        READ uvcVideoSourceID                           NOTIFY uvcVideoSourceIDChanged)
-
+    //Kest
+	//    Q_INVOKABLE void switchVideoUri(const QString& newUri);
+    //
     friend class FinishVideoInitialization;
 
 public:
