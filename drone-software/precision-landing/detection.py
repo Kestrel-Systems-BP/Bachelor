@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from camera import Camera
 
 class ObjectDetector:
     def __init__(self, img_width=1280, img_height=720):
@@ -56,20 +57,43 @@ class ObjectDetector:
             return None
         return (center[0] - self.img_center[0], center[1] - self.img_center[1])
 
+def run_detection():
+    """Process live camera feed"""
+    detector = ObjectDetector()
+    cam = Camera()
+    cam.initialize()
+    try:
+        while True:
+            frame = cam.get_frame()
+            center, radius, processed_frame = detector.detect(frame)
+            if center:
+                offset = detector.compute_offset(center)
+                print(f"Detected center: {center}, radius: {radius}, offset: {offset}")
+            else:
+                print("No object detected")
+    except KeyboardInterrupt:
+        print("Stopping detection")
+    except Exception as e:
+        print(f"Detection failed: {e}")
+    finally:
+        cam.release()
+
+
 if __name__ == "__main__":
     try:
         detector = ObjectDetector()
-        frame = cv2.imread("C:/Users/eirik/Documents/GitHub/Bachelor/Drone Software/testimage.jpg")
+        frame = cv2.imread("/data/user_scripts/landing/testimage.jpg")
         if frame is None:
-            raise RuntimeError("Failed to load test image")
-        center, radius, processed_frame = detector.detect(frame)
-        if center:
-            offset = detector.compute_offset(center)
-            print(f"Detected center: {center}, radius: {radius}, offset: {offset}")
-            cv2.imshow("Detection test", processed_frame)
-            cv2.waitKey(0)
-            cv2.destroyAllWindows()
+            print("Failed to load test image, trying camera")
+            run_detection()
         else:
-            print("No object detected")
+            center, radius, processed_frame = detector.detect(frame)
+            if center:
+                offset = detector.compute_offset(center)
+                print(f"Detected center: {center}, radius: {radius}, offset: {offset}")
+            else:
+                print("No object detected")
     except Exception as e:
         print(f"Detection test failed: {e}")
+else:
+    run_detection()
