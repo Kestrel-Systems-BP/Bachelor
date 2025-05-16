@@ -23,10 +23,11 @@ async def main():
         await mavlink.connect()
 
         #Initialize the camera
-        camera.initialize()
+        await camera.initialize()
 
         #Start offboard mode
         await controller.start_offboard()
+
 
         #Main loop
         center_threshold = 50
