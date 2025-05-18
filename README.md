@@ -18,7 +18,7 @@ This system runs on a Rapsberry Pi performing the following tasks:
 ## File structure 
 
 ```plaintext
-Bachelor/
+Kestrel/
 ├── QGC_Communication.py
 ├── Actuator_Control.py
 ├── Charging_Control.py
@@ -43,7 +43,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Kestrel-Systems-BP/Bachelor.git
-cd Bachelor
+cd Kestrel
 ```
 
 Adjust the settings.yaml file 
