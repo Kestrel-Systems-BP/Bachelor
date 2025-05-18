@@ -29,7 +29,13 @@ Bachelor/
 ```
 
 ## Requirements 
-Installing packages imported in the scripts. 
+For testing with a physical setup, the following hardware is needed: 
+- Raspberry Pi
+- Raspberry Pi Relay HAT
+- Electromechanical Actuators
+- DHT11 Sensor
+
+The code can be run with only Raspberry Pi and Raspberry Pi Relay HAT for testing.
 
 ## Set & run
 
