@@ -18,7 +18,7 @@ This system runs on a Rapsberry Pi performing the following tasks:
 ## File structure 
 
 ```plaintext
-Kestrel/
+Bachelor/
 ├── QGC_Communication.py
 ├── Actuator_Control.py
 ├── Charging_Control.py
@@ -42,8 +42,9 @@ The code can be run with only Raspberry Pi and Raspberry Pi Relay HAT for testin
 Clone the repository:
 
 ```bash
-git clone https://github.com/Kestrel-Systems-BP/Bachelor.git
-cd Kestrel
+git clone git@github.com:Kestrel-Systems-BP/Bachelor.git
+cd Bachelor
+git checkout master
 ```
 
 Adjust the settings.yaml file 
