@@ -20,7 +20,7 @@ class ObjectDetector:
         center, bbox = None, None
         for result in results:
             for box in result.boxes:
-                if int(box.cls) == 0:  # Person class
+                if int(box.cls) == 0:  # Person class (ID = 0) in YOLO
                     x1, y1, x2, y2 = map(int, box.xyxy[0])
                     #Calculate center of bounding box
                     center = ((x1 + x2) // 2, (y1 + y2) // 2)
