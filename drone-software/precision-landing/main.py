@@ -23,7 +23,7 @@ async def main():
         await mavlink.connect()
 
         #Initialize the camera
-        await camera.initialize()
+        camera.initialize()
 
         #Start offboard mode
         await controller.start_offboard()
@@ -62,18 +62,13 @@ async def main():
             else:
                 centered_start_time = None
 
-            #Display the frame
-            #Not possible within VOXL 2
-#            cv2.imshow('Camera Feed', processed_frame)
-#            if cv2.waitKey(1) & 0xFF == ord('q'):
-#                break
+            await asyncio.sleep(0.01)
 
     except Exception as e:
         print(f"Error in main loop: {e}")
     finally:
         #Clean up processes
         camera.release()
-#        cv2.destroyAllWindows()
         await controller.stop_offboard()
 
 if __name__ == "__main__":
