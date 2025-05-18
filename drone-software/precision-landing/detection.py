@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from camera import Camera
+import asyncio
 
 class ObjectDetector:
     def __init__(self, img_width=1280, img_height=720):
@@ -57,12 +58,12 @@ class ObjectDetector:
             return None
         return (center[0] - self.img_center[0], center[1] - self.img_center[1])
 
-def run_detection():
+async def run_detection():
     """Process live camera feed"""
     detector = ObjectDetector()
     cam = Camera()
-    cam.initialize()
     try:
+        cam.initialize()
         while True:
             frame = cam.get_frame()
             center, radius, processed_frame = detector.detect(frame)
@@ -71,6 +72,7 @@ def run_detection():
                 print(f"Detected center: {center}, radius: {radius}, offset: {offset}")
             else:
                 print("No object detected")
+            await asyncio.sleep(0.01)
     except KeyboardInterrupt:
         print("Stopping detection")
     except Exception as e:
@@ -85,7 +87,7 @@ if __name__ == "__main__":
         frame = cv2.imread("/data/user_scripts/landing/testimage.jpg")
         if frame is None:
             print("Failed to load test image, trying camera")
-            run_detection()
+            asyncio.run(run_detection())
         else:
             center, radius, processed_frame = detector.detect(frame)
             if center:
@@ -95,5 +97,3 @@ if __name__ == "__main__":
                 print("No object detected")
     except Exception as e:
         print(f"Detection test failed: {e}")
-else:
-    run_detection()
