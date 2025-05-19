@@ -1,0 +1,16 @@
+[Unit]
+Description=voxl-streamer
+SourcePath=/usr/bin/voxl-streamer
+After=voxl-wait-for-fs.service
+Requires=voxl-wait-for-fs.service
+
+[Service]
+Restart=no
+User=root
+Type=simple
+PIDFile=/run/voxl-streamer.pid
+ExecStartPre=/bin/sleep 5
+ExecStart=/usr/bin/voxl-streamer -c /etc/modalai/voxl-streamer2.conf
+
+[Install]
+WantedBy=multi-user.target
