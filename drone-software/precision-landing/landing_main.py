@@ -3,9 +3,9 @@ import cv2
 import sys
 import time
 from camera import Camera
-from detection import ObjectDetector
+from landing_detection import ObjectDetector
 from mavlink import MAVLinkConnection
-from control import DroneController
+from landing_control import DroneController
 
 async def main():
     if sys.version_info < (3.8):

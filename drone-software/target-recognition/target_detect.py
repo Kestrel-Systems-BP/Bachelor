@@ -1,11 +1,12 @@
 from ultralytics import YOLO
 import cv2
 import numpy as np
+from camera import Camera
 
 class ObjectDetector:
     def __init__(self, img_width=1280, img_height=720):
         self.img_center = (img_width // 2, img_height // 2)
-        self.model = YOLO('yolov8n.pt') #Load the pretrained YOLOv8 nano model for object detection
+        self.model = YOLO('yolov8n.pt') #Pretrained YOLOv8 nano model for object detection
 
     def detect(self, frame):
         # Detect a person in the input frame and draw a bounding box around them
@@ -29,7 +30,7 @@ class ObjectDetector:
                     cv2.rectangle(processed_frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
                     break
             if center:
-                break
+                break #Exit the outer loop when a person is identified
         return center, bbox, processed_frame
 
     def compute_offset(self, center):
